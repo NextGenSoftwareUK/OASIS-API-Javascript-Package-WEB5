@@ -4,9 +4,6 @@ import type { OASISResponse } from '../core/types';
 export declare class NFTsModule {
   constructor(http: unknown);
 
-  /** POST api/nFTs/{id}/activate */
-  activateNFT(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** POST api/nFTs/{id}/clone */
   cloneNFT(args?: Record<string, any>): Promise<OASISResponse>;
 
@@ -16,14 +13,8 @@ export declare class NFTsModule {
   /** POST api/nFTs/create */
   createNFTWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
 
-  /** POST api/nFTs/{id}/deactivate */
-  deactivateNFT(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** DELETE api/nFTs/{id} */
   deleteNFT(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/nFTs/{id}/download */
-  downloadNFT(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/nFTs/{id}/edit */
   editNFT(args?: Record<string, any>): Promise<OASISResponse>;
@@ -37,32 +28,11 @@ export declare class NFTsModule {
   /** GET api/nFTs/{id}/versions */
   getNFTVersions(args?: Record<string, any>): Promise<OASISResponse>;
 
-  /** GET api/nFTs/load-all-for-avatar */
-  loadAllNFTsForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/nFTs/{id}/load */
-  loadNFT(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/nFTs/load-from-path */
-  loadNFTFromPath(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/nFTs/load-from-published */
-  loadNFTFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** GET api/nFTs/{id}/version/{version} */
   loadNFTVersion(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/nFTs/{id}/publish */
   publishNFT(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/nFTs/{id}/republish */
-  republishNFT(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/nFTs/search */
-  searchNFTs(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/nFTs/{id}/unpublish */
-  unpublishNFT(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** PUT api/nFTs/{id} */
   updateNFT(args?: Record<string, any>): Promise<OASISResponse>;

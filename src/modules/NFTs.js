@@ -15,20 +15,20 @@ class NFTsModule {
   constructor(http) {
     this._http = http;
 
-    // post api/nFTs/{id}/activate
-    this.activateNFT = makeOperation(http, "api/nFTs", "POST", "{id}/activate");
+    // post api/nFTs/{id}/activate (query: version)
+    this.activateNFT = makeOperation(http, "api/nFTs", "POST", "{id}/activate", {"query":["version"]});
     // post api/nFTs/{id}/clone
     this.cloneNFT = makeOperation(http, "api/nFTs", "POST", "{id}/clone");
     // post api/nFTs/
     this.createNFT = makeOperation(http, "api/nFTs", "POST", "");
     // post api/nFTs/create
     this.createNFTWithOptions = makeOperation(http, "api/nFTs", "POST", "create");
-    // post api/nFTs/{id}/deactivate
-    this.deactivateNFT = makeOperation(http, "api/nFTs", "POST", "{id}/deactivate");
+    // post api/nFTs/{id}/deactivate (query: version)
+    this.deactivateNFT = makeOperation(http, "api/nFTs", "POST", "{id}/deactivate", {"query":["version"]});
     // delete api/nFTs/{id}
     this.deleteNFT = makeOperation(http, "api/nFTs", "DELETE", "{id}");
-    // post api/nFTs/{id}/download
-    this.downloadNFT = makeOperation(http, "api/nFTs", "POST", "{id}/download");
+    // post api/nFTs/{id}/download (query: version, downloadPath, reInstall)
+    this.downloadNFT = makeOperation(http, "api/nFTs", "POST", "{id}/download", {"query":["version","downloadPath","reInstall"]});
     // post api/nFTs/{id}/edit
     this.editNFT = makeOperation(http, "api/nFTs", "POST", "{id}/edit");
     // get api/nFTs/
@@ -37,24 +37,24 @@ class NFTsModule {
     this.getNFT = makeOperation(http, "api/nFTs", "GET", "{id}");
     // get api/nFTs/{id}/versions
     this.getNFTVersions = makeOperation(http, "api/nFTs", "GET", "{id}/versions");
-    // get api/nFTs/load-all-for-avatar
-    this.loadAllNFTsForAvatar = makeOperation(http, "api/nFTs", "GET", "load-all-for-avatar");
-    // get api/nFTs/{id}/load
-    this.loadNFT = makeOperation(http, "api/nFTs", "GET", "{id}/load");
-    // get api/nFTs/load-from-path
-    this.loadNFTFromPath = makeOperation(http, "api/nFTs", "GET", "load-from-path");
-    // get api/nFTs/load-from-published
-    this.loadNFTFromPublished = makeOperation(http, "api/nFTs", "GET", "load-from-published");
+    // get api/nFTs/load-all-for-avatar (query: showAllVersions, version)
+    this.loadAllNFTsForAvatar = makeOperation(http, "api/nFTs", "GET", "load-all-for-avatar", {"query":["showAllVersions","version"]});
+    // get api/nFTs/{id}/load (query: version, holonType)
+    this.loadNFT = makeOperation(http, "api/nFTs", "GET", "{id}/load", {"query":["version","holonType"]});
+    // get api/nFTs/load-from-path (query: path, holonType)
+    this.loadNFTFromPath = makeOperation(http, "api/nFTs", "GET", "load-from-path", {"query":["path","holonType"]});
+    // get api/nFTs/load-from-published (query: publishedFilePath)
+    this.loadNFTFromPublished = makeOperation(http, "api/nFTs", "GET", "load-from-published", {"query":["publishedFilePath"]});
     // get api/nFTs/{id}/version/{version}
     this.loadNFTVersion = makeOperation(http, "api/nFTs", "GET", "{id}/version/{version}");
     // post api/nFTs/{id}/publish
     this.publishNFT = makeOperation(http, "api/nFTs", "POST", "{id}/publish");
-    // post api/nFTs/{id}/republish
-    this.republishNFT = makeOperation(http, "api/nFTs", "POST", "{id}/republish");
-    // get api/nFTs/search
-    this.searchNFTs = makeOperation(http, "api/nFTs", "GET", "search");
-    // post api/nFTs/{id}/unpublish
-    this.unpublishNFT = makeOperation(http, "api/nFTs", "POST", "{id}/unpublish");
+    // post api/nFTs/{id}/republish (query: version)
+    this.republishNFT = makeOperation(http, "api/nFTs", "POST", "{id}/republish", {"query":["version"]});
+    // get api/nFTs/search (query: searchTerm, searchOnlyForCurrentAvatar, showAllVersions, version)
+    this.searchNFTs = makeOperation(http, "api/nFTs", "GET", "search", {"query":["searchTerm","searchOnlyForCurrentAvatar","showAllVersions","version"]});
+    // post api/nFTs/{id}/unpublish (query: version)
+    this.unpublishNFT = makeOperation(http, "api/nFTs", "POST", "{id}/unpublish", {"query":["version"]});
     // put api/nFTs/{id}
     this.updateNFT = makeOperation(http, "api/nFTs", "PUT", "{id}");
   }

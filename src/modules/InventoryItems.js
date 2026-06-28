@@ -15,18 +15,18 @@ class InventoryItemsModule {
   constructor(http) {
     this._http = http;
 
-    // post api/inventoryItems/{id}/activate
-    this.activateInventoryItem = makeOperation(http, "api/inventoryItems", "POST", "{id}/activate");
+    // post api/inventoryItems/{id}/activate (query: version)
+    this.activateInventoryItem = makeOperation(http, "api/inventoryItems", "POST", "{id}/activate", {"query":["version"]});
     // post api/inventoryItems/
     this.createInventoryItem = makeOperation(http, "api/inventoryItems", "POST", "");
     // post api/inventoryItems/create
     this.createInventoryItemWithOptions = makeOperation(http, "api/inventoryItems", "POST", "create");
-    // post api/inventoryItems/{id}/deactivate
-    this.deactivateInventoryItem = makeOperation(http, "api/inventoryItems", "POST", "{id}/deactivate");
+    // post api/inventoryItems/{id}/deactivate (query: version)
+    this.deactivateInventoryItem = makeOperation(http, "api/inventoryItems", "POST", "{id}/deactivate", {"query":["version"]});
     // delete api/inventoryItems/{id}
     this.deleteInventoryItem = makeOperation(http, "api/inventoryItems", "DELETE", "{id}");
-    // post api/inventoryItems/{id}/download
-    this.downloadInventoryItem = makeOperation(http, "api/inventoryItems", "POST", "{id}/download");
+    // post api/inventoryItems/{id}/download (query: version, downloadPath, reInstall)
+    this.downloadInventoryItem = makeOperation(http, "api/inventoryItems", "POST", "{id}/download", {"query":["version","downloadPath","reInstall"]});
     // post api/inventoryItems/{id}/edit
     this.editInventoryItem = makeOperation(http, "api/inventoryItems", "POST", "{id}/edit");
     // get api/inventoryItems/
@@ -37,24 +37,24 @@ class InventoryItemsModule {
     this.getInventoryItemVersions = makeOperation(http, "api/inventoryItems", "GET", "{id}/versions");
     // get api/inventoryItems/by-avatar/{avatarId}
     this.getInventoryItemsByAvatar = makeOperation(http, "api/inventoryItems", "GET", "by-avatar/{avatarId}");
-    // get api/inventoryItems/load-all-for-avatar
-    this.loadAllInventoryItemsForAvatar = makeOperation(http, "api/inventoryItems", "GET", "load-all-for-avatar");
-    // get api/inventoryItems/{id}/load
-    this.loadInventoryItem = makeOperation(http, "api/inventoryItems", "GET", "{id}/load");
-    // get api/inventoryItems/load-from-path
-    this.loadInventoryItemFromPath = makeOperation(http, "api/inventoryItems", "GET", "load-from-path");
-    // get api/inventoryItems/load-from-published
-    this.loadInventoryItemFromPublished = makeOperation(http, "api/inventoryItems", "GET", "load-from-published");
+    // get api/inventoryItems/load-all-for-avatar (query: showAllVersions, version)
+    this.loadAllInventoryItemsForAvatar = makeOperation(http, "api/inventoryItems", "GET", "load-all-for-avatar", {"query":["showAllVersions","version"]});
+    // get api/inventoryItems/{id}/load (query: version, holonType)
+    this.loadInventoryItem = makeOperation(http, "api/inventoryItems", "GET", "{id}/load", {"query":["version","holonType"]});
+    // get api/inventoryItems/load-from-path (query: path, holonType)
+    this.loadInventoryItemFromPath = makeOperation(http, "api/inventoryItems", "GET", "load-from-path", {"query":["path","holonType"]});
+    // get api/inventoryItems/load-from-published (query: publishedFilePath)
+    this.loadInventoryItemFromPublished = makeOperation(http, "api/inventoryItems", "GET", "load-from-published", {"query":["publishedFilePath"]});
     // get api/inventoryItems/{id}/version/{version}
     this.loadInventoryItemVersion = makeOperation(http, "api/inventoryItems", "GET", "{id}/version/{version}");
     // post api/inventoryItems/{id}/publish
     this.publishInventoryItem = makeOperation(http, "api/inventoryItems", "POST", "{id}/publish");
-    // post api/inventoryItems/{id}/republish
-    this.republishInventoryItem = makeOperation(http, "api/inventoryItems", "POST", "{id}/republish");
+    // post api/inventoryItems/{id}/republish (query: version)
+    this.republishInventoryItem = makeOperation(http, "api/inventoryItems", "POST", "{id}/republish", {"query":["version"]});
     // post api/inventoryItems/search
     this.searchInventoryItems = makeOperation(http, "api/inventoryItems", "POST", "search");
-    // post api/inventoryItems/{id}/unpublish
-    this.unpublishInventoryItem = makeOperation(http, "api/inventoryItems", "POST", "{id}/unpublish");
+    // post api/inventoryItems/{id}/unpublish (query: version)
+    this.unpublishInventoryItem = makeOperation(http, "api/inventoryItems", "POST", "{id}/unpublish", {"query":["version"]});
     // put api/inventoryItems/{id}
     this.updateInventoryItem = makeOperation(http, "api/inventoryItems", "PUT", "{id}");
   }

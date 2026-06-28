@@ -15,16 +15,16 @@ class CompetitionModule {
   constructor(http) {
     this._http = http;
 
-    // get api/competition/tournaments
-    this.getActiveTournaments = makeOperation(http, "api/competition", "GET", "tournaments");
+    // get api/competition/tournaments (query: competitionType)
+    this.getActiveTournaments = makeOperation(http, "api/competition", "GET", "tournaments", {"query":["competitionType"]});
     // get api/competition/leagues/{competitionType}/{seasonType}
     this.getAvailableLeagues = makeOperation(http, "api/competition", "GET", "leagues/{competitionType}/{seasonType}");
     // get api/competition/league/{avatarId}/{competitionType}/{seasonType}
     this.getAvatarLeague = makeOperation(http, "api/competition", "GET", "league/{avatarId}/{competitionType}/{seasonType}");
     // get api/competition/rank/{avatarId}/{competitionType}/{seasonType}
     this.getAvatarRank = makeOperation(http, "api/competition", "GET", "rank/{avatarId}/{competitionType}/{seasonType}");
-    // get api/competition/leaderboard/{competitionType}/{seasonType}
-    this.getLeaderboard = makeOperation(http, "api/competition", "GET", "leaderboard/{competitionType}/{seasonType}");
+    // get api/competition/leaderboard/{competitionType}/{seasonType} (query: limit, offset)
+    this.getLeaderboard = makeOperation(http, "api/competition", "GET", "leaderboard/{competitionType}/{seasonType}", {"query":["limit","offset"]});
     // get api/competition/my-league/{competitionType}/{seasonType}
     this.getMyLeague = makeOperation(http, "api/competition", "GET", "my-league/{competitionType}/{seasonType}");
     // get api/competition/my-rank/{competitionType}/{seasonType}

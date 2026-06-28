@@ -15,30 +15,30 @@ class MissionsModule {
   constructor(http) {
     this._http = http;
 
-    // post api/missions/{id}/activate
-    this.activateMission = makeOperation(http, "api/missions", "POST", "{id}/activate");
+    // post api/missions/{id}/activate (query: version)
+    this.activateMission = makeOperation(http, "api/missions", "POST", "{id}/activate", {"query":["version"]});
     // post api/missions/{id}/clone
     this.cloneMission = makeOperation(http, "api/missions", "POST", "{id}/clone");
-    // post api/missions/{id}/complete
-    this.completeMission = makeOperation(http, "api/missions", "POST", "{id}/complete");
+    // post api/missions/{id}/complete (body: completionNotes)
+    this.completeMission = makeOperation(http, "api/missions", "POST", "{id}/complete", {"bodyParam":"completionNotes"});
     // post api/missions/
     this.createMission = makeOperation(http, "api/missions", "POST", "");
     // post api/missions/create
     this.createMissionWithOptions = makeOperation(http, "api/missions", "POST", "create");
-    // post api/missions/{id}/deactivate
-    this.deactivateMission = makeOperation(http, "api/missions", "POST", "{id}/deactivate");
+    // post api/missions/{id}/deactivate (query: version)
+    this.deactivateMission = makeOperation(http, "api/missions", "POST", "{id}/deactivate", {"query":["version"]});
     // delete api/missions/{id}
     this.deleteMission = makeOperation(http, "api/missions", "DELETE", "{id}");
-    // post api/missions/{id}/download
-    this.downloadMission = makeOperation(http, "api/missions", "POST", "{id}/download");
+    // post api/missions/{id}/download (query: version, downloadPath, reInstall)
+    this.downloadMission = makeOperation(http, "api/missions", "POST", "{id}/download", {"query":["version","downloadPath","reInstall"]});
     // post api/missions/{id}/edit
     this.editMission = makeOperation(http, "api/missions", "POST", "{id}/edit");
     // get api/missions/
     this.getAllMissions = makeOperation(http, "api/missions", "GET", "");
     // get api/missions/{id}
     this.getMission = makeOperation(http, "api/missions", "GET", "{id}");
-    // get api/missions/{id}/leaderboard
-    this.getMissionLeaderboard = makeOperation(http, "api/missions", "GET", "{id}/leaderboard");
+    // get api/missions/{id}/leaderboard (query: limit)
+    this.getMissionLeaderboard = makeOperation(http, "api/missions", "GET", "{id}/leaderboard", {"query":["limit"]});
     // get api/missions/{id}/rewards
     this.getMissionRewards = makeOperation(http, "api/missions", "GET", "{id}/rewards");
     // get api/missions/stats
@@ -49,24 +49,24 @@ class MissionsModule {
     this.getMissionsByStatus = makeOperation(http, "api/missions", "GET", "by-status/{status}");
     // get api/missions/by-type/{type}
     this.getMissionsByType = makeOperation(http, "api/missions", "GET", "by-type/{type}");
-    // get api/missions/load-all-for-avatar
-    this.loadAllMissionsForAvatar = makeOperation(http, "api/missions", "GET", "load-all-for-avatar");
-    // get api/missions/{id}/load
-    this.loadMission = makeOperation(http, "api/missions", "GET", "{id}/load");
-    // get api/missions/load-from-path
-    this.loadMissionFromPath = makeOperation(http, "api/missions", "GET", "load-from-path");
-    // get api/missions/load-from-published
-    this.loadMissionFromPublished = makeOperation(http, "api/missions", "GET", "load-from-published");
+    // get api/missions/load-all-for-avatar (query: showAllVersions, version)
+    this.loadAllMissionsForAvatar = makeOperation(http, "api/missions", "GET", "load-all-for-avatar", {"query":["showAllVersions","version"]});
+    // get api/missions/{id}/load (query: version, holonType)
+    this.loadMission = makeOperation(http, "api/missions", "GET", "{id}/load", {"query":["version","holonType"]});
+    // get api/missions/load-from-path (query: path, holonType)
+    this.loadMissionFromPath = makeOperation(http, "api/missions", "GET", "load-from-path", {"query":["path","holonType"]});
+    // get api/missions/load-from-published (query: publishedFilePath)
+    this.loadMissionFromPublished = makeOperation(http, "api/missions", "GET", "load-from-published", {"query":["publishedFilePath"]});
     // get api/missions/{id}/version/{version}
     this.loadMissionVersion = makeOperation(http, "api/missions", "GET", "{id}/version/{version}");
     // post api/missions/{id}/publish
     this.publishMission = makeOperation(http, "api/missions", "POST", "{id}/publish");
-    // post api/missions/{id}/republish
-    this.republishMission = makeOperation(http, "api/missions", "POST", "{id}/republish");
-    // get api/missions/search
-    this.searchMissions = makeOperation(http, "api/missions", "GET", "search");
-    // post api/missions/{id}/unpublish
-    this.unpublishMission = makeOperation(http, "api/missions", "POST", "{id}/unpublish");
+    // post api/missions/{id}/republish (query: version)
+    this.republishMission = makeOperation(http, "api/missions", "POST", "{id}/republish", {"query":["version"]});
+    // get api/missions/search (query: query)
+    this.searchMissions = makeOperation(http, "api/missions", "GET", "search", {"query":["query"]});
+    // post api/missions/{id}/unpublish (query: version)
+    this.unpublishMission = makeOperation(http, "api/missions", "POST", "{id}/unpublish", {"query":["version"]});
     // put api/missions/{id}
     this.updateMission = makeOperation(http, "api/missions", "PUT", "{id}");
   }

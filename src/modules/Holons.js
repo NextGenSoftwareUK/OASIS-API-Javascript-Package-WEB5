@@ -15,18 +15,18 @@ class HolonsModule {
   constructor(http) {
     this._http = http;
 
-    // post api/holons/{id}/activate
-    this.activateHolon = makeOperation(http, "api/holons", "POST", "{id}/activate");
+    // post api/holons/{id}/activate (query: version)
+    this.activateHolon = makeOperation(http, "api/holons", "POST", "{id}/activate", {"query":["version"]});
     // post api/holons/
     this.createHolon = makeOperation(http, "api/holons", "POST", "");
     // post api/holons/create
     this.createHolonWithOptions = makeOperation(http, "api/holons", "POST", "create");
-    // post api/holons/{id}/deactivate
-    this.deactivateHolon = makeOperation(http, "api/holons", "POST", "{id}/deactivate");
+    // post api/holons/{id}/deactivate (query: version)
+    this.deactivateHolon = makeOperation(http, "api/holons", "POST", "{id}/deactivate", {"query":["version"]});
     // delete api/holons/{id}
     this.deleteHolon = makeOperation(http, "api/holons", "DELETE", "{id}");
-    // post api/holons/{id}/download
-    this.downloadHolon = makeOperation(http, "api/holons", "POST", "{id}/download");
+    // post api/holons/{id}/download (query: version, downloadPath, reInstall)
+    this.downloadHolon = makeOperation(http, "api/holons", "POST", "{id}/download", {"query":["version","downloadPath","reInstall"]});
     // post api/holons/{id}/edit
     this.editHolon = makeOperation(http, "api/holons", "POST", "{id}/edit");
     // get api/holons/
@@ -35,32 +35,32 @@ class HolonsModule {
     this.getHolon = makeOperation(http, "api/holons", "GET", "{id}");
     // get api/holons/{id}/versions
     this.getHolonVersions = makeOperation(http, "api/holons", "GET", "{id}/versions");
-    // get api/holons/by-metadata
-    this.getHolonsByMetadata = makeOperation(http, "api/holons", "GET", "by-metadata");
+    // get api/holons/by-metadata (query: key, value)
+    this.getHolonsByMetadata = makeOperation(http, "api/holons", "GET", "by-metadata", {"query":["key","value"]});
     // get api/holons/by-parent/{parentId}
     this.getHolonsByParent = makeOperation(http, "api/holons", "GET", "by-parent/{parentId}");
     // get api/holons/by-status/{status}
     this.getHolonsByStatus = makeOperation(http, "api/holons", "GET", "by-status/{status}");
     // get api/holons/by-type/{type}
     this.getHolonsByType = makeOperation(http, "api/holons", "GET", "by-type/{type}");
-    // get api/holons/load-all-for-avatar
-    this.loadAllHolonsForAvatar = makeOperation(http, "api/holons", "GET", "load-all-for-avatar");
-    // get api/holons/{id}/load
-    this.loadHolon = makeOperation(http, "api/holons", "GET", "{id}/load");
-    // get api/holons/load-from-path
-    this.loadHolonFromPath = makeOperation(http, "api/holons", "GET", "load-from-path");
-    // get api/holons/load-from-published
-    this.loadHolonFromPublished = makeOperation(http, "api/holons", "GET", "load-from-published");
+    // get api/holons/load-all-for-avatar (query: showAllVersions, version)
+    this.loadAllHolonsForAvatar = makeOperation(http, "api/holons", "GET", "load-all-for-avatar", {"query":["showAllVersions","version"]});
+    // get api/holons/{id}/load (query: version, holonType)
+    this.loadHolon = makeOperation(http, "api/holons", "GET", "{id}/load", {"query":["version","holonType"]});
+    // get api/holons/load-from-path (query: path, holonType)
+    this.loadHolonFromPath = makeOperation(http, "api/holons", "GET", "load-from-path", {"query":["path","holonType"]});
+    // get api/holons/load-from-published (query: publishedFilePath)
+    this.loadHolonFromPublished = makeOperation(http, "api/holons", "GET", "load-from-published", {"query":["publishedFilePath"]});
     // get api/holons/{id}/version/{version}
     this.loadHolonVersion = makeOperation(http, "api/holons", "GET", "{id}/version/{version}");
     // post api/holons/{id}/publish
     this.publishHolon = makeOperation(http, "api/holons", "POST", "{id}/publish");
-    // post api/holons/{id}/republish
-    this.republishHolon = makeOperation(http, "api/holons", "POST", "{id}/republish");
-    // get api/holons/search
-    this.searchHolons = makeOperation(http, "api/holons", "GET", "search");
-    // post api/holons/{id}/unpublish
-    this.unpublishHolon = makeOperation(http, "api/holons", "POST", "{id}/unpublish");
+    // post api/holons/{id}/republish (query: version)
+    this.republishHolon = makeOperation(http, "api/holons", "POST", "{id}/republish", {"query":["version"]});
+    // get api/holons/search (query: query)
+    this.searchHolons = makeOperation(http, "api/holons", "GET", "search", {"query":["query"]});
+    // post api/holons/{id}/unpublish (query: version)
+    this.unpublishHolon = makeOperation(http, "api/holons", "POST", "{id}/unpublish", {"query":["version"]});
     // put api/holons/{id}
     this.updateHolon = makeOperation(http, "api/holons", "PUT", "{id}");
   }

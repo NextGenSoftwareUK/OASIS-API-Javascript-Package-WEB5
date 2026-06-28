@@ -4,23 +4,14 @@ import type { OASISResponse } from '../core/types';
 export declare class ChaptersModule {
   constructor(http: unknown);
 
-  /** POST api/chapters/{id}/activate */
-  activateChapter(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** POST api/chapters/ */
   createChapter(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/chapters/create */
   createChapterWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
 
-  /** POST api/chapters/{id}/deactivate */
-  deactivateChapter(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** DELETE api/chapters/{id} */
   deleteChapter(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/chapters/{id}/download */
-  downloadChapter(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/chapters/{id}/edit */
   editChapter(args?: Record<string, any>): Promise<OASISResponse>;
@@ -34,32 +25,11 @@ export declare class ChaptersModule {
   /** GET api/chapters/{id}/versions */
   getChapterVersions(args?: Record<string, any>): Promise<OASISResponse>;
 
-  /** GET api/chapters/load-all-for-avatar */
-  loadAllChaptersForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/chapters/{id}/load */
-  loadChapter(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/chapters/load-from-path */
-  loadChapterFromPath(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/chapters/load-from-published */
-  loadChapterFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** GET api/chapters/{id}/version/{version} */
   loadChapterVersion(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/chapters/{id}/publish */
   publishChapter(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/chapters/{id}/republish */
-  republishChapter(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/chapters/search */
-  searchChapters(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/chapters/{id}/unpublish */
-  unpublishChapter(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** PUT api/chapters/{id} */
   updateChapter(args?: Record<string, any>): Promise<OASISResponse>;

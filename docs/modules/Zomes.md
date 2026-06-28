@@ -12,30 +12,30 @@ URL; everything else becomes the query string (GET/DELETE) or JSON body
 
 ## Methods
 
-| Method | HTTP | Route | Route params |
-| --- | --- | --- | --- |
-| `activateZome` | POST | `api/zomes/{id}/activate` | `id` |
-| `createZome` | POST | `api/zomes` | – |
-| `createZomeWithOptions` | POST | `api/zomes/create` | – |
-| `deactivateZome` | POST | `api/zomes/{id}/deactivate` | `id` |
-| `deleteZome` | DELETE | `api/zomes/{id}` | `id` |
-| `downloadZome` | POST | `api/zomes/{id}/download` | `id` |
-| `editZome` | POST | `api/zomes/{id}/edit` | `id` |
-| `getAllZomes` | GET | `api/zomes` | – |
-| `getZome` | GET | `api/zomes/{id}` | `id` |
-| `getZomesByType` | GET | `api/zomes/by-type/{type}` | `type` |
-| `getZomesInSpace` | GET | `api/zomes/in-space/{spaceId}` | `spaceId` |
-| `getZomeVersions` | GET | `api/zomes/{id}/versions` | `id` |
-| `loadAllZomesForAvatar` | GET | `api/zomes/load-all-for-avatar` | – |
-| `loadZome` | GET | `api/zomes/{id}/load` | `id` |
-| `loadZomeFromPath` | GET | `api/zomes/load-from-path` | – |
-| `loadZomeFromPublished` | GET | `api/zomes/load-from-published` | – |
-| `loadZomeVersion` | GET | `api/zomes/{id}/version/{version}` | `id`, `version` |
-| `publishZome` | POST | `api/zomes/{id}/publish` | `id` |
-| `republishZome` | POST | `api/zomes/{id}/republish` | `id` |
-| `searchZomes` | GET | `api/zomes/search` | – |
-| `unpublishZome` | POST | `api/zomes/{id}/unpublish` | `id` |
-| `updateZome` | PUT | `api/zomes/{id}` | `id` |
+| Method | HTTP | Route | Route params | Query params | Body |
+| --- | --- | --- | --- | --- | --- |
+| `activateZome` | POST | `api/zomes/{id}/activate` | `id` | `version` | remaining args |
+| `createZome` | POST | `api/zomes` | – | – | remaining args |
+| `createZomeWithOptions` | POST | `api/zomes/create` | – | – | remaining args |
+| `deactivateZome` | POST | `api/zomes/{id}/deactivate` | `id` | `version` | remaining args |
+| `deleteZome` | DELETE | `api/zomes/{id}` | `id` | – | – |
+| `downloadZome` | POST | `api/zomes/{id}/download` | `id` | `version`, `downloadPath`, `reInstall` | remaining args |
+| `editZome` | POST | `api/zomes/{id}/edit` | `id` | – | remaining args |
+| `getAllZomes` | GET | `api/zomes` | – | – | – |
+| `getZome` | GET | `api/zomes/{id}` | `id` | – | – |
+| `getZomesByType` | GET | `api/zomes/by-type/{type}` | `type` | – | – |
+| `getZomesInSpace` | GET | `api/zomes/in-space/{spaceId}` | `spaceId` | – | – |
+| `getZomeVersions` | GET | `api/zomes/{id}/versions` | `id` | – | – |
+| `loadAllZomesForAvatar` | GET | `api/zomes/load-all-for-avatar` | – | `showAllVersions`, `version` | – |
+| `loadZome` | GET | `api/zomes/{id}/load` | `id` | `version`, `holonType` | – |
+| `loadZomeFromPath` | GET | `api/zomes/load-from-path` | – | `path`, `holonType` | – |
+| `loadZomeFromPublished` | GET | `api/zomes/load-from-published` | – | `publishedFilePath` | – |
+| `loadZomeVersion` | GET | `api/zomes/{id}/version/{version}` | `id`, `version` | – | – |
+| `publishZome` | POST | `api/zomes/{id}/publish` | `id` | – | remaining args |
+| `republishZome` | POST | `api/zomes/{id}/republish` | `id` | `version` | remaining args |
+| `searchZomes` | GET | `api/zomes/search` | – | `searchTerm`, `searchOnlyForCurrentAvatar`, `showAllVersions`, `version` | – |
+| `unpublishZome` | POST | `api/zomes/{id}/unpublish` | `id` | `version` | remaining args |
+| `updateZome` | PUT | `api/zomes/{id}` | `id` | – | remaining args |
 
 ## Example
 

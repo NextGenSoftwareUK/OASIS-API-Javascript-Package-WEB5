@@ -12,49 +12,49 @@ URL; everything else becomes the query string (GET/DELETE) or JSON body
 
 ## Methods
 
-| Method | HTTP | Route | Route params |
-| --- | --- | --- | --- |
-| `activateQuest` | POST | `api/quests/{id}/activate` | `id` |
-| `addQuestObjective` | POST | `api/quests/{id}/objectives` | `id` |
-| `addSubQuest` | POST | `api/quests/{id}/subquests` | `id` |
-| `applyQuestProgress` | POST | `api/quests/{id}/progress` | `id` |
-| `canStartQuest` | GET | `api/quests/{id}/can-start` | `id` |
-| `cloneQuest` | POST | `api/quests/{id}/clone` | `id` |
-| `completeQuest` | POST | `api/quests/{id}/complete` | `id` |
-| `completeQuestObjective` | POST | `api/quests/{id}/objectives/{objectiveId}/complete` | `id`, `objectiveId` |
-| `completeQuestObjectiveByIdentifiers` | POST | `api/quests/objectives/complete` | – |
-| `createIQuest` | POST | `api/quests` | – |
-| `createQuestWithOptions` | POST | `api/quests/create` | – |
-| `deactivateQuest` | POST | `api/quests/{id}/deactivate` | `id` |
-| `deleteIQuest` | DELETE | `api/quests/{id}` | `id` |
-| `downloadQuest` | POST | `api/quests/{id}/download` | `id` |
-| `editQuest` | POST | `api/quests/{id}/edit` | `id` |
-| `getAllIQuests` | GET | `api/quests` | – |
-| `getAllQuestsForAvatar` | GET | `api/quests/all-for-avatar` | – |
-| `getAllQuestsForAvatarGame` | GET | `api/quests/all-for-avatar/game` | – |
-| `getIQuest` | GET | `api/quests/{id}` | `id` |
-| `getIQuestsByAvatar` | GET | `api/quests/by-avatar/{avatarId}` | `avatarId` |
-| `getQuestLeaderboard` | GET | `api/quests/{id}/leaderboard` | `id` |
-| `getQuestRewards` | GET | `api/quests/{id}/rewards` | `id` |
-| `getQuestsByStatus` | GET | `api/quests/by-status/{status}` | `status` |
-| `getQuestsByStatusGame` | GET | `api/quests/by-status/{status}/game` | `status` |
-| `getQuestsByType` | GET | `api/quests/by-type/{type}` | `type` |
-| `getQuestStats` | GET | `api/quests/stats` | – |
-| `getQuestVersions` | GET | `api/quests/{id}/versions` | `id` |
-| `loadAllQuestsForAvatar` | GET | `api/quests/load-all-for-avatar` | – |
-| `loadQuest` | GET | `api/quests/{id}/load` | `id` |
-| `loadQuestFromPath` | GET | `api/quests/load-from-path` | – |
-| `loadQuestFromPublished` | GET | `api/quests/load-from-published` | – |
-| `loadQuestVersion` | GET | `api/quests/{id}/version/{version}` | `id`, `version` |
-| `publishQuest` | POST | `api/quests/{id}/publish` | `id` |
-| `removeQuestObjective` | DELETE | `api/quests/{parentId}/objectives/{objectiveId}` | `parentId`, `objectiveId` |
-| `removeSubQuest` | DELETE | `api/quests/{parentId}/subquests/{subQuestId}` | `parentId`, `subQuestId` |
-| `republishQuest` | POST | `api/quests/{id}/republish` | `id` |
-| `resetObjectiveProgress` | POST | `api/quests/{id}/progress/reset` | `id` |
-| `searchQuests` | GET | `api/quests/search` | – |
-| `startQuest` | POST | `api/quests/{id}/start` | `id` |
-| `unpublishQuest` | POST | `api/quests/{id}/unpublish` | `id` |
-| `updateIQuest` | PUT | `api/quests/{id}` | `id` |
+| Method | HTTP | Route | Route params | Query params | Body |
+| --- | --- | --- | --- | --- | --- |
+| `activateQuest` | POST | `api/quests/{id}/activate` | `id` | `version` | remaining args |
+| `addQuestObjective` | POST | `api/quests/{id}/objectives` | `id` | – | remaining args |
+| `addSubQuest` | POST | `api/quests/{id}/subquests` | `id` | – | remaining args |
+| `applyQuestProgress` | POST | `api/quests/{id}/progress` | `id` | – | remaining args |
+| `canStartQuest` | GET | `api/quests/{id}/can-start` | `id` | – | – |
+| `cloneQuest` | POST | `api/quests/{id}/clone` | `id` | – | remaining args |
+| `completeQuest` | POST | `api/quests/{id}/complete` | `id` | – | `completionNotes` |
+| `completeQuestObjective` | POST | `api/quests/{id}/objectives/{objectiveId}/complete` | `id`, `objectiveId` | – | remaining args |
+| `completeQuestObjectiveByIdentifiers` | POST | `api/quests/objectives/complete` | – | – | remaining args |
+| `createIQuest` | POST | `api/quests` | – | – | remaining args |
+| `createQuestWithOptions` | POST | `api/quests/create` | – | – | remaining args |
+| `deactivateQuest` | POST | `api/quests/{id}/deactivate` | `id` | `version` | remaining args |
+| `deleteIQuest` | DELETE | `api/quests/{id}` | `id` | – | – |
+| `downloadQuest` | POST | `api/quests/{id}/download` | `id` | `version`, `downloadPath`, `reInstall` | remaining args |
+| `editQuest` | POST | `api/quests/{id}/edit` | `id` | – | remaining args |
+| `getAllIQuests` | GET | `api/quests` | – | – | – |
+| `getAllQuestsForAvatar` | GET | `api/quests/all-for-avatar` | – | – | – |
+| `getAllQuestsForAvatarGame` | GET | `api/quests/all-for-avatar/game` | – | – | – |
+| `getIQuest` | GET | `api/quests/{id}` | `id` | – | – |
+| `getIQuestsByAvatar` | GET | `api/quests/by-avatar/{avatarId}` | `avatarId` | – | – |
+| `getQuestLeaderboard` | GET | `api/quests/{id}/leaderboard` | `id` | `limit` | – |
+| `getQuestRewards` | GET | `api/quests/{id}/rewards` | `id` | – | – |
+| `getQuestsByStatus` | GET | `api/quests/by-status/{status}` | `status` | – | – |
+| `getQuestsByStatusGame` | GET | `api/quests/by-status/{status}/game` | `status` | – | – |
+| `getQuestsByType` | GET | `api/quests/by-type/{type}` | `type` | – | – |
+| `getQuestStats` | GET | `api/quests/stats` | – | – | – |
+| `getQuestVersions` | GET | `api/quests/{id}/versions` | `id` | – | – |
+| `loadAllQuestsForAvatar` | GET | `api/quests/load-all-for-avatar` | – | `showAllVersions`, `version` | – |
+| `loadQuest` | GET | `api/quests/{id}/load` | `id` | `version`, `holonType` | – |
+| `loadQuestFromPath` | GET | `api/quests/load-from-path` | – | `path`, `holonType` | – |
+| `loadQuestFromPublished` | GET | `api/quests/load-from-published` | – | `publishedFilePath` | – |
+| `loadQuestVersion` | GET | `api/quests/{id}/version/{version}` | `id`, `version` | – | – |
+| `publishQuest` | POST | `api/quests/{id}/publish` | `id` | – | remaining args |
+| `removeQuestObjective` | DELETE | `api/quests/{parentId}/objectives/{objectiveId}` | `parentId`, `objectiveId` | – | – |
+| `removeSubQuest` | DELETE | `api/quests/{parentId}/subquests/{subQuestId}` | `parentId`, `subQuestId` | – | – |
+| `republishQuest` | POST | `api/quests/{id}/republish` | `id` | `version` | remaining args |
+| `resetObjectiveProgress` | POST | `api/quests/{id}/progress/reset` | `id` | – | remaining args |
+| `searchQuests` | GET | `api/quests/search` | – | `query` | – |
+| `startQuest` | POST | `api/quests/{id}/start` | `id` | – | `startNotes` |
+| `unpublishQuest` | POST | `api/quests/{id}/unpublish` | `id` | `version` | remaining args |
+| `updateIQuest` | PUT | `api/quests/{id}` | `id` | – | remaining args |
 
 ## Example
 

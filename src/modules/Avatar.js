@@ -29,12 +29,12 @@ class AvatarModule {
     this.getInventoryItem = makeOperation(http, "api/avatar", "GET", "inventory/{itemId}");
     // get api/avatar/inventory/{itemId}/has
     this.hasItem = makeOperation(http, "api/avatar", "GET", "inventory/{itemId}/has");
-    // get api/avatar/inventory/has-by-name
-    this.hasItemByName = makeOperation(http, "api/avatar", "GET", "inventory/has-by-name");
+    // get api/avatar/inventory/has-by-name (query: itemName)
+    this.hasItemByName = makeOperation(http, "api/avatar", "GET", "inventory/has-by-name", {"query":["itemName"]});
     // delete api/avatar/inventory/{itemId}
     this.removeItemFromInventory = makeOperation(http, "api/avatar", "DELETE", "inventory/{itemId}");
-    // get api/avatar/inventory/search
-    this.searchInventory = makeOperation(http, "api/avatar", "GET", "inventory/search");
+    // get api/avatar/inventory/search (query: searchTerm)
+    this.searchInventory = makeOperation(http, "api/avatar", "GET", "inventory/search", {"query":["searchTerm"]});
     // post api/avatar/inventory/send-to-avatar
     this.sendItemToAvatar = makeOperation(http, "api/avatar", "POST", "inventory/send-to-avatar");
     // post api/avatar/inventory/send-to-clan

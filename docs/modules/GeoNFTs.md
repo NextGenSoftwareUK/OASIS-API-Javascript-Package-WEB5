@@ -12,30 +12,30 @@ URL; everything else becomes the query string (GET/DELETE) or JSON body
 
 ## Methods
 
-| Method | HTTP | Route | Route params |
-| --- | --- | --- | --- |
-| `activateGeoNFT` | POST | `api/geoNFTs/{id}/activate` | `id` |
-| `createGeoNFT` | POST | `api/geoNFTs` | – |
-| `createGeoNFTWithOptions` | POST | `api/geoNFTs/create` | – |
-| `deactivateGeoNFT` | POST | `api/geoNFTs/{id}/deactivate` | `id` |
-| `deleteGeoNFT` | DELETE | `api/geoNFTs/{id}` | `id` |
-| `downloadGeoNFT` | POST | `api/geoNFTs/{id}/download` | `id` |
-| `editGeoNFT` | POST | `api/geoNFTs/{id}/edit` | `id` |
-| `getAllGeoNFTs` | GET | `api/geoNFTs` | – |
-| `getGeoNFT` | GET | `api/geoNFTs/{id}` | `id` |
-| `getGeoNFTsByAvatar` | GET | `api/geoNFTs/by-avatar/{avatarId}` | `avatarId` |
-| `getGeoNFTVersions` | GET | `api/geoNFTs/{id}/versions` | `id` |
-| `getNearbyGeoNFTs` | GET | `api/geoNFTs/nearby` | – |
-| `loadAllGeoNFTsForAvatar` | GET | `api/geoNFTs/load-all-for-avatar` | – |
-| `loadGeoNFT` | GET | `api/geoNFTs/{id}/load` | `id` |
-| `loadGeoNFTFromPath` | GET | `api/geoNFTs/load-from-path` | – |
-| `loadGeoNFTFromPublished` | GET | `api/geoNFTs/load-from-published` | – |
-| `loadGeoNFTVersion` | GET | `api/geoNFTs/{id}/version/{version}` | `id`, `version` |
-| `publishGeoNFT` | POST | `api/geoNFTs/{id}/publish` | `id` |
-| `republishGeoNFT` | POST | `api/geoNFTs/{id}/republish` | `id` |
-| `searchGeoNFTs` | GET | `api/geoNFTs/search` | – |
-| `unpublishGeoNFT` | POST | `api/geoNFTs/{id}/unpublish` | `id` |
-| `updateGeoNFT` | PUT | `api/geoNFTs/{id}` | `id` |
+| Method | HTTP | Route | Route params | Query params | Body |
+| --- | --- | --- | --- | --- | --- |
+| `activateGeoNFT` | POST | `api/geoNFTs/{id}/activate` | `id` | `version` | remaining args |
+| `createGeoNFT` | POST | `api/geoNFTs` | – | – | remaining args |
+| `createGeoNFTWithOptions` | POST | `api/geoNFTs/create` | – | – | remaining args |
+| `deactivateGeoNFT` | POST | `api/geoNFTs/{id}/deactivate` | `id` | `version` | remaining args |
+| `deleteGeoNFT` | DELETE | `api/geoNFTs/{id}` | `id` | – | – |
+| `downloadGeoNFT` | POST | `api/geoNFTs/{id}/download` | `id` | `version`, `downloadPath`, `reInstall` | remaining args |
+| `editGeoNFT` | POST | `api/geoNFTs/{id}/edit` | `id` | – | remaining args |
+| `getAllGeoNFTs` | GET | `api/geoNFTs` | – | – | – |
+| `getGeoNFT` | GET | `api/geoNFTs/{id}` | `id` | – | – |
+| `getGeoNFTsByAvatar` | GET | `api/geoNFTs/by-avatar/{avatarId}` | `avatarId` | – | – |
+| `getGeoNFTVersions` | GET | `api/geoNFTs/{id}/versions` | `id` | – | – |
+| `getNearbyGeoNFTs` | GET | `api/geoNFTs/nearby` | – | `latitude`, `longitude`, `radiusKm` | – |
+| `loadAllGeoNFTsForAvatar` | GET | `api/geoNFTs/load-all-for-avatar` | – | `showAllVersions`, `version` | – |
+| `loadGeoNFT` | GET | `api/geoNFTs/{id}/load` | `id` | `version`, `holonType` | – |
+| `loadGeoNFTFromPath` | GET | `api/geoNFTs/load-from-path` | – | `path`, `holonType` | – |
+| `loadGeoNFTFromPublished` | GET | `api/geoNFTs/load-from-published` | – | `publishedFilePath` | – |
+| `loadGeoNFTVersion` | GET | `api/geoNFTs/{id}/version/{version}` | `id`, `version` | – | – |
+| `publishGeoNFT` | POST | `api/geoNFTs/{id}/publish` | `id` | – | remaining args |
+| `republishGeoNFT` | POST | `api/geoNFTs/{id}/republish` | `id` | `version` | remaining args |
+| `searchGeoNFTs` | GET | `api/geoNFTs/search` | – | `query` | – |
+| `unpublishGeoNFT` | POST | `api/geoNFTs/{id}/unpublish` | `id` | `version` | remaining args |
+| `updateGeoNFT` | PUT | `api/geoNFTs/{id}` | `id` | – | remaining args |
 
 ## Example
 

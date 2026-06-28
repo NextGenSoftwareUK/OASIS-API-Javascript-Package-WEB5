@@ -12,29 +12,29 @@ URL; everything else becomes the query string (GET/DELETE) or JSON body
 
 ## Methods
 
-| Method | HTTP | Route | Route params |
-| --- | --- | --- | --- |
-| `activateZomeMetaData` | POST | `api/zomesMetaData/{id}/activate` | `id` |
-| `cloneZomeMetaData` | POST | `api/zomesMetaData/{id}/clone` | `id` |
-| `createZomeMetaData` | POST | `api/zomesMetaData` | – |
-| `createZomeMetaDataWithOptions` | POST | `api/zomesMetaData/create` | – |
-| `deactivateZomeMetaData` | POST | `api/zomesMetaData/{id}/deactivate` | `id` |
-| `deleteZomeMetaData` | DELETE | `api/zomesMetaData/{id}` | `id` |
-| `downloadZomeMetaData` | POST | `api/zomesMetaData/{id}/download` | `id` |
-| `editZomeMetaData` | PUT | `api/zomesMetaData/{id}/edit` | `id` |
-| `getAllZomesMetaData` | GET | `api/zomesMetaData` | – |
-| `getZomeMetaData` | GET | `api/zomesMetaData/{id}` | `id` |
-| `getZomeMetaDataVersions` | GET | `api/zomesMetaData/{id}/versions` | `id` |
-| `loadAllZomeMetaDataForAvatar` | GET | `api/zomesMetaData/load-all-for-avatar` | – |
-| `loadZomeMetaDataFromPath` | GET | `api/zomesMetaData/load-from-path` | – |
-| `loadZomeMetaDataFromPublished` | GET | `api/zomesMetaData/load-from-published` | – |
-| `loadZomeMetaDataVersion` | GET | `api/zomesMetaData/{id}/versions/{version}` | `id`, `version` |
-| `publishZomeMetaData` | POST | `api/zomesMetaData/{id}/publish` | `id` |
-| `republishZomeMetaData` | POST | `api/zomesMetaData/{id}/republish` | `id` |
-| `searchZomesMetaDataGet` | GET | `api/zomesMetaData/search` | – |
-| `searchZomesMetaDataPost` | POST | `api/zomesMetaData/search` | – |
-| `unpublishZomeMetaData` | POST | `api/zomesMetaData/{id}/unpublish` | `id` |
-| `updateZomeMetaData` | PUT | `api/zomesMetaData/{id}` | `id` |
+| Method | HTTP | Route | Route params | Query params | Body |
+| --- | --- | --- | --- | --- | --- |
+| `activateZomeMetaData` | POST | `api/zomesMetaData/{id}/activate` | `id` | `version` | remaining args |
+| `cloneZomeMetaData` | POST | `api/zomesMetaData/{id}/clone` | `id` | – | remaining args |
+| `createZomeMetaData` | POST | `api/zomesMetaData` | – | – | remaining args |
+| `createZomeMetaDataWithOptions` | POST | `api/zomesMetaData/create` | – | – | remaining args |
+| `deactivateZomeMetaData` | POST | `api/zomesMetaData/{id}/deactivate` | `id` | `version` | remaining args |
+| `deleteZomeMetaData` | DELETE | `api/zomesMetaData/{id}` | `id` | – | – |
+| `downloadZomeMetaData` | POST | `api/zomesMetaData/{id}/download` | `id` | – | remaining args |
+| `editZomeMetaData` | PUT | `api/zomesMetaData/{id}/edit` | `id` | – | remaining args |
+| `getAllZomesMetaData` | GET | `api/zomesMetaData` | – | – | – |
+| `getZomeMetaData` | GET | `api/zomesMetaData/{id}` | `id` | – | – |
+| `getZomeMetaDataVersions` | GET | `api/zomesMetaData/{id}/versions` | `id` | – | – |
+| `loadAllZomeMetaDataForAvatar` | GET | `api/zomesMetaData/load-all-for-avatar` | – | – | – |
+| `loadZomeMetaDataFromPath` | GET | `api/zomesMetaData/load-from-path` | – | `path` | – |
+| `loadZomeMetaDataFromPublished` | GET | `api/zomesMetaData/load-from-published` | – | `publishedFilePath` | – |
+| `loadZomeMetaDataVersion` | GET | `api/zomesMetaData/{id}/versions/{version}` | `id`, `version` | – | – |
+| `publishZomeMetaData` | POST | `api/zomesMetaData/{id}/publish` | `id` | – | remaining args |
+| `republishZomeMetaData` | POST | `api/zomesMetaData/{id}/republish` | `id` | `version` | remaining args |
+| `searchZomesMetaData` | GET | `api/zomesMetaData/search` | – | `searchTerm`, `showAllVersions`, `version` | – |
+| `searchZomesMetaDataPost` | POST | `api/zomesMetaData/search` | – | – | remaining args |
+| `unpublishZomeMetaData` | POST | `api/zomesMetaData/{id}/unpublish` | `id` | `version` | remaining args |
+| `updateZomeMetaData` | PUT | `api/zomesMetaData/{id}` | `id` | – | remaining args |
 
 ## Example
 

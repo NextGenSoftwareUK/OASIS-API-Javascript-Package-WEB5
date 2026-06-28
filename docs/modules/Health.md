@@ -12,10 +12,10 @@ URL; everything else becomes the query string (GET/DELETE) or JSON body
 
 ## Methods
 
-| Method | HTTP | Route | Route params |
-| --- | --- | --- | --- |
-| `get` | GET | `api/health` | – |
-| `health` | GET | `api/health/health` | – |
+| Method | HTTP | Route | Route params | Query params | Body |
+| --- | --- | --- | --- | --- | --- |
+| `get` | GET | `api/health` | – | – | – |
+| `health` | GET | `api/health/health` | – | – | – |
 
 ## Example
 

@@ -4,9 +4,6 @@ import type { OASISResponse } from '../core/types';
 export declare class CelestialBodiesMetaDataModule {
   constructor(http: unknown);
 
-  /** POST api/celestialBodiesMetaData/{id}/activate */
-  activateCelestialBodyMetaData(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** POST api/celestialBodiesMetaData/{id}/clone */
   cloneCelestialBodyMetaData(args?: Record<string, any>): Promise<OASISResponse>;
 
@@ -15,9 +12,6 @@ export declare class CelestialBodiesMetaDataModule {
 
   /** POST api/celestialBodiesMetaData/create */
   createCelestialBodyMetaDataWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/celestialBodiesMetaData/{id}/deactivate */
-  deactivateCelestialBodyMetaData(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** DELETE api/celestialBodiesMetaData/{id} */
   deleteCelestialBodyMetaData(args?: Record<string, any>): Promise<OASISResponse>;
@@ -40,29 +34,14 @@ export declare class CelestialBodiesMetaDataModule {
   /** GET api/celestialBodiesMetaData/load-all-for-avatar */
   loadAllCelestialBodyMetaDataForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
 
-  /** GET api/celestialBodiesMetaData/load-from-path */
-  loadCelestialBodyMetaDataFromPath(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/celestialBodiesMetaData/load-from-published */
-  loadCelestialBodyMetaDataFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** GET api/celestialBodiesMetaData/{id}/versions/{version} */
   loadCelestialBodyMetaDataVersion(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/celestialBodiesMetaData/{id}/publish */
   publishCelestialBodyMetaData(args?: Record<string, any>): Promise<OASISResponse>;
 
-  /** POST api/celestialBodiesMetaData/{id}/republish */
-  republishCelestialBodyMetaData(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/celestialBodiesMetaData/search */
-  searchCelestialBodiesMetaDataGet(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** POST api/celestialBodiesMetaData/search */
   searchCelestialBodiesMetaDataPost(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/celestialBodiesMetaData/{id}/unpublish */
-  unpublishCelestialBodyMetaData(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** PUT api/celestialBodiesMetaData/{id} */
   updateCelestialBodyMetaData(args?: Record<string, any>): Promise<OASISResponse>;

@@ -12,30 +12,30 @@ URL; everything else becomes the query string (GET/DELETE) or JSON body
 
 ## Methods
 
-| Method | HTTP | Route | Route params |
-| --- | --- | --- | --- |
-| `activateTemplate` | POST | `api/templates/{id}/activate` | `id` |
-| `cloneTemplate` | POST | `api/templates/{id}/clone` | `id` |
-| `createTemplate` | POST | `api/templates` | – |
-| `createTemplateWithOptions` | POST | `api/templates/create` | – |
-| `deactivateTemplate` | POST | `api/templates/{id}/deactivate` | `id` |
-| `deleteTemplate` | DELETE | `api/templates/{id}` | `id` |
-| `downloadTemplate` | POST | `api/templates/{id}/download` | `id` |
-| `editTemplate` | PUT | `api/templates/{id}/edit` | `id` |
-| `getAllTemplates` | GET | `api/templates` | – |
-| `getTemplate` | GET | `api/templates/{id}` | `id` |
-| `getTemplatesByType` | GET | `api/templates/by-type/{type}` | `type` |
-| `getTemplateVersions` | GET | `api/templates/{id}/versions` | `id` |
-| `loadAllTemplatesForAvatar` | GET | `api/templates/load-all-for-avatar` | – |
-| `loadTemplateFromPath` | GET | `api/templates/load-from-path` | – |
-| `loadTemplateFromPublished` | GET | `api/templates/load-from-published` | – |
-| `loadTemplateVersion` | GET | `api/templates/{id}/versions/{version}` | `id`, `version` |
-| `publishTemplate` | POST | `api/templates/{id}/publish` | `id` |
-| `republishTemplate` | POST | `api/templates/{id}/republish` | `id` |
-| `searchTemplatesGet` | GET | `api/templates/search` | – |
-| `searchTemplatesPost` | POST | `api/templates/search` | – |
-| `unpublishTemplate` | POST | `api/templates/{id}/unpublish` | `id` |
-| `updateTemplate` | PUT | `api/templates/{id}` | `id` |
+| Method | HTTP | Route | Route params | Query params | Body |
+| --- | --- | --- | --- | --- | --- |
+| `activateTemplate` | POST | `api/templates/{id}/activate` | `id` | – | remaining args |
+| `cloneTemplate` | POST | `api/templates/{id}/clone` | `id` | – | remaining args |
+| `createTemplate` | POST | `api/templates` | – | – | remaining args |
+| `createTemplateWithOptions` | POST | `api/templates/create` | – | – | remaining args |
+| `deactivateTemplate` | POST | `api/templates/{id}/deactivate` | `id` | – | remaining args |
+| `deleteTemplate` | DELETE | `api/templates/{id}` | `id` | – | – |
+| `downloadTemplate` | POST | `api/templates/{id}/download` | `id` | – | remaining args |
+| `editTemplate` | PUT | `api/templates/{id}/edit` | `id` | – | remaining args |
+| `getAllTemplates` | GET | `api/templates` | – | – | – |
+| `getTemplate` | GET | `api/templates/{id}` | `id` | – | – |
+| `getTemplatesByType` | GET | `api/templates/by-type/{type}` | `type` | – | – |
+| `getTemplateVersions` | GET | `api/templates/{id}/versions` | `id` | – | – |
+| `loadAllTemplatesForAvatar` | GET | `api/templates/load-all-for-avatar` | – | – | – |
+| `loadTemplateFromPath` | GET | `api/templates/load-from-path` | – | `path` | – |
+| `loadTemplateFromPublished` | GET | `api/templates/load-from-published` | – | `publishedFilePath` | – |
+| `loadTemplateVersion` | GET | `api/templates/{id}/versions/{version}` | `id`, `version` | – | – |
+| `publishTemplate` | POST | `api/templates/{id}/publish` | `id` | – | remaining args |
+| `republishTemplate` | POST | `api/templates/{id}/republish` | `id` | – | remaining args |
+| `searchTemplates` | GET | `api/templates/search` | – | `searchTerm` | – |
+| `searchTemplatesPost` | POST | `api/templates/search` | – | – | remaining args |
+| `unpublishTemplate` | POST | `api/templates/{id}/unpublish` | `id` | – | remaining args |
+| `updateTemplate` | PUT | `api/templates/{id}` | `id` | – | remaining args |
 
 ## Example
 

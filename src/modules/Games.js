@@ -15,8 +15,8 @@ class GamesModule {
   constructor(http) {
     this._http = http;
 
-    // post api/games/{id}/activate
-    this.activateGame = makeOperation(http, "api/games", "POST", "{id}/activate");
+    // post api/games/{id}/activate (query: version)
+    this.activateGame = makeOperation(http, "api/games", "POST", "{id}/activate", {"query":["version"]});
     // post api/games/shared-inventory/add
     this.addItemToInventory = makeOperation(http, "api/games", "POST", "shared-inventory/add");
     // post api/games/{gameId}/input/bind-keys
@@ -27,12 +27,12 @@ class GamesModule {
     this.createGame = makeOperation(http, "api/games", "POST", "");
     // post api/games/create
     this.createGameWithOptions = makeOperation(http, "api/games", "POST", "create");
-    // post api/games/{id}/deactivate
-    this.deactivateGame = makeOperation(http, "api/games", "POST", "{id}/deactivate");
+    // post api/games/{id}/deactivate (query: version)
+    this.deactivateGame = makeOperation(http, "api/games", "POST", "{id}/deactivate", {"query":["version"]});
     // delete api/games/{id}
     this.deleteGame = makeOperation(http, "api/games", "DELETE", "{id}");
-    // post api/games/{id}/download
-    this.downloadGame = makeOperation(http, "api/games", "POST", "{id}/download");
+    // post api/games/{id}/download (query: version, downloadPath, reInstall)
+    this.downloadGame = makeOperation(http, "api/games", "POST", "{id}/download", {"query":["version","downloadPath","reInstall"]});
     // post api/games/{id}/edit
     this.editGame = makeOperation(http, "api/games", "POST", "{id}/edit");
     // post api/games/{gameId}/end
@@ -63,28 +63,28 @@ class GamesModule {
     this.getVoiceVolume = makeOperation(http, "api/games", "GET", "{gameId}/audio/voice-volume");
     // get api/games/shared-inventory/{itemId}/has
     this.hasItem = makeOperation(http, "api/games", "GET", "shared-inventory/{itemId}/has");
-    // get api/games/shared-inventory/has-by-name
-    this.hasItemByName = makeOperation(http, "api/games", "GET", "shared-inventory/has-by-name");
-    // post api/games/{id}/install
-    this.installGame = makeOperation(http, "api/games", "POST", "{id}/install");
+    // get api/games/shared-inventory/has-by-name (query: itemName)
+    this.hasItemByName = makeOperation(http, "api/games", "GET", "shared-inventory/has-by-name", {"query":["itemName"]});
+    // post api/games/{id}/install (query: version, installPath)
+    this.installGame = makeOperation(http, "api/games", "POST", "{id}/install", {"query":["version","installPath"]});
     // post api/games/{gameId}/areas/jump
     this.jumpToArea = makeOperation(http, "api/games", "POST", "{gameId}/areas/jump");
     // post api/games/{gameId}/levels/{level}/jump
     this.jumpToLevel = makeOperation(http, "api/games", "POST", "{gameId}/levels/{level}/jump");
     // post api/games/{gameId}/levels/{level}/jump-to-point
     this.jumpToPointInLevel = makeOperation(http, "api/games", "POST", "{gameId}/levels/{level}/jump-to-point");
-    // get api/games/load-all-for-avatar
-    this.loadAllGamesForAvatar = makeOperation(http, "api/games", "GET", "load-all-for-avatar");
+    // get api/games/load-all-for-avatar (query: showAllVersions, version)
+    this.loadAllGamesForAvatar = makeOperation(http, "api/games", "GET", "load-all-for-avatar", {"query":["showAllVersions","version"]});
     // post api/games/{gameId}/areas/load
     this.loadArea = makeOperation(http, "api/games", "POST", "{gameId}/areas/load");
     // post api/games/{gameId}/load
     this.loadGame = makeOperation(http, "api/games", "POST", "{gameId}/load");
-    // get api/games/{id}/load
-    this.loadGameById = makeOperation(http, "api/games", "GET", "{id}/load");
-    // get api/games/load-from-path
-    this.loadGameFromPath = makeOperation(http, "api/games", "GET", "load-from-path");
-    // get api/games/load-from-published
-    this.loadGameFromPublished = makeOperation(http, "api/games", "GET", "load-from-published");
+    // get api/games/{id}/load (query: version, holonType)
+    this.loadGameById = makeOperation(http, "api/games", "GET", "{id}/load", {"query":["version","holonType"]});
+    // get api/games/load-from-path (query: path, holonType)
+    this.loadGameFromPath = makeOperation(http, "api/games", "GET", "load-from-path", {"query":["path","holonType"]});
+    // get api/games/load-from-published (query: publishedFilePath)
+    this.loadGameFromPublished = makeOperation(http, "api/games", "GET", "load-from-published", {"query":["publishedFilePath"]});
     // get api/games/{id}/version/{version}
     this.loadGameVersion = makeOperation(http, "api/games", "GET", "{id}/version/{version}");
     // post api/games/{gameId}/levels/{level}/load
@@ -95,8 +95,8 @@ class GamesModule {
     this.removeItemFromInventory = makeOperation(http, "api/games", "DELETE", "shared-inventory/{itemId}");
     // post api/games/{id}/republish
     this.republishGame = makeOperation(http, "api/games", "POST", "{id}/republish");
-    // get api/games/search
-    this.searchGames = makeOperation(http, "api/games", "GET", "search");
+    // get api/games/search (query: query)
+    this.searchGames = makeOperation(http, "api/games", "GET", "search", {"query":["query"]});
     // post api/games/{gameId}/audio/master-volume
     this.setMasterVolume = makeOperation(http, "api/games", "POST", "{gameId}/audio/master-volume");
     // post api/games/{gameId}/audio/sound-volume
@@ -121,8 +121,8 @@ class GamesModule {
     this.unloadGame = makeOperation(http, "api/games", "POST", "{gameId}/unload");
     // post api/games/{gameId}/levels/{level}/unload
     this.unloadLevel = makeOperation(http, "api/games", "POST", "{gameId}/levels/{level}/unload");
-    // post api/games/{id}/unpublish
-    this.unpublishGame = makeOperation(http, "api/games", "POST", "{id}/unpublish");
+    // post api/games/{id}/unpublish (query: version)
+    this.unpublishGame = makeOperation(http, "api/games", "POST", "{id}/unpublish", {"query":["version"]});
     // put api/games/{id}
     this.updateGame = makeOperation(http, "api/games", "PUT", "{id}");
   }

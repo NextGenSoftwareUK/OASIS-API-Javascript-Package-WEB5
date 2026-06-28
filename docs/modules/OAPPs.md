@@ -12,29 +12,29 @@ URL; everything else becomes the query string (GET/DELETE) or JSON body
 
 ## Methods
 
-| Method | HTTP | Route | Route params |
-| --- | --- | --- | --- |
-| `activateOAPP` | POST | `api/oAPPs/{id}/activate` | `id` |
-| `cloneOAPP` | POST | `api/oAPPs/{id}/clone` | `id` |
-| `createOAPP` | POST | `api/oAPPs` | – |
-| `createOAPPWithOptions` | POST | `api/oAPPs/create` | – |
-| `deactivateOAPP` | POST | `api/oAPPs/{id}/deactivate` | `id` |
-| `deleteOAPP` | DELETE | `api/oAPPs/{id}` | `id` |
-| `downloadOAPP` | POST | `api/oAPPs/{id}/download` | `id` |
-| `editOAPP` | PUT | `api/oAPPs/{id}/edit` | `id` |
-| `getAllOAPPs` | GET | `api/oAPPs` | – |
-| `getOAPP` | GET | `api/oAPPs/{id}` | `id` |
-| `getOAPPVersions` | GET | `api/oAPPs/{id}/versions` | `id` |
-| `loadAllOAPPsForAvatar` | GET | `api/oAPPs/load-all-for-avatar` | – |
-| `loadOAPPFromPath` | GET | `api/oAPPs/load-from-path` | – |
-| `loadOAPPFromPublished` | GET | `api/oAPPs/load-from-published` | – |
-| `loadOAPPVersion` | GET | `api/oAPPs/{id}/versions/{version}` | `id`, `version` |
-| `publishOAPP` | POST | `api/oAPPs/{id}/publish` | `id` |
-| `republishOAPP` | POST | `api/oAPPs/{id}/republish` | `id` |
-| `searchOAPPsGet` | GET | `api/oAPPs/search` | – |
-| `searchOAPPsPost` | POST | `api/oAPPs/search` | – |
-| `unpublishOAPP` | POST | `api/oAPPs/{id}/unpublish` | `id` |
-| `updateOAPP` | PUT | `api/oAPPs/{id}` | `id` |
+| Method | HTTP | Route | Route params | Query params | Body |
+| --- | --- | --- | --- | --- | --- |
+| `activateOAPP` | POST | `api/oAPPs/{id}/activate` | `id` | `version` | remaining args |
+| `cloneOAPP` | POST | `api/oAPPs/{id}/clone` | `id` | – | remaining args |
+| `createOAPP` | POST | `api/oAPPs` | – | – | remaining args |
+| `createOAPPWithOptions` | POST | `api/oAPPs/create` | – | – | remaining args |
+| `deactivateOAPP` | POST | `api/oAPPs/{id}/deactivate` | `id` | `version` | remaining args |
+| `deleteOAPP` | DELETE | `api/oAPPs/{id}` | `id` | – | – |
+| `downloadOAPP` | POST | `api/oAPPs/{id}/download` | `id` | – | remaining args |
+| `editOAPP` | PUT | `api/oAPPs/{id}/edit` | `id` | – | remaining args |
+| `getAllOAPPs` | GET | `api/oAPPs` | – | – | – |
+| `getOAPP` | GET | `api/oAPPs/{id}` | `id` | – | – |
+| `getOAPPVersions` | GET | `api/oAPPs/{id}/versions` | `id` | – | – |
+| `loadAllOAPPsForAvatar` | GET | `api/oAPPs/load-all-for-avatar` | – | – | – |
+| `loadOAPPFromPath` | GET | `api/oAPPs/load-from-path` | – | `path` | – |
+| `loadOAPPFromPublished` | GET | `api/oAPPs/load-from-published` | – | `publishedFilePath` | – |
+| `loadOAPPVersion` | GET | `api/oAPPs/{id}/versions/{version}` | `id`, `version` | – | – |
+| `publishOAPP` | POST | `api/oAPPs/{id}/publish` | `id` | – | remaining args |
+| `republishOAPP` | POST | `api/oAPPs/{id}/republish` | `id` | `version` | remaining args |
+| `searchOAPPs` | GET | `api/oAPPs/search` | – | `searchTerm`, `showAllVersions`, `version` | – |
+| `searchOAPPsPost` | POST | `api/oAPPs/search` | – | – | remaining args |
+| `unpublishOAPP` | POST | `api/oAPPs/{id}/unpublish` | `id` | `version` | remaining args |
+| `updateOAPP` | PUT | `api/oAPPs/{id}` | `id` | – | remaining args |
 
 ## Example
 

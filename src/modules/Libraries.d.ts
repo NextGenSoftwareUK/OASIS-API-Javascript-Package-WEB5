@@ -4,9 +4,6 @@ import type { OASISResponse } from '../core/types';
 export declare class LibrariesModule {
   constructor(http: unknown);
 
-  /** POST api/libraries/{id}/activate */
-  activateLibrary(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** POST api/libraries/{id}/clone */
   cloneLibrary(args?: Record<string, any>): Promise<OASISResponse>;
 
@@ -16,14 +13,8 @@ export declare class LibrariesModule {
   /** POST api/libraries/create */
   createLibraryWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
 
-  /** POST api/libraries/{id}/deactivate */
-  deactivateLibrary(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** DELETE api/libraries/{id} */
   deleteLibrary(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/libraries/{id}/download */
-  downloadLibrary(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/libraries/{id}/edit */
   editLibrary(args?: Record<string, any>): Promise<OASISResponse>;
@@ -40,32 +31,11 @@ export declare class LibrariesModule {
   /** GET api/libraries/{id}/versions */
   getLibraryVersions(args?: Record<string, any>): Promise<OASISResponse>;
 
-  /** GET api/libraries/load-all-for-avatar */
-  loadAllLibrariesForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/libraries/{id}/load */
-  loadLibrary(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/libraries/load-from-path */
-  loadLibraryFromPath(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/libraries/load-from-published */
-  loadLibraryFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** GET api/libraries/{id}/version/{version} */
   loadLibraryVersion(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/libraries/{id}/publish */
   publishLibrary(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/libraries/{id}/republish */
-  republishLibrary(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/libraries/search */
-  searchLibraries(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/libraries/{id}/unpublish */
-  unpublishLibrary(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** PUT api/libraries/{id} */
   updateLibrary(args?: Record<string, any>): Promise<OASISResponse>;

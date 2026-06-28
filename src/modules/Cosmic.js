@@ -37,58 +37,58 @@ class CosmicModule {
     this.addStar = makeOperation(http, "api/cosmic", "POST", "galaxy/{parentGalaxyId}/star");
     // post api/cosmic/multiverse/{parentMultiverseId}/universe
     this.addUniverse = makeOperation(http, "api/cosmic", "POST", "multiverse/{parentMultiverseId}/universe");
-    // delete api/cosmic/asteroid/{asteroidId}
-    this.deleteAsteroid = makeOperation(http, "api/cosmic", "DELETE", "asteroid/{asteroidId}");
-    // delete api/cosmic/blackhole/{blackHoleId}
-    this.deleteBlackHole = makeOperation(http, "api/cosmic", "DELETE", "blackhole/{blackHoleId}");
-    // delete api/cosmic/comet/{cometId}
-    this.deleteComet = makeOperation(http, "api/cosmic", "DELETE", "comet/{cometId}");
-    // delete api/cosmic/cosmic-ray/{rayId}
-    this.deleteCosmicRay = makeOperation(http, "api/cosmic", "DELETE", "cosmic-ray/{rayId}");
-    // delete api/cosmic/cosmic-wave/{waveId}
-    this.deleteCosmicWave = makeOperation(http, "api/cosmic", "DELETE", "cosmic-wave/{waveId}");
-    // delete api/cosmic/galaxy/{galaxyId}
-    this.deleteGalaxy = makeOperation(http, "api/cosmic", "DELETE", "galaxy/{galaxyId}");
-    // delete api/cosmic/galaxy-cluster/{galaxyClusterId}
-    this.deleteGalaxyCluster = makeOperation(http, "api/cosmic", "DELETE", "galaxy-cluster/{galaxyClusterId}");
-    // delete api/cosmic/gravitational-wave/{waveId}
-    this.deleteGravitationalWave = makeOperation(http, "api/cosmic", "DELETE", "gravitational-wave/{waveId}");
-    // delete api/cosmic/meteroid/{meteroidId}
-    this.deleteMeteroid = makeOperation(http, "api/cosmic", "DELETE", "meteroid/{meteroidId}");
-    // delete api/cosmic/moon/{moonId}
-    this.deleteMoon = makeOperation(http, "api/cosmic", "DELETE", "moon/{moonId}");
-    // delete api/cosmic/multiverse/{multiverseId}
-    this.deleteMultiverse = makeOperation(http, "api/cosmic", "DELETE", "multiverse/{multiverseId}");
-    // delete api/cosmic/nebula/{nebulaId}
-    this.deleteNebula = makeOperation(http, "api/cosmic", "DELETE", "nebula/{nebulaId}");
-    // delete api/cosmic/omniverse/{omniverseId}
-    this.deleteOmniverse = makeOperation(http, "api/cosmic", "DELETE", "omniverse/{omniverseId}");
-    // delete api/cosmic/planet/{planetId}
-    this.deletePlanet = makeOperation(http, "api/cosmic", "DELETE", "planet/{planetId}");
-    // delete api/cosmic/portal/{portalId}
-    this.deletePortal = makeOperation(http, "api/cosmic", "DELETE", "portal/{portalId}");
-    // delete api/cosmic/solar-system/{solarSystemId}
-    this.deleteSolarSystem = makeOperation(http, "api/cosmic", "DELETE", "solar-system/{solarSystemId}");
-    // delete api/cosmic/spacetime-abnormally/{abnormallyId}
-    this.deleteSpaceTimeAbnormally = makeOperation(http, "api/cosmic", "DELETE", "spacetime-abnormally/{abnormallyId}");
-    // delete api/cosmic/spacetime-distortion/{distortionId}
-    this.deleteSpaceTimeDistortion = makeOperation(http, "api/cosmic", "DELETE", "spacetime-distortion/{distortionId}");
-    // delete api/cosmic/star/{starId}
-    this.deleteStar = makeOperation(http, "api/cosmic", "DELETE", "star/{starId}");
-    // delete api/cosmic/stardust/{starDustId}
-    this.deleteStarDust = makeOperation(http, "api/cosmic", "DELETE", "stardust/{starDustId}");
-    // delete api/cosmic/stargate/{starGateId}
-    this.deleteStarGate = makeOperation(http, "api/cosmic", "DELETE", "stargate/{starGateId}");
-    // delete api/cosmic/superverse/{superVerseId}
-    this.deleteSuperVerse = makeOperation(http, "api/cosmic", "DELETE", "superverse/{superVerseId}");
-    // delete api/cosmic/temporal-rift/{riftId}
-    this.deleteTemporalRift = makeOperation(http, "api/cosmic", "DELETE", "temporal-rift/{riftId}");
-    // delete api/cosmic/universe/{universeId}
-    this.deleteUniverse = makeOperation(http, "api/cosmic", "DELETE", "universe/{universeId}");
-    // delete api/cosmic/wormhole/{wormHoleId}
-    this.deleteWormHole = makeOperation(http, "api/cosmic", "DELETE", "wormhole/{wormHoleId}");
-    // get api/cosmic/children/{parentId}
-    this.getChildrenForParent = makeOperation(http, "api/cosmic", "GET", "children/{parentId}");
+    // delete api/cosmic/asteroid/{asteroidId} (query: softDelete, providerType)
+    this.deleteAsteroid = makeOperation(http, "api/cosmic", "DELETE", "asteroid/{asteroidId}", {"query":["softDelete","providerType"]});
+    // delete api/cosmic/blackhole/{blackHoleId} (query: softDelete, providerType)
+    this.deleteBlackHole = makeOperation(http, "api/cosmic", "DELETE", "blackhole/{blackHoleId}", {"query":["softDelete","providerType"]});
+    // delete api/cosmic/comet/{cometId} (query: softDelete, providerType)
+    this.deleteComet = makeOperation(http, "api/cosmic", "DELETE", "comet/{cometId}", {"query":["softDelete","providerType"]});
+    // delete api/cosmic/cosmic-ray/{rayId} (query: softDelete, providerType)
+    this.deleteCosmicRay = makeOperation(http, "api/cosmic", "DELETE", "cosmic-ray/{rayId}", {"query":["softDelete","providerType"]});
+    // delete api/cosmic/cosmic-wave/{waveId} (query: softDelete, providerType)
+    this.deleteCosmicWave = makeOperation(http, "api/cosmic", "DELETE", "cosmic-wave/{waveId}", {"query":["softDelete","providerType"]});
+    // delete api/cosmic/galaxy/{galaxyId} (query: softDelete, providerType)
+    this.deleteGalaxy = makeOperation(http, "api/cosmic", "DELETE", "galaxy/{galaxyId}", {"query":["softDelete","providerType"]});
+    // delete api/cosmic/galaxy-cluster/{galaxyClusterId} (query: softDelete, providerType)
+    this.deleteGalaxyCluster = makeOperation(http, "api/cosmic", "DELETE", "galaxy-cluster/{galaxyClusterId}", {"query":["softDelete","providerType"]});
+    // delete api/cosmic/gravitational-wave/{waveId} (query: softDelete, providerType)
+    this.deleteGravitationalWave = makeOperation(http, "api/cosmic", "DELETE", "gravitational-wave/{waveId}", {"query":["softDelete","providerType"]});
+    // delete api/cosmic/meteroid/{meteroidId} (query: softDelete, providerType)
+    this.deleteMeteroid = makeOperation(http, "api/cosmic", "DELETE", "meteroid/{meteroidId}", {"query":["softDelete","providerType"]});
+    // delete api/cosmic/moon/{moonId} (query: softDelete, providerType)
+    this.deleteMoon = makeOperation(http, "api/cosmic", "DELETE", "moon/{moonId}", {"query":["softDelete","providerType"]});
+    // delete api/cosmic/multiverse/{multiverseId} (query: softDelete, providerType)
+    this.deleteMultiverse = makeOperation(http, "api/cosmic", "DELETE", "multiverse/{multiverseId}", {"query":["softDelete","providerType"]});
+    // delete api/cosmic/nebula/{nebulaId} (query: softDelete, providerType)
+    this.deleteNebula = makeOperation(http, "api/cosmic", "DELETE", "nebula/{nebulaId}", {"query":["softDelete","providerType"]});
+    // delete api/cosmic/omniverse/{omniverseId} (query: softDelete, providerType)
+    this.deleteOmniverse = makeOperation(http, "api/cosmic", "DELETE", "omniverse/{omniverseId}", {"query":["softDelete","providerType"]});
+    // delete api/cosmic/planet/{planetId} (query: softDelete, providerType)
+    this.deletePlanet = makeOperation(http, "api/cosmic", "DELETE", "planet/{planetId}", {"query":["softDelete","providerType"]});
+    // delete api/cosmic/portal/{portalId} (query: softDelete, providerType)
+    this.deletePortal = makeOperation(http, "api/cosmic", "DELETE", "portal/{portalId}", {"query":["softDelete","providerType"]});
+    // delete api/cosmic/solar-system/{solarSystemId} (query: softDelete, providerType)
+    this.deleteSolarSystem = makeOperation(http, "api/cosmic", "DELETE", "solar-system/{solarSystemId}", {"query":["softDelete","providerType"]});
+    // delete api/cosmic/spacetime-abnormally/{abnormallyId} (query: softDelete, providerType)
+    this.deleteSpaceTimeAbnormally = makeOperation(http, "api/cosmic", "DELETE", "spacetime-abnormally/{abnormallyId}", {"query":["softDelete","providerType"]});
+    // delete api/cosmic/spacetime-distortion/{distortionId} (query: softDelete, providerType)
+    this.deleteSpaceTimeDistortion = makeOperation(http, "api/cosmic", "DELETE", "spacetime-distortion/{distortionId}", {"query":["softDelete","providerType"]});
+    // delete api/cosmic/star/{starId} (query: softDelete, providerType)
+    this.deleteStar = makeOperation(http, "api/cosmic", "DELETE", "star/{starId}", {"query":["softDelete","providerType"]});
+    // delete api/cosmic/stardust/{starDustId} (query: softDelete, providerType)
+    this.deleteStarDust = makeOperation(http, "api/cosmic", "DELETE", "stardust/{starDustId}", {"query":["softDelete","providerType"]});
+    // delete api/cosmic/stargate/{starGateId} (query: softDelete, providerType)
+    this.deleteStarGate = makeOperation(http, "api/cosmic", "DELETE", "stargate/{starGateId}", {"query":["softDelete","providerType"]});
+    // delete api/cosmic/superverse/{superVerseId} (query: softDelete, providerType)
+    this.deleteSuperVerse = makeOperation(http, "api/cosmic", "DELETE", "superverse/{superVerseId}", {"query":["softDelete","providerType"]});
+    // delete api/cosmic/temporal-rift/{riftId} (query: softDelete, providerType)
+    this.deleteTemporalRift = makeOperation(http, "api/cosmic", "DELETE", "temporal-rift/{riftId}", {"query":["softDelete","providerType"]});
+    // delete api/cosmic/universe/{universeId} (query: softDelete, providerType)
+    this.deleteUniverse = makeOperation(http, "api/cosmic", "DELETE", "universe/{universeId}", {"query":["softDelete","providerType"]});
+    // delete api/cosmic/wormhole/{wormHoleId} (query: softDelete, providerType)
+    this.deleteWormHole = makeOperation(http, "api/cosmic", "DELETE", "wormhole/{wormHoleId}", {"query":["softDelete","providerType"]});
+    // get api/cosmic/children/{parentId} (query: parentHolonType, childHolonType)
+    this.getChildrenForParent = makeOperation(http, "api/cosmic", "GET", "children/{parentId}", {"query":["parentHolonType","childHolonType"]});
     // get api/cosmic/galaxy/{galaxyId}/moons
     this.getMoonsForGalaxy = makeOperation(http, "api/cosmic", "GET", "galaxy/{galaxyId}/moons");
     // get api/cosmic/omniverse
@@ -103,62 +103,62 @@ class CosmicModule {
     this.getStarsForGalaxy = makeOperation(http, "api/cosmic", "GET", "galaxy/{galaxyId}/stars");
     // post api/cosmic/omniverse
     this.saveOmniverse = makeOperation(http, "api/cosmic", "POST", "omniverse");
-    // get api/cosmic/search-children
-    this.searchChildrenForParent = makeOperation(http, "api/cosmic", "GET", "search-children");
-    // get api/cosmic/search-holons
-    this.searchHolonsForParent = makeOperation(http, "api/cosmic", "GET", "search-holons");
-    // get api/cosmic/search-holons-sync
-    this.searchHolonsForParentSync = makeOperation(http, "api/cosmic", "GET", "search-holons-sync");
-    // put api/cosmic/asteroid
-    this.updateAsteroid = makeOperation(http, "api/cosmic", "PUT", "asteroid");
-    // put api/cosmic/blackhole
-    this.updateBlackHole = makeOperation(http, "api/cosmic", "PUT", "blackhole");
-    // put api/cosmic/comet
-    this.updateComet = makeOperation(http, "api/cosmic", "PUT", "comet");
-    // put api/cosmic/cosmic-ray
-    this.updateCosmicRay = makeOperation(http, "api/cosmic", "PUT", "cosmic-ray");
-    // put api/cosmic/cosmic-wave
-    this.updateCosmicWave = makeOperation(http, "api/cosmic", "PUT", "cosmic-wave");
-    // put api/cosmic/galaxy
-    this.updateGalaxy = makeOperation(http, "api/cosmic", "PUT", "galaxy");
-    // put api/cosmic/galaxy-cluster
-    this.updateGalaxyCluster = makeOperation(http, "api/cosmic", "PUT", "galaxy-cluster");
-    // put api/cosmic/gravitational-wave
-    this.updateGravitationalWave = makeOperation(http, "api/cosmic", "PUT", "gravitational-wave");
-    // put api/cosmic/meteroid
-    this.updateMeteroid = makeOperation(http, "api/cosmic", "PUT", "meteroid");
-    // put api/cosmic/moon
-    this.updateMoon = makeOperation(http, "api/cosmic", "PUT", "moon");
-    // put api/cosmic/multiverse
-    this.updateMultiverse = makeOperation(http, "api/cosmic", "PUT", "multiverse");
-    // put api/cosmic/nebula
-    this.updateNebula = makeOperation(http, "api/cosmic", "PUT", "nebula");
-    // put api/cosmic/omniverse
-    this.updateOmniverse = makeOperation(http, "api/cosmic", "PUT", "omniverse");
-    // put api/cosmic/planet
-    this.updatePlanet = makeOperation(http, "api/cosmic", "PUT", "planet");
-    // put api/cosmic/portal
-    this.updatePortal = makeOperation(http, "api/cosmic", "PUT", "portal");
-    // put api/cosmic/solar-system
-    this.updateSolarSystem = makeOperation(http, "api/cosmic", "PUT", "solar-system");
-    // put api/cosmic/spacetime-abnormally
-    this.updateSpaceTimeAbnormally = makeOperation(http, "api/cosmic", "PUT", "spacetime-abnormally");
-    // put api/cosmic/spacetime-distortion
-    this.updateSpaceTimeDistortion = makeOperation(http, "api/cosmic", "PUT", "spacetime-distortion");
-    // put api/cosmic/star
-    this.updateStar = makeOperation(http, "api/cosmic", "PUT", "star");
-    // put api/cosmic/stardust
-    this.updateStarDust = makeOperation(http, "api/cosmic", "PUT", "stardust");
-    // put api/cosmic/stargate
-    this.updateStarGate = makeOperation(http, "api/cosmic", "PUT", "stargate");
-    // put api/cosmic/superverse
-    this.updateSuperVerse = makeOperation(http, "api/cosmic", "PUT", "superverse");
-    // put api/cosmic/temporal-rift
-    this.updateTemporalRift = makeOperation(http, "api/cosmic", "PUT", "temporal-rift");
-    // put api/cosmic/universe
-    this.updateUniverse = makeOperation(http, "api/cosmic", "PUT", "universe");
-    // put api/cosmic/wormhole
-    this.updateWormHole = makeOperation(http, "api/cosmic", "PUT", "wormhole");
+    // get api/cosmic/search-children (query: searchTerm, parentId, parentHolonType, childHolonType)
+    this.searchChildrenForParent = makeOperation(http, "api/cosmic", "GET", "search-children", {"query":["searchTerm","parentId","parentHolonType","childHolonType"]});
+    // get api/cosmic/search-holons (query: searchTerm, parentId, parentHolonType, childHolonType)
+    this.searchHolonsForParent = makeOperation(http, "api/cosmic", "GET", "search-holons", {"query":["searchTerm","parentId","parentHolonType","childHolonType"]});
+    // get api/cosmic/search-holons-sync (query: searchTerm, parentId, parentHolonType, childHolonType, searchOnlyForCurrentAvatar, providerType)
+    this.searchHolonsForParentSync = makeOperation(http, "api/cosmic", "GET", "search-holons-sync", {"query":["searchTerm","parentId","parentHolonType","childHolonType","searchOnlyForCurrentAvatar","providerType"]});
+    // put api/cosmic/asteroid (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updateAsteroid = makeOperation(http, "api/cosmic", "PUT", "asteroid", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
+    // put api/cosmic/blackhole (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updateBlackHole = makeOperation(http, "api/cosmic", "PUT", "blackhole", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
+    // put api/cosmic/comet (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updateComet = makeOperation(http, "api/cosmic", "PUT", "comet", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
+    // put api/cosmic/cosmic-ray (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updateCosmicRay = makeOperation(http, "api/cosmic", "PUT", "cosmic-ray", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
+    // put api/cosmic/cosmic-wave (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updateCosmicWave = makeOperation(http, "api/cosmic", "PUT", "cosmic-wave", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
+    // put api/cosmic/galaxy (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updateGalaxy = makeOperation(http, "api/cosmic", "PUT", "galaxy", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
+    // put api/cosmic/galaxy-cluster (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updateGalaxyCluster = makeOperation(http, "api/cosmic", "PUT", "galaxy-cluster", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
+    // put api/cosmic/gravitational-wave (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updateGravitationalWave = makeOperation(http, "api/cosmic", "PUT", "gravitational-wave", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
+    // put api/cosmic/meteroid (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updateMeteroid = makeOperation(http, "api/cosmic", "PUT", "meteroid", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
+    // put api/cosmic/moon (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updateMoon = makeOperation(http, "api/cosmic", "PUT", "moon", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
+    // put api/cosmic/multiverse (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updateMultiverse = makeOperation(http, "api/cosmic", "PUT", "multiverse", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
+    // put api/cosmic/nebula (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updateNebula = makeOperation(http, "api/cosmic", "PUT", "nebula", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
+    // put api/cosmic/omniverse (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updateOmniverse = makeOperation(http, "api/cosmic", "PUT", "omniverse", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
+    // put api/cosmic/planet (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updatePlanet = makeOperation(http, "api/cosmic", "PUT", "planet", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
+    // put api/cosmic/portal (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updatePortal = makeOperation(http, "api/cosmic", "PUT", "portal", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
+    // put api/cosmic/solar-system (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updateSolarSystem = makeOperation(http, "api/cosmic", "PUT", "solar-system", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
+    // put api/cosmic/spacetime-abnormally (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updateSpaceTimeAbnormally = makeOperation(http, "api/cosmic", "PUT", "spacetime-abnormally", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
+    // put api/cosmic/spacetime-distortion (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updateSpaceTimeDistortion = makeOperation(http, "api/cosmic", "PUT", "spacetime-distortion", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
+    // put api/cosmic/star (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updateStar = makeOperation(http, "api/cosmic", "PUT", "star", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
+    // put api/cosmic/stardust (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updateStarDust = makeOperation(http, "api/cosmic", "PUT", "stardust", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
+    // put api/cosmic/stargate (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updateStarGate = makeOperation(http, "api/cosmic", "PUT", "stargate", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
+    // put api/cosmic/superverse (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updateSuperVerse = makeOperation(http, "api/cosmic", "PUT", "superverse", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
+    // put api/cosmic/temporal-rift (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updateTemporalRift = makeOperation(http, "api/cosmic", "PUT", "temporal-rift", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
+    // put api/cosmic/universe (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updateUniverse = makeOperation(http, "api/cosmic", "PUT", "universe", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
+    // put api/cosmic/wormhole (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType)
+    this.updateWormHole = makeOperation(http, "api/cosmic", "PUT", "wormhole", {"query":["saveChildren","recursive","maxChildDepth","continueOnError","saveChildrenOnProvider","providerType"]});
   }
 }
 

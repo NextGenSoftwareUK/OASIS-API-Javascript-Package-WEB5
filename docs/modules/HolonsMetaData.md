@@ -12,29 +12,29 @@ URL; everything else becomes the query string (GET/DELETE) or JSON body
 
 ## Methods
 
-| Method | HTTP | Route | Route params |
-| --- | --- | --- | --- |
-| `activateHolonMetaData` | POST | `api/holonsMetaData/{id}/activate` | `id` |
-| `cloneHolonMetaData` | POST | `api/holonsMetaData/{id}/clone` | `id` |
-| `createHolonMetaData` | POST | `api/holonsMetaData` | – |
-| `createHolonMetaDataWithOptions` | POST | `api/holonsMetaData/create` | – |
-| `deactivateHolonMetaData` | POST | `api/holonsMetaData/{id}/deactivate` | `id` |
-| `deleteHolonMetaData` | DELETE | `api/holonsMetaData/{id}` | `id` |
-| `downloadHolonMetaData` | POST | `api/holonsMetaData/{id}/download` | `id` |
-| `editHolonMetaData` | PUT | `api/holonsMetaData/{id}/edit` | `id` |
-| `getAllHolonsMetaData` | GET | `api/holonsMetaData` | – |
-| `getHolonMetaData` | GET | `api/holonsMetaData/{id}` | `id` |
-| `getHolonMetaDataVersions` | GET | `api/holonsMetaData/{id}/versions` | `id` |
-| `loadAllHolonMetaDataForAvatar` | GET | `api/holonsMetaData/load-all-for-avatar` | – |
-| `loadHolonMetaDataFromPath` | GET | `api/holonsMetaData/load-from-path` | – |
-| `loadHolonMetaDataFromPublished` | GET | `api/holonsMetaData/load-from-published` | – |
-| `loadHolonMetaDataVersion` | GET | `api/holonsMetaData/{id}/versions/{version}` | `id`, `version` |
-| `publishHolonMetaData` | POST | `api/holonsMetaData/{id}/publish` | `id` |
-| `republishHolonMetaData` | POST | `api/holonsMetaData/{id}/republish` | `id` |
-| `searchHolonsMetaDataGet` | GET | `api/holonsMetaData/search` | – |
-| `searchHolonsMetaDataPost` | POST | `api/holonsMetaData/search` | – |
-| `unpublishHolonMetaData` | POST | `api/holonsMetaData/{id}/unpublish` | `id` |
-| `updateHolonMetaData` | PUT | `api/holonsMetaData/{id}` | `id` |
+| Method | HTTP | Route | Route params | Query params | Body |
+| --- | --- | --- | --- | --- | --- |
+| `activateHolonMetaData` | POST | `api/holonsMetaData/{id}/activate` | `id` | `version` | remaining args |
+| `cloneHolonMetaData` | POST | `api/holonsMetaData/{id}/clone` | `id` | – | remaining args |
+| `createHolonMetaData` | POST | `api/holonsMetaData` | – | – | remaining args |
+| `createHolonMetaDataWithOptions` | POST | `api/holonsMetaData/create` | – | – | remaining args |
+| `deactivateHolonMetaData` | POST | `api/holonsMetaData/{id}/deactivate` | `id` | `version` | remaining args |
+| `deleteHolonMetaData` | DELETE | `api/holonsMetaData/{id}` | `id` | – | – |
+| `downloadHolonMetaData` | POST | `api/holonsMetaData/{id}/download` | `id` | – | remaining args |
+| `editHolonMetaData` | PUT | `api/holonsMetaData/{id}/edit` | `id` | – | remaining args |
+| `getAllHolonsMetaData` | GET | `api/holonsMetaData` | – | – | – |
+| `getHolonMetaData` | GET | `api/holonsMetaData/{id}` | `id` | – | – |
+| `getHolonMetaDataVersions` | GET | `api/holonsMetaData/{id}/versions` | `id` | – | – |
+| `loadAllHolonMetaDataForAvatar` | GET | `api/holonsMetaData/load-all-for-avatar` | – | – | – |
+| `loadHolonMetaDataFromPath` | GET | `api/holonsMetaData/load-from-path` | – | `path` | – |
+| `loadHolonMetaDataFromPublished` | GET | `api/holonsMetaData/load-from-published` | – | `publishedFilePath` | – |
+| `loadHolonMetaDataVersion` | GET | `api/holonsMetaData/{id}/versions/{version}` | `id`, `version` | – | – |
+| `publishHolonMetaData` | POST | `api/holonsMetaData/{id}/publish` | `id` | – | remaining args |
+| `republishHolonMetaData` | POST | `api/holonsMetaData/{id}/republish` | `id` | `version` | remaining args |
+| `searchHolonsMetaData` | GET | `api/holonsMetaData/search` | – | `searchTerm`, `showAllVersions`, `version` | – |
+| `searchHolonsMetaDataPost` | POST | `api/holonsMetaData/search` | – | – | remaining args |
+| `unpublishHolonMetaData` | POST | `api/holonsMetaData/{id}/unpublish` | `id` | `version` | remaining args |
+| `updateHolonMetaData` | PUT | `api/holonsMetaData/{id}` | `id` | – | remaining args |
 
 ## Example
 

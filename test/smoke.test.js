@@ -47,17 +47,49 @@ test('login stores session and subsequent calls send Bearer token', async () => 
   assert.equal(questsCall.url, 'https://example.test/api/quests/all-for-avatar');
 });
 
-test('route tokens are consumed from the URL, remaining args become the body', async () => {
+test('route tokens are consumed from the URL, single primitive FromBody param becomes the raw body', async () => {
   const fetchImpl = fakeFetch([{ match: 'api/missions/mission-123/complete', body: { isError: false, result: {} } }]);
   const star = new STARClient({ baseUrl: 'https://example.test', persistSession: false, fetchImpl });
 
+  // CompleteMission's C# signature is `CompleteMission(Guid id, [FromBody] string completionNotes)` -
+  // a single *primitive* [FromBody] param, so the JSON body must be the raw
+  // string itself, not an object wrapping it under a "completionNotes" key.
   await star.missions.completeMission({ id: 'mission-123', completionNotes: 'Done it' });
 
   const call = fetchImpl.calls[0];
   assert.equal(call.url, 'https://example.test/api/missions/mission-123/complete');
   assert.equal(call.init.method, 'POST');
   const body = JSON.parse(call.init.body);
-  assert.deepEqual(body, { completionNotes: 'Done it' });
+  assert.equal(body, 'Done it');
+});
+
+test('mixed FromQuery + FromBody POST sends query params on the URL and the rest as the body', async () => {
+  const fetchImpl = fakeFetch([{ match: 'api/cosmic/omniverse', body: { isError: false, result: {} } }]);
+  const star = new STARClient({ baseUrl: 'https://example.test', persistSession: false, fetchImpl });
+
+  // UpdateOmniverse(omniverse: [FromBody], saveChildren/recursive/.../providerType: [FromQuery]).
+  await star.cosmic.updateOmniverse({ name: 'New Omniverse', saveChildren: true, providerType: 'Default' });
+
+  const call = fetchImpl.calls[0];
+  assert.match(call.url, /^https:\/\/example\.test\/api\/cosmic\/omniverse\?/);
+  assert.match(call.url, /saveChildren=true/);
+  assert.match(call.url, /providerType=Default/);
+  assert.equal(call.url.includes('name='), false);
+  const body = JSON.parse(call.init.body);
+  assert.deepEqual(body, { name: 'New Omniverse' });
+});
+
+test('DELETE with FromQuery params sends them as query string, not a JSON body', async () => {
+  const fetchImpl = fakeFetch([{ match: 'api/cosmic/omniverse/omni-1', body: { isError: false, result: true } }]);
+  const star = new STARClient({ baseUrl: 'https://example.test', persistSession: false, fetchImpl });
+
+  await star.cosmic.deleteOmniverse({ omniverseId: 'omni-1', softDelete: false, providerType: 'Default' });
+
+  const call = fetchImpl.calls[0];
+  assert.equal(call.init.method, 'DELETE');
+  assert.equal(call.init.body, undefined);
+  assert.match(call.url, /softDelete=false/);
+  assert.match(call.url, /providerType=Default/);
 });
 
 test('GET requests send remaining args as query string', async () => {

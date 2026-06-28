@@ -12,21 +12,21 @@ URL; everything else becomes the query string (GET/DELETE) or JSON body
 
 ## Methods
 
-| Method | HTTP | Route | Route params |
-| --- | --- | --- | --- |
-| `addItemToInventory` | POST | `api/avatar/inventory` | – |
-| `addXp` | POST | `api/avatar/add-xp` | – |
-| `authenticate` | POST | `api/avatar/authenticate` | – |
-| `getCurrentAvatar` | GET | `api/avatar/current` | – |
-| `getInventory` | GET | `api/avatar/inventory` | – |
-| `getInventoryItem` | GET | `api/avatar/inventory/{itemId}` | `itemId` |
-| `hasItem` | GET | `api/avatar/inventory/{itemId}/has` | `itemId` |
-| `hasItemByName` | GET | `api/avatar/inventory/has-by-name` | – |
-| `removeItemFromInventory` | DELETE | `api/avatar/inventory/{itemId}` | `itemId` |
-| `searchInventory` | GET | `api/avatar/inventory/search` | – |
-| `sendItemToAvatar` | POST | `api/avatar/inventory/send-to-avatar` | – |
-| `sendItemToClan` | POST | `api/avatar/inventory/send-to-clan` | – |
-| `setActiveQuest` | POST | `api/avatar/set-active-quest` | – |
+| Method | HTTP | Route | Route params | Query params | Body |
+| --- | --- | --- | --- | --- | --- |
+| `addItemToInventory` | POST | `api/avatar/inventory` | – | – | remaining args |
+| `addXp` | POST | `api/avatar/add-xp` | – | – | remaining args |
+| `authenticate` | POST | `api/avatar/authenticate` | – | – | remaining args |
+| `getCurrentAvatar` | GET | `api/avatar/current` | – | – | – |
+| `getInventory` | GET | `api/avatar/inventory` | – | – | – |
+| `getInventoryItem` | GET | `api/avatar/inventory/{itemId}` | `itemId` | – | – |
+| `hasItem` | GET | `api/avatar/inventory/{itemId}/has` | `itemId` | – | – |
+| `hasItemByName` | GET | `api/avatar/inventory/has-by-name` | – | `itemName` | – |
+| `removeItemFromInventory` | DELETE | `api/avatar/inventory/{itemId}` | `itemId` | – | – |
+| `searchInventory` | GET | `api/avatar/inventory/search` | – | `searchTerm` | – |
+| `sendItemToAvatar` | POST | `api/avatar/inventory/send-to-avatar` | – | – | remaining args |
+| `sendItemToClan` | POST | `api/avatar/inventory/send-to-clan` | – | – | remaining args |
+| `setActiveQuest` | POST | `api/avatar/set-active-quest` | – | – | remaining args |
 
 ## Example
 

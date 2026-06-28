@@ -12,30 +12,30 @@ URL; everything else becomes the query string (GET/DELETE) or JSON body
 
 ## Methods
 
-| Method | HTTP | Route | Route params |
-| --- | --- | --- | --- |
-| `activateLibrary` | POST | `api/libraries/{id}/activate` | `id` |
-| `cloneLibrary` | POST | `api/libraries/{id}/clone` | `id` |
-| `createLibrary` | POST | `api/libraries` | – |
-| `createLibraryWithOptions` | POST | `api/libraries/create` | – |
-| `deactivateLibrary` | POST | `api/libraries/{id}/deactivate` | `id` |
-| `deleteLibrary` | DELETE | `api/libraries/{id}` | `id` |
-| `downloadLibrary` | POST | `api/libraries/{id}/download` | `id` |
-| `editLibrary` | POST | `api/libraries/{id}/edit` | `id` |
-| `getAllLibraries` | GET | `api/libraries` | – |
-| `getLibrariesByCategory` | GET | `api/libraries/by-category/{category}` | `category` |
-| `getLibrary` | GET | `api/libraries/{id}` | `id` |
-| `getLibraryVersions` | GET | `api/libraries/{id}/versions` | `id` |
-| `loadAllLibrariesForAvatar` | GET | `api/libraries/load-all-for-avatar` | – |
-| `loadLibrary` | GET | `api/libraries/{id}/load` | `id` |
-| `loadLibraryFromPath` | GET | `api/libraries/load-from-path` | – |
-| `loadLibraryFromPublished` | GET | `api/libraries/load-from-published` | – |
-| `loadLibraryVersion` | GET | `api/libraries/{id}/version/{version}` | `id`, `version` |
-| `publishLibrary` | POST | `api/libraries/{id}/publish` | `id` |
-| `republishLibrary` | POST | `api/libraries/{id}/republish` | `id` |
-| `searchLibraries` | GET | `api/libraries/search` | – |
-| `unpublishLibrary` | POST | `api/libraries/{id}/unpublish` | `id` |
-| `updateLibrary` | PUT | `api/libraries/{id}` | `id` |
+| Method | HTTP | Route | Route params | Query params | Body |
+| --- | --- | --- | --- | --- | --- |
+| `activateLibrary` | POST | `api/libraries/{id}/activate` | `id` | `version` | remaining args |
+| `cloneLibrary` | POST | `api/libraries/{id}/clone` | `id` | – | remaining args |
+| `createLibrary` | POST | `api/libraries` | – | – | remaining args |
+| `createLibraryWithOptions` | POST | `api/libraries/create` | – | – | remaining args |
+| `deactivateLibrary` | POST | `api/libraries/{id}/deactivate` | `id` | `version` | remaining args |
+| `deleteLibrary` | DELETE | `api/libraries/{id}` | `id` | – | – |
+| `downloadLibrary` | POST | `api/libraries/{id}/download` | `id` | `version`, `downloadPath`, `reInstall` | remaining args |
+| `editLibrary` | POST | `api/libraries/{id}/edit` | `id` | – | remaining args |
+| `getAllLibraries` | GET | `api/libraries` | – | – | – |
+| `getLibrariesByCategory` | GET | `api/libraries/by-category/{category}` | `category` | – | – |
+| `getLibrary` | GET | `api/libraries/{id}` | `id` | – | – |
+| `getLibraryVersions` | GET | `api/libraries/{id}/versions` | `id` | – | – |
+| `loadAllLibrariesForAvatar` | GET | `api/libraries/load-all-for-avatar` | – | `showAllVersions`, `version` | – |
+| `loadLibrary` | GET | `api/libraries/{id}/load` | `id` | `version`, `holonType` | – |
+| `loadLibraryFromPath` | GET | `api/libraries/load-from-path` | – | `path`, `holonType` | – |
+| `loadLibraryFromPublished` | GET | `api/libraries/load-from-published` | – | `publishedFilePath` | – |
+| `loadLibraryVersion` | GET | `api/libraries/{id}/version/{version}` | `id`, `version` | – | – |
+| `publishLibrary` | POST | `api/libraries/{id}/publish` | `id` | – | remaining args |
+| `republishLibrary` | POST | `api/libraries/{id}/republish` | `id` | `version` | remaining args |
+| `searchLibraries` | GET | `api/libraries/search` | – | `searchTerm` | – |
+| `unpublishLibrary` | POST | `api/libraries/{id}/unpublish` | `id` | `version` | remaining args |
+| `updateLibrary` | PUT | `api/libraries/{id}` | `id` | – | remaining args |
 
 ## Example
 

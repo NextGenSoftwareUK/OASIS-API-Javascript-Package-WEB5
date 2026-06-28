@@ -4,23 +4,14 @@ import type { OASISResponse } from '../core/types';
 export declare class CelestialSpacesModule {
   constructor(http: unknown);
 
-  /** POST api/celestialSpaces/{id}/activate */
-  activateCelestialSpace(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** POST api/celestialSpaces/ */
   createCelestialSpace(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/celestialSpaces/create */
   createCelestialSpaceWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
 
-  /** POST api/celestialSpaces/{id}/deactivate */
-  deactivateCelestialSpace(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** DELETE api/celestialSpaces/{id} */
   deleteCelestialSpace(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/celestialSpaces/{id}/download */
-  downloadCelestialSpace(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/celestialSpaces/{id}/edit */
   editCelestialSpace(args?: Record<string, any>): Promise<OASISResponse>;
@@ -40,32 +31,11 @@ export declare class CelestialSpacesModule {
   /** GET api/celestialSpaces/{id}/versions */
   getCelestialSpaceVersions(args?: Record<string, any>): Promise<OASISResponse>;
 
-  /** GET api/celestialSpaces/load-all-for-avatar */
-  loadAllCelestialSpacesForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/celestialSpaces/{id}/load */
-  loadCelestialSpace(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/celestialSpaces/load-from-path */
-  loadCelestialSpaceFromPath(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/celestialSpaces/load-from-published */
-  loadCelestialSpaceFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** GET api/celestialSpaces/{id}/version/{version} */
   loadCelestialSpaceVersion(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/celestialSpaces/{id}/publish */
   publishCelestialSpace(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/celestialSpaces/{id}/republish */
-  republishCelestialSpace(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/celestialSpaces/search */
-  searchCelestialSpaces(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/celestialSpaces/{id}/unpublish */
-  unpublishCelestialSpace(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** PUT api/celestialSpaces/{id} */
   updateCelestialSpace(args?: Record<string, any>): Promise<OASISResponse>;

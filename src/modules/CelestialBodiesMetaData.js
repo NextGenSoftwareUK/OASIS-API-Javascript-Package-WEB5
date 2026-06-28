@@ -15,16 +15,16 @@ class CelestialBodiesMetaDataModule {
   constructor(http) {
     this._http = http;
 
-    // post api/celestialBodiesMetaData/{id}/activate
-    this.activateCelestialBodyMetaData = makeOperation(http, "api/celestialBodiesMetaData", "POST", "{id}/activate");
+    // post api/celestialBodiesMetaData/{id}/activate (query: version)
+    this.activateCelestialBodyMetaData = makeOperation(http, "api/celestialBodiesMetaData", "POST", "{id}/activate", {"query":["version"]});
     // post api/celestialBodiesMetaData/{id}/clone
     this.cloneCelestialBodyMetaData = makeOperation(http, "api/celestialBodiesMetaData", "POST", "{id}/clone");
     // post api/celestialBodiesMetaData/
     this.createCelestialBodyMetaData = makeOperation(http, "api/celestialBodiesMetaData", "POST", "");
     // post api/celestialBodiesMetaData/create
     this.createCelestialBodyMetaDataWithOptions = makeOperation(http, "api/celestialBodiesMetaData", "POST", "create");
-    // post api/celestialBodiesMetaData/{id}/deactivate
-    this.deactivateCelestialBodyMetaData = makeOperation(http, "api/celestialBodiesMetaData", "POST", "{id}/deactivate");
+    // post api/celestialBodiesMetaData/{id}/deactivate (query: version)
+    this.deactivateCelestialBodyMetaData = makeOperation(http, "api/celestialBodiesMetaData", "POST", "{id}/deactivate", {"query":["version"]});
     // delete api/celestialBodiesMetaData/{id}
     this.deleteCelestialBodyMetaData = makeOperation(http, "api/celestialBodiesMetaData", "DELETE", "{id}");
     // post api/celestialBodiesMetaData/{id}/download
@@ -39,22 +39,22 @@ class CelestialBodiesMetaDataModule {
     this.getCelestialBodyMetaDataVersions = makeOperation(http, "api/celestialBodiesMetaData", "GET", "{id}/versions");
     // get api/celestialBodiesMetaData/load-all-for-avatar
     this.loadAllCelestialBodyMetaDataForAvatar = makeOperation(http, "api/celestialBodiesMetaData", "GET", "load-all-for-avatar");
-    // get api/celestialBodiesMetaData/load-from-path
-    this.loadCelestialBodyMetaDataFromPath = makeOperation(http, "api/celestialBodiesMetaData", "GET", "load-from-path");
-    // get api/celestialBodiesMetaData/load-from-published
-    this.loadCelestialBodyMetaDataFromPublished = makeOperation(http, "api/celestialBodiesMetaData", "GET", "load-from-published");
+    // get api/celestialBodiesMetaData/load-from-path (query: path)
+    this.loadCelestialBodyMetaDataFromPath = makeOperation(http, "api/celestialBodiesMetaData", "GET", "load-from-path", {"query":["path"]});
+    // get api/celestialBodiesMetaData/load-from-published (query: publishedFilePath)
+    this.loadCelestialBodyMetaDataFromPublished = makeOperation(http, "api/celestialBodiesMetaData", "GET", "load-from-published", {"query":["publishedFilePath"]});
     // get api/celestialBodiesMetaData/{id}/versions/{version}
     this.loadCelestialBodyMetaDataVersion = makeOperation(http, "api/celestialBodiesMetaData", "GET", "{id}/versions/{version}");
     // post api/celestialBodiesMetaData/{id}/publish
     this.publishCelestialBodyMetaData = makeOperation(http, "api/celestialBodiesMetaData", "POST", "{id}/publish");
-    // post api/celestialBodiesMetaData/{id}/republish
-    this.republishCelestialBodyMetaData = makeOperation(http, "api/celestialBodiesMetaData", "POST", "{id}/republish");
-    // get api/celestialBodiesMetaData/search
-    this.searchCelestialBodiesMetaDataGet = makeOperation(http, "api/celestialBodiesMetaData", "GET", "search");
+    // post api/celestialBodiesMetaData/{id}/republish (query: version)
+    this.republishCelestialBodyMetaData = makeOperation(http, "api/celestialBodiesMetaData", "POST", "{id}/republish", {"query":["version"]});
+    // get api/celestialBodiesMetaData/search (query: searchTerm, showAllVersions, version)
+    this.searchCelestialBodiesMetaData = makeOperation(http, "api/celestialBodiesMetaData", "GET", "search", {"query":["searchTerm","showAllVersions","version"]});
     // post api/celestialBodiesMetaData/search
     this.searchCelestialBodiesMetaDataPost = makeOperation(http, "api/celestialBodiesMetaData", "POST", "search");
-    // post api/celestialBodiesMetaData/{id}/unpublish
-    this.unpublishCelestialBodyMetaData = makeOperation(http, "api/celestialBodiesMetaData", "POST", "{id}/unpublish");
+    // post api/celestialBodiesMetaData/{id}/unpublish (query: version)
+    this.unpublishCelestialBodyMetaData = makeOperation(http, "api/celestialBodiesMetaData", "POST", "{id}/unpublish", {"query":["version"]});
     // put api/celestialBodiesMetaData/{id}
     this.updateCelestialBodyMetaData = makeOperation(http, "api/celestialBodiesMetaData", "PUT", "{id}");
   }

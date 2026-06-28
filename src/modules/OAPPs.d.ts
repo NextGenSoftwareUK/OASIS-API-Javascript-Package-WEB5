@@ -4,9 +4,6 @@ import type { OASISResponse } from '../core/types';
 export declare class OAPPsModule {
   constructor(http: unknown);
 
-  /** POST api/oAPPs/{id}/activate */
-  activateOAPP(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** POST api/oAPPs/{id}/clone */
   cloneOAPP(args?: Record<string, any>): Promise<OASISResponse>;
 
@@ -15,9 +12,6 @@ export declare class OAPPsModule {
 
   /** POST api/oAPPs/create */
   createOAPPWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/oAPPs/{id}/deactivate */
-  deactivateOAPP(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** DELETE api/oAPPs/{id} */
   deleteOAPP(args?: Record<string, any>): Promise<OASISResponse>;
@@ -40,29 +34,14 @@ export declare class OAPPsModule {
   /** GET api/oAPPs/load-all-for-avatar */
   loadAllOAPPsForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
 
-  /** GET api/oAPPs/load-from-path */
-  loadOAPPFromPath(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/oAPPs/load-from-published */
-  loadOAPPFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** GET api/oAPPs/{id}/versions/{version} */
   loadOAPPVersion(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/oAPPs/{id}/publish */
   publishOAPP(args?: Record<string, any>): Promise<OASISResponse>;
 
-  /** POST api/oAPPs/{id}/republish */
-  republishOAPP(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/oAPPs/search */
-  searchOAPPsGet(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** POST api/oAPPs/search */
   searchOAPPsPost(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/oAPPs/{id}/unpublish */
-  unpublishOAPP(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** PUT api/oAPPs/{id} */
   updateOAPP(args?: Record<string, any>): Promise<OASISResponse>;

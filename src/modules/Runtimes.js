@@ -43,18 +43,18 @@ class RuntimesModule {
     this.getRuntimesByType = makeOperation(http, "api/runtimes", "GET", "by-type/{type}");
     // get api/runtimes/load-all-for-avatar
     this.loadAllRuntimesForAvatar = makeOperation(http, "api/runtimes", "GET", "load-all-for-avatar");
-    // get api/runtimes/load-from-path
-    this.loadRuntimeFromPath = makeOperation(http, "api/runtimes", "GET", "load-from-path");
-    // get api/runtimes/load-from-published
-    this.loadRuntimeFromPublished = makeOperation(http, "api/runtimes", "GET", "load-from-published");
+    // get api/runtimes/load-from-path (query: path)
+    this.loadRuntimeFromPath = makeOperation(http, "api/runtimes", "GET", "load-from-path", {"query":["path"]});
+    // get api/runtimes/load-from-published (query: publishedFilePath)
+    this.loadRuntimeFromPublished = makeOperation(http, "api/runtimes", "GET", "load-from-published", {"query":["publishedFilePath"]});
     // get api/runtimes/{id}/versions/{version}
     this.loadRuntimeVersion = makeOperation(http, "api/runtimes", "GET", "{id}/versions/{version}");
     // post api/runtimes/{id}/publish
     this.publishRuntime = makeOperation(http, "api/runtimes", "POST", "{id}/publish");
     // post api/runtimes/{id}/republish
     this.republishRuntime = makeOperation(http, "api/runtimes", "POST", "{id}/republish");
-    // get api/runtimes/search
-    this.searchRuntimesGet = makeOperation(http, "api/runtimes", "GET", "search");
+    // get api/runtimes/search (query: searchTerm)
+    this.searchRuntimes = makeOperation(http, "api/runtimes", "GET", "search", {"query":["searchTerm"]});
     // post api/runtimes/search
     this.searchRuntimesPost = makeOperation(http, "api/runtimes", "POST", "search");
     // post api/runtimes/{id}/start

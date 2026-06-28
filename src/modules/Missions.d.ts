@@ -4,14 +4,8 @@ import type { OASISResponse } from '../core/types';
 export declare class MissionsModule {
   constructor(http: unknown);
 
-  /** POST api/missions/{id}/activate */
-  activateMission(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** POST api/missions/{id}/clone */
   cloneMission(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/missions/{id}/complete */
-  completeMission(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/missions/ */
   createMission(args?: Record<string, any>): Promise<OASISResponse>;
@@ -19,14 +13,8 @@ export declare class MissionsModule {
   /** POST api/missions/create */
   createMissionWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
 
-  /** POST api/missions/{id}/deactivate */
-  deactivateMission(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** DELETE api/missions/{id} */
   deleteMission(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/missions/{id}/download */
-  downloadMission(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/missions/{id}/edit */
   editMission(args?: Record<string, any>): Promise<OASISResponse>;
@@ -36,9 +24,6 @@ export declare class MissionsModule {
 
   /** GET api/missions/{id} */
   getMission(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/missions/{id}/leaderboard */
-  getMissionLeaderboard(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** GET api/missions/{id}/rewards */
   getMissionRewards(args?: Record<string, any>): Promise<OASISResponse>;
@@ -55,32 +40,11 @@ export declare class MissionsModule {
   /** GET api/missions/{id}/versions */
   getMissionVersions(args?: Record<string, any>): Promise<OASISResponse>;
 
-  /** GET api/missions/load-all-for-avatar */
-  loadAllMissionsForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/missions/{id}/load */
-  loadMission(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/missions/load-from-path */
-  loadMissionFromPath(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/missions/load-from-published */
-  loadMissionFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** GET api/missions/{id}/version/{version} */
   loadMissionVersion(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/missions/{id}/publish */
   publishMission(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/missions/{id}/republish */
-  republishMission(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/missions/search */
-  searchMissions(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/missions/{id}/unpublish */
-  unpublishMission(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** PUT api/missions/{id} */
   updateMission(args?: Record<string, any>): Promise<OASISResponse>;

@@ -43,14 +43,32 @@ property on the client (`star.avatar`, `star.quests`, `star.missions`,
 - Any key matching a `{token}` in the route template is consumed and
   substituted into the URL (case-insensitive match).
 - Any remaining keys become the query string (GET/DELETE) or JSON body
-  (POST/PUT).
+  (POST/PUT) - **matching the real `[FromQuery]`/`[FromBody]` binding of the
+  underlying C# action**, not just the HTTP verb. Many STAR actions mix a
+  `[FromBody]` payload with several `[FromQuery]` flags (e.g. `version`,
+  `providerType`, `softDelete`) even on `POST`/`PUT`/`DELETE` - those flags are
+  always sent as query params, never folded into the JSON body, because
+  `endpoints.json` records exactly which arg names are query-bound per
+  operation (see [`docs/`](./docs/README.md) for the per-method breakdown).
+- When an action's entire body is a single primitive `[FromBody]` parameter
+  (e.g. `CompleteQuest(Guid id, [FromBody] string completionNotes)`), the
+  JSON body is that value directly - not an object wrapping it.
 
 ```js
 // GET api/celestialBodies/{id} -> id is consumed as a route token
 const body = await star.celestialBodies.getCelestialBody({ id: '...' });
 
-// POST api/quests/{id}/complete -> id consumed, completionNotes becomes the body
+// POST api/quests/{id}/complete -> id consumed as a route token, completionNotes
+// (a single primitive [FromBody] param) becomes the raw JSON body itself
 const done = await star.quests.completeQuest({ id: questId, completionNotes: 'Finished!' });
+
+// PUT api/cosmic/omniverse -> saveChildren/providerType are [FromQuery] and go
+// on the URL; the rest (the omniverse payload) becomes the JSON body
+await star.cosmic.updateOmniverse({ name: 'New Omniverse', saveChildren: true, providerType: 'Default' });
+
+// DELETE api/cosmic/omniverse/{omniverseId} -> omniverseId is a route token,
+// softDelete/providerType are [FromQuery] and go on the URL - no body sent
+await star.cosmic.deleteOmniverse({ omniverseId, softDelete: true, providerType: 'Default' });
 ```
 
 Every response has the shape:

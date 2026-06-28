@@ -4,23 +4,14 @@ import type { OASISResponse } from '../core/types';
 export declare class GeoHotSpotsModule {
   constructor(http: unknown);
 
-  /** POST api/geoHotSpots/{id}/activate */
-  activateGeoHotSpot(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** POST api/geoHotSpots/ */
   createGeoHotSpot(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/geoHotSpots/create */
   createGeoHotSpotWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
 
-  /** POST api/geoHotSpots/{id}/deactivate */
-  deactivateGeoHotSpot(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** DELETE api/geoHotSpots/{id} */
   deleteGeoHotSpot(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/geoHotSpots/{id}/download */
-  downloadGeoHotSpot(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/geoHotSpots/{id}/edit */
   editGeoHotSpot(args?: Record<string, any>): Promise<OASISResponse>;
@@ -34,32 +25,11 @@ export declare class GeoHotSpotsModule {
   /** GET api/geoHotSpots/{id}/versions */
   getGeoHotSpotVersions(args?: Record<string, any>): Promise<OASISResponse>;
 
-  /** GET api/geoHotSpots/nearby */
-  getNearbyGeoHotSpots(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/geoHotSpots/load-all-for-avatar */
-  loadAllGeoHotSpotsForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/geoHotSpots/{id}/load */
-  loadGeoHotSpot(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/geoHotSpots/load-from-path */
-  loadGeoHotSpotFromPath(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/geoHotSpots/load-from-published */
-  loadGeoHotSpotFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** GET api/geoHotSpots/{id}/version/{version} */
   loadGeoHotSpotVersion(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/geoHotSpots/{id}/publish */
   publishGeoHotSpot(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/geoHotSpots/{id}/republish */
-  republishGeoHotSpot(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/geoHotSpots/{id}/unpublish */
-  unpublishGeoHotSpot(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** PUT api/geoHotSpots/{id} */
   updateGeoHotSpot(args?: Record<string, any>): Promise<OASISResponse>;

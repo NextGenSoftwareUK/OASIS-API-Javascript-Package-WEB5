@@ -4,23 +4,14 @@ import type { OASISResponse } from '../core/types';
 export declare class ZomesModule {
   constructor(http: unknown);
 
-  /** POST api/zomes/{id}/activate */
-  activateZome(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** POST api/zomes/ */
   createZome(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/zomes/create */
   createZomeWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
 
-  /** POST api/zomes/{id}/deactivate */
-  deactivateZome(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** DELETE api/zomes/{id} */
   deleteZome(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/zomes/{id}/download */
-  downloadZome(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/zomes/{id}/edit */
   editZome(args?: Record<string, any>): Promise<OASISResponse>;
@@ -40,32 +31,11 @@ export declare class ZomesModule {
   /** GET api/zomes/{id}/versions */
   getZomeVersions(args?: Record<string, any>): Promise<OASISResponse>;
 
-  /** GET api/zomes/load-all-for-avatar */
-  loadAllZomesForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/zomes/{id}/load */
-  loadZome(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/zomes/load-from-path */
-  loadZomeFromPath(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/zomes/load-from-published */
-  loadZomeFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
-
   /** GET api/zomes/{id}/version/{version} */
   loadZomeVersion(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/zomes/{id}/publish */
   publishZome(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/zomes/{id}/republish */
-  republishZome(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** GET api/zomes/search */
-  searchZomes(args?: Record<string, any>): Promise<OASISResponse>;
-
-  /** POST api/zomes/{id}/unpublish */
-  unpublishZome(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** PUT api/zomes/{id} */
   updateZome(args?: Record<string, any>): Promise<OASISResponse>;

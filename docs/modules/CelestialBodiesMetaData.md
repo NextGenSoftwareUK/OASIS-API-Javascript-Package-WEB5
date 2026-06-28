@@ -12,29 +12,29 @@ URL; everything else becomes the query string (GET/DELETE) or JSON body
 
 ## Methods
 
-| Method | HTTP | Route | Route params |
-| --- | --- | --- | --- |
-| `activateCelestialBodyMetaData` | POST | `api/celestialBodiesMetaData/{id}/activate` | `id` |
-| `cloneCelestialBodyMetaData` | POST | `api/celestialBodiesMetaData/{id}/clone` | `id` |
-| `createCelestialBodyMetaData` | POST | `api/celestialBodiesMetaData` | – |
-| `createCelestialBodyMetaDataWithOptions` | POST | `api/celestialBodiesMetaData/create` | – |
-| `deactivateCelestialBodyMetaData` | POST | `api/celestialBodiesMetaData/{id}/deactivate` | `id` |
-| `deleteCelestialBodyMetaData` | DELETE | `api/celestialBodiesMetaData/{id}` | `id` |
-| `downloadCelestialBodyMetaData` | POST | `api/celestialBodiesMetaData/{id}/download` | `id` |
-| `editCelestialBodyMetaData` | PUT | `api/celestialBodiesMetaData/{id}/edit` | `id` |
-| `getAllCelestialBodiesMetaData` | GET | `api/celestialBodiesMetaData` | – |
-| `getCelestialBodyMetaData` | GET | `api/celestialBodiesMetaData/{id}` | `id` |
-| `getCelestialBodyMetaDataVersions` | GET | `api/celestialBodiesMetaData/{id}/versions` | `id` |
-| `loadAllCelestialBodyMetaDataForAvatar` | GET | `api/celestialBodiesMetaData/load-all-for-avatar` | – |
-| `loadCelestialBodyMetaDataFromPath` | GET | `api/celestialBodiesMetaData/load-from-path` | – |
-| `loadCelestialBodyMetaDataFromPublished` | GET | `api/celestialBodiesMetaData/load-from-published` | – |
-| `loadCelestialBodyMetaDataVersion` | GET | `api/celestialBodiesMetaData/{id}/versions/{version}` | `id`, `version` |
-| `publishCelestialBodyMetaData` | POST | `api/celestialBodiesMetaData/{id}/publish` | `id` |
-| `republishCelestialBodyMetaData` | POST | `api/celestialBodiesMetaData/{id}/republish` | `id` |
-| `searchCelestialBodiesMetaDataGet` | GET | `api/celestialBodiesMetaData/search` | – |
-| `searchCelestialBodiesMetaDataPost` | POST | `api/celestialBodiesMetaData/search` | – |
-| `unpublishCelestialBodyMetaData` | POST | `api/celestialBodiesMetaData/{id}/unpublish` | `id` |
-| `updateCelestialBodyMetaData` | PUT | `api/celestialBodiesMetaData/{id}` | `id` |
+| Method | HTTP | Route | Route params | Query params | Body |
+| --- | --- | --- | --- | --- | --- |
+| `activateCelestialBodyMetaData` | POST | `api/celestialBodiesMetaData/{id}/activate` | `id` | `version` | remaining args |
+| `cloneCelestialBodyMetaData` | POST | `api/celestialBodiesMetaData/{id}/clone` | `id` | – | remaining args |
+| `createCelestialBodyMetaData` | POST | `api/celestialBodiesMetaData` | – | – | remaining args |
+| `createCelestialBodyMetaDataWithOptions` | POST | `api/celestialBodiesMetaData/create` | – | – | remaining args |
+| `deactivateCelestialBodyMetaData` | POST | `api/celestialBodiesMetaData/{id}/deactivate` | `id` | `version` | remaining args |
+| `deleteCelestialBodyMetaData` | DELETE | `api/celestialBodiesMetaData/{id}` | `id` | – | – |
+| `downloadCelestialBodyMetaData` | POST | `api/celestialBodiesMetaData/{id}/download` | `id` | – | remaining args |
+| `editCelestialBodyMetaData` | PUT | `api/celestialBodiesMetaData/{id}/edit` | `id` | – | remaining args |
+| `getAllCelestialBodiesMetaData` | GET | `api/celestialBodiesMetaData` | – | – | – |
+| `getCelestialBodyMetaData` | GET | `api/celestialBodiesMetaData/{id}` | `id` | – | – |
+| `getCelestialBodyMetaDataVersions` | GET | `api/celestialBodiesMetaData/{id}/versions` | `id` | – | – |
+| `loadAllCelestialBodyMetaDataForAvatar` | GET | `api/celestialBodiesMetaData/load-all-for-avatar` | – | – | – |
+| `loadCelestialBodyMetaDataFromPath` | GET | `api/celestialBodiesMetaData/load-from-path` | – | `path` | – |
+| `loadCelestialBodyMetaDataFromPublished` | GET | `api/celestialBodiesMetaData/load-from-published` | – | `publishedFilePath` | – |
+| `loadCelestialBodyMetaDataVersion` | GET | `api/celestialBodiesMetaData/{id}/versions/{version}` | `id`, `version` | – | – |
+| `publishCelestialBodyMetaData` | POST | `api/celestialBodiesMetaData/{id}/publish` | `id` | – | remaining args |
+| `republishCelestialBodyMetaData` | POST | `api/celestialBodiesMetaData/{id}/republish` | `id` | `version` | remaining args |
+| `searchCelestialBodiesMetaData` | GET | `api/celestialBodiesMetaData/search` | – | `searchTerm`, `showAllVersions`, `version` | – |
+| `searchCelestialBodiesMetaDataPost` | POST | `api/celestialBodiesMetaData/search` | – | – | remaining args |
+| `unpublishCelestialBodyMetaData` | POST | `api/celestialBodiesMetaData/{id}/unpublish` | `id` | `version` | remaining args |
+| `updateCelestialBodyMetaData` | PUT | `api/celestialBodiesMetaData/{id}` | `id` | – | remaining args |
 
 ## Example
 

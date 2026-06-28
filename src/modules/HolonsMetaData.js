@@ -15,16 +15,16 @@ class HolonsMetaDataModule {
   constructor(http) {
     this._http = http;
 
-    // post api/holonsMetaData/{id}/activate
-    this.activateHolonMetaData = makeOperation(http, "api/holonsMetaData", "POST", "{id}/activate");
+    // post api/holonsMetaData/{id}/activate (query: version)
+    this.activateHolonMetaData = makeOperation(http, "api/holonsMetaData", "POST", "{id}/activate", {"query":["version"]});
     // post api/holonsMetaData/{id}/clone
     this.cloneHolonMetaData = makeOperation(http, "api/holonsMetaData", "POST", "{id}/clone");
     // post api/holonsMetaData/
     this.createHolonMetaData = makeOperation(http, "api/holonsMetaData", "POST", "");
     // post api/holonsMetaData/create
     this.createHolonMetaDataWithOptions = makeOperation(http, "api/holonsMetaData", "POST", "create");
-    // post api/holonsMetaData/{id}/deactivate
-    this.deactivateHolonMetaData = makeOperation(http, "api/holonsMetaData", "POST", "{id}/deactivate");
+    // post api/holonsMetaData/{id}/deactivate (query: version)
+    this.deactivateHolonMetaData = makeOperation(http, "api/holonsMetaData", "POST", "{id}/deactivate", {"query":["version"]});
     // delete api/holonsMetaData/{id}
     this.deleteHolonMetaData = makeOperation(http, "api/holonsMetaData", "DELETE", "{id}");
     // post api/holonsMetaData/{id}/download
@@ -39,22 +39,22 @@ class HolonsMetaDataModule {
     this.getHolonMetaDataVersions = makeOperation(http, "api/holonsMetaData", "GET", "{id}/versions");
     // get api/holonsMetaData/load-all-for-avatar
     this.loadAllHolonMetaDataForAvatar = makeOperation(http, "api/holonsMetaData", "GET", "load-all-for-avatar");
-    // get api/holonsMetaData/load-from-path
-    this.loadHolonMetaDataFromPath = makeOperation(http, "api/holonsMetaData", "GET", "load-from-path");
-    // get api/holonsMetaData/load-from-published
-    this.loadHolonMetaDataFromPublished = makeOperation(http, "api/holonsMetaData", "GET", "load-from-published");
+    // get api/holonsMetaData/load-from-path (query: path)
+    this.loadHolonMetaDataFromPath = makeOperation(http, "api/holonsMetaData", "GET", "load-from-path", {"query":["path"]});
+    // get api/holonsMetaData/load-from-published (query: publishedFilePath)
+    this.loadHolonMetaDataFromPublished = makeOperation(http, "api/holonsMetaData", "GET", "load-from-published", {"query":["publishedFilePath"]});
     // get api/holonsMetaData/{id}/versions/{version}
     this.loadHolonMetaDataVersion = makeOperation(http, "api/holonsMetaData", "GET", "{id}/versions/{version}");
     // post api/holonsMetaData/{id}/publish
     this.publishHolonMetaData = makeOperation(http, "api/holonsMetaData", "POST", "{id}/publish");
-    // post api/holonsMetaData/{id}/republish
-    this.republishHolonMetaData = makeOperation(http, "api/holonsMetaData", "POST", "{id}/republish");
-    // get api/holonsMetaData/search
-    this.searchHolonsMetaDataGet = makeOperation(http, "api/holonsMetaData", "GET", "search");
+    // post api/holonsMetaData/{id}/republish (query: version)
+    this.republishHolonMetaData = makeOperation(http, "api/holonsMetaData", "POST", "{id}/republish", {"query":["version"]});
+    // get api/holonsMetaData/search (query: searchTerm, showAllVersions, version)
+    this.searchHolonsMetaData = makeOperation(http, "api/holonsMetaData", "GET", "search", {"query":["searchTerm","showAllVersions","version"]});
     // post api/holonsMetaData/search
     this.searchHolonsMetaDataPost = makeOperation(http, "api/holonsMetaData", "POST", "search");
-    // post api/holonsMetaData/{id}/unpublish
-    this.unpublishHolonMetaData = makeOperation(http, "api/holonsMetaData", "POST", "{id}/unpublish");
+    // post api/holonsMetaData/{id}/unpublish (query: version)
+    this.unpublishHolonMetaData = makeOperation(http, "api/holonsMetaData", "POST", "{id}/unpublish", {"query":["version"]});
     // put api/holonsMetaData/{id}
     this.updateHolonMetaData = makeOperation(http, "api/holonsMetaData", "PUT", "{id}");
   }

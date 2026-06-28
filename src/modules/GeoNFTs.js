@@ -15,18 +15,18 @@ class GeoNFTsModule {
   constructor(http) {
     this._http = http;
 
-    // post api/geoNFTs/{id}/activate
-    this.activateGeoNFT = makeOperation(http, "api/geoNFTs", "POST", "{id}/activate");
+    // post api/geoNFTs/{id}/activate (query: version)
+    this.activateGeoNFT = makeOperation(http, "api/geoNFTs", "POST", "{id}/activate", {"query":["version"]});
     // post api/geoNFTs/
     this.createGeoNFT = makeOperation(http, "api/geoNFTs", "POST", "");
     // post api/geoNFTs/create
     this.createGeoNFTWithOptions = makeOperation(http, "api/geoNFTs", "POST", "create");
-    // post api/geoNFTs/{id}/deactivate
-    this.deactivateGeoNFT = makeOperation(http, "api/geoNFTs", "POST", "{id}/deactivate");
+    // post api/geoNFTs/{id}/deactivate (query: version)
+    this.deactivateGeoNFT = makeOperation(http, "api/geoNFTs", "POST", "{id}/deactivate", {"query":["version"]});
     // delete api/geoNFTs/{id}
     this.deleteGeoNFT = makeOperation(http, "api/geoNFTs", "DELETE", "{id}");
-    // post api/geoNFTs/{id}/download
-    this.downloadGeoNFT = makeOperation(http, "api/geoNFTs", "POST", "{id}/download");
+    // post api/geoNFTs/{id}/download (query: version, downloadPath, reInstall)
+    this.downloadGeoNFT = makeOperation(http, "api/geoNFTs", "POST", "{id}/download", {"query":["version","downloadPath","reInstall"]});
     // post api/geoNFTs/{id}/edit
     this.editGeoNFT = makeOperation(http, "api/geoNFTs", "POST", "{id}/edit");
     // get api/geoNFTs/
@@ -37,26 +37,26 @@ class GeoNFTsModule {
     this.getGeoNFTVersions = makeOperation(http, "api/geoNFTs", "GET", "{id}/versions");
     // get api/geoNFTs/by-avatar/{avatarId}
     this.getGeoNFTsByAvatar = makeOperation(http, "api/geoNFTs", "GET", "by-avatar/{avatarId}");
-    // get api/geoNFTs/nearby
-    this.getNearbyGeoNFTs = makeOperation(http, "api/geoNFTs", "GET", "nearby");
-    // get api/geoNFTs/load-all-for-avatar
-    this.loadAllGeoNFTsForAvatar = makeOperation(http, "api/geoNFTs", "GET", "load-all-for-avatar");
-    // get api/geoNFTs/{id}/load
-    this.loadGeoNFT = makeOperation(http, "api/geoNFTs", "GET", "{id}/load");
-    // get api/geoNFTs/load-from-path
-    this.loadGeoNFTFromPath = makeOperation(http, "api/geoNFTs", "GET", "load-from-path");
-    // get api/geoNFTs/load-from-published
-    this.loadGeoNFTFromPublished = makeOperation(http, "api/geoNFTs", "GET", "load-from-published");
+    // get api/geoNFTs/nearby (query: latitude, longitude, radiusKm)
+    this.getNearbyGeoNFTs = makeOperation(http, "api/geoNFTs", "GET", "nearby", {"query":["latitude","longitude","radiusKm"]});
+    // get api/geoNFTs/load-all-for-avatar (query: showAllVersions, version)
+    this.loadAllGeoNFTsForAvatar = makeOperation(http, "api/geoNFTs", "GET", "load-all-for-avatar", {"query":["showAllVersions","version"]});
+    // get api/geoNFTs/{id}/load (query: version, holonType)
+    this.loadGeoNFT = makeOperation(http, "api/geoNFTs", "GET", "{id}/load", {"query":["version","holonType"]});
+    // get api/geoNFTs/load-from-path (query: path, holonType)
+    this.loadGeoNFTFromPath = makeOperation(http, "api/geoNFTs", "GET", "load-from-path", {"query":["path","holonType"]});
+    // get api/geoNFTs/load-from-published (query: publishedFilePath)
+    this.loadGeoNFTFromPublished = makeOperation(http, "api/geoNFTs", "GET", "load-from-published", {"query":["publishedFilePath"]});
     // get api/geoNFTs/{id}/version/{version}
     this.loadGeoNFTVersion = makeOperation(http, "api/geoNFTs", "GET", "{id}/version/{version}");
     // post api/geoNFTs/{id}/publish
     this.publishGeoNFT = makeOperation(http, "api/geoNFTs", "POST", "{id}/publish");
-    // post api/geoNFTs/{id}/republish
-    this.republishGeoNFT = makeOperation(http, "api/geoNFTs", "POST", "{id}/republish");
-    // get api/geoNFTs/search
-    this.searchGeoNFTs = makeOperation(http, "api/geoNFTs", "GET", "search");
-    // post api/geoNFTs/{id}/unpublish
-    this.unpublishGeoNFT = makeOperation(http, "api/geoNFTs", "POST", "{id}/unpublish");
+    // post api/geoNFTs/{id}/republish (query: version)
+    this.republishGeoNFT = makeOperation(http, "api/geoNFTs", "POST", "{id}/republish", {"query":["version"]});
+    // get api/geoNFTs/search (query: query)
+    this.searchGeoNFTs = makeOperation(http, "api/geoNFTs", "GET", "search", {"query":["query"]});
+    // post api/geoNFTs/{id}/unpublish (query: version)
+    this.unpublishGeoNFT = makeOperation(http, "api/geoNFTs", "POST", "{id}/unpublish", {"query":["version"]});
     // put api/geoNFTs/{id}
     this.updateGeoNFT = makeOperation(http, "api/geoNFTs", "PUT", "{id}");
   }

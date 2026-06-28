@@ -15,18 +15,18 @@ class GeoHotSpotsModule {
   constructor(http) {
     this._http = http;
 
-    // post api/geoHotSpots/{id}/activate
-    this.activateGeoHotSpot = makeOperation(http, "api/geoHotSpots", "POST", "{id}/activate");
+    // post api/geoHotSpots/{id}/activate (query: version)
+    this.activateGeoHotSpot = makeOperation(http, "api/geoHotSpots", "POST", "{id}/activate", {"query":["version"]});
     // post api/geoHotSpots/
     this.createGeoHotSpot = makeOperation(http, "api/geoHotSpots", "POST", "");
     // post api/geoHotSpots/create
     this.createGeoHotSpotWithOptions = makeOperation(http, "api/geoHotSpots", "POST", "create");
-    // post api/geoHotSpots/{id}/deactivate
-    this.deactivateGeoHotSpot = makeOperation(http, "api/geoHotSpots", "POST", "{id}/deactivate");
+    // post api/geoHotSpots/{id}/deactivate (query: version)
+    this.deactivateGeoHotSpot = makeOperation(http, "api/geoHotSpots", "POST", "{id}/deactivate", {"query":["version"]});
     // delete api/geoHotSpots/{id}
     this.deleteGeoHotSpot = makeOperation(http, "api/geoHotSpots", "DELETE", "{id}");
-    // post api/geoHotSpots/{id}/download
-    this.downloadGeoHotSpot = makeOperation(http, "api/geoHotSpots", "POST", "{id}/download");
+    // post api/geoHotSpots/{id}/download (query: version, downloadPath, reInstall)
+    this.downloadGeoHotSpot = makeOperation(http, "api/geoHotSpots", "POST", "{id}/download", {"query":["version","downloadPath","reInstall"]});
     // post api/geoHotSpots/{id}/edit
     this.editGeoHotSpot = makeOperation(http, "api/geoHotSpots", "POST", "{id}/edit");
     // get api/geoHotSpots/
@@ -35,24 +35,24 @@ class GeoHotSpotsModule {
     this.getGeoHotSpot = makeOperation(http, "api/geoHotSpots", "GET", "{id}");
     // get api/geoHotSpots/{id}/versions
     this.getGeoHotSpotVersions = makeOperation(http, "api/geoHotSpots", "GET", "{id}/versions");
-    // get api/geoHotSpots/nearby
-    this.getNearbyGeoHotSpots = makeOperation(http, "api/geoHotSpots", "GET", "nearby");
-    // get api/geoHotSpots/load-all-for-avatar
-    this.loadAllGeoHotSpotsForAvatar = makeOperation(http, "api/geoHotSpots", "GET", "load-all-for-avatar");
-    // get api/geoHotSpots/{id}/load
-    this.loadGeoHotSpot = makeOperation(http, "api/geoHotSpots", "GET", "{id}/load");
-    // get api/geoHotSpots/load-from-path
-    this.loadGeoHotSpotFromPath = makeOperation(http, "api/geoHotSpots", "GET", "load-from-path");
-    // get api/geoHotSpots/load-from-published
-    this.loadGeoHotSpotFromPublished = makeOperation(http, "api/geoHotSpots", "GET", "load-from-published");
+    // get api/geoHotSpots/nearby (query: latitude, longitude, radiusKm)
+    this.getNearbyGeoHotSpots = makeOperation(http, "api/geoHotSpots", "GET", "nearby", {"query":["latitude","longitude","radiusKm"]});
+    // get api/geoHotSpots/load-all-for-avatar (query: showAllVersions, version)
+    this.loadAllGeoHotSpotsForAvatar = makeOperation(http, "api/geoHotSpots", "GET", "load-all-for-avatar", {"query":["showAllVersions","version"]});
+    // get api/geoHotSpots/{id}/load (query: version, holonType)
+    this.loadGeoHotSpot = makeOperation(http, "api/geoHotSpots", "GET", "{id}/load", {"query":["version","holonType"]});
+    // get api/geoHotSpots/load-from-path (query: path, holonType)
+    this.loadGeoHotSpotFromPath = makeOperation(http, "api/geoHotSpots", "GET", "load-from-path", {"query":["path","holonType"]});
+    // get api/geoHotSpots/load-from-published (query: publishedFilePath)
+    this.loadGeoHotSpotFromPublished = makeOperation(http, "api/geoHotSpots", "GET", "load-from-published", {"query":["publishedFilePath"]});
     // get api/geoHotSpots/{id}/version/{version}
     this.loadGeoHotSpotVersion = makeOperation(http, "api/geoHotSpots", "GET", "{id}/version/{version}");
     // post api/geoHotSpots/{id}/publish
     this.publishGeoHotSpot = makeOperation(http, "api/geoHotSpots", "POST", "{id}/publish");
-    // post api/geoHotSpots/{id}/republish
-    this.republishGeoHotSpot = makeOperation(http, "api/geoHotSpots", "POST", "{id}/republish");
-    // post api/geoHotSpots/{id}/unpublish
-    this.unpublishGeoHotSpot = makeOperation(http, "api/geoHotSpots", "POST", "{id}/unpublish");
+    // post api/geoHotSpots/{id}/republish (query: version)
+    this.republishGeoHotSpot = makeOperation(http, "api/geoHotSpots", "POST", "{id}/republish", {"query":["version"]});
+    // post api/geoHotSpots/{id}/unpublish (query: version)
+    this.unpublishGeoHotSpot = makeOperation(http, "api/geoHotSpots", "POST", "{id}/unpublish", {"query":["version"]});
     // put api/geoHotSpots/{id}
     this.updateGeoHotSpot = makeOperation(http, "api/geoHotSpots", "PUT", "{id}");
   }

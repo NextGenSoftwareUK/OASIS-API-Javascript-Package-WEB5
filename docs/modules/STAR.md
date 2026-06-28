@@ -12,12 +12,12 @@ URL; everything else becomes the query string (GET/DELETE) or JSON body
 
 ## Methods
 
-| Method | HTTP | Route | Route params |
-| --- | --- | --- | --- |
-| `beamIn` | POST | `api/sTAR/beam-in` | – |
-| `extinguishSTAR` | POST | `api/sTAR/extinguish` | – |
-| `getStatus` | GET | `api/sTAR/status` | – |
-| `igniteSTAR` | POST | `api/sTAR/ignite` | – |
+| Method | HTTP | Route | Route params | Query params | Body |
+| --- | --- | --- | --- | --- | --- |
+| `beamIn` | POST | `api/sTAR/beam-in` | – | – | remaining args |
+| `extinguishSTAR` | POST | `api/sTAR/extinguish` | – | – | remaining args |
+| `getStatus` | GET | `api/sTAR/status` | – | – | – |
+| `igniteSTAR` | POST | `api/sTAR/ignite` | – | – | remaining args |
 
 ## Example
 

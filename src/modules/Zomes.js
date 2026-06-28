@@ -15,18 +15,18 @@ class ZomesModule {
   constructor(http) {
     this._http = http;
 
-    // post api/zomes/{id}/activate
-    this.activateZome = makeOperation(http, "api/zomes", "POST", "{id}/activate");
+    // post api/zomes/{id}/activate (query: version)
+    this.activateZome = makeOperation(http, "api/zomes", "POST", "{id}/activate", {"query":["version"]});
     // post api/zomes/
     this.createZome = makeOperation(http, "api/zomes", "POST", "");
     // post api/zomes/create
     this.createZomeWithOptions = makeOperation(http, "api/zomes", "POST", "create");
-    // post api/zomes/{id}/deactivate
-    this.deactivateZome = makeOperation(http, "api/zomes", "POST", "{id}/deactivate");
+    // post api/zomes/{id}/deactivate (query: version)
+    this.deactivateZome = makeOperation(http, "api/zomes", "POST", "{id}/deactivate", {"query":["version"]});
     // delete api/zomes/{id}
     this.deleteZome = makeOperation(http, "api/zomes", "DELETE", "{id}");
-    // post api/zomes/{id}/download
-    this.downloadZome = makeOperation(http, "api/zomes", "POST", "{id}/download");
+    // post api/zomes/{id}/download (query: version, downloadPath, reInstall)
+    this.downloadZome = makeOperation(http, "api/zomes", "POST", "{id}/download", {"query":["version","downloadPath","reInstall"]});
     // post api/zomes/{id}/edit
     this.editZome = makeOperation(http, "api/zomes", "POST", "{id}/edit");
     // get api/zomes/
@@ -39,24 +39,24 @@ class ZomesModule {
     this.getZomesByType = makeOperation(http, "api/zomes", "GET", "by-type/{type}");
     // get api/zomes/in-space/{spaceId}
     this.getZomesInSpace = makeOperation(http, "api/zomes", "GET", "in-space/{spaceId}");
-    // get api/zomes/load-all-for-avatar
-    this.loadAllZomesForAvatar = makeOperation(http, "api/zomes", "GET", "load-all-for-avatar");
-    // get api/zomes/{id}/load
-    this.loadZome = makeOperation(http, "api/zomes", "GET", "{id}/load");
-    // get api/zomes/load-from-path
-    this.loadZomeFromPath = makeOperation(http, "api/zomes", "GET", "load-from-path");
-    // get api/zomes/load-from-published
-    this.loadZomeFromPublished = makeOperation(http, "api/zomes", "GET", "load-from-published");
+    // get api/zomes/load-all-for-avatar (query: showAllVersions, version)
+    this.loadAllZomesForAvatar = makeOperation(http, "api/zomes", "GET", "load-all-for-avatar", {"query":["showAllVersions","version"]});
+    // get api/zomes/{id}/load (query: version, holonType)
+    this.loadZome = makeOperation(http, "api/zomes", "GET", "{id}/load", {"query":["version","holonType"]});
+    // get api/zomes/load-from-path (query: path, holonType)
+    this.loadZomeFromPath = makeOperation(http, "api/zomes", "GET", "load-from-path", {"query":["path","holonType"]});
+    // get api/zomes/load-from-published (query: publishedFilePath)
+    this.loadZomeFromPublished = makeOperation(http, "api/zomes", "GET", "load-from-published", {"query":["publishedFilePath"]});
     // get api/zomes/{id}/version/{version}
     this.loadZomeVersion = makeOperation(http, "api/zomes", "GET", "{id}/version/{version}");
     // post api/zomes/{id}/publish
     this.publishZome = makeOperation(http, "api/zomes", "POST", "{id}/publish");
-    // post api/zomes/{id}/republish
-    this.republishZome = makeOperation(http, "api/zomes", "POST", "{id}/republish");
-    // get api/zomes/search
-    this.searchZomes = makeOperation(http, "api/zomes", "GET", "search");
-    // post api/zomes/{id}/unpublish
-    this.unpublishZome = makeOperation(http, "api/zomes", "POST", "{id}/unpublish");
+    // post api/zomes/{id}/republish (query: version)
+    this.republishZome = makeOperation(http, "api/zomes", "POST", "{id}/republish", {"query":["version"]});
+    // get api/zomes/search (query: searchTerm, searchOnlyForCurrentAvatar, showAllVersions, version)
+    this.searchZomes = makeOperation(http, "api/zomes", "GET", "search", {"query":["searchTerm","searchOnlyForCurrentAvatar","showAllVersions","version"]});
+    // post api/zomes/{id}/unpublish (query: version)
+    this.unpublishZome = makeOperation(http, "api/zomes", "POST", "{id}/unpublish", {"query":["version"]});
     // put api/zomes/{id}
     this.updateZome = makeOperation(http, "api/zomes", "PUT", "{id}");
   }
