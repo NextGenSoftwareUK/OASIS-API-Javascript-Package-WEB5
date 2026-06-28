@@ -4,6 +4,9 @@ import type { OASISResponse } from '../core/types';
 export declare class CompetitionModule {
   constructor(http: unknown);
 
+  /** GET api/competition/tournaments (query: competitionType) */
+  getActiveTournaments(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** GET api/competition/leagues/{competitionType}/{seasonType} */
   getAvailableLeagues(args?: Record<string, any>): Promise<OASISResponse>;
 
@@ -12,6 +15,9 @@ export declare class CompetitionModule {
 
   /** GET api/competition/rank/{avatarId}/{competitionType}/{seasonType} */
   getAvatarRank(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/competition/leaderboard/{competitionType}/{seasonType} (query: limit, offset) */
+  getLeaderboard(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** GET api/competition/my-league/{competitionType}/{seasonType} */
   getMyLeague(args?: Record<string, any>): Promise<OASISResponse>;

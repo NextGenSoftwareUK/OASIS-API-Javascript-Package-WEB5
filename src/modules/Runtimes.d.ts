@@ -46,6 +46,12 @@ export declare class RuntimesModule {
   /** GET api/runtimes/load-all-for-avatar */
   loadAllRuntimesForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** GET api/runtimes/load-from-path (query: path) */
+  loadRuntimeFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/runtimes/load-from-published (query: publishedFilePath) */
+  loadRuntimeFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** GET api/runtimes/{id}/versions/{version} */
   loadRuntimeVersion(args?: Record<string, any>): Promise<OASISResponse>;
 
@@ -54,6 +60,9 @@ export declare class RuntimesModule {
 
   /** POST api/runtimes/{id}/republish */
   republishRuntime(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/runtimes/search (query: searchTerm) */
+  searchRuntimes(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/runtimes/search */
   searchRuntimesPost(args?: Record<string, any>): Promise<OASISResponse>;

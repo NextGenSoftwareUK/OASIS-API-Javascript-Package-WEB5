@@ -4,14 +4,23 @@ import type { OASISResponse } from '../core/types';
 export declare class GeoHotSpotsModule {
   constructor(http: unknown);
 
+  /** POST api/geoHotSpots/{id}/activate (query: version) */
+  activateGeoHotSpot(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** POST api/geoHotSpots/ */
   createGeoHotSpot(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/geoHotSpots/create */
   createGeoHotSpotWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** POST api/geoHotSpots/{id}/deactivate (query: version) */
+  deactivateGeoHotSpot(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** DELETE api/geoHotSpots/{id} */
   deleteGeoHotSpot(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/geoHotSpots/{id}/download (query: version, downloadPath, reInstall) */
+  downloadGeoHotSpot(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/geoHotSpots/{id}/edit */
   editGeoHotSpot(args?: Record<string, any>): Promise<OASISResponse>;
@@ -25,11 +34,32 @@ export declare class GeoHotSpotsModule {
   /** GET api/geoHotSpots/{id}/versions */
   getGeoHotSpotVersions(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** GET api/geoHotSpots/nearby (query: latitude, longitude, radiusKm) */
+  getNearbyGeoHotSpots(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/geoHotSpots/load-all-for-avatar (query: showAllVersions, version) */
+  loadAllGeoHotSpotsForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/geoHotSpots/{id}/load (query: version, holonType) */
+  loadGeoHotSpot(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/geoHotSpots/load-from-path (query: path, holonType) */
+  loadGeoHotSpotFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/geoHotSpots/load-from-published (query: publishedFilePath) */
+  loadGeoHotSpotFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** GET api/geoHotSpots/{id}/version/{version} */
   loadGeoHotSpotVersion(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/geoHotSpots/{id}/publish */
   publishGeoHotSpot(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/geoHotSpots/{id}/republish (query: version) */
+  republishGeoHotSpot(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/geoHotSpots/{id}/unpublish (query: version) */
+  unpublishGeoHotSpot(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** PUT api/geoHotSpots/{id} */
   updateGeoHotSpot(args?: Record<string, any>): Promise<OASISResponse>;

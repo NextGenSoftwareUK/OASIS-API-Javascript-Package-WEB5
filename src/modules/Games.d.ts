@@ -4,6 +4,9 @@ import type { OASISResponse } from '../core/types';
 export declare class GamesModule {
   constructor(http: unknown);
 
+  /** POST api/games/{id}/activate (query: version) */
+  activateGame(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** POST api/games/shared-inventory/add */
   addItemToInventory(args?: Record<string, any>): Promise<OASISResponse>;
 
@@ -19,8 +22,14 @@ export declare class GamesModule {
   /** POST api/games/create */
   createGameWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** POST api/games/{id}/deactivate (query: version) */
+  deactivateGame(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** DELETE api/games/{id} */
   deleteGame(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/games/{id}/download (query: version, downloadPath, reInstall) */
+  downloadGame(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/games/{id}/edit */
   editGame(args?: Record<string, any>): Promise<OASISResponse>;
@@ -67,6 +76,12 @@ export declare class GamesModule {
   /** GET api/games/shared-inventory/{itemId}/has */
   hasItem(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** GET api/games/shared-inventory/has-by-name (query: itemName) */
+  hasItemByName(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/games/{id}/install (query: version, installPath) */
+  installGame(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** POST api/games/{gameId}/areas/jump */
   jumpToArea(args?: Record<string, any>): Promise<OASISResponse>;
 
@@ -76,11 +91,23 @@ export declare class GamesModule {
   /** POST api/games/{gameId}/levels/{level}/jump-to-point */
   jumpToPointInLevel(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** GET api/games/load-all-for-avatar (query: showAllVersions, version) */
+  loadAllGamesForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** POST api/games/{gameId}/areas/load */
   loadArea(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/games/{gameId}/load */
   loadGame(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/games/{id}/load (query: version, holonType) */
+  loadGameById(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/games/load-from-path (query: path, holonType) */
+  loadGameFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/games/load-from-published (query: publishedFilePath) */
+  loadGameFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** GET api/games/{id}/version/{version} */
   loadGameVersion(args?: Record<string, any>): Promise<OASISResponse>;
@@ -96,6 +123,9 @@ export declare class GamesModule {
 
   /** POST api/games/{id}/republish */
   republishGame(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/games/search (query: query) */
+  searchGames(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/games/{gameId}/audio/master-volume */
   setMasterVolume(args?: Record<string, any>): Promise<OASISResponse>;
@@ -132,6 +162,9 @@ export declare class GamesModule {
 
   /** POST api/games/{gameId}/levels/{level}/unload */
   unloadLevel(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/games/{id}/unpublish (query: version) */
+  unpublishGame(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** PUT api/games/{id} */
   updateGame(args?: Record<string, any>): Promise<OASISResponse>;

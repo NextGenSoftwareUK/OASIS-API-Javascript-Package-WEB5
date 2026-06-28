@@ -4,14 +4,23 @@ import type { OASISResponse } from '../core/types';
 export declare class ChaptersModule {
   constructor(http: unknown);
 
+  /** POST api/chapters/{id}/activate (query: version) */
+  activateChapter(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** POST api/chapters/ */
   createChapter(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/chapters/create */
   createChapterWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** POST api/chapters/{id}/deactivate (query: version) */
+  deactivateChapter(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** DELETE api/chapters/{id} */
   deleteChapter(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/chapters/{id}/download (query: version, downloadPath, reInstall) */
+  downloadChapter(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/chapters/{id}/edit */
   editChapter(args?: Record<string, any>): Promise<OASISResponse>;
@@ -25,11 +34,32 @@ export declare class ChaptersModule {
   /** GET api/chapters/{id}/versions */
   getChapterVersions(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** GET api/chapters/load-all-for-avatar (query: showAllVersions, version) */
+  loadAllChaptersForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/chapters/{id}/load (query: version, holonType) */
+  loadChapter(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/chapters/load-from-path (query: path, holonType) */
+  loadChapterFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/chapters/load-from-published (query: publishedFilePath) */
+  loadChapterFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** GET api/chapters/{id}/version/{version} */
   loadChapterVersion(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/chapters/{id}/publish */
   publishChapter(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/chapters/{id}/republish (query: version) */
+  republishChapter(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/chapters/search (query: query) */
+  searchChapters(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/chapters/{id}/unpublish (query: version) */
+  unpublishChapter(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** PUT api/chapters/{id} */
   updateChapter(args?: Record<string, any>): Promise<OASISResponse>;

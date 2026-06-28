@@ -4,6 +4,9 @@ import type { OASISResponse } from '../core/types';
 export declare class NFTsModule {
   constructor(http: unknown);
 
+  /** POST api/nFTs/{id}/activate (query: version) */
+  activateNFT(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** POST api/nFTs/{id}/clone */
   cloneNFT(args?: Record<string, any>): Promise<OASISResponse>;
 
@@ -13,8 +16,14 @@ export declare class NFTsModule {
   /** POST api/nFTs/create */
   createNFTWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** POST api/nFTs/{id}/deactivate (query: version) */
+  deactivateNFT(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** DELETE api/nFTs/{id} */
   deleteNFT(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/nFTs/{id}/download (query: version, downloadPath, reInstall) */
+  downloadNFT(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/nFTs/{id}/edit */
   editNFT(args?: Record<string, any>): Promise<OASISResponse>;
@@ -28,11 +37,32 @@ export declare class NFTsModule {
   /** GET api/nFTs/{id}/versions */
   getNFTVersions(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** GET api/nFTs/load-all-for-avatar (query: showAllVersions, version) */
+  loadAllNFTsForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/nFTs/{id}/load (query: version, holonType) */
+  loadNFT(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/nFTs/load-from-path (query: path, holonType) */
+  loadNFTFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/nFTs/load-from-published (query: publishedFilePath) */
+  loadNFTFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** GET api/nFTs/{id}/version/{version} */
   loadNFTVersion(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/nFTs/{id}/publish */
   publishNFT(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/nFTs/{id}/republish (query: version) */
+  republishNFT(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/nFTs/search (query: searchTerm, searchOnlyForCurrentAvatar, showAllVersions, version) */
+  searchNFTs(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/nFTs/{id}/unpublish (query: version) */
+  unpublishNFT(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** PUT api/nFTs/{id} */
   updateNFT(args?: Record<string, any>): Promise<OASISResponse>;

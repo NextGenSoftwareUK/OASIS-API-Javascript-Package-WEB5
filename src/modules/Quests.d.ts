@@ -4,6 +4,9 @@ import type { OASISResponse } from '../core/types';
 export declare class QuestsModule {
   constructor(http: unknown);
 
+  /** POST api/quests/{id}/activate (query: version) */
+  activateQuest(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** POST api/quests/{id}/objectives */
   addQuestObjective(args?: Record<string, any>): Promise<OASISResponse>;
 
@@ -19,6 +22,9 @@ export declare class QuestsModule {
   /** POST api/quests/{id}/clone */
   cloneQuest(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** POST api/quests/{id}/complete (body: completionNotes) */
+  completeQuest(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** POST api/quests/{id}/objectives/{objectiveId}/complete */
   completeQuestObjective(args?: Record<string, any>): Promise<OASISResponse>;
 
@@ -31,8 +37,14 @@ export declare class QuestsModule {
   /** POST api/quests/create */
   createQuestWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** POST api/quests/{id}/deactivate (query: version) */
+  deactivateQuest(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** DELETE api/quests/{id} */
   deleteIQuest(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/quests/{id}/download (query: version, downloadPath, reInstall) */
+  downloadQuest(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/quests/{id}/edit */
   editQuest(args?: Record<string, any>): Promise<OASISResponse>;
@@ -52,6 +64,9 @@ export declare class QuestsModule {
   /** GET api/quests/by-avatar/{avatarId} */
   getIQuestsByAvatar(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** GET api/quests/{id}/leaderboard (query: limit) */
+  getQuestLeaderboard(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** GET api/quests/{id}/rewards */
   getQuestRewards(args?: Record<string, any>): Promise<OASISResponse>;
 
@@ -70,6 +85,18 @@ export declare class QuestsModule {
   /** GET api/quests/{id}/versions */
   getQuestVersions(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** GET api/quests/load-all-for-avatar (query: showAllVersions, version) */
+  loadAllQuestsForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/quests/{id}/load (query: version, holonType) */
+  loadQuest(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/quests/load-from-path (query: path, holonType) */
+  loadQuestFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/quests/load-from-published (query: publishedFilePath) */
+  loadQuestFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** GET api/quests/{id}/version/{version} */
   loadQuestVersion(args?: Record<string, any>): Promise<OASISResponse>;
 
@@ -82,8 +109,20 @@ export declare class QuestsModule {
   /** DELETE api/quests/{parentId}/subquests/{subQuestId} */
   removeSubQuest(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** POST api/quests/{id}/republish (query: version) */
+  republishQuest(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** POST api/quests/{id}/progress/reset */
   resetObjectiveProgress(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/quests/search (query: query) */
+  searchQuests(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/quests/{id}/start (body: startNotes) */
+  startQuest(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/quests/{id}/unpublish (query: version) */
+  unpublishQuest(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** PUT api/quests/{id} */
   updateIQuest(args?: Record<string, any>): Promise<OASISResponse>;

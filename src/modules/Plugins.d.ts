@@ -4,6 +4,9 @@ import type { OASISResponse } from '../core/types';
 export declare class PluginsModule {
   constructor(http: unknown);
 
+  /** POST api/plugins/{id}/activate (query: version) */
+  activatePlugin(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** POST api/plugins/{id}/clone */
   clonePlugin(args?: Record<string, any>): Promise<OASISResponse>;
 
@@ -13,8 +16,14 @@ export declare class PluginsModule {
   /** POST api/plugins/create */
   createPluginWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** POST api/plugins/{id}/deactivate (query: version) */
+  deactivatePlugin(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** DELETE api/plugins/{id} */
   deletePlugin(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/plugins/{id}/download (query: version, downloadPath, reInstall) */
+  downloadPlugin(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/plugins/{id}/edit */
   editPlugin(args?: Record<string, any>): Promise<OASISResponse>;
@@ -34,14 +43,35 @@ export declare class PluginsModule {
   /** POST api/plugins/{id}/install */
   installPlugin(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** GET api/plugins/load-all-for-avatar (query: showAllVersions, version) */
+  loadAllPluginsForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/plugins/{id}/load (query: version, holonType) */
+  loadPlugin(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/plugins/load-from-path (query: path, holonType) */
+  loadPluginFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/plugins/load-from-published (query: publishedFilePath) */
+  loadPluginFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** GET api/plugins/{id}/version/{version} */
   loadPluginVersion(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/plugins/{id}/publish */
   publishPlugin(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** POST api/plugins/{id}/republish (query: version) */
+  republishPlugin(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/plugins/search (query: searchTerm) */
+  searchPlugins(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** POST api/plugins/{id}/uninstall */
   uninstallPlugin(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/plugins/{id}/unpublish (query: version) */
+  unpublishPlugin(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** PUT api/plugins/{id} */
   updatePlugin(args?: Record<string, any>): Promise<OASISResponse>;

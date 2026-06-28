@@ -4,14 +4,23 @@ import type { OASISResponse } from '../core/types';
 export declare class ZomesModule {
   constructor(http: unknown);
 
+  /** POST api/zomes/{id}/activate (query: version) */
+  activateZome(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** POST api/zomes/ */
   createZome(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/zomes/create */
   createZomeWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** POST api/zomes/{id}/deactivate (query: version) */
+  deactivateZome(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** DELETE api/zomes/{id} */
   deleteZome(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/zomes/{id}/download (query: version, downloadPath, reInstall) */
+  downloadZome(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/zomes/{id}/edit */
   editZome(args?: Record<string, any>): Promise<OASISResponse>;
@@ -31,11 +40,32 @@ export declare class ZomesModule {
   /** GET api/zomes/{id}/versions */
   getZomeVersions(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** GET api/zomes/load-all-for-avatar (query: showAllVersions, version) */
+  loadAllZomesForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/zomes/{id}/load (query: version, holonType) */
+  loadZome(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/zomes/load-from-path (query: path, holonType) */
+  loadZomeFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/zomes/load-from-published (query: publishedFilePath) */
+  loadZomeFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** GET api/zomes/{id}/version/{version} */
   loadZomeVersion(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/zomes/{id}/publish */
   publishZome(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/zomes/{id}/republish (query: version) */
+  republishZome(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/zomes/search (query: searchTerm, searchOnlyForCurrentAvatar, showAllVersions, version) */
+  searchZomes(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/zomes/{id}/unpublish (query: version) */
+  unpublishZome(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** PUT api/zomes/{id} */
   updateZome(args?: Record<string, any>): Promise<OASISResponse>;

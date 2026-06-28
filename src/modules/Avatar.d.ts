@@ -25,8 +25,14 @@ export declare class AvatarModule {
   /** GET api/avatar/inventory/{itemId}/has */
   hasItem(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** GET api/avatar/inventory/has-by-name (query: itemName) */
+  hasItemByName(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** DELETE api/avatar/inventory/{itemId} */
   removeItemFromInventory(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/avatar/inventory/search (query: searchTerm) */
+  searchInventory(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/avatar/inventory/send-to-avatar */
   sendItemToAvatar(args?: Record<string, any>): Promise<OASISResponse>;

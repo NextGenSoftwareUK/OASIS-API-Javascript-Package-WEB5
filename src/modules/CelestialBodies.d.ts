@@ -4,14 +4,23 @@ import type { OASISResponse } from '../core/types';
 export declare class CelestialBodiesModule {
   constructor(http: unknown);
 
+  /** POST api/celestialBodies/{id}/activate (query: version) */
+  activateCelestialBody(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** POST api/celestialBodies/ */
   createCelestialBody(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/celestialBodies/create */
   createCelestialBodyWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** POST api/celestialBodies/{id}/deactivate (query: version) */
+  deactivateCelestialBody(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** DELETE api/celestialBodies/{id} */
   deleteCelestialBody(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/celestialBodies/{id}/download (query: version, downloadPath, reInstall) */
+  downloadCelestialBody(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/celestialBodies/{id}/edit */
   editCelestialBody(args?: Record<string, any>): Promise<OASISResponse>;
@@ -31,11 +40,32 @@ export declare class CelestialBodiesModule {
   /** GET api/celestialBodies/{id}/versions */
   getCelestialBodyVersions(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** GET api/celestialBodies/load-all-for-avatar (query: showAllVersions, version) */
+  loadAllCelestialBodiesForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/celestialBodies/{id}/load (query: version, holonType) */
+  loadCelestialBody(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/celestialBodies/load-from-path (query: path, holonType) */
+  loadCelestialBodyFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/celestialBodies/load-from-published (query: publishedFilePath) */
+  loadCelestialBodyFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** GET api/celestialBodies/{id}/version/{version} */
   loadCelestialBodyVersion(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/celestialBodies/{id}/publish */
   publishCelestialBody(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/celestialBodies/{id}/republish (query: version) */
+  republishCelestialBody(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/celestialBodies/search (query: query) */
+  searchCelestialBodies(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/celestialBodies/{id}/unpublish (query: version) */
+  unpublishCelestialBody(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** PUT api/celestialBodies/{id} */
   updateCelestialBody(args?: Record<string, any>): Promise<OASISResponse>;

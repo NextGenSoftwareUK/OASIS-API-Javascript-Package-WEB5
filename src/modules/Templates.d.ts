@@ -43,6 +43,12 @@ export declare class TemplatesModule {
   /** GET api/templates/load-all-for-avatar */
   loadAllTemplatesForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** GET api/templates/load-from-path (query: path) */
+  loadTemplateFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/templates/load-from-published (query: publishedFilePath) */
+  loadTemplateFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** GET api/templates/{id}/versions/{version} */
   loadTemplateVersion(args?: Record<string, any>): Promise<OASISResponse>;
 
@@ -51,6 +57,9 @@ export declare class TemplatesModule {
 
   /** POST api/templates/{id}/republish */
   republishTemplate(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/templates/search (query: searchTerm) */
+  searchTemplates(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/templates/search */
   searchTemplatesPost(args?: Record<string, any>): Promise<OASISResponse>;

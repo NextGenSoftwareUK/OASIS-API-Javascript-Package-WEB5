@@ -4,6 +4,9 @@ import type { OASISResponse } from '../core/types';
 export declare class HolonsMetaDataModule {
   constructor(http: unknown);
 
+  /** POST api/holonsMetaData/{id}/activate (query: version) */
+  activateHolonMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** POST api/holonsMetaData/{id}/clone */
   cloneHolonMetaData(args?: Record<string, any>): Promise<OASISResponse>;
 
@@ -12,6 +15,9 @@ export declare class HolonsMetaDataModule {
 
   /** POST api/holonsMetaData/create */
   createHolonMetaDataWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/holonsMetaData/{id}/deactivate (query: version) */
+  deactivateHolonMetaData(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** DELETE api/holonsMetaData/{id} */
   deleteHolonMetaData(args?: Record<string, any>): Promise<OASISResponse>;
@@ -34,14 +40,29 @@ export declare class HolonsMetaDataModule {
   /** GET api/holonsMetaData/load-all-for-avatar */
   loadAllHolonMetaDataForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** GET api/holonsMetaData/load-from-path (query: path) */
+  loadHolonMetaDataFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/holonsMetaData/load-from-published (query: publishedFilePath) */
+  loadHolonMetaDataFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** GET api/holonsMetaData/{id}/versions/{version} */
   loadHolonMetaDataVersion(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/holonsMetaData/{id}/publish */
   publishHolonMetaData(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** POST api/holonsMetaData/{id}/republish (query: version) */
+  republishHolonMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/holonsMetaData/search (query: searchTerm, showAllVersions, version) */
+  searchHolonsMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** POST api/holonsMetaData/search */
   searchHolonsMetaDataPost(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/holonsMetaData/{id}/unpublish (query: version) */
+  unpublishHolonMetaData(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** PUT api/holonsMetaData/{id} */
   updateHolonMetaData(args?: Record<string, any>): Promise<OASISResponse>;

@@ -4,6 +4,9 @@ import type { OASISResponse } from '../core/types';
 export declare class OAPPsModule {
   constructor(http: unknown);
 
+  /** POST api/oAPPs/{id}/activate (query: version) */
+  activateOAPP(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** POST api/oAPPs/{id}/clone */
   cloneOAPP(args?: Record<string, any>): Promise<OASISResponse>;
 
@@ -12,6 +15,9 @@ export declare class OAPPsModule {
 
   /** POST api/oAPPs/create */
   createOAPPWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/oAPPs/{id}/deactivate (query: version) */
+  deactivateOAPP(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** DELETE api/oAPPs/{id} */
   deleteOAPP(args?: Record<string, any>): Promise<OASISResponse>;
@@ -34,14 +40,29 @@ export declare class OAPPsModule {
   /** GET api/oAPPs/load-all-for-avatar */
   loadAllOAPPsForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** GET api/oAPPs/load-from-path (query: path) */
+  loadOAPPFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/oAPPs/load-from-published (query: publishedFilePath) */
+  loadOAPPFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** GET api/oAPPs/{id}/versions/{version} */
   loadOAPPVersion(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/oAPPs/{id}/publish */
   publishOAPP(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** POST api/oAPPs/{id}/republish (query: version) */
+  republishOAPP(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/oAPPs/search (query: searchTerm, showAllVersions, version) */
+  searchOAPPs(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** POST api/oAPPs/search */
   searchOAPPsPost(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/oAPPs/{id}/unpublish (query: version) */
+  unpublishOAPP(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** PUT api/oAPPs/{id} */
   updateOAPP(args?: Record<string, any>): Promise<OASISResponse>;

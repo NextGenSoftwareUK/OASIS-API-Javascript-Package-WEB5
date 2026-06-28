@@ -4,14 +4,23 @@ import type { OASISResponse } from '../core/types';
 export declare class InventoryItemsModule {
   constructor(http: unknown);
 
+  /** POST api/inventoryItems/{id}/activate (query: version) */
+  activateInventoryItem(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** POST api/inventoryItems/ */
   createInventoryItem(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/inventoryItems/create */
   createInventoryItemWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** POST api/inventoryItems/{id}/deactivate (query: version) */
+  deactivateInventoryItem(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** DELETE api/inventoryItems/{id} */
   deleteInventoryItem(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/inventoryItems/{id}/download (query: version, downloadPath, reInstall) */
+  downloadInventoryItem(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/inventoryItems/{id}/edit */
   editInventoryItem(args?: Record<string, any>): Promise<OASISResponse>;
@@ -28,14 +37,32 @@ export declare class InventoryItemsModule {
   /** GET api/inventoryItems/{id}/versions */
   getInventoryItemVersions(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** GET api/inventoryItems/load-all-for-avatar (query: showAllVersions, version) */
+  loadAllInventoryItemsForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/inventoryItems/{id}/load (query: version, holonType) */
+  loadInventoryItem(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/inventoryItems/load-from-path (query: path, holonType) */
+  loadInventoryItemFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/inventoryItems/load-from-published (query: publishedFilePath) */
+  loadInventoryItemFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** GET api/inventoryItems/{id}/version/{version} */
   loadInventoryItemVersion(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/inventoryItems/{id}/publish */
   publishInventoryItem(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** POST api/inventoryItems/{id}/republish (query: version) */
+  republishInventoryItem(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** POST api/inventoryItems/search */
   searchInventoryItems(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/inventoryItems/{id}/unpublish (query: version) */
+  unpublishInventoryItem(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** PUT api/inventoryItems/{id} */
   updateInventoryItem(args?: Record<string, any>): Promise<OASISResponse>;

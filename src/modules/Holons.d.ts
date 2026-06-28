@@ -4,14 +4,23 @@ import type { OASISResponse } from '../core/types';
 export declare class HolonsModule {
   constructor(http: unknown);
 
+  /** POST api/holons/{id}/activate (query: version) */
+  activateHolon(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** POST api/holons/ */
   createHolon(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/holons/create */
   createHolonWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** POST api/holons/{id}/deactivate (query: version) */
+  deactivateHolon(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** DELETE api/holons/{id} */
   deleteHolon(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/holons/{id}/download (query: version, downloadPath, reInstall) */
+  downloadHolon(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/holons/{id}/edit */
   editHolon(args?: Record<string, any>): Promise<OASISResponse>;
@@ -21,6 +30,9 @@ export declare class HolonsModule {
 
   /** GET api/holons/{id} */
   getHolon(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/holons/by-metadata (query: key, value) */
+  getHolonsByMetadata(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** GET api/holons/by-parent/{parentId} */
   getHolonsByParent(args?: Record<string, any>): Promise<OASISResponse>;
@@ -34,11 +46,32 @@ export declare class HolonsModule {
   /** GET api/holons/{id}/versions */
   getHolonVersions(args?: Record<string, any>): Promise<OASISResponse>;
 
+  /** GET api/holons/load-all-for-avatar (query: showAllVersions, version) */
+  loadAllHolonsForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/holons/{id}/load (query: version, holonType) */
+  loadHolon(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/holons/load-from-path (query: path, holonType) */
+  loadHolonFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/holons/load-from-published (query: publishedFilePath) */
+  loadHolonFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+
   /** GET api/holons/{id}/version/{version} */
   loadHolonVersion(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** POST api/holons/{id}/publish */
   publishHolon(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/holons/{id}/republish (query: version) */
+  republishHolon(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** GET api/holons/search (query: query) */
+  searchHolons(args?: Record<string, any>): Promise<OASISResponse>;
+
+  /** POST api/holons/{id}/unpublish (query: version) */
+  unpublishHolon(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** PUT api/holons/{id} */
   updateHolon(args?: Record<string, any>): Promise<OASISResponse>;
