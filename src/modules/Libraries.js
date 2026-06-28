@@ -15,49 +15,49 @@ class LibrariesModule {
   constructor(http) {
     this._http = http;
 
-    // post api/libraries/{id}/activate (query: version)
+    // POST api/libraries/{id}/activate (query: version)
     this.activateLibrary = makeOperation(http, "api/libraries", "POST", "{id}/activate", {"query":["version"]});
-    // post api/libraries/{id}/clone
+    // POST api/libraries/{id}/clone
     this.cloneLibrary = makeOperation(http, "api/libraries", "POST", "{id}/clone");
-    // post api/libraries/
+    // POST api/libraries/
     this.createLibrary = makeOperation(http, "api/libraries", "POST", "");
-    // post api/libraries/create
+    // POST api/libraries/create
     this.createLibraryWithOptions = makeOperation(http, "api/libraries", "POST", "create");
-    // post api/libraries/{id}/deactivate (query: version)
+    // POST api/libraries/{id}/deactivate (query: version)
     this.deactivateLibrary = makeOperation(http, "api/libraries", "POST", "{id}/deactivate", {"query":["version"]});
-    // delete api/libraries/{id}
+    // DELETE api/libraries/{id}
     this.deleteLibrary = makeOperation(http, "api/libraries", "DELETE", "{id}");
-    // post api/libraries/{id}/download (query: version, downloadPath, reInstall)
+    // POST api/libraries/{id}/download (query: version, downloadPath, reInstall)
     this.downloadLibrary = makeOperation(http, "api/libraries", "POST", "{id}/download", {"query":["version","downloadPath","reInstall"]});
-    // post api/libraries/{id}/edit
+    // POST api/libraries/{id}/edit
     this.editLibrary = makeOperation(http, "api/libraries", "POST", "{id}/edit");
-    // get api/libraries/
+    // GET api/libraries/
     this.getAllLibraries = makeOperation(http, "api/libraries", "GET", "");
-    // get api/libraries/by-category/{category}
+    // GET api/libraries/by-category/{category}
     this.getLibrariesByCategory = makeOperation(http, "api/libraries", "GET", "by-category/{category}");
-    // get api/libraries/{id}
+    // GET api/libraries/{id}
     this.getLibrary = makeOperation(http, "api/libraries", "GET", "{id}");
-    // get api/libraries/{id}/versions
+    // GET api/libraries/{id}/versions
     this.getLibraryVersions = makeOperation(http, "api/libraries", "GET", "{id}/versions");
-    // get api/libraries/load-all-for-avatar (query: showAllVersions, version)
+    // GET api/libraries/load-all-for-avatar (query: showAllVersions, version)
     this.loadAllLibrariesForAvatar = makeOperation(http, "api/libraries", "GET", "load-all-for-avatar", {"query":["showAllVersions","version"]});
-    // get api/libraries/{id}/load (query: version, holonType)
+    // GET api/libraries/{id}/load (query: version, holonType)
     this.loadLibrary = makeOperation(http, "api/libraries", "GET", "{id}/load", {"query":["version","holonType"]});
-    // get api/libraries/load-from-path (query: path, holonType)
+    // GET api/libraries/load-from-path (query: path, holonType)
     this.loadLibraryFromPath = makeOperation(http, "api/libraries", "GET", "load-from-path", {"query":["path","holonType"]});
-    // get api/libraries/load-from-published (query: publishedFilePath)
+    // GET api/libraries/load-from-published (query: publishedFilePath)
     this.loadLibraryFromPublished = makeOperation(http, "api/libraries", "GET", "load-from-published", {"query":["publishedFilePath"]});
-    // get api/libraries/{id}/version/{version}
+    // GET api/libraries/{id}/version/{version}
     this.loadLibraryVersion = makeOperation(http, "api/libraries", "GET", "{id}/version/{version}");
-    // post api/libraries/{id}/publish
+    // POST api/libraries/{id}/publish
     this.publishLibrary = makeOperation(http, "api/libraries", "POST", "{id}/publish");
-    // post api/libraries/{id}/republish (query: version)
+    // POST api/libraries/{id}/republish (query: version)
     this.republishLibrary = makeOperation(http, "api/libraries", "POST", "{id}/republish", {"query":["version"]});
-    // get api/libraries/search (query: searchTerm)
+    // GET api/libraries/search (query: searchTerm)
     this.searchLibraries = makeOperation(http, "api/libraries", "GET", "search", {"query":["searchTerm"]});
-    // post api/libraries/{id}/unpublish (query: version)
+    // POST api/libraries/{id}/unpublish (query: version)
     this.unpublishLibrary = makeOperation(http, "api/libraries", "POST", "{id}/unpublish", {"query":["version"]});
-    // put api/libraries/{id}
+    // PUT api/libraries/{id}
     this.updateLibrary = makeOperation(http, "api/libraries", "PUT", "{id}");
   }
 }

@@ -15,49 +15,49 @@ class ParksModule {
   constructor(http) {
     this._http = http;
 
-    // post api/parks/{id}/activate (query: version)
+    // POST api/parks/{id}/activate (query: version)
     this.activatePark = makeOperation(http, "api/parks", "POST", "{id}/activate", {"query":["version"]});
-    // post api/parks/
+    // POST api/parks/
     this.createPark = makeOperation(http, "api/parks", "POST", "");
-    // post api/parks/create
+    // POST api/parks/create
     this.createParkWithOptions = makeOperation(http, "api/parks", "POST", "create");
-    // post api/parks/{id}/deactivate (query: version)
+    // POST api/parks/{id}/deactivate (query: version)
     this.deactivatePark = makeOperation(http, "api/parks", "POST", "{id}/deactivate", {"query":["version"]});
-    // delete api/parks/{id}
+    // DELETE api/parks/{id}
     this.deletePark = makeOperation(http, "api/parks", "DELETE", "{id}");
-    // post api/parks/{id}/download (query: version, downloadPath, reInstall)
+    // POST api/parks/{id}/download (query: version, downloadPath, reInstall)
     this.downloadPark = makeOperation(http, "api/parks", "POST", "{id}/download", {"query":["version","downloadPath","reInstall"]});
-    // post api/parks/{id}/edit
+    // POST api/parks/{id}/edit
     this.editPark = makeOperation(http, "api/parks", "POST", "{id}/edit");
-    // get api/parks/
+    // GET api/parks/
     this.getAllParks = makeOperation(http, "api/parks", "GET", "");
-    // get api/parks/nearby (query: latitude, longitude, radiusKm)
+    // GET api/parks/nearby (query: latitude, longitude, radiusKm)
     this.getNearbyParks = makeOperation(http, "api/parks", "GET", "nearby", {"query":["latitude","longitude","radiusKm"]});
-    // get api/parks/{id}
+    // GET api/parks/{id}
     this.getPark = makeOperation(http, "api/parks", "GET", "{id}");
-    // get api/parks/{id}/versions
+    // GET api/parks/{id}/versions
     this.getParkVersions = makeOperation(http, "api/parks", "GET", "{id}/versions");
-    // get api/parks/by-type/{type}
+    // GET api/parks/by-type/{type}
     this.getParksByType = makeOperation(http, "api/parks", "GET", "by-type/{type}");
-    // get api/parks/load-all-for-avatar (query: showAllVersions, version)
+    // GET api/parks/load-all-for-avatar (query: showAllVersions, version)
     this.loadAllParksForAvatar = makeOperation(http, "api/parks", "GET", "load-all-for-avatar", {"query":["showAllVersions","version"]});
-    // get api/parks/{id}/load (query: version, holonType)
+    // GET api/parks/{id}/load (query: version, holonType)
     this.loadPark = makeOperation(http, "api/parks", "GET", "{id}/load", {"query":["version","holonType"]});
-    // get api/parks/load-from-path (query: path, holonType)
+    // GET api/parks/load-from-path (query: path, holonType)
     this.loadParkFromPath = makeOperation(http, "api/parks", "GET", "load-from-path", {"query":["path","holonType"]});
-    // get api/parks/load-from-published (query: publishedFilePath)
+    // GET api/parks/load-from-published (query: publishedFilePath)
     this.loadParkFromPublished = makeOperation(http, "api/parks", "GET", "load-from-published", {"query":["publishedFilePath"]});
-    // get api/parks/{id}/version/{version}
+    // GET api/parks/{id}/version/{version}
     this.loadParkVersion = makeOperation(http, "api/parks", "GET", "{id}/version/{version}");
-    // post api/parks/{id}/publish
+    // POST api/parks/{id}/publish
     this.publishPark = makeOperation(http, "api/parks", "POST", "{id}/publish");
-    // post api/parks/{id}/republish (query: version)
+    // POST api/parks/{id}/republish (query: version)
     this.republishPark = makeOperation(http, "api/parks", "POST", "{id}/republish", {"query":["version"]});
-    // post api/parks/search
+    // POST api/parks/search
     this.searchParks = makeOperation(http, "api/parks", "POST", "search");
-    // post api/parks/{id}/unpublish (query: version)
+    // POST api/parks/{id}/unpublish (query: version)
     this.unpublishPark = makeOperation(http, "api/parks", "POST", "{id}/unpublish", {"query":["version"]});
-    // put api/parks/{id}
+    // PUT api/parks/{id}
     this.updatePark = makeOperation(http, "api/parks", "PUT", "{id}");
   }
 }

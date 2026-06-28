@@ -15,23 +15,23 @@ class CompetitionModule {
   constructor(http) {
     this._http = http;
 
-    // get api/competition/tournaments (query: competitionType)
+    // GET api/competition/tournaments (query: competitionType)
     this.getActiveTournaments = makeOperation(http, "api/competition", "GET", "tournaments", {"query":["competitionType"]});
-    // get api/competition/leagues/{competitionType}/{seasonType}
+    // GET api/competition/leagues/{competitionType}/{seasonType}
     this.getAvailableLeagues = makeOperation(http, "api/competition", "GET", "leagues/{competitionType}/{seasonType}");
-    // get api/competition/league/{avatarId}/{competitionType}/{seasonType}
+    // GET api/competition/league/{avatarId}/{competitionType}/{seasonType}
     this.getAvatarLeague = makeOperation(http, "api/competition", "GET", "league/{avatarId}/{competitionType}/{seasonType}");
-    // get api/competition/rank/{avatarId}/{competitionType}/{seasonType}
+    // GET api/competition/rank/{avatarId}/{competitionType}/{seasonType}
     this.getAvatarRank = makeOperation(http, "api/competition", "GET", "rank/{avatarId}/{competitionType}/{seasonType}");
-    // get api/competition/leaderboard/{competitionType}/{seasonType} (query: limit, offset)
+    // GET api/competition/leaderboard/{competitionType}/{seasonType} (query: limit, offset)
     this.getLeaderboard = makeOperation(http, "api/competition", "GET", "leaderboard/{competitionType}/{seasonType}", {"query":["limit","offset"]});
-    // get api/competition/my-league/{competitionType}/{seasonType}
+    // GET api/competition/my-league/{competitionType}/{seasonType}
     this.getMyLeague = makeOperation(http, "api/competition", "GET", "my-league/{competitionType}/{seasonType}");
-    // get api/competition/my-rank/{competitionType}/{seasonType}
+    // GET api/competition/my-rank/{competitionType}/{seasonType}
     this.getMyRank = makeOperation(http, "api/competition", "GET", "my-rank/{competitionType}/{seasonType}");
-    // get api/competition/stats/{competitionType}/{seasonType}
+    // GET api/competition/stats/{competitionType}/{seasonType}
     this.getMyStats = makeOperation(http, "api/competition", "GET", "stats/{competitionType}/{seasonType}");
-    // post api/competition/tournaments/{tournamentId}/join
+    // POST api/competition/tournaments/{tournamentId}/join
     this.joinTournament = makeOperation(http, "api/competition", "POST", "tournaments/{tournamentId}/join");
   }
 }

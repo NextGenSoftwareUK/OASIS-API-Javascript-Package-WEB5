@@ -15,47 +15,45 @@ class ZomesMetaDataModule {
   constructor(http) {
     this._http = http;
 
-    // post api/zomesMetaData/{id}/activate (query: version)
+    // POST api/zomesMetaData/{id}/activate (query: version)
     this.activateZomeMetaData = makeOperation(http, "api/zomesMetaData", "POST", "{id}/activate", {"query":["version"]});
-    // post api/zomesMetaData/{id}/clone
+    // POST api/zomesMetaData/{id}/clone
     this.cloneZomeMetaData = makeOperation(http, "api/zomesMetaData", "POST", "{id}/clone");
-    // post api/zomesMetaData/
+    // POST api/zomesMetaData/
     this.createZomeMetaData = makeOperation(http, "api/zomesMetaData", "POST", "");
-    // post api/zomesMetaData/create
+    // POST api/zomesMetaData/create
     this.createZomeMetaDataWithOptions = makeOperation(http, "api/zomesMetaData", "POST", "create");
-    // post api/zomesMetaData/{id}/deactivate (query: version)
+    // POST api/zomesMetaData/{id}/deactivate (query: version)
     this.deactivateZomeMetaData = makeOperation(http, "api/zomesMetaData", "POST", "{id}/deactivate", {"query":["version"]});
-    // delete api/zomesMetaData/{id}
+    // DELETE api/zomesMetaData/{id}
     this.deleteZomeMetaData = makeOperation(http, "api/zomesMetaData", "DELETE", "{id}");
-    // post api/zomesMetaData/{id}/download
+    // POST api/zomesMetaData/{id}/download
     this.downloadZomeMetaData = makeOperation(http, "api/zomesMetaData", "POST", "{id}/download");
-    // put api/zomesMetaData/{id}/edit
+    // PUT api/zomesMetaData/{id}/edit
     this.editZomeMetaData = makeOperation(http, "api/zomesMetaData", "PUT", "{id}/edit");
-    // get api/zomesMetaData/
+    // GET api/zomesMetaData/
     this.getAllZomesMetaData = makeOperation(http, "api/zomesMetaData", "GET", "");
-    // get api/zomesMetaData/{id}
+    // GET api/zomesMetaData/{id}
     this.getZomeMetaData = makeOperation(http, "api/zomesMetaData", "GET", "{id}");
-    // get api/zomesMetaData/{id}/versions
+    // GET api/zomesMetaData/{id}/versions
     this.getZomeMetaDataVersions = makeOperation(http, "api/zomesMetaData", "GET", "{id}/versions");
-    // get api/zomesMetaData/load-all-for-avatar
+    // GET api/zomesMetaData/load-all-for-avatar
     this.loadAllZomeMetaDataForAvatar = makeOperation(http, "api/zomesMetaData", "GET", "load-all-for-avatar");
-    // get api/zomesMetaData/load-from-path (query: path)
+    // GET api/zomesMetaData/load-from-path (query: path)
     this.loadZomeMetaDataFromPath = makeOperation(http, "api/zomesMetaData", "GET", "load-from-path", {"query":["path"]});
-    // get api/zomesMetaData/load-from-published (query: publishedFilePath)
+    // GET api/zomesMetaData/load-from-published (query: publishedFilePath)
     this.loadZomeMetaDataFromPublished = makeOperation(http, "api/zomesMetaData", "GET", "load-from-published", {"query":["publishedFilePath"]});
-    // get api/zomesMetaData/{id}/versions/{version}
+    // GET api/zomesMetaData/{id}/versions/{version}
     this.loadZomeMetaDataVersion = makeOperation(http, "api/zomesMetaData", "GET", "{id}/versions/{version}");
-    // post api/zomesMetaData/{id}/publish
+    // POST api/zomesMetaData/{id}/publish
     this.publishZomeMetaData = makeOperation(http, "api/zomesMetaData", "POST", "{id}/publish");
-    // post api/zomesMetaData/{id}/republish (query: version)
+    // POST api/zomesMetaData/{id}/republish (query: version)
     this.republishZomeMetaData = makeOperation(http, "api/zomesMetaData", "POST", "{id}/republish", {"query":["version"]});
-    // get api/zomesMetaData/search (query: searchTerm, showAllVersions, version)
-    this.searchZomesMetaData = makeOperation(http, "api/zomesMetaData", "GET", "search", {"query":["searchTerm","showAllVersions","version"]});
-    // post api/zomesMetaData/search
-    this.searchZomesMetaDataPost = makeOperation(http, "api/zomesMetaData", "POST", "search");
-    // post api/zomesMetaData/{id}/unpublish (query: version)
+    // POST api/zomesMetaData/search
+    this.searchZomesMetaData = makeOperation(http, "api/zomesMetaData", "POST", "search");
+    // POST api/zomesMetaData/{id}/unpublish (query: version)
     this.unpublishZomeMetaData = makeOperation(http, "api/zomesMetaData", "POST", "{id}/unpublish", {"query":["version"]});
-    // put api/zomesMetaData/{id}
+    // PUT api/zomesMetaData/{id}
     this.updateZomeMetaData = makeOperation(http, "api/zomesMetaData", "PUT", "{id}");
   }
 }

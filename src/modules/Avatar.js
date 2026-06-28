@@ -15,31 +15,31 @@ class AvatarModule {
   constructor(http) {
     this._http = http;
 
-    // post api/avatar/inventory
+    // POST api/avatar/inventory
     this.addItemToInventory = makeOperation(http, "api/avatar", "POST", "inventory");
-    // post api/avatar/add-xp
+    // POST api/avatar/add-xp
     this.addXp = makeOperation(http, "api/avatar", "POST", "add-xp");
-    // post api/avatar/authenticate
+    // POST api/avatar/authenticate
     this.authenticate = makeOperation(http, "api/avatar", "POST", "authenticate");
-    // get api/avatar/current
+    // GET api/avatar/current
     this.getCurrentAvatar = makeOperation(http, "api/avatar", "GET", "current");
-    // get api/avatar/inventory
+    // GET api/avatar/inventory
     this.getInventory = makeOperation(http, "api/avatar", "GET", "inventory");
-    // get api/avatar/inventory/{itemId}
+    // GET api/avatar/inventory/{itemId}
     this.getInventoryItem = makeOperation(http, "api/avatar", "GET", "inventory/{itemId}");
-    // get api/avatar/inventory/{itemId}/has
+    // GET api/avatar/inventory/{itemId}/has
     this.hasItem = makeOperation(http, "api/avatar", "GET", "inventory/{itemId}/has");
-    // get api/avatar/inventory/has-by-name (query: itemName)
+    // GET api/avatar/inventory/has-by-name (query: itemName)
     this.hasItemByName = makeOperation(http, "api/avatar", "GET", "inventory/has-by-name", {"query":["itemName"]});
-    // delete api/avatar/inventory/{itemId}
+    // DELETE api/avatar/inventory/{itemId}
     this.removeItemFromInventory = makeOperation(http, "api/avatar", "DELETE", "inventory/{itemId}");
-    // get api/avatar/inventory/search (query: searchTerm)
+    // GET api/avatar/inventory/search (query: searchTerm)
     this.searchInventory = makeOperation(http, "api/avatar", "GET", "inventory/search", {"query":["searchTerm"]});
-    // post api/avatar/inventory/send-to-avatar
+    // POST api/avatar/inventory/send-to-avatar
     this.sendItemToAvatar = makeOperation(http, "api/avatar", "POST", "inventory/send-to-avatar");
-    // post api/avatar/inventory/send-to-clan
+    // POST api/avatar/inventory/send-to-clan
     this.sendItemToClan = makeOperation(http, "api/avatar", "POST", "inventory/send-to-clan");
-    // post api/avatar/set-active-quest
+    // POST api/avatar/set-active-quest
     this.setActiveQuest = makeOperation(http, "api/avatar", "POST", "set-active-quest");
   }
 }

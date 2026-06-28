@@ -15,45 +15,45 @@ class ChaptersModule {
   constructor(http) {
     this._http = http;
 
-    // post api/chapters/{id}/activate (query: version)
+    // POST api/chapters/{id}/activate (query: version)
     this.activateChapter = makeOperation(http, "api/chapters", "POST", "{id}/activate", {"query":["version"]});
-    // post api/chapters/
+    // POST api/chapters/
     this.createChapter = makeOperation(http, "api/chapters", "POST", "");
-    // post api/chapters/create
+    // POST api/chapters/create
     this.createChapterWithOptions = makeOperation(http, "api/chapters", "POST", "create");
-    // post api/chapters/{id}/deactivate (query: version)
+    // POST api/chapters/{id}/deactivate (query: version)
     this.deactivateChapter = makeOperation(http, "api/chapters", "POST", "{id}/deactivate", {"query":["version"]});
-    // delete api/chapters/{id}
+    // DELETE api/chapters/{id}
     this.deleteChapter = makeOperation(http, "api/chapters", "DELETE", "{id}");
-    // post api/chapters/{id}/download (query: version, downloadPath, reInstall)
+    // POST api/chapters/{id}/download (query: version, downloadPath, reInstall)
     this.downloadChapter = makeOperation(http, "api/chapters", "POST", "{id}/download", {"query":["version","downloadPath","reInstall"]});
-    // post api/chapters/{id}/edit
+    // POST api/chapters/{id}/edit
     this.editChapter = makeOperation(http, "api/chapters", "POST", "{id}/edit");
-    // get api/chapters/
+    // GET api/chapters/
     this.getAllChapters = makeOperation(http, "api/chapters", "GET", "");
-    // get api/chapters/{id}
+    // GET api/chapters/{id}
     this.getChapter = makeOperation(http, "api/chapters", "GET", "{id}");
-    // get api/chapters/{id}/versions
+    // GET api/chapters/{id}/versions
     this.getChapterVersions = makeOperation(http, "api/chapters", "GET", "{id}/versions");
-    // get api/chapters/load-all-for-avatar (query: showAllVersions, version)
+    // GET api/chapters/load-all-for-avatar (query: showAllVersions, version)
     this.loadAllChaptersForAvatar = makeOperation(http, "api/chapters", "GET", "load-all-for-avatar", {"query":["showAllVersions","version"]});
-    // get api/chapters/{id}/load (query: version, holonType)
+    // GET api/chapters/{id}/load (query: version, holonType)
     this.loadChapter = makeOperation(http, "api/chapters", "GET", "{id}/load", {"query":["version","holonType"]});
-    // get api/chapters/load-from-path (query: path, holonType)
+    // GET api/chapters/load-from-path (query: path, holonType)
     this.loadChapterFromPath = makeOperation(http, "api/chapters", "GET", "load-from-path", {"query":["path","holonType"]});
-    // get api/chapters/load-from-published (query: publishedFilePath)
+    // GET api/chapters/load-from-published (query: publishedFilePath)
     this.loadChapterFromPublished = makeOperation(http, "api/chapters", "GET", "load-from-published", {"query":["publishedFilePath"]});
-    // get api/chapters/{id}/version/{version}
+    // GET api/chapters/{id}/version/{version}
     this.loadChapterVersion = makeOperation(http, "api/chapters", "GET", "{id}/version/{version}");
-    // post api/chapters/{id}/publish
+    // POST api/chapters/{id}/publish
     this.publishChapter = makeOperation(http, "api/chapters", "POST", "{id}/publish");
-    // post api/chapters/{id}/republish (query: version)
+    // POST api/chapters/{id}/republish (query: version)
     this.republishChapter = makeOperation(http, "api/chapters", "POST", "{id}/republish", {"query":["version"]});
-    // get api/chapters/search (query: query)
+    // GET api/chapters/search (query: query)
     this.searchChapters = makeOperation(http, "api/chapters", "GET", "search", {"query":["query"]});
-    // post api/chapters/{id}/unpublish (query: version)
+    // POST api/chapters/{id}/unpublish (query: version)
     this.unpublishChapter = makeOperation(http, "api/chapters", "POST", "{id}/unpublish", {"query":["version"]});
-    // put api/chapters/{id}
+    // PUT api/chapters/{id}
     this.updateChapter = makeOperation(http, "api/chapters", "PUT", "{id}");
   }
 }

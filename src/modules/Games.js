@@ -15,115 +15,115 @@ class GamesModule {
   constructor(http) {
     this._http = http;
 
-    // post api/games/{id}/activate (query: version)
+    // POST api/games/{id}/activate (query: version)
     this.activateGame = makeOperation(http, "api/games", "POST", "{id}/activate", {"query":["version"]});
-    // post api/games/shared-inventory/add
+    // POST api/games/shared-inventory/add
     this.addItemToInventory = makeOperation(http, "api/games", "POST", "shared-inventory/add");
-    // post api/games/{gameId}/input/bind-keys
+    // POST api/games/{gameId}/input/bind-keys
     this.bindKeys = makeOperation(http, "api/games", "POST", "{gameId}/input/bind-keys");
-    // post api/games/{id}/clone
+    // POST api/games/{id}/clone
     this.cloneGame = makeOperation(http, "api/games", "POST", "{id}/clone");
-    // post api/games/
+    // POST api/games/
     this.createGame = makeOperation(http, "api/games", "POST", "");
-    // post api/games/create
+    // POST api/games/create
     this.createGameWithOptions = makeOperation(http, "api/games", "POST", "create");
-    // post api/games/{id}/deactivate (query: version)
+    // POST api/games/{id}/deactivate (query: version)
     this.deactivateGame = makeOperation(http, "api/games", "POST", "{id}/deactivate", {"query":["version"]});
-    // delete api/games/{id}
+    // DELETE api/games/{id}
     this.deleteGame = makeOperation(http, "api/games", "DELETE", "{id}");
-    // post api/games/{id}/download (query: version, downloadPath, reInstall)
+    // POST api/games/{id}/download (query: version, downloadPath, reInstall)
     this.downloadGame = makeOperation(http, "api/games", "POST", "{id}/download", {"query":["version","downloadPath","reInstall"]});
-    // post api/games/{id}/edit
+    // POST api/games/{id}/edit
     this.editGame = makeOperation(http, "api/games", "POST", "{id}/edit");
-    // post api/games/{gameId}/end
+    // POST api/games/{gameId}/end
     this.endGame = makeOperation(http, "api/games", "POST", "{gameId}/end");
-    // get api/games/
+    // GET api/games/
     this.getAllGames = makeOperation(http, "api/games", "GET", "");
-    // get api/games/karma
+    // GET api/games/karma
     this.getAvatarKarma = makeOperation(http, "api/games", "GET", "karma");
-    // get api/games/cross-game-quests
+    // GET api/games/cross-game-quests
     this.getCrossGameQuests = makeOperation(http, "api/games", "GET", "cross-game-quests");
-    // get api/games/{id}
+    // GET api/games/{id}
     this.getGame = makeOperation(http, "api/games", "GET", "{id}");
-    // get api/games/{id}/versions
+    // GET api/games/{id}/versions
     this.getGameVersions = makeOperation(http, "api/games", "GET", "{id}/versions");
-    // get api/games/by-type/{type}
+    // GET api/games/by-type/{type}
     this.getGamesByType = makeOperation(http, "api/games", "GET", "by-type/{type}");
-    // get api/games/{gameId}/input/bind-keys
+    // GET api/games/{gameId}/input/bind-keys
     this.getKeyBindings = makeOperation(http, "api/games", "GET", "{gameId}/input/bind-keys");
-    // get api/games/{gameId}/audio/master-volume
+    // GET api/games/{gameId}/audio/master-volume
     this.getMasterVolume = makeOperation(http, "api/games", "GET", "{gameId}/audio/master-volume");
-    // get api/games/shared-inventory
+    // GET api/games/shared-inventory
     this.getSharedInventory = makeOperation(http, "api/games", "GET", "shared-inventory");
-    // get api/games/{gameId}/audio/sound-volume
+    // GET api/games/{gameId}/audio/sound-volume
     this.getSoundVolume = makeOperation(http, "api/games", "GET", "{gameId}/audio/sound-volume");
-    // get api/games/{gameId}/video/setting
+    // GET api/games/{gameId}/video/setting
     this.getVideoSetting = makeOperation(http, "api/games", "GET", "{gameId}/video/setting");
-    // get api/games/{gameId}/audio/voice-volume
+    // GET api/games/{gameId}/audio/voice-volume
     this.getVoiceVolume = makeOperation(http, "api/games", "GET", "{gameId}/audio/voice-volume");
-    // get api/games/shared-inventory/{itemId}/has
+    // GET api/games/shared-inventory/{itemId}/has
     this.hasItem = makeOperation(http, "api/games", "GET", "shared-inventory/{itemId}/has");
-    // get api/games/shared-inventory/has-by-name (query: itemName)
+    // GET api/games/shared-inventory/has-by-name (query: itemName)
     this.hasItemByName = makeOperation(http, "api/games", "GET", "shared-inventory/has-by-name", {"query":["itemName"]});
-    // post api/games/{id}/install (query: version, installPath)
+    // POST api/games/{id}/install (query: version, installPath)
     this.installGame = makeOperation(http, "api/games", "POST", "{id}/install", {"query":["version","installPath"]});
-    // post api/games/{gameId}/areas/jump
+    // POST api/games/{gameId}/areas/jump
     this.jumpToArea = makeOperation(http, "api/games", "POST", "{gameId}/areas/jump");
-    // post api/games/{gameId}/levels/{level}/jump
+    // POST api/games/{gameId}/levels/{level}/jump
     this.jumpToLevel = makeOperation(http, "api/games", "POST", "{gameId}/levels/{level}/jump");
-    // post api/games/{gameId}/levels/{level}/jump-to-point
+    // POST api/games/{gameId}/levels/{level}/jump-to-point
     this.jumpToPointInLevel = makeOperation(http, "api/games", "POST", "{gameId}/levels/{level}/jump-to-point");
-    // get api/games/load-all-for-avatar (query: showAllVersions, version)
+    // GET api/games/load-all-for-avatar (query: showAllVersions, version)
     this.loadAllGamesForAvatar = makeOperation(http, "api/games", "GET", "load-all-for-avatar", {"query":["showAllVersions","version"]});
-    // post api/games/{gameId}/areas/load
+    // POST api/games/{gameId}/areas/load
     this.loadArea = makeOperation(http, "api/games", "POST", "{gameId}/areas/load");
-    // post api/games/{gameId}/load
+    // POST api/games/{gameId}/load
     this.loadGame = makeOperation(http, "api/games", "POST", "{gameId}/load");
-    // get api/games/{id}/load (query: version, holonType)
+    // GET api/games/{id}/load (query: version, holonType)
     this.loadGameById = makeOperation(http, "api/games", "GET", "{id}/load", {"query":["version","holonType"]});
-    // get api/games/load-from-path (query: path, holonType)
+    // GET api/games/load-from-path (query: path, holonType)
     this.loadGameFromPath = makeOperation(http, "api/games", "GET", "load-from-path", {"query":["path","holonType"]});
-    // get api/games/load-from-published (query: publishedFilePath)
+    // GET api/games/load-from-published (query: publishedFilePath)
     this.loadGameFromPublished = makeOperation(http, "api/games", "GET", "load-from-published", {"query":["publishedFilePath"]});
-    // get api/games/{id}/version/{version}
+    // GET api/games/{id}/version/{version}
     this.loadGameVersion = makeOperation(http, "api/games", "GET", "{id}/version/{version}");
-    // post api/games/{gameId}/levels/{level}/load
+    // POST api/games/{gameId}/levels/{level}/load
     this.loadLevel = makeOperation(http, "api/games", "POST", "{gameId}/levels/{level}/load");
-    // post api/games/{id}/publish
+    // POST api/games/{id}/publish
     this.publishGame = makeOperation(http, "api/games", "POST", "{id}/publish");
-    // delete api/games/shared-inventory/{itemId}
+    // DELETE api/games/shared-inventory/{itemId}
     this.removeItemFromInventory = makeOperation(http, "api/games", "DELETE", "shared-inventory/{itemId}");
-    // post api/games/{id}/republish
+    // POST api/games/{id}/republish
     this.republishGame = makeOperation(http, "api/games", "POST", "{id}/republish");
-    // get api/games/search (query: query)
+    // GET api/games/search (query: query)
     this.searchGames = makeOperation(http, "api/games", "GET", "search", {"query":["query"]});
-    // post api/games/{gameId}/audio/master-volume
+    // POST api/games/{gameId}/audio/master-volume
     this.setMasterVolume = makeOperation(http, "api/games", "POST", "{gameId}/audio/master-volume");
-    // post api/games/{gameId}/audio/sound-volume
+    // POST api/games/{gameId}/audio/sound-volume
     this.setSoundVolume = makeOperation(http, "api/games", "POST", "{gameId}/audio/sound-volume");
-    // post api/games/{gameId}/video/setting
+    // POST api/games/{gameId}/video/setting
     this.setVideoSetting = makeOperation(http, "api/games", "POST", "{gameId}/video/setting");
-    // post api/games/{gameId}/audio/voice-volume
+    // POST api/games/{gameId}/audio/voice-volume
     this.setVoiceVolume = makeOperation(http, "api/games", "POST", "{gameId}/audio/voice-volume");
-    // post api/games/{gameId}/ui/credits
+    // POST api/games/{gameId}/ui/credits
     this.showCredits = makeOperation(http, "api/games", "POST", "{gameId}/ui/credits");
-    // post api/games/{gameId}/ui/main-menu
+    // POST api/games/{gameId}/ui/main-menu
     this.showMainMenu = makeOperation(http, "api/games", "POST", "{gameId}/ui/main-menu");
-    // post api/games/{gameId}/ui/options
+    // POST api/games/{gameId}/ui/options
     this.showOptions = makeOperation(http, "api/games", "POST", "{gameId}/ui/options");
-    // post api/games/{gameId}/ui/title-screen
+    // POST api/games/{gameId}/ui/title-screen
     this.showTitleScreen = makeOperation(http, "api/games", "POST", "{gameId}/ui/title-screen");
-    // post api/games/{gameId}/start
+    // POST api/games/{gameId}/start
     this.startGame = makeOperation(http, "api/games", "POST", "{gameId}/start");
-    // post api/games/{gameId}/areas/{areaId}/unload
+    // POST api/games/{gameId}/areas/{areaId}/unload
     this.unloadArea = makeOperation(http, "api/games", "POST", "{gameId}/areas/{areaId}/unload");
-    // post api/games/{gameId}/unload
+    // POST api/games/{gameId}/unload
     this.unloadGame = makeOperation(http, "api/games", "POST", "{gameId}/unload");
-    // post api/games/{gameId}/levels/{level}/unload
+    // POST api/games/{gameId}/levels/{level}/unload
     this.unloadLevel = makeOperation(http, "api/games", "POST", "{gameId}/levels/{level}/unload");
-    // post api/games/{id}/unpublish (query: version)
+    // POST api/games/{id}/unpublish (query: version)
     this.unpublishGame = makeOperation(http, "api/games", "POST", "{id}/unpublish", {"query":["version"]});
-    // put api/games/{id}
+    // PUT api/games/{id}
     this.updateGame = makeOperation(http, "api/games", "PUT", "{id}");
   }
 }

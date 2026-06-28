@@ -15,49 +15,47 @@ class TemplatesModule {
   constructor(http) {
     this._http = http;
 
-    // post api/templates/{id}/activate
+    // POST api/templates/{id}/activate
     this.activateTemplate = makeOperation(http, "api/templates", "POST", "{id}/activate");
-    // post api/templates/{id}/clone
+    // POST api/templates/{id}/clone
     this.cloneTemplate = makeOperation(http, "api/templates", "POST", "{id}/clone");
-    // post api/templates/
+    // POST api/templates/
     this.createTemplate = makeOperation(http, "api/templates", "POST", "");
-    // post api/templates/create
+    // POST api/templates/create
     this.createTemplateWithOptions = makeOperation(http, "api/templates", "POST", "create");
-    // post api/templates/{id}/deactivate
+    // POST api/templates/{id}/deactivate
     this.deactivateTemplate = makeOperation(http, "api/templates", "POST", "{id}/deactivate");
-    // delete api/templates/{id}
+    // DELETE api/templates/{id}
     this.deleteTemplate = makeOperation(http, "api/templates", "DELETE", "{id}");
-    // post api/templates/{id}/download
+    // POST api/templates/{id}/download
     this.downloadTemplate = makeOperation(http, "api/templates", "POST", "{id}/download");
-    // put api/templates/{id}/edit
+    // PUT api/templates/{id}/edit
     this.editTemplate = makeOperation(http, "api/templates", "PUT", "{id}/edit");
-    // get api/templates/
+    // GET api/templates/
     this.getAllTemplates = makeOperation(http, "api/templates", "GET", "");
-    // get api/templates/{id}
+    // GET api/templates/{id}
     this.getTemplate = makeOperation(http, "api/templates", "GET", "{id}");
-    // get api/templates/{id}/versions
+    // GET api/templates/{id}/versions
     this.getTemplateVersions = makeOperation(http, "api/templates", "GET", "{id}/versions");
-    // get api/templates/by-type/{type}
+    // GET api/templates/by-type/{type}
     this.getTemplatesByType = makeOperation(http, "api/templates", "GET", "by-type/{type}");
-    // get api/templates/load-all-for-avatar
+    // GET api/templates/load-all-for-avatar
     this.loadAllTemplatesForAvatar = makeOperation(http, "api/templates", "GET", "load-all-for-avatar");
-    // get api/templates/load-from-path (query: path)
+    // GET api/templates/load-from-path (query: path)
     this.loadTemplateFromPath = makeOperation(http, "api/templates", "GET", "load-from-path", {"query":["path"]});
-    // get api/templates/load-from-published (query: publishedFilePath)
+    // GET api/templates/load-from-published (query: publishedFilePath)
     this.loadTemplateFromPublished = makeOperation(http, "api/templates", "GET", "load-from-published", {"query":["publishedFilePath"]});
-    // get api/templates/{id}/versions/{version}
+    // GET api/templates/{id}/versions/{version}
     this.loadTemplateVersion = makeOperation(http, "api/templates", "GET", "{id}/versions/{version}");
-    // post api/templates/{id}/publish
+    // POST api/templates/{id}/publish
     this.publishTemplate = makeOperation(http, "api/templates", "POST", "{id}/publish");
-    // post api/templates/{id}/republish
+    // POST api/templates/{id}/republish
     this.republishTemplate = makeOperation(http, "api/templates", "POST", "{id}/republish");
-    // get api/templates/search (query: searchTerm)
+    // GET api/templates/search (query: searchTerm)
     this.searchTemplates = makeOperation(http, "api/templates", "GET", "search", {"query":["searchTerm"]});
-    // post api/templates/search
-    this.searchTemplatesPost = makeOperation(http, "api/templates", "POST", "search");
-    // post api/templates/{id}/unpublish
+    // POST api/templates/{id}/unpublish
     this.unpublishTemplate = makeOperation(http, "api/templates", "POST", "{id}/unpublish");
-    // put api/templates/{id}
+    // PUT api/templates/{id}
     this.updateTemplate = makeOperation(http, "api/templates", "PUT", "{id}");
   }
 }

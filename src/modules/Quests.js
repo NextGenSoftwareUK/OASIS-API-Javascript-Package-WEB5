@@ -15,87 +15,85 @@ class QuestsModule {
   constructor(http) {
     this._http = http;
 
-    // post api/quests/{id}/activate (query: version)
+    // POST api/quests/{id}/activate (query: version)
     this.activateQuest = makeOperation(http, "api/quests", "POST", "{id}/activate", {"query":["version"]});
-    // post api/quests/{id}/objectives
+    // POST api/quests/{id}/objectives
     this.addQuestObjective = makeOperation(http, "api/quests", "POST", "{id}/objectives");
-    // post api/quests/{id}/subquests
+    // POST api/quests/{id}/subquests
     this.addSubQuest = makeOperation(http, "api/quests", "POST", "{id}/subquests");
-    // post api/quests/{id}/progress
+    // POST api/quests/{id}/progress
     this.applyQuestProgress = makeOperation(http, "api/quests", "POST", "{id}/progress");
-    // get api/quests/{id}/can-start
+    // GET api/quests/{id}/can-start
     this.canStartQuest = makeOperation(http, "api/quests", "GET", "{id}/can-start");
-    // post api/quests/{id}/clone
+    // POST api/quests/{id}/clone
     this.cloneQuest = makeOperation(http, "api/quests", "POST", "{id}/clone");
-    // post api/quests/{id}/complete (body: completionNotes)
+    // POST api/quests/{id}/complete (body: completionNotes)
     this.completeQuest = makeOperation(http, "api/quests", "POST", "{id}/complete", {"bodyParam":"completionNotes"});
-    // post api/quests/{id}/objectives/{objectiveId}/complete
+    // POST api/quests/{id}/objectives/{objectiveId}/complete
     this.completeQuestObjective = makeOperation(http, "api/quests", "POST", "{id}/objectives/{objectiveId}/complete");
-    // post api/quests/objectives/complete
+    // POST api/quests/objectives/complete
     this.completeQuestObjectiveByIdentifiers = makeOperation(http, "api/quests", "POST", "objectives/complete");
-    // post api/quests/
+    // POST api/quests/
     this.createIQuest = makeOperation(http, "api/quests", "POST", "");
-    // post api/quests/create
+    // POST api/quests/create
     this.createQuestWithOptions = makeOperation(http, "api/quests", "POST", "create");
-    // post api/quests/{id}/deactivate (query: version)
+    // POST api/quests/{id}/deactivate (query: version)
     this.deactivateQuest = makeOperation(http, "api/quests", "POST", "{id}/deactivate", {"query":["version"]});
-    // delete api/quests/{id}
+    // DELETE api/quests/{id}
     this.deleteIQuest = makeOperation(http, "api/quests", "DELETE", "{id}");
-    // post api/quests/{id}/download (query: version, downloadPath, reInstall)
+    // POST api/quests/{id}/download (query: version, downloadPath, reInstall)
     this.downloadQuest = makeOperation(http, "api/quests", "POST", "{id}/download", {"query":["version","downloadPath","reInstall"]});
-    // post api/quests/{id}/edit
+    // POST api/quests/{id}/edit
     this.editQuest = makeOperation(http, "api/quests", "POST", "{id}/edit");
-    // get api/quests/
+    // GET api/quests/
     this.getAllIQuests = makeOperation(http, "api/quests", "GET", "");
-    // get api/quests/all-for-avatar
+    // GET api/quests/all-for-avatar
     this.getAllQuestsForAvatar = makeOperation(http, "api/quests", "GET", "all-for-avatar");
-    // get api/quests/all-for-avatar/game
+    // GET api/quests/all-for-avatar/game
     this.getAllQuestsForAvatarGame = makeOperation(http, "api/quests", "GET", "all-for-avatar/game");
-    // get api/quests/{id}
+    // GET api/quests/{id}
     this.getIQuest = makeOperation(http, "api/quests", "GET", "{id}");
-    // get api/quests/by-avatar/{avatarId}
+    // GET api/quests/by-avatar/{avatarId}
     this.getIQuestsByAvatar = makeOperation(http, "api/quests", "GET", "by-avatar/{avatarId}");
-    // get api/quests/{id}/leaderboard (query: limit)
+    // GET api/quests/{id}/leaderboard (query: limit)
     this.getQuestLeaderboard = makeOperation(http, "api/quests", "GET", "{id}/leaderboard", {"query":["limit"]});
-    // get api/quests/{id}/rewards
+    // GET api/quests/{id}/rewards
     this.getQuestRewards = makeOperation(http, "api/quests", "GET", "{id}/rewards");
-    // get api/quests/stats
+    // GET api/quests/stats
     this.getQuestStats = makeOperation(http, "api/quests", "GET", "stats");
-    // get api/quests/{id}/versions
+    // GET api/quests/{id}/versions
     this.getQuestVersions = makeOperation(http, "api/quests", "GET", "{id}/versions");
-    // get api/quests/by-status/{status}
+    // GET api/quests/by-status/{status}
     this.getQuestsByStatus = makeOperation(http, "api/quests", "GET", "by-status/{status}");
-    // get api/quests/by-status/{status}/game
+    // GET api/quests/by-status/{status}/game
     this.getQuestsByStatusGame = makeOperation(http, "api/quests", "GET", "by-status/{status}/game");
-    // get api/quests/by-type/{type}
+    // GET api/quests/by-type/{type}
     this.getQuestsByType = makeOperation(http, "api/quests", "GET", "by-type/{type}");
-    // get api/quests/load-all-for-avatar (query: showAllVersions, version)
+    // GET api/quests/load-all-for-avatar (query: showAllVersions, version)
     this.loadAllQuestsForAvatar = makeOperation(http, "api/quests", "GET", "load-all-for-avatar", {"query":["showAllVersions","version"]});
-    // get api/quests/{id}/load (query: version, holonType)
+    // GET api/quests/{id}/load (query: version, holonType)
     this.loadQuest = makeOperation(http, "api/quests", "GET", "{id}/load", {"query":["version","holonType"]});
-    // get api/quests/load-from-path (query: path, holonType)
+    // GET api/quests/load-from-path (query: path, holonType)
     this.loadQuestFromPath = makeOperation(http, "api/quests", "GET", "load-from-path", {"query":["path","holonType"]});
-    // get api/quests/load-from-published (query: publishedFilePath)
+    // GET api/quests/load-from-published (query: publishedFilePath)
     this.loadQuestFromPublished = makeOperation(http, "api/quests", "GET", "load-from-published", {"query":["publishedFilePath"]});
-    // get api/quests/{id}/version/{version}
+    // GET api/quests/{id}/version/{version}
     this.loadQuestVersion = makeOperation(http, "api/quests", "GET", "{id}/version/{version}");
-    // post api/quests/{id}/publish
+    // POST api/quests/{id}/publish
     this.publishQuest = makeOperation(http, "api/quests", "POST", "{id}/publish");
-    // delete api/quests/{parentId}/objectives/{objectiveId}
+    // DELETE api/quests/{parentId}/objectives/{objectiveId}
     this.removeQuestObjective = makeOperation(http, "api/quests", "DELETE", "{parentId}/objectives/{objectiveId}");
-    // delete api/quests/{parentId}/subquests/{subQuestId}
+    // DELETE api/quests/{parentId}/subquests/{subQuestId}
     this.removeSubQuest = makeOperation(http, "api/quests", "DELETE", "{parentId}/subquests/{subQuestId}");
-    // post api/quests/{id}/republish (query: version)
+    // POST api/quests/{id}/republish (query: version)
     this.republishQuest = makeOperation(http, "api/quests", "POST", "{id}/republish", {"query":["version"]});
-    // post api/quests/{id}/progress/reset
+    // POST api/quests/{id}/progress/reset
     this.resetObjectiveProgress = makeOperation(http, "api/quests", "POST", "{id}/progress/reset");
-    // get api/quests/search (query: query)
+    // GET api/quests/search (query: query)
     this.searchQuests = makeOperation(http, "api/quests", "GET", "search", {"query":["query"]});
-    // post api/quests/{id}/start (body: startNotes)
-    this.startQuest = makeOperation(http, "api/quests", "POST", "{id}/start", {"bodyParam":"startNotes"});
-    // post api/quests/{id}/unpublish (query: version)
+    // POST api/quests/{id}/unpublish (query: version)
     this.unpublishQuest = makeOperation(http, "api/quests", "POST", "{id}/unpublish", {"query":["version"]});
-    // put api/quests/{id}
+    // PUT api/quests/{id}
     this.updateIQuest = makeOperation(http, "api/quests", "PUT", "{id}");
   }
 }

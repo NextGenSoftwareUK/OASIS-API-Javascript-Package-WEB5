@@ -15,47 +15,47 @@ class NFTsModule {
   constructor(http) {
     this._http = http;
 
-    // post api/nFTs/{id}/activate (query: version)
+    // POST api/nFTs/{id}/activate (query: version)
     this.activateNFT = makeOperation(http, "api/nFTs", "POST", "{id}/activate", {"query":["version"]});
-    // post api/nFTs/{id}/clone
+    // POST api/nFTs/{id}/clone
     this.cloneNFT = makeOperation(http, "api/nFTs", "POST", "{id}/clone");
-    // post api/nFTs/
+    // POST api/nFTs/
     this.createNFT = makeOperation(http, "api/nFTs", "POST", "");
-    // post api/nFTs/create
+    // POST api/nFTs/create
     this.createNFTWithOptions = makeOperation(http, "api/nFTs", "POST", "create");
-    // post api/nFTs/{id}/deactivate (query: version)
+    // POST api/nFTs/{id}/deactivate (query: version)
     this.deactivateNFT = makeOperation(http, "api/nFTs", "POST", "{id}/deactivate", {"query":["version"]});
-    // delete api/nFTs/{id}
+    // DELETE api/nFTs/{id}
     this.deleteNFT = makeOperation(http, "api/nFTs", "DELETE", "{id}");
-    // post api/nFTs/{id}/download (query: version, downloadPath, reInstall)
+    // POST api/nFTs/{id}/download (query: version, downloadPath, reInstall)
     this.downloadNFT = makeOperation(http, "api/nFTs", "POST", "{id}/download", {"query":["version","downloadPath","reInstall"]});
-    // post api/nFTs/{id}/edit
+    // POST api/nFTs/{id}/edit
     this.editNFT = makeOperation(http, "api/nFTs", "POST", "{id}/edit");
-    // get api/nFTs/
+    // GET api/nFTs/
     this.getAllNFTs = makeOperation(http, "api/nFTs", "GET", "");
-    // get api/nFTs/{id}
+    // GET api/nFTs/{id}
     this.getNFT = makeOperation(http, "api/nFTs", "GET", "{id}");
-    // get api/nFTs/{id}/versions
+    // GET api/nFTs/{id}/versions
     this.getNFTVersions = makeOperation(http, "api/nFTs", "GET", "{id}/versions");
-    // get api/nFTs/load-all-for-avatar (query: showAllVersions, version)
+    // GET api/nFTs/load-all-for-avatar (query: showAllVersions, version)
     this.loadAllNFTsForAvatar = makeOperation(http, "api/nFTs", "GET", "load-all-for-avatar", {"query":["showAllVersions","version"]});
-    // get api/nFTs/{id}/load (query: version, holonType)
+    // GET api/nFTs/{id}/load (query: version, holonType)
     this.loadNFT = makeOperation(http, "api/nFTs", "GET", "{id}/load", {"query":["version","holonType"]});
-    // get api/nFTs/load-from-path (query: path, holonType)
+    // GET api/nFTs/load-from-path (query: path, holonType)
     this.loadNFTFromPath = makeOperation(http, "api/nFTs", "GET", "load-from-path", {"query":["path","holonType"]});
-    // get api/nFTs/load-from-published (query: publishedFilePath)
+    // GET api/nFTs/load-from-published (query: publishedFilePath)
     this.loadNFTFromPublished = makeOperation(http, "api/nFTs", "GET", "load-from-published", {"query":["publishedFilePath"]});
-    // get api/nFTs/{id}/version/{version}
+    // GET api/nFTs/{id}/version/{version}
     this.loadNFTVersion = makeOperation(http, "api/nFTs", "GET", "{id}/version/{version}");
-    // post api/nFTs/{id}/publish
+    // POST api/nFTs/{id}/publish
     this.publishNFT = makeOperation(http, "api/nFTs", "POST", "{id}/publish");
-    // post api/nFTs/{id}/republish (query: version)
+    // POST api/nFTs/{id}/republish (query: version)
     this.republishNFT = makeOperation(http, "api/nFTs", "POST", "{id}/republish", {"query":["version"]});
-    // get api/nFTs/search (query: searchTerm, searchOnlyForCurrentAvatar, showAllVersions, version)
+    // GET api/nFTs/search (query: searchTerm, searchOnlyForCurrentAvatar, showAllVersions, version)
     this.searchNFTs = makeOperation(http, "api/nFTs", "GET", "search", {"query":["searchTerm","searchOnlyForCurrentAvatar","showAllVersions","version"]});
-    // post api/nFTs/{id}/unpublish (query: version)
+    // POST api/nFTs/{id}/unpublish (query: version)
     this.unpublishNFT = makeOperation(http, "api/nFTs", "POST", "{id}/unpublish", {"query":["version"]});
-    // put api/nFTs/{id}
+    // PUT api/nFTs/{id}
     this.updateNFT = makeOperation(http, "api/nFTs", "PUT", "{id}");
   }
 }

@@ -15,49 +15,49 @@ class CelestialSpacesModule {
   constructor(http) {
     this._http = http;
 
-    // post api/celestialSpaces/{id}/activate (query: version)
+    // POST api/celestialSpaces/{id}/activate (query: version)
     this.activateCelestialSpace = makeOperation(http, "api/celestialSpaces", "POST", "{id}/activate", {"query":["version"]});
-    // post api/celestialSpaces/
+    // POST api/celestialSpaces/
     this.createCelestialSpace = makeOperation(http, "api/celestialSpaces", "POST", "");
-    // post api/celestialSpaces/create
+    // POST api/celestialSpaces/create
     this.createCelestialSpaceWithOptions = makeOperation(http, "api/celestialSpaces", "POST", "create");
-    // post api/celestialSpaces/{id}/deactivate (query: version)
+    // POST api/celestialSpaces/{id}/deactivate (query: version)
     this.deactivateCelestialSpace = makeOperation(http, "api/celestialSpaces", "POST", "{id}/deactivate", {"query":["version"]});
-    // delete api/celestialSpaces/{id}
+    // DELETE api/celestialSpaces/{id}
     this.deleteCelestialSpace = makeOperation(http, "api/celestialSpaces", "DELETE", "{id}");
-    // post api/celestialSpaces/{id}/download (query: version, downloadPath, reInstall)
+    // POST api/celestialSpaces/{id}/download (query: version, downloadPath, reInstall)
     this.downloadCelestialSpace = makeOperation(http, "api/celestialSpaces", "POST", "{id}/download", {"query":["version","downloadPath","reInstall"]});
-    // post api/celestialSpaces/{id}/edit
+    // POST api/celestialSpaces/{id}/edit
     this.editCelestialSpace = makeOperation(http, "api/celestialSpaces", "POST", "{id}/edit");
-    // get api/celestialSpaces/
+    // GET api/celestialSpaces/
     this.getAllCelestialSpaces = makeOperation(http, "api/celestialSpaces", "GET", "");
-    // get api/celestialSpaces/{id}
+    // GET api/celestialSpaces/{id}
     this.getCelestialSpace = makeOperation(http, "api/celestialSpaces", "GET", "{id}");
-    // get api/celestialSpaces/{id}/versions
+    // GET api/celestialSpaces/{id}/versions
     this.getCelestialSpaceVersions = makeOperation(http, "api/celestialSpaces", "GET", "{id}/versions");
-    // get api/celestialSpaces/by-type/{type}
+    // GET api/celestialSpaces/by-type/{type}
     this.getCelestialSpacesByType = makeOperation(http, "api/celestialSpaces", "GET", "by-type/{type}");
-    // get api/celestialSpaces/in-space/{parentSpaceId}
+    // GET api/celestialSpaces/in-space/{parentSpaceId}
     this.getCelestialSpacesInSpace = makeOperation(http, "api/celestialSpaces", "GET", "in-space/{parentSpaceId}");
-    // get api/celestialSpaces/load-all-for-avatar (query: showAllVersions, version)
+    // GET api/celestialSpaces/load-all-for-avatar (query: showAllVersions, version)
     this.loadAllCelestialSpacesForAvatar = makeOperation(http, "api/celestialSpaces", "GET", "load-all-for-avatar", {"query":["showAllVersions","version"]});
-    // get api/celestialSpaces/{id}/load (query: version, holonType)
+    // GET api/celestialSpaces/{id}/load (query: version, holonType)
     this.loadCelestialSpace = makeOperation(http, "api/celestialSpaces", "GET", "{id}/load", {"query":["version","holonType"]});
-    // get api/celestialSpaces/load-from-path (query: path, holonType)
+    // GET api/celestialSpaces/load-from-path (query: path, holonType)
     this.loadCelestialSpaceFromPath = makeOperation(http, "api/celestialSpaces", "GET", "load-from-path", {"query":["path","holonType"]});
-    // get api/celestialSpaces/load-from-published (query: publishedFilePath)
+    // GET api/celestialSpaces/load-from-published (query: publishedFilePath)
     this.loadCelestialSpaceFromPublished = makeOperation(http, "api/celestialSpaces", "GET", "load-from-published", {"query":["publishedFilePath"]});
-    // get api/celestialSpaces/{id}/version/{version}
+    // GET api/celestialSpaces/{id}/version/{version}
     this.loadCelestialSpaceVersion = makeOperation(http, "api/celestialSpaces", "GET", "{id}/version/{version}");
-    // post api/celestialSpaces/{id}/publish
+    // POST api/celestialSpaces/{id}/publish
     this.publishCelestialSpace = makeOperation(http, "api/celestialSpaces", "POST", "{id}/publish");
-    // post api/celestialSpaces/{id}/republish (query: version)
+    // POST api/celestialSpaces/{id}/republish (query: version)
     this.republishCelestialSpace = makeOperation(http, "api/celestialSpaces", "POST", "{id}/republish", {"query":["version"]});
-    // get api/celestialSpaces/search (query: query)
+    // GET api/celestialSpaces/search (query: query)
     this.searchCelestialSpaces = makeOperation(http, "api/celestialSpaces", "GET", "search", {"query":["query"]});
-    // post api/celestialSpaces/{id}/unpublish (query: version)
+    // POST api/celestialSpaces/{id}/unpublish (query: version)
     this.unpublishCelestialSpace = makeOperation(http, "api/celestialSpaces", "POST", "{id}/unpublish", {"query":["version"]});
-    // put api/celestialSpaces/{id}
+    // PUT api/celestialSpaces/{id}
     this.updateCelestialSpace = makeOperation(http, "api/celestialSpaces", "PUT", "{id}");
   }
 }

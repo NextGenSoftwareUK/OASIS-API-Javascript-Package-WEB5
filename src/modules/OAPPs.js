@@ -15,47 +15,45 @@ class OAPPsModule {
   constructor(http) {
     this._http = http;
 
-    // post api/oAPPs/{id}/activate (query: version)
+    // POST api/oAPPs/{id}/activate (query: version)
     this.activateOAPP = makeOperation(http, "api/oAPPs", "POST", "{id}/activate", {"query":["version"]});
-    // post api/oAPPs/{id}/clone
+    // POST api/oAPPs/{id}/clone
     this.cloneOAPP = makeOperation(http, "api/oAPPs", "POST", "{id}/clone");
-    // post api/oAPPs/
+    // POST api/oAPPs/
     this.createOAPP = makeOperation(http, "api/oAPPs", "POST", "");
-    // post api/oAPPs/create
+    // POST api/oAPPs/create
     this.createOAPPWithOptions = makeOperation(http, "api/oAPPs", "POST", "create");
-    // post api/oAPPs/{id}/deactivate (query: version)
+    // POST api/oAPPs/{id}/deactivate (query: version)
     this.deactivateOAPP = makeOperation(http, "api/oAPPs", "POST", "{id}/deactivate", {"query":["version"]});
-    // delete api/oAPPs/{id}
+    // DELETE api/oAPPs/{id}
     this.deleteOAPP = makeOperation(http, "api/oAPPs", "DELETE", "{id}");
-    // post api/oAPPs/{id}/download
+    // POST api/oAPPs/{id}/download
     this.downloadOAPP = makeOperation(http, "api/oAPPs", "POST", "{id}/download");
-    // put api/oAPPs/{id}/edit
+    // PUT api/oAPPs/{id}/edit
     this.editOAPP = makeOperation(http, "api/oAPPs", "PUT", "{id}/edit");
-    // get api/oAPPs/
+    // GET api/oAPPs/
     this.getAllOAPPs = makeOperation(http, "api/oAPPs", "GET", "");
-    // get api/oAPPs/{id}
+    // GET api/oAPPs/{id}
     this.getOAPP = makeOperation(http, "api/oAPPs", "GET", "{id}");
-    // get api/oAPPs/{id}/versions
+    // GET api/oAPPs/{id}/versions
     this.getOAPPVersions = makeOperation(http, "api/oAPPs", "GET", "{id}/versions");
-    // get api/oAPPs/load-all-for-avatar
+    // GET api/oAPPs/load-all-for-avatar
     this.loadAllOAPPsForAvatar = makeOperation(http, "api/oAPPs", "GET", "load-all-for-avatar");
-    // get api/oAPPs/load-from-path (query: path)
+    // GET api/oAPPs/load-from-path (query: path)
     this.loadOAPPFromPath = makeOperation(http, "api/oAPPs", "GET", "load-from-path", {"query":["path"]});
-    // get api/oAPPs/load-from-published (query: publishedFilePath)
+    // GET api/oAPPs/load-from-published (query: publishedFilePath)
     this.loadOAPPFromPublished = makeOperation(http, "api/oAPPs", "GET", "load-from-published", {"query":["publishedFilePath"]});
-    // get api/oAPPs/{id}/versions/{version}
+    // GET api/oAPPs/{id}/versions/{version}
     this.loadOAPPVersion = makeOperation(http, "api/oAPPs", "GET", "{id}/versions/{version}");
-    // post api/oAPPs/{id}/publish
+    // POST api/oAPPs/{id}/publish
     this.publishOAPP = makeOperation(http, "api/oAPPs", "POST", "{id}/publish");
-    // post api/oAPPs/{id}/republish (query: version)
+    // POST api/oAPPs/{id}/republish (query: version)
     this.republishOAPP = makeOperation(http, "api/oAPPs", "POST", "{id}/republish", {"query":["version"]});
-    // get api/oAPPs/search (query: searchTerm, showAllVersions, version)
-    this.searchOAPPs = makeOperation(http, "api/oAPPs", "GET", "search", {"query":["searchTerm","showAllVersions","version"]});
-    // post api/oAPPs/search
-    this.searchOAPPsPost = makeOperation(http, "api/oAPPs", "POST", "search");
-    // post api/oAPPs/{id}/unpublish (query: version)
+    // POST api/oAPPs/search
+    this.searchOAPPs = makeOperation(http, "api/oAPPs", "POST", "search");
+    // POST api/oAPPs/{id}/unpublish (query: version)
     this.unpublishOAPP = makeOperation(http, "api/oAPPs", "POST", "{id}/unpublish", {"query":["version"]});
-    // put api/oAPPs/{id}
+    // PUT api/oAPPs/{id}
     this.updateOAPP = makeOperation(http, "api/oAPPs", "PUT", "{id}");
   }
 }

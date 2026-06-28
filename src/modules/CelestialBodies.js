@@ -15,49 +15,49 @@ class CelestialBodiesModule {
   constructor(http) {
     this._http = http;
 
-    // post api/celestialBodies/{id}/activate (query: version)
+    // POST api/celestialBodies/{id}/activate (query: version)
     this.activateCelestialBody = makeOperation(http, "api/celestialBodies", "POST", "{id}/activate", {"query":["version"]});
-    // post api/celestialBodies/
+    // POST api/celestialBodies/
     this.createCelestialBody = makeOperation(http, "api/celestialBodies", "POST", "");
-    // post api/celestialBodies/create
+    // POST api/celestialBodies/create
     this.createCelestialBodyWithOptions = makeOperation(http, "api/celestialBodies", "POST", "create");
-    // post api/celestialBodies/{id}/deactivate (query: version)
+    // POST api/celestialBodies/{id}/deactivate (query: version)
     this.deactivateCelestialBody = makeOperation(http, "api/celestialBodies", "POST", "{id}/deactivate", {"query":["version"]});
-    // delete api/celestialBodies/{id}
+    // DELETE api/celestialBodies/{id}
     this.deleteCelestialBody = makeOperation(http, "api/celestialBodies", "DELETE", "{id}");
-    // post api/celestialBodies/{id}/download (query: version, downloadPath, reInstall)
+    // POST api/celestialBodies/{id}/download (query: version, downloadPath, reInstall)
     this.downloadCelestialBody = makeOperation(http, "api/celestialBodies", "POST", "{id}/download", {"query":["version","downloadPath","reInstall"]});
-    // post api/celestialBodies/{id}/edit
+    // POST api/celestialBodies/{id}/edit
     this.editCelestialBody = makeOperation(http, "api/celestialBodies", "POST", "{id}/edit");
-    // get api/celestialBodies/
+    // GET api/celestialBodies/
     this.getAllCelestialBodies = makeOperation(http, "api/celestialBodies", "GET", "");
-    // get api/celestialBodies/by-type/{type}
+    // GET api/celestialBodies/by-type/{type}
     this.getCelestialBodiesByType = makeOperation(http, "api/celestialBodies", "GET", "by-type/{type}");
-    // get api/celestialBodies/in-space/{spaceId}
+    // GET api/celestialBodies/in-space/{spaceId}
     this.getCelestialBodiesInSpace = makeOperation(http, "api/celestialBodies", "GET", "in-space/{spaceId}");
-    // get api/celestialBodies/{id}
+    // GET api/celestialBodies/{id}
     this.getCelestialBody = makeOperation(http, "api/celestialBodies", "GET", "{id}");
-    // get api/celestialBodies/{id}/versions
+    // GET api/celestialBodies/{id}/versions
     this.getCelestialBodyVersions = makeOperation(http, "api/celestialBodies", "GET", "{id}/versions");
-    // get api/celestialBodies/load-all-for-avatar (query: showAllVersions, version)
+    // GET api/celestialBodies/load-all-for-avatar (query: showAllVersions, version)
     this.loadAllCelestialBodiesForAvatar = makeOperation(http, "api/celestialBodies", "GET", "load-all-for-avatar", {"query":["showAllVersions","version"]});
-    // get api/celestialBodies/{id}/load (query: version, holonType)
+    // GET api/celestialBodies/{id}/load (query: version, holonType)
     this.loadCelestialBody = makeOperation(http, "api/celestialBodies", "GET", "{id}/load", {"query":["version","holonType"]});
-    // get api/celestialBodies/load-from-path (query: path, holonType)
+    // GET api/celestialBodies/load-from-path (query: path, holonType)
     this.loadCelestialBodyFromPath = makeOperation(http, "api/celestialBodies", "GET", "load-from-path", {"query":["path","holonType"]});
-    // get api/celestialBodies/load-from-published (query: publishedFilePath)
+    // GET api/celestialBodies/load-from-published (query: publishedFilePath)
     this.loadCelestialBodyFromPublished = makeOperation(http, "api/celestialBodies", "GET", "load-from-published", {"query":["publishedFilePath"]});
-    // get api/celestialBodies/{id}/version/{version}
+    // GET api/celestialBodies/{id}/version/{version}
     this.loadCelestialBodyVersion = makeOperation(http, "api/celestialBodies", "GET", "{id}/version/{version}");
-    // post api/celestialBodies/{id}/publish
+    // POST api/celestialBodies/{id}/publish
     this.publishCelestialBody = makeOperation(http, "api/celestialBodies", "POST", "{id}/publish");
-    // post api/celestialBodies/{id}/republish (query: version)
+    // POST api/celestialBodies/{id}/republish (query: version)
     this.republishCelestialBody = makeOperation(http, "api/celestialBodies", "POST", "{id}/republish", {"query":["version"]});
-    // get api/celestialBodies/search (query: query)
+    // GET api/celestialBodies/search (query: query)
     this.searchCelestialBodies = makeOperation(http, "api/celestialBodies", "GET", "search", {"query":["query"]});
-    // post api/celestialBodies/{id}/unpublish (query: version)
+    // POST api/celestialBodies/{id}/unpublish (query: version)
     this.unpublishCelestialBody = makeOperation(http, "api/celestialBodies", "POST", "{id}/unpublish", {"query":["version"]});
-    // put api/celestialBodies/{id}
+    // PUT api/celestialBodies/{id}
     this.updateCelestialBody = makeOperation(http, "api/celestialBodies", "PUT", "{id}");
   }
 }

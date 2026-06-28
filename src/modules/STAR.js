@@ -15,13 +15,13 @@ class STARModule {
   constructor(http) {
     this._http = http;
 
-    // post api/sTAR/beam-in
+    // POST api/sTAR/beam-in
     this.beamIn = makeOperation(http, "api/sTAR", "POST", "beam-in");
-    // post api/sTAR/extinguish
+    // POST api/sTAR/extinguish
     this.extinguishSTAR = makeOperation(http, "api/sTAR", "POST", "extinguish");
-    // get api/sTAR/status
+    // GET api/sTAR/status
     this.getStatus = makeOperation(http, "api/sTAR", "GET", "status");
-    // post api/sTAR/ignite
+    // POST api/sTAR/ignite
     this.igniteSTAR = makeOperation(http, "api/sTAR", "POST", "ignite");
   }
 }

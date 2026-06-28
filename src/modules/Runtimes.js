@@ -15,55 +15,53 @@ class RuntimesModule {
   constructor(http) {
     this._http = http;
 
-    // post api/runtimes/{id}/activate
+    // POST api/runtimes/{id}/activate
     this.activateRuntime = makeOperation(http, "api/runtimes", "POST", "{id}/activate");
-    // post api/runtimes/{id}/clone
+    // POST api/runtimes/{id}/clone
     this.cloneRuntime = makeOperation(http, "api/runtimes", "POST", "{id}/clone");
-    // post api/runtimes/
+    // POST api/runtimes/
     this.createRuntime = makeOperation(http, "api/runtimes", "POST", "");
-    // post api/runtimes/create
+    // POST api/runtimes/create
     this.createRuntimeWithOptions = makeOperation(http, "api/runtimes", "POST", "create");
-    // post api/runtimes/{id}/deactivate
+    // POST api/runtimes/{id}/deactivate
     this.deactivateRuntime = makeOperation(http, "api/runtimes", "POST", "{id}/deactivate");
-    // delete api/runtimes/{id}
+    // DELETE api/runtimes/{id}
     this.deleteRuntime = makeOperation(http, "api/runtimes", "DELETE", "{id}");
-    // post api/runtimes/{id}/download
+    // POST api/runtimes/{id}/download
     this.downloadRuntime = makeOperation(http, "api/runtimes", "POST", "{id}/download");
-    // put api/runtimes/{id}/edit
+    // PUT api/runtimes/{id}/edit
     this.editRuntime = makeOperation(http, "api/runtimes", "PUT", "{id}/edit");
-    // get api/runtimes/
+    // GET api/runtimes/
     this.getAllRuntimes = makeOperation(http, "api/runtimes", "GET", "");
-    // get api/runtimes/{id}
+    // GET api/runtimes/{id}
     this.getRuntime = makeOperation(http, "api/runtimes", "GET", "{id}");
-    // get api/runtimes/{id}/status
+    // GET api/runtimes/{id}/status
     this.getRuntimeStatus = makeOperation(http, "api/runtimes", "GET", "{id}/status");
-    // get api/runtimes/{id}/versions
+    // GET api/runtimes/{id}/versions
     this.getRuntimeVersions = makeOperation(http, "api/runtimes", "GET", "{id}/versions");
-    // get api/runtimes/by-type/{type}
+    // GET api/runtimes/by-type/{type}
     this.getRuntimesByType = makeOperation(http, "api/runtimes", "GET", "by-type/{type}");
-    // get api/runtimes/load-all-for-avatar
+    // GET api/runtimes/load-all-for-avatar
     this.loadAllRuntimesForAvatar = makeOperation(http, "api/runtimes", "GET", "load-all-for-avatar");
-    // get api/runtimes/load-from-path (query: path)
+    // GET api/runtimes/load-from-path (query: path)
     this.loadRuntimeFromPath = makeOperation(http, "api/runtimes", "GET", "load-from-path", {"query":["path"]});
-    // get api/runtimes/load-from-published (query: publishedFilePath)
+    // GET api/runtimes/load-from-published (query: publishedFilePath)
     this.loadRuntimeFromPublished = makeOperation(http, "api/runtimes", "GET", "load-from-published", {"query":["publishedFilePath"]});
-    // get api/runtimes/{id}/versions/{version}
+    // GET api/runtimes/{id}/versions/{version}
     this.loadRuntimeVersion = makeOperation(http, "api/runtimes", "GET", "{id}/versions/{version}");
-    // post api/runtimes/{id}/publish
+    // POST api/runtimes/{id}/publish
     this.publishRuntime = makeOperation(http, "api/runtimes", "POST", "{id}/publish");
-    // post api/runtimes/{id}/republish
+    // POST api/runtimes/{id}/republish
     this.republishRuntime = makeOperation(http, "api/runtimes", "POST", "{id}/republish");
-    // get api/runtimes/search (query: searchTerm)
+    // GET api/runtimes/search (query: searchTerm)
     this.searchRuntimes = makeOperation(http, "api/runtimes", "GET", "search", {"query":["searchTerm"]});
-    // post api/runtimes/search
-    this.searchRuntimesPost = makeOperation(http, "api/runtimes", "POST", "search");
-    // post api/runtimes/{id}/start
+    // POST api/runtimes/{id}/start
     this.startRuntime = makeOperation(http, "api/runtimes", "POST", "{id}/start");
-    // post api/runtimes/{id}/stop
+    // POST api/runtimes/{id}/stop
     this.stopRuntime = makeOperation(http, "api/runtimes", "POST", "{id}/stop");
-    // post api/runtimes/{id}/unpublish
+    // POST api/runtimes/{id}/unpublish
     this.unpublishRuntime = makeOperation(http, "api/runtimes", "POST", "{id}/unpublish");
-    // put api/runtimes/{id}
+    // PUT api/runtimes/{id}
     this.updateRuntime = makeOperation(http, "api/runtimes", "PUT", "{id}");
   }
 }

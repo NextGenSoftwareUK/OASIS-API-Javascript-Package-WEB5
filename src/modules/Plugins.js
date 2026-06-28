@@ -15,53 +15,53 @@ class PluginsModule {
   constructor(http) {
     this._http = http;
 
-    // post api/plugins/{id}/activate (query: version)
+    // POST api/plugins/{id}/activate (query: version)
     this.activatePlugin = makeOperation(http, "api/plugins", "POST", "{id}/activate", {"query":["version"]});
-    // post api/plugins/{id}/clone
+    // POST api/plugins/{id}/clone
     this.clonePlugin = makeOperation(http, "api/plugins", "POST", "{id}/clone");
-    // post api/plugins/
+    // POST api/plugins/
     this.createPlugin = makeOperation(http, "api/plugins", "POST", "");
-    // post api/plugins/create
+    // POST api/plugins/create
     this.createPluginWithOptions = makeOperation(http, "api/plugins", "POST", "create");
-    // post api/plugins/{id}/deactivate (query: version)
+    // POST api/plugins/{id}/deactivate (query: version)
     this.deactivatePlugin = makeOperation(http, "api/plugins", "POST", "{id}/deactivate", {"query":["version"]});
-    // delete api/plugins/{id}
+    // DELETE api/plugins/{id}
     this.deletePlugin = makeOperation(http, "api/plugins", "DELETE", "{id}");
-    // post api/plugins/{id}/download (query: version, downloadPath, reInstall)
+    // POST api/plugins/{id}/download (query: version, downloadPath, reInstall)
     this.downloadPlugin = makeOperation(http, "api/plugins", "POST", "{id}/download", {"query":["version","downloadPath","reInstall"]});
-    // post api/plugins/{id}/edit
+    // POST api/plugins/{id}/edit
     this.editPlugin = makeOperation(http, "api/plugins", "POST", "{id}/edit");
-    // get api/plugins/
+    // GET api/plugins/
     this.getAllPlugins = makeOperation(http, "api/plugins", "GET", "");
-    // get api/plugins/{id}
+    // GET api/plugins/{id}
     this.getPlugin = makeOperation(http, "api/plugins", "GET", "{id}");
-    // get api/plugins/{id}/versions
+    // GET api/plugins/{id}/versions
     this.getPluginVersions = makeOperation(http, "api/plugins", "GET", "{id}/versions");
-    // get api/plugins/by-type/{type}
+    // GET api/plugins/by-type/{type}
     this.getPluginsByType = makeOperation(http, "api/plugins", "GET", "by-type/{type}");
-    // post api/plugins/{id}/install
+    // POST api/plugins/{id}/install
     this.installPlugin = makeOperation(http, "api/plugins", "POST", "{id}/install");
-    // get api/plugins/load-all-for-avatar (query: showAllVersions, version)
+    // GET api/plugins/load-all-for-avatar (query: showAllVersions, version)
     this.loadAllPluginsForAvatar = makeOperation(http, "api/plugins", "GET", "load-all-for-avatar", {"query":["showAllVersions","version"]});
-    // get api/plugins/{id}/load (query: version, holonType)
+    // GET api/plugins/{id}/load (query: version, holonType)
     this.loadPlugin = makeOperation(http, "api/plugins", "GET", "{id}/load", {"query":["version","holonType"]});
-    // get api/plugins/load-from-path (query: path, holonType)
+    // GET api/plugins/load-from-path (query: path, holonType)
     this.loadPluginFromPath = makeOperation(http, "api/plugins", "GET", "load-from-path", {"query":["path","holonType"]});
-    // get api/plugins/load-from-published (query: publishedFilePath)
+    // GET api/plugins/load-from-published (query: publishedFilePath)
     this.loadPluginFromPublished = makeOperation(http, "api/plugins", "GET", "load-from-published", {"query":["publishedFilePath"]});
-    // get api/plugins/{id}/version/{version}
+    // GET api/plugins/{id}/version/{version}
     this.loadPluginVersion = makeOperation(http, "api/plugins", "GET", "{id}/version/{version}");
-    // post api/plugins/{id}/publish
+    // POST api/plugins/{id}/publish
     this.publishPlugin = makeOperation(http, "api/plugins", "POST", "{id}/publish");
-    // post api/plugins/{id}/republish (query: version)
+    // POST api/plugins/{id}/republish (query: version)
     this.republishPlugin = makeOperation(http, "api/plugins", "POST", "{id}/republish", {"query":["version"]});
-    // get api/plugins/search (query: searchTerm)
+    // GET api/plugins/search (query: searchTerm)
     this.searchPlugins = makeOperation(http, "api/plugins", "GET", "search", {"query":["searchTerm"]});
-    // post api/plugins/{id}/uninstall
+    // POST api/plugins/{id}/uninstall
     this.uninstallPlugin = makeOperation(http, "api/plugins", "POST", "{id}/uninstall");
-    // post api/plugins/{id}/unpublish (query: version)
+    // POST api/plugins/{id}/unpublish (query: version)
     this.unpublishPlugin = makeOperation(http, "api/plugins", "POST", "{id}/unpublish", {"query":["version"]});
-    // put api/plugins/{id}
+    // PUT api/plugins/{id}
     this.updatePlugin = makeOperation(http, "api/plugins", "PUT", "{id}");
   }
 }

@@ -4,30 +4,175 @@ Source controller: [`STARController.cs`](https://github.com/NextGenSoftwareUK/OA
 Route prefix: `api/sTAR`
 4 operation(s).
 
-All methods are generated 1:1 from the controller's real `[Http*]` routes (see
-[Conventions](../README.md#calling-any-endpoint)). They take a single args
-object: any key matching a `{token}` in the route is substituted into the
-URL; everything else becomes the query string (GET/DELETE) or JSON body
-(POST/PUT).
+Every method takes a single args object: any key matching a `{token}` in the route is substituted into the URL; everything else becomes the query string (GET/DELETE) or JSON body (POST/PUT). Every call resolves to the standard OASIS envelope:
 
-## Methods
+```ts
+{
+  isError: boolean;
+  isWarning: boolean;
+  message: string;
+  errorCode?: string;
+  result: T; // see each endpoint's Response section below
+}
+```
 
-| Method | HTTP | Route | Route params | Query params | Body |
-| --- | --- | --- | --- | --- | --- |
-| `beamIn` | POST | `api/sTAR/beam-in` | – | – | remaining args |
-| `extinguishSTAR` | POST | `api/sTAR/extinguish` | – | – | remaining args |
-| `getStatus` | GET | `api/sTAR/status` | – | – | – |
-| `igniteSTAR` | POST | `api/sTAR/ignite` | – | – | remaining args |
+## Operations
 
-## Example
+### `beamIn`
+
+Beams in (authenticates) an avatar to the STAR system.
+
+**POST** `api/sTAR/beam-in`
+
+**Request**
+
+Body type: `BeamInRequest`
+
+| Field | Type |
+| --- | --- |
+| `Username` | `string` |
+| `Password` | `string` |
+
+**Response**
+
+Standard `OASISResult` envelope (see top of this page) with:
+
+`result` type: `IActionResult` (not part of the request/response payload).
+
+**Example**
 
 ```js
-const star = new STARClient({ baseUrl: '...' });
-star.setToken(jwtToken); // or: await star.auth.login({ username, password })
-
 const { isError, message, result } = await star.sTAR.beamIn({
-    /* ...other fields per the request body */
+    username: "example string",
+    password: "example string"
   });
 if (isError) throw new Error(message);
 console.log(result);
 ```
+
+Example response:
+
+```json
+{
+  "isError": false,
+  "message": "",
+  "result": null
+}
+```
+
+---
+
+### `extinguishSTAR`
+
+Extinguishes (stops) the STAR system.
+
+**POST** `api/sTAR/extinguish`
+
+**Request**
+
+No request body.
+
+**Response**
+
+Standard `OASISResult` envelope (see top of this page) with:
+
+`result` type: `IActionResult` (not part of the request/response payload).
+
+**Example**
+
+```js
+const { isError, message, result } = await star.sTAR.extinguishSTAR({});
+if (isError) throw new Error(message);
+console.log(result);
+```
+
+Example response:
+
+```json
+{
+  "isError": false,
+  "message": "",
+  "result": null
+}
+```
+
+---
+
+### `getStatus`
+
+Retrieves the current status of the STAR system.
+
+**GET** `api/sTAR/status`
+
+**Request**
+
+No request body.
+
+**Response**
+
+Standard `OASISResult` envelope (see top of this page) with:
+
+`result` type: `object`
+
+**Example**
+
+```js
+const { isError, message, result } = await star.sTAR.getStatus({});
+if (isError) throw new Error(message);
+console.log(result);
+```
+
+Example response:
+
+```json
+{
+  "isError": false,
+  "message": "",
+  "result": {}
+}
+```
+
+---
+
+### `igniteSTAR`
+
+Ignites (starts) the STAR system with optional authentication credentials.
+
+**POST** `api/sTAR/ignite`
+
+**Request**
+
+Body type: `IgniteRequest`
+
+| Field | Type |
+| --- | --- |
+| `UserName` | `string` |
+| `Password` | `string` |
+
+**Response**
+
+Standard `OASISResult` envelope (see top of this page) with:
+
+`result` type: `IActionResult` (not part of the request/response payload).
+
+**Example**
+
+```js
+const { isError, message, result } = await star.sTAR.igniteSTAR({
+    userName: "example string",
+    password: "example string"
+  });
+if (isError) throw new Error(message);
+console.log(result);
+```
+
+Example response:
+
+```json
+{
+  "isError": false,
+  "message": "",
+  "result": null
+}
+```
+
