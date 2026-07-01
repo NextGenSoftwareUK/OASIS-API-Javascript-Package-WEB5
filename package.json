@@ -1,6 +1,7 @@
 {
-  "name": "web5-star-api",
+  "name": "@oasisomniverse/web5-api",
   "version": "1.0.0",
+  "publishConfig": { "access": "public" },
   "description": "Isomorphic (Node + browser) JavaScript/TypeScript-friendly client for the WEB5 STAR API - full coverage of the OASIS2 STAR WebAPI (OAPPs, Quests, Missions, Games, Celestial Bodies/Spaces, Cosmic hierarchy, NFTs, GeoNFTs, Plugins, Templates, Libraries, Runtimes, Competition/Leaderboards, and more).",
   "main": "index.js",
   "module": "index.mjs",

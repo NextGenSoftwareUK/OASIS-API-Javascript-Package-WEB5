@@ -1,4 +1,4 @@
-# web5-star-api
+# @oasisomniverse/web5-api
 
 Isomorphic (Node 18+ and browser) JavaScript/TypeScript-friendly client for the
 **WEB5 STAR API** - full coverage of the OASIS2 STAR WebAPI: OAPPs, Quests,
@@ -14,14 +14,14 @@ browser.
 ## Installation
 
 ```bash
-npm install web5-star-api
+npm install @oasisomniverse/web5-api
 ```
 
 ## Quick start
 
 ```js
-const { STARClient } = require('web5-star-api');
-// or: import { STARClient } from 'web5-star-api';
+const { STARClient } = require('@oasisomniverse/web5-api');
+// or: import { STARClient } from '@oasisomniverse/web5-api';
 
 const star = new STARClient({ baseUrl: 'https://api.star.oasisweb5.one' });
 

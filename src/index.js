@@ -8,7 +8,7 @@ const { AuthModule } = require('./modules/Auth');
 /**
  * Main SDK entry point. Works in Node 18+ and any modern browser.
  *
- *   const { STARClient } = require('web5-star-api');
+ *   const { STARClient } = require('@oasisomniverse/web5-api');
  *   const star = new STARClient({ baseUrl: 'https://api.star.oasisweb5.one' });
  *   await star.auth.login({ username: 'me@example.com', password: '...' });
  *   const quests = await star.quests.getAllQuestsForAvatar();
