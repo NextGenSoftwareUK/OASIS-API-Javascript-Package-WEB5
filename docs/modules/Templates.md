@@ -1,6 +1,6 @@
 # Templates — `star.templates`
 
-Source controller: [`TemplatesController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/TemplatesController.cs)
+Source controller: [`TemplatesController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/TemplatesController.cs)
 Route prefix: `api/templates`
 21 operation(s).
 

@@ -1,6 +1,6 @@
 # GeoHotSpots — `star.geoHotSpots`
 
-Source controller: [`GeoHotSpotsController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/GeoHotSpotsController.cs)
+Source controller: [`GeoHotSpotsController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/GeoHotSpotsController.cs)
 Route prefix: `api/geoHotSpots`
 20 operation(s).
 

@@ -1,6 +1,6 @@
 # Quests — `star.quests`
 
-Source controller: [`QuestsController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/QuestsController.cs)
+Source controller: [`QuestsController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/QuestsController.cs)
 Route prefix: `api/quests`
 40 operation(s).
 

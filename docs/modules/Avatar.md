@@ -1,6 +1,6 @@
 # Avatar — `star.avatar`
 
-Source controller: [`AvatarController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/AvatarController.cs)
+Source controller: [`AvatarController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/AvatarController.cs)
 Route prefix: `api/avatar`
 13 operation(s).
 

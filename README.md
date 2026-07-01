@@ -1,7 +1,7 @@
 # @oasisomniverse/web5-api
 
 Isomorphic (Node 18+ and browser) JavaScript/TypeScript-friendly client for the
-**WEB5 STAR API** - full coverage of the OASIS2 STAR WebAPI: OAPPs, Quests,
+**WEB5 STAR API** - full coverage of the OASIS STAR WebAPI: OAPPs, Quests,
 Missions, Games, Celestial Bodies/Spaces, the full Cosmic hierarchy
 (Omniverse → Multiverse → Universe → Galaxy → Solar System → Planet/Moon/Star
 and beyond), NFTs, GeoNFTs, GeoHotSpots, Plugins, Templates, Libraries,
@@ -10,6 +10,24 @@ Competition/Leaderboards.
 
 Zero dependencies. Wraps the global `fetch`. Works the same in Node and the
 browser.
+
+## About WEB5
+
+> **"Build OAPPs once. Deploy everywhere. 40+ providers. Zero rewrites."**
+
+WEB5 (STAR) is the experience layer of the OASIS Omniverse — a low-code metaverse generator and runtime built on top of WEB4. It aggregates every metaverse into one interoperable simulation via the COSMIC ORM (Omniverse → Multiverse → Universe → Galaxy → Solar System → Planet and beyond), letting you write an OAPP's business logic once and have STAR compile and deploy it across every supported blockchain, database and protocol - no vendor lock-in, no rewrites per platform.
+
+WEB5 is built directly on **[WEB4](https://www.npmjs.com/package/@oasisomniverse/web4-api)** (identity, karma & unification) and is one layer of the wider **[OASIS Omniverse](https://oasisomniverse.one)** (WEB4 through WEB10).
+
+## About The OASIS Omniverse
+
+The OASIS (Open Advanced Sensory Immersion System) is the universal interoperability layer connecting all of WEB2 and WEB3 — every blockchain, database, cloud provider and protocol — into one unified, fault-tolerant API. Rather than picking a single tech stack, the OASIS harnesses the best of every provider (auto-failover, auto-load-balancing, auto-replication) so nothing is ever a single point of failure, and hides the complexity behind one intuitive API so you never need to learn a new stack again — even as underlying tech evolves, your app keeps working with zero changes.
+
+At its core sits one Avatar with one SSO login and one Karma reputation score that travels with you across every app, game and world built on top of it — full transparency and full control over your own data, right down to the field level.
+
+This is the foundation of the OASIS Omniverse: a network of unified layers, WEB4 (identity & unification) through WEB10 (source), each building on the one below to connect blockchains, metaverses, AI, human consciousness and beyond into a single interoperable whole.
+
+👉 See the full ecosystem at **[oasisomniverse.one](https://oasisomniverse.one)**.
 
 ## Installation
 
@@ -34,7 +52,7 @@ console.log(result);
 
 ## Calling any endpoint
 
-Every controller on the OASIS2 STAR WebAPI is reachable as a lowerCamel
+Every controller on the OASIS STAR WebAPI is reachable as a lowerCamel
 property on the client (`star.avatar`, `star.quests`, `star.missions`,
 `star.games`, `star.cosmic`, `star.holons`, `star.nFTs`, `star.geoNFTs`,
 `star.plugins`, `star.templates`, `star.libraries`, `star.runtimes`,
@@ -62,13 +80,13 @@ const body = await star.celestialBodies.getCelestialBody({ id: '...' });
 // (a single primitive [FromBody] param) becomes the raw JSON body itself
 const done = await star.quests.completeQuest({ id: questId, completionNotes: 'Finished!' });
 
-// PUT api/cosmic/omniverse -> saveChildren/providerType are [FromQuery] and go
-// on the URL; the rest (the omniverse payload) becomes the JSON body
-await star.cosmic.updateOmniverse({ name: 'New Omniverse', saveChildren: true, providerType: 'Default' });
+// PUT api/cosmic/universe -> saveChildren/providerType are [FromQuery] and go
+// on the URL; the rest (the universe payload) becomes the JSON body
+await star.cosmic.updateUniverse({ name: 'New Universe', saveChildren: true, providerType: 'Default' });
 
-// DELETE api/cosmic/omniverse/{omniverseId} -> omniverseId is a route token,
+// DELETE api/cosmic/universe/{universeId} -> universeId is a route token,
 // softDelete/providerType are [FromQuery] and go on the URL - no body sent
-await star.cosmic.deleteOmniverse({ omniverseId, softDelete: true, providerType: 'Default' });
+await star.cosmic.deleteUniverse({ universeId, softDelete: true, providerType: 'Default' });
 ```
 
 Every response has the shape:

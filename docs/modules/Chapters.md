@@ -1,6 +1,6 @@
 # Chapters — `star.chapters`
 
-Source controller: [`ChaptersController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/ChaptersController.cs)
+Source controller: [`ChaptersController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/ChaptersController.cs)
 Route prefix: `api/chapters`
 20 operation(s).
 

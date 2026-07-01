@@ -1,6 +1,6 @@
 # CelestialSpaces — `star.celestialSpaces`
 
-Source controller: [`CelestialSpacesController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/CelestialSpacesController.cs)
+Source controller: [`CelestialSpacesController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/CelestialSpacesController.cs)
 Route prefix: `api/celestialSpaces`
 22 operation(s).
 

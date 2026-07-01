@@ -1,6 +1,6 @@
 # Holons — `star.holons`
 
-Source controller: [`HolonsController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/HolonsController.cs)
+Source controller: [`HolonsController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/HolonsController.cs)
 Route prefix: `api/holons`
 24 operation(s).
 

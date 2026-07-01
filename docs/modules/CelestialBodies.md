@@ -1,6 +1,6 @@
 # CelestialBodies — `star.celestialBodies`
 
-Source controller: [`CelestialBodiesController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/CelestialBodiesController.cs)
+Source controller: [`CelestialBodiesController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/CelestialBodiesController.cs)
 Route prefix: `api/celestialBodies`
 22 operation(s).
 

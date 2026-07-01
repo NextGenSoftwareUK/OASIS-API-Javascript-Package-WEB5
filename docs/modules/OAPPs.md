@@ -1,6 +1,6 @@
 # OAPPs — `star.oAPPs`
 
-Source controller: [`OAPPsController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/OAPPsController.cs)
+Source controller: [`OAPPsController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/OAPPsController.cs)
 Route prefix: `api/oAPPs`
 20 operation(s).
 

@@ -1,6 +1,6 @@
 # Competition — `star.competition`
 
-Source controller: [`CompetitionController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/CompetitionController.cs)
+Source controller: [`CompetitionController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/CompetitionController.cs)
 Route prefix: `api/competition`
 9 operation(s).
 

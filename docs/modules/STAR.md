@@ -1,6 +1,6 @@
 # STAR — `star.sTAR`
 
-Source controller: [`STARController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/STARController.cs)
+Source controller: [`STARController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/STARController.cs)
 Route prefix: `api/sTAR`
 4 operation(s).
 

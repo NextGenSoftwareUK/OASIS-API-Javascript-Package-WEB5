@@ -1,6 +1,6 @@
 # HolonsMetaData — `star.holonsMetaData`
 
-Source controller: [`HolonsMetaDataController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/HolonsMetaDataController.cs)
+Source controller: [`HolonsMetaDataController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/HolonsMetaDataController.cs)
 Route prefix: `api/holonsMetaData`
 20 operation(s).
 

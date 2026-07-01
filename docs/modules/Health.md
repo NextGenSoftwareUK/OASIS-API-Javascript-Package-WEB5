@@ -1,6 +1,6 @@
 # Health — `star.health`
 
-Source controller: [`HealthController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/HealthController.cs)
+Source controller: [`HealthController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/HealthController.cs)
 Route prefix: `api/health`
 2 operation(s).
 

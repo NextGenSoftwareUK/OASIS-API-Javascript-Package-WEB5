@@ -92,7 +92,7 @@ for (const file of files) {
 
   const content = `# ${moduleName} — \`star.${clientProp}\`
 
-Source controller: [\`${sourceFile}\`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/${sourceFile})
+Source controller: [\`${sourceFile}\`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/${sourceFile})
 Route prefix: \`${routePrefix}\`
 ${ops.length} operation(s).
 

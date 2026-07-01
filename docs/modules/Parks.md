@@ -1,6 +1,6 @@
 # Parks — `star.parks`
 
-Source controller: [`ParksController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/ParksController.cs)
+Source controller: [`ParksController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/ParksController.cs)
 Route prefix: `api/parks`
 22 operation(s).
 

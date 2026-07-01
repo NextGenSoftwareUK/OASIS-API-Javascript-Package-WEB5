@@ -1,6 +1,6 @@
 # ZomesMetaData — `star.zomesMetaData`
 
-Source controller: [`ZomesMetaDataController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/ZomesMetaDataController.cs)
+Source controller: [`ZomesMetaDataController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/ZomesMetaDataController.cs)
 Route prefix: `api/zomesMetaData`
 20 operation(s).
 

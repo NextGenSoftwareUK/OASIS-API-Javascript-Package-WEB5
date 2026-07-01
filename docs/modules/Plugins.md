@@ -1,6 +1,6 @@
 # Plugins — `star.plugins`
 
-Source controller: [`PluginsController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/PluginsController.cs)
+Source controller: [`PluginsController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/PluginsController.cs)
 Route prefix: `api/plugins`
 24 operation(s).
 

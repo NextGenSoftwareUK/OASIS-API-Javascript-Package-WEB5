@@ -1,6 +1,6 @@
 # InventoryItems — `star.inventoryItems`
 
-Source controller: [`InventoryItemsController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/InventoryItemsController.cs)
+Source controller: [`InventoryItemsController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/InventoryItemsController.cs)
 Route prefix: `api/inventoryItems`
 21 operation(s).
 

@@ -1,6 +1,6 @@
 # NFTs — `star.nFTs`
 
-Source controller: [`NFTsController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/NFTsController.cs)
+Source controller: [`NFTsController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/NFTsController.cs)
 Route prefix: `api/nFTs`
 21 operation(s).
 

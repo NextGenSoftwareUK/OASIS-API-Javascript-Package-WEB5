@@ -1,6 +1,6 @@
 # Libraries — `star.libraries`
 
-Source controller: [`LibrariesController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/LibrariesController.cs)
+Source controller: [`LibrariesController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/LibrariesController.cs)
 Route prefix: `api/libraries`
 22 operation(s).
 

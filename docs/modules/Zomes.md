@@ -1,6 +1,6 @@
 # Zomes — `star.zomes`
 
-Source controller: [`ZomesController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/ZomesController.cs)
+Source controller: [`ZomesController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/ZomesController.cs)
 Route prefix: `api/zomes`
 22 operation(s).
 

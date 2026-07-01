@@ -1,6 +1,6 @@
 # CelestialBodiesMetaData — `star.celestialBodiesMetaData`
 
-Source controller: [`CelestialBodiesMetaDataController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/CelestialBodiesMetaDataController.cs)
+Source controller: [`CelestialBodiesMetaDataController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/CelestialBodiesMetaDataController.cs)
 Route prefix: `api/celestialBodiesMetaData`
 20 operation(s).
 

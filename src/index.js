@@ -13,7 +13,7 @@ const { AuthModule } = require('./modules/Auth');
  *   await star.auth.login({ username: 'me@example.com', password: '...' });
  *   const quests = await star.quests.getAllQuestsForAvatar();
  *
- * Every controller on the OASIS2 STAR WebAPI is reachable as a lowerCamel
+ * Every controller on the OASIS STAR WebAPI is reachable as a lowerCamel
  * property (star.avatar, star.quests, star.missions, star.games, star.cosmic,
  * star.holons, star.nFTs, star.geoNFTs, star.plugins, star.templates,
  * star.libraries, star.runtimes, star.competition, ...). Generated methods

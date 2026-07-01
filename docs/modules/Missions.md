@@ -1,6 +1,6 @@
 # Missions — `star.missions`
 
-Source controller: [`MissionsController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/MissionsController.cs)
+Source controller: [`MissionsController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/MissionsController.cs)
 Route prefix: `api/missions`
 27 operation(s).
 

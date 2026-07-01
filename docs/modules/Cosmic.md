@@ -1,6 +1,6 @@
 # Cosmic — `star.cosmic`
 
-Source controller: [`CosmicController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/CosmicController.cs)
+Source controller: [`CosmicController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/CosmicController.cs)
 Route prefix: `api/cosmic`
 72 operation(s).
 

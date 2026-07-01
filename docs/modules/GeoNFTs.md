@@ -1,6 +1,6 @@
 # GeoNFTs — `star.geoNFTs`
 
-Source controller: [`GeoNFTsController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/GeoNFTsController.cs)
+Source controller: [`GeoNFTsController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/GeoNFTsController.cs)
 Route prefix: `api/geoNFTs`
 22 operation(s).
 

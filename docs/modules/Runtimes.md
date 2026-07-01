@@ -1,6 +1,6 @@
 # Runtimes — `star.runtimes`
 
-Source controller: [`RuntimesController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/RuntimesController.cs)
+Source controller: [`RuntimesController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/RuntimesController.cs)
 Route prefix: `api/runtimes`
 24 operation(s).
 

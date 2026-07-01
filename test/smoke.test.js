@@ -64,26 +64,26 @@ test('route tokens are consumed from the URL, single primitive FromBody param be
 });
 
 test('mixed FromQuery + FromBody POST sends query params on the URL and the rest as the body', async () => {
-  const fetchImpl = fakeFetch([{ match: 'api/cosmic/omniverse', body: { isError: false, result: {} } }]);
+  const fetchImpl = fakeFetch([{ match: 'api/cosmic/universe', body: { isError: false, result: {} } }]);
   const star = new STARClient({ baseUrl: 'https://example.test', persistSession: false, fetchImpl });
 
-  // UpdateOmniverse(omniverse: [FromBody], saveChildren/recursive/.../providerType: [FromQuery]).
-  await star.cosmic.updateOmniverse({ name: 'New Omniverse', saveChildren: true, providerType: 'Default' });
+  // UpdateUniverse(universe: [FromBody], saveChildren/recursive/.../providerType: [FromQuery]).
+  await star.cosmic.updateUniverse({ name: 'New Universe', saveChildren: true, providerType: 'Default' });
 
   const call = fetchImpl.calls[0];
-  assert.match(call.url, /^https:\/\/example\.test\/api\/cosmic\/omniverse\?/);
+  assert.match(call.url, /^https:\/\/example\.test\/api\/cosmic\/universe\?/);
   assert.match(call.url, /saveChildren=true/);
   assert.match(call.url, /providerType=Default/);
   assert.equal(call.url.includes('name='), false);
   const body = JSON.parse(call.init.body);
-  assert.deepEqual(body, { name: 'New Omniverse' });
+  assert.deepEqual(body, { name: 'New Universe' });
 });
 
 test('DELETE with FromQuery params sends them as query string, not a JSON body', async () => {
-  const fetchImpl = fakeFetch([{ match: 'api/cosmic/omniverse/omni-1', body: { isError: false, result: true } }]);
+  const fetchImpl = fakeFetch([{ match: 'api/cosmic/universe/uni-1', body: { isError: false, result: true } }]);
   const star = new STARClient({ baseUrl: 'https://example.test', persistSession: false, fetchImpl });
 
-  await star.cosmic.deleteOmniverse({ omniverseId: 'omni-1', softDelete: false, providerType: 'Default' });
+  await star.cosmic.deleteUniverse({ universeId: 'uni-1', softDelete: false, providerType: 'Default' });
 
   const call = fetchImpl.calls[0];
   assert.equal(call.init.method, 'DELETE');
