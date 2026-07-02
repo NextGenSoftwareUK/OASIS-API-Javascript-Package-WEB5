@@ -1,9 +1,9 @@
-# @oasisomniverse/web5-api
+﻿# @oasisomniverse/web5-api
 
 - [@oasisomniverse/web5-api](#oasisomniverseweb5-api)
-  - [About WEB5](#about-web5)
+  - [About WEB 5](#about-web-5)
   - [About The OASIS Omniverse](#about-the-oasis-omniverse)
-  - [Benefits Of Building On The WEB5 STAR API](#benefits-of-building-on-the-web5-star-api)
+  - [Benefits Of Building On The WEB 5 STAR API](#benefits-of-building-on-the-web-5-star-api)
   - [WEB 5 STAR API Packages](#web-5-star-api-packages)
     - [Javascript](#javascript)
     - [Unity](#unity)
@@ -23,7 +23,7 @@
   - [License](#license)
 
 Isomorphic (Node 18+ and browser) JavaScript/TypeScript-friendly client for the
-**WEB5 STAR API** - full coverage of the OASIS STAR WebAPI: OAPPs, Quests,
+**WEB 5 STAR API** - full coverage of the OASIS STAR WebAPI: OAPPs, Quests,
 Missions, Games, Celestial Bodies/Spaces, the full Cosmic hierarchy
 (Omniverse → Multiverse → Universe → Galaxy → Solar System → Planet/Moon/Star
 and beyond), NFTs, GeoNFTs, GeoHotSpots, Plugins, Templates, Libraries,
@@ -33,13 +33,13 @@ Competition/Leaderboards.
 Zero dependencies. Wraps the global `fetch`. Works the same in Node and the
 browser.
 
-## About WEB5
+## About WEB 5
 
 > **"Build OAPPs once. Deploy everywhere. 40+ providers. Zero rewrites."**
 
-WEB5 (STAR) is the experience layer of the OASIS Omniverse — a low-code metaverse generator and runtime built on top of WEB4. It aggregates every metaverse into one interoperable simulation via the COSMIC ORM (Omniverse → Multiverse → Universe → Galaxy → Solar System → Planet and beyond), letting you write an OAPP's business logic once and have STAR compile and deploy it across every supported blockchain, database and protocol - no vendor lock-in, no rewrites per platform.
+WEB 5 (STAR) is the experience layer of the OASIS Omniverse — a low-code metaverse generator and runtime built on top of WEB 4. It aggregates every metaverse into one interoperable simulation via the COSMIC ORM (Omniverse → Multiverse → Universe → Galaxy → Solar System → Planet and beyond), letting you write an OAPP's business logic once and have STAR compile and deploy it across every supported blockchain, database and protocol - no vendor lock-in, no rewrites per platform.
 
-WEB5 is built directly on **[WEB4](https://www.npmjs.com/package/@oasisomniverse/web4-api)** (identity, karma & unification) and is one layer of the wider **[OASIS Omniverse](https://oasisomniverse.one)** (WEB4 through WEB10).
+WEB 5 is built directly on **[WEB 4](https://www.npmjs.com/package/@oasisomniverse/web4-api)** (identity, karma & unification) and is one layer of the wider **[OASIS Omniverse](https://oasisomniverse.one)** (WEB 4 through WEB 10).
 
 ## About The OASIS Omniverse
 
@@ -47,13 +47,13 @@ The OASIS (Open Advanced Sensory Immersion System) is the universal interoperabi
 
 At its core sits one Avatar with one SSO login and one Karma reputation score that travels with you across every app, game and world built on top of it — full transparency and full control over your own data, right down to the field level.
 
-This is the foundation of the OASIS Omniverse: a network of unified layers, WEB4 (identity & unification) through WEB10 (source), each building on the one below to connect blockchains, metaverses, AI, human consciousness and beyond into a single interoperable whole.
+This is the foundation of the OASIS Omniverse: a network of unified layers, WEB 4 (identity & unification) through WEB 10 (source), each building on the one below to connect blockchains, metaverses, AI, human consciousness and beyond into a single interoperable whole.
 
 👉 See the full ecosystem at **[oasisomniverse.one](https://oasisomniverse.one)**.
 
 <a name="web5-starapi-benefits"></a>
 
-## Benefits Of Building On The WEB5 STAR API
+## Benefits Of Building On The WEB 5 STAR API
 
 - **Low-code metaverse generator - build OAPPs through the STAR ODK/CLI with minimal code.**
 - **COSMIC ORM - the full Cosmic hierarchy (Omniverse → Multiverse → Universe → Galaxy → Solar System → Planet/Moon/Star) as one interoperable simulation.**
@@ -62,7 +62,7 @@ This is the foundation of the OASIS Omniverse: a network of unified layers, WEB4
 - **Built-in Quests, Missions, Games and Competition/Leaderboards systems.**
 - **GeoNFTs & GeoHotSpots for location-based experiences.**
 - **Integrate any WEB2 or WEB3 tech into your (web)app without having to learn or worry about new tech stacks/languages.**
-- **SSO Avatar with a Karma reputation system (inherited from WEB4 - full accountability, zero crime, dark-net proof).**
+- **SSO Avatar with a Karma reputation system (inherited from WEB 4 - full accountability, zero crime, dark-net proof).**
 - **Maximum integration & interoperability, auto load-balancing, auto fail-over, auto replication.**
 - **HOT-swappable plugin architecture. HTTP REST/gRPC/GraphQL/CLI/Native endpoints.**
 - **Javascript, Unity, Rust & Unreal packages - more coming.**
@@ -72,12 +72,12 @@ This is the foundation of the OASIS Omniverse: a network of unified layers, WEB4
 - **Decentralised distributed P2P networking - works offline and syncs automatically (even over LAN/Bluetooth/Mesh).**
 - **Agent-centric: you own and store your own data.**
 - **Powers WEB/2D/3D/AR/VR/IR/Map/Meta visualization, Our World & One World (Game of Games Engine).**
-- **Smart City ready. Bio-feedback ready. IR (Infinite Reality) ready. WEB6 Omniverse Ready.**
+- **Smart City ready. Bio-feedback ready. IR (Infinite Reality) ready. WEB 6 Omniverse Ready.**
 
 Check out more info below:<br><br>
 [The Power Of The OASIS API](https://drive.google.com/file/d/1nnhGpXcprr6kota1Y85HDDKsBfJHN6sn/view?usp=sharing) <br>
-[What Is WEB4 & WEB5 Really?](https://www.ourworldthegame.com/single-post/what-is-web4-web5-really) <br>
-[Annoucing WEB5 STAR ODK/HDK/COSMIC](https://www.ourworldthegame.com/single-post/announcing-star-odk-hdk-cosmic) <br>
+[What Is WEB 4 & WEB 5 Really?](https://www.ourworldthegame.com/single-post/what-is-web4-web5-really) <br>
+[Annoucing WEB 5 STAR ODK/HDK/COSMIC](https://www.ourworldthegame.com/single-post/announcing-star-odk-hdk-cosmic) <br>
 [STAR ODK/HDK/COSMIC/OASIS API/Our World Update](https://www.ourworldthegame.com/single-post/star-odk-hdk-cosmic-oasis-api-our-world-update) <br>
 [Main OASIS Repo](https://github.com/NextGenSoftwareUK/OASIS)
 
@@ -246,7 +246,7 @@ await star.auth.logout(); // clears the local session
 ```
 
 > STAR's `AvatarController` has no logout/revoke-token endpoint of its own (it
-> only forwards a subset of WEB4 avatar operations), so `logout()` simply
+> only forwards a subset of WEB 4 avatar operations), so `logout()` simply
 > clears the local session client-side - it does not call the server.
 
 If you already have a JWT (e.g. issued by your own backend), set it directly:
