@@ -1,6 +1,6 @@
 'use strict';
 
-const DEFAULT_BASE_URL = 'https://api.star.oasisweb5.one';
+const DEFAULT_BASE_URL = 'https://api.starnet.oasisomniverse.one';
 
 function buildQueryString(query) {
   const entries = Object.entries(query || {}).filter(([, v]) => v !== undefined && v !== null);
