@@ -149,3 +149,27 @@ test('starIgnite/starExtinguish/starStatus pass through to the generated STAR mo
   const status = await star.starStatus();
   assert.equal(status.isError, false);
 });
+
+test('Holon creation supports a caller-assigned public GUID and updates target that GUID through the route', async () => {
+  const publicId = '5ae2ba80-8048-47e2-ae74-8356df1b72ef';
+  const fetchImpl = fakeFetch([
+    { match: 'api/holons', body: { isError: false, result: { id: publicId } } }
+  ]);
+  const star = new STARClient({ baseUrl: 'https://example.test', persistSession: false, fetchImpl });
+
+  await star.holons.createHolon({ id: publicId, name: 'Parent before child', description: 'Preallocated identity' });
+  const createCall = fetchImpl.calls[0];
+  assert.equal(createCall.init.method, 'POST');
+  assert.equal(createCall.url, 'https://example.test/api/holons');
+  assert.deepEqual(JSON.parse(createCall.init.body), {
+    id: publicId,
+    name: 'Parent before child',
+    description: 'Preallocated identity'
+  });
+
+  await star.holons.updateHolon({ id: publicId, name: 'Parent after child' });
+  const updateCall = fetchImpl.calls[1];
+  assert.equal(updateCall.init.method, 'PUT');
+  assert.equal(updateCall.url, `https://example.test/api/holons/${publicId}`);
+  assert.deepEqual(JSON.parse(updateCall.init.body), { name: 'Parent after child' });
+});
