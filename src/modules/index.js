@@ -16,6 +16,7 @@ const { HolonsModule } = require('./Holons');
 const { HolonsMetaDataModule } = require('./HolonsMetaData');
 const { InventoryItemsModule } = require('./InventoryItems');
 const { LibrariesModule } = require('./Libraries');
+const { MapEntitiesModule } = require('./MapEntities');
 const { MissionsModule } = require('./Missions');
 const { NFTsModule } = require('./NFTs');
 const { OAPPsModule } = require('./OAPPs');
@@ -54,6 +55,7 @@ function attachGeneratedModules(client, http) {
   client.holonsMetaData = client.holonsMetaData || new HolonsMetaDataModule(http);
   client.inventoryItems = client.inventoryItems || new InventoryItemsModule(http);
   client.libraries = client.libraries || new LibrariesModule(http);
+  client.mapEntities = client.mapEntities || new MapEntitiesModule(http);
   client.missions = client.missions || new MissionsModule(http);
   client.nFTs = client.nFTs || new NFTsModule(http);
   client.oAPPs = client.oAPPs || new OAPPsModule(http);
