@@ -5,68 +5,68 @@ export declare class CelestialBodiesModule {
   constructor(http: unknown);
 
   /** POST api/celestialBodies/{id}/activate (query: version) */
-  activateCelestialBody(args?: Record<string, any>): Promise<OASISResponse>;
+  activateCelestialBody(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/celestialBodies/ */
-  createCelestialBody(args?: Record<string, any>): Promise<OASISResponse>;
+  createCelestialBody(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/celestialBodies/create */
-  createCelestialBodyWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
+  createCelestialBodyWithOptions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/celestialBodies/{id}/deactivate (query: version) */
-  deactivateCelestialBody(args?: Record<string, any>): Promise<OASISResponse>;
+  deactivateCelestialBody(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/celestialBodies/{id} */
-  deleteCelestialBody(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteCelestialBody(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/celestialBodies/{id}/download (query: version, downloadPath, reInstall) */
-  downloadCelestialBody(args?: Record<string, any>): Promise<OASISResponse>;
+  downloadCelestialBody(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/celestialBodies/{id}/edit */
-  editCelestialBody(args?: Record<string, any>): Promise<OASISResponse>;
+  editCelestialBody(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/celestialBodies/ */
-  getAllCelestialBodies(args?: Record<string, any>): Promise<OASISResponse>;
+  getAllCelestialBodies(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/celestialBodies/by-type/{type} */
-  getCelestialBodiesByType(args?: Record<string, any>): Promise<OASISResponse>;
+  getCelestialBodiesByType(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/celestialBodies/in-space/{spaceId} */
-  getCelestialBodiesInSpace(args?: Record<string, any>): Promise<OASISResponse>;
+  getCelestialBodiesInSpace(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/celestialBodies/{id} */
-  getCelestialBody(args?: Record<string, any>): Promise<OASISResponse>;
+  getCelestialBody(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/celestialBodies/{id}/versions */
-  getCelestialBodyVersions(args?: Record<string, any>): Promise<OASISResponse>;
+  getCelestialBodyVersions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/celestialBodies/load-all-for-avatar (query: showAllVersions, version) */
-  loadAllCelestialBodiesForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+  loadAllCelestialBodiesForAvatar(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/celestialBodies/{id}/load (query: version, holonType) */
-  loadCelestialBody(args?: Record<string, any>): Promise<OASISResponse>;
+  loadCelestialBody(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/celestialBodies/load-from-path (query: path, holonType) */
-  loadCelestialBodyFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+  loadCelestialBodyFromPath(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/celestialBodies/load-from-published (query: publishedFilePath) */
-  loadCelestialBodyFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+  loadCelestialBodyFromPublished(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/celestialBodies/{id}/version/{version} */
-  loadCelestialBodyVersion(args?: Record<string, any>): Promise<OASISResponse>;
+  loadCelestialBodyVersion(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/celestialBodies/{id}/publish */
-  publishCelestialBody(args?: Record<string, any>): Promise<OASISResponse>;
+  publishCelestialBody(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/celestialBodies/{id}/republish (query: version) */
-  republishCelestialBody(args?: Record<string, any>): Promise<OASISResponse>;
+  republishCelestialBody(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/celestialBodies/search (query: query) */
-  searchCelestialBodies(args?: Record<string, any>): Promise<OASISResponse>;
+  searchCelestialBodies(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/celestialBodies/{id}/unpublish (query: version) */
-  unpublishCelestialBody(args?: Record<string, any>): Promise<OASISResponse>;
+  unpublishCelestialBody(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/celestialBodies/{id} */
-  updateCelestialBody(args?: Record<string, any>): Promise<OASISResponse>;
+  updateCelestialBody(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

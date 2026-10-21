@@ -5,83 +5,83 @@ export declare class MissionsModule {
   constructor(http: unknown);
 
   /** POST api/missions/{id}/activate (query: version) */
-  activateMission(args?: Record<string, any>): Promise<OASISResponse>;
+  activateMission(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/missions/{id}/clone */
-  cloneMission(args?: Record<string, any>): Promise<OASISResponse>;
+  cloneMission(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/missions/{id}/complete (body: completionNotes) */
-  completeMission(args?: Record<string, any>): Promise<OASISResponse>;
+  completeMission(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/missions/ */
-  createMission(args?: Record<string, any>): Promise<OASISResponse>;
+  createMission(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/missions/create */
-  createMissionWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
+  createMissionWithOptions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/missions/{id}/deactivate (query: version) */
-  deactivateMission(args?: Record<string, any>): Promise<OASISResponse>;
+  deactivateMission(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/missions/{id} */
-  deleteMission(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteMission(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/missions/{id}/download (query: version, downloadPath, reInstall) */
-  downloadMission(args?: Record<string, any>): Promise<OASISResponse>;
+  downloadMission(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/missions/{id}/edit */
-  editMission(args?: Record<string, any>): Promise<OASISResponse>;
+  editMission(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/missions/ */
-  getAllMissions(args?: Record<string, any>): Promise<OASISResponse>;
+  getAllMissions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/missions/{id} */
-  getMission(args?: Record<string, any>): Promise<OASISResponse>;
+  getMission(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/missions/{id}/leaderboard (query: limit) */
-  getMissionLeaderboard(args?: Record<string, any>): Promise<OASISResponse>;
+  getMissionLeaderboard(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/missions/{id}/rewards */
-  getMissionRewards(args?: Record<string, any>): Promise<OASISResponse>;
+  getMissionRewards(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/missions/by-status/{status} */
-  getMissionsByStatus(args?: Record<string, any>): Promise<OASISResponse>;
+  getMissionsByStatus(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/missions/by-type/{type} */
-  getMissionsByType(args?: Record<string, any>): Promise<OASISResponse>;
+  getMissionsByType(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/missions/stats */
-  getMissionStats(args?: Record<string, any>): Promise<OASISResponse>;
+  getMissionStats(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/missions/{id}/versions */
-  getMissionVersions(args?: Record<string, any>): Promise<OASISResponse>;
+  getMissionVersions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/missions/load-all-for-avatar (query: showAllVersions, version) */
-  loadAllMissionsForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+  loadAllMissionsForAvatar(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/missions/{id}/load (query: version, holonType) */
-  loadMission(args?: Record<string, any>): Promise<OASISResponse>;
+  loadMission(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/missions/load-from-path (query: path, holonType) */
-  loadMissionFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+  loadMissionFromPath(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/missions/load-from-published (query: publishedFilePath) */
-  loadMissionFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+  loadMissionFromPublished(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/missions/{id}/version/{version} */
-  loadMissionVersion(args?: Record<string, any>): Promise<OASISResponse>;
+  loadMissionVersion(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/missions/{id}/publish */
-  publishMission(args?: Record<string, any>): Promise<OASISResponse>;
+  publishMission(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/missions/{id}/republish (query: version) */
-  republishMission(args?: Record<string, any>): Promise<OASISResponse>;
+  republishMission(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/missions/search (query: query) */
-  searchMissions(args?: Record<string, any>): Promise<OASISResponse>;
+  searchMissions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/missions/{id}/unpublish (query: version) */
-  unpublishMission(args?: Record<string, any>): Promise<OASISResponse>;
+  unpublishMission(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/missions/{id} */
-  updateMission(args?: Record<string, any>): Promise<OASISResponse>;
+  updateMission(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

@@ -5,68 +5,68 @@ export declare class CelestialSpacesModule {
   constructor(http: unknown);
 
   /** POST api/celestialSpaces/{id}/activate (query: version) */
-  activateCelestialSpace(args?: Record<string, any>): Promise<OASISResponse>;
+  activateCelestialSpace(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/celestialSpaces/ */
-  createCelestialSpace(args?: Record<string, any>): Promise<OASISResponse>;
+  createCelestialSpace(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/celestialSpaces/create */
-  createCelestialSpaceWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
+  createCelestialSpaceWithOptions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/celestialSpaces/{id}/deactivate (query: version) */
-  deactivateCelestialSpace(args?: Record<string, any>): Promise<OASISResponse>;
+  deactivateCelestialSpace(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/celestialSpaces/{id} */
-  deleteCelestialSpace(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteCelestialSpace(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/celestialSpaces/{id}/download (query: version, downloadPath, reInstall) */
-  downloadCelestialSpace(args?: Record<string, any>): Promise<OASISResponse>;
+  downloadCelestialSpace(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/celestialSpaces/{id}/edit */
-  editCelestialSpace(args?: Record<string, any>): Promise<OASISResponse>;
+  editCelestialSpace(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/celestialSpaces/ */
-  getAllCelestialSpaces(args?: Record<string, any>): Promise<OASISResponse>;
+  getAllCelestialSpaces(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/celestialSpaces/{id} */
-  getCelestialSpace(args?: Record<string, any>): Promise<OASISResponse>;
+  getCelestialSpace(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/celestialSpaces/by-type/{type} */
-  getCelestialSpacesByType(args?: Record<string, any>): Promise<OASISResponse>;
+  getCelestialSpacesByType(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/celestialSpaces/in-space/{parentSpaceId} */
-  getCelestialSpacesInSpace(args?: Record<string, any>): Promise<OASISResponse>;
+  getCelestialSpacesInSpace(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/celestialSpaces/{id}/versions */
-  getCelestialSpaceVersions(args?: Record<string, any>): Promise<OASISResponse>;
+  getCelestialSpaceVersions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/celestialSpaces/load-all-for-avatar (query: showAllVersions, version) */
-  loadAllCelestialSpacesForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+  loadAllCelestialSpacesForAvatar(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/celestialSpaces/{id}/load (query: version, holonType) */
-  loadCelestialSpace(args?: Record<string, any>): Promise<OASISResponse>;
+  loadCelestialSpace(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/celestialSpaces/load-from-path (query: path, holonType) */
-  loadCelestialSpaceFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+  loadCelestialSpaceFromPath(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/celestialSpaces/load-from-published (query: publishedFilePath) */
-  loadCelestialSpaceFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+  loadCelestialSpaceFromPublished(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/celestialSpaces/{id}/version/{version} */
-  loadCelestialSpaceVersion(args?: Record<string, any>): Promise<OASISResponse>;
+  loadCelestialSpaceVersion(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/celestialSpaces/{id}/publish */
-  publishCelestialSpace(args?: Record<string, any>): Promise<OASISResponse>;
+  publishCelestialSpace(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/celestialSpaces/{id}/republish (query: version) */
-  republishCelestialSpace(args?: Record<string, any>): Promise<OASISResponse>;
+  republishCelestialSpace(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/celestialSpaces/search (query: query) */
-  searchCelestialSpaces(args?: Record<string, any>): Promise<OASISResponse>;
+  searchCelestialSpaces(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/celestialSpaces/{id}/unpublish (query: version) */
-  unpublishCelestialSpace(args?: Record<string, any>): Promise<OASISResponse>;
+  unpublishCelestialSpace(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/celestialSpaces/{id} */
-  updateCelestialSpace(args?: Record<string, any>): Promise<OASISResponse>;
+  updateCelestialSpace(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

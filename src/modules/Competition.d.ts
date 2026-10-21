@@ -5,29 +5,29 @@ export declare class CompetitionModule {
   constructor(http: unknown);
 
   /** GET api/competition/tournaments (query: competitionType) */
-  getActiveTournaments(args?: Record<string, any>): Promise<OASISResponse>;
+  getActiveTournaments(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/competition/leagues/{competitionType}/{seasonType} */
-  getAvailableLeagues(args?: Record<string, any>): Promise<OASISResponse>;
+  getAvailableLeagues(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/competition/league/{avatarId}/{competitionType}/{seasonType} */
-  getAvatarLeague(args?: Record<string, any>): Promise<OASISResponse>;
+  getAvatarLeague(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/competition/rank/{avatarId}/{competitionType}/{seasonType} */
-  getAvatarRank(args?: Record<string, any>): Promise<OASISResponse>;
+  getAvatarRank(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/competition/leaderboard/{competitionType}/{seasonType} (query: limit, offset) */
-  getLeaderboard(args?: Record<string, any>): Promise<OASISResponse>;
+  getLeaderboard(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/competition/my-league/{competitionType}/{seasonType} */
-  getMyLeague(args?: Record<string, any>): Promise<OASISResponse>;
+  getMyLeague(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/competition/my-rank/{competitionType}/{seasonType} */
-  getMyRank(args?: Record<string, any>): Promise<OASISResponse>;
+  getMyRank(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/competition/stats/{competitionType}/{seasonType} */
-  getMyStats(args?: Record<string, any>): Promise<OASISResponse>;
+  getMyStats(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/competition/tournaments/{tournamentId}/join */
-  joinTournament(args?: Record<string, any>): Promise<OASISResponse>;
+  joinTournament(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

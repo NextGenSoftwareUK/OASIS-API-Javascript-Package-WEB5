@@ -5,68 +5,68 @@ export declare class ParksModule {
   constructor(http: unknown);
 
   /** POST api/parks/{id}/activate (query: version) */
-  activatePark(args?: Record<string, any>): Promise<OASISResponse>;
+  activatePark(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/parks/ */
-  createPark(args?: Record<string, any>): Promise<OASISResponse>;
+  createPark(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/parks/create */
-  createParkWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
+  createParkWithOptions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/parks/{id}/deactivate (query: version) */
-  deactivatePark(args?: Record<string, any>): Promise<OASISResponse>;
+  deactivatePark(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/parks/{id} */
-  deletePark(args?: Record<string, any>): Promise<OASISResponse>;
+  deletePark(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/parks/{id}/download (query: version, downloadPath, reInstall) */
-  downloadPark(args?: Record<string, any>): Promise<OASISResponse>;
+  downloadPark(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/parks/{id}/edit */
-  editPark(args?: Record<string, any>): Promise<OASISResponse>;
+  editPark(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/parks/ */
-  getAllParks(args?: Record<string, any>): Promise<OASISResponse>;
+  getAllParks(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/parks/nearby (query: latitude, longitude, radiusKm) */
-  getNearbyParks(args?: Record<string, any>): Promise<OASISResponse>;
+  getNearbyParks(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/parks/{id} */
-  getPark(args?: Record<string, any>): Promise<OASISResponse>;
+  getPark(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/parks/by-type/{type} */
-  getParksByType(args?: Record<string, any>): Promise<OASISResponse>;
+  getParksByType(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/parks/{id}/versions */
-  getParkVersions(args?: Record<string, any>): Promise<OASISResponse>;
+  getParkVersions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/parks/load-all-for-avatar (query: showAllVersions, version) */
-  loadAllParksForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+  loadAllParksForAvatar(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/parks/{id}/load (query: version, holonType) */
-  loadPark(args?: Record<string, any>): Promise<OASISResponse>;
+  loadPark(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/parks/load-from-path (query: path, holonType) */
-  loadParkFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+  loadParkFromPath(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/parks/load-from-published (query: publishedFilePath) */
-  loadParkFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+  loadParkFromPublished(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/parks/{id}/version/{version} */
-  loadParkVersion(args?: Record<string, any>): Promise<OASISResponse>;
+  loadParkVersion(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/parks/{id}/publish */
-  publishPark(args?: Record<string, any>): Promise<OASISResponse>;
+  publishPark(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/parks/{id}/republish (query: version) */
-  republishPark(args?: Record<string, any>): Promise<OASISResponse>;
+  republishPark(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/parks/search */
-  searchParks(args?: Record<string, any>): Promise<OASISResponse>;
+  searchParks(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/parks/{id}/unpublish (query: version) */
-  unpublishPark(args?: Record<string, any>): Promise<OASISResponse>;
+  unpublishPark(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/parks/{id} */
-  updatePark(args?: Record<string, any>): Promise<OASISResponse>;
+  updatePark(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

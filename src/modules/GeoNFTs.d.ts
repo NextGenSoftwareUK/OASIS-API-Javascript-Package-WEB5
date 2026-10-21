@@ -5,68 +5,68 @@ export declare class GeoNFTsModule {
   constructor(http: unknown);
 
   /** POST api/geoNFTs/{id}/activate (query: version) */
-  activateGeoNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  activateGeoNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/geoNFTs/ */
-  createGeoNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  createGeoNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/geoNFTs/create */
-  createGeoNFTWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
+  createGeoNFTWithOptions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/geoNFTs/{id}/deactivate (query: version) */
-  deactivateGeoNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  deactivateGeoNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/geoNFTs/{id} */
-  deleteGeoNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteGeoNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/geoNFTs/{id}/download (query: version, downloadPath, reInstall) */
-  downloadGeoNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  downloadGeoNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/geoNFTs/{id}/edit */
-  editGeoNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  editGeoNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/geoNFTs/ */
-  getAllGeoNFTs(args?: Record<string, any>): Promise<OASISResponse>;
+  getAllGeoNFTs(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/geoNFTs/{id} */
-  getGeoNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  getGeoNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/geoNFTs/by-avatar/{avatarId} */
-  getGeoNFTsByAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+  getGeoNFTsByAvatar(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/geoNFTs/{id}/versions */
-  getGeoNFTVersions(args?: Record<string, any>): Promise<OASISResponse>;
+  getGeoNFTVersions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/geoNFTs/nearby (query: latitude, longitude, radiusKm) */
-  getNearbyGeoNFTs(args?: Record<string, any>): Promise<OASISResponse>;
+  getNearbyGeoNFTs(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/geoNFTs/load-all-for-avatar (query: showAllVersions, version) */
-  loadAllGeoNFTsForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+  loadAllGeoNFTsForAvatar(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/geoNFTs/{id}/load (query: version, holonType) */
-  loadGeoNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  loadGeoNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/geoNFTs/load-from-path (query: path, holonType) */
-  loadGeoNFTFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+  loadGeoNFTFromPath(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/geoNFTs/load-from-published (query: publishedFilePath) */
-  loadGeoNFTFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+  loadGeoNFTFromPublished(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/geoNFTs/{id}/version/{version} */
-  loadGeoNFTVersion(args?: Record<string, any>): Promise<OASISResponse>;
+  loadGeoNFTVersion(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/geoNFTs/{id}/publish */
-  publishGeoNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  publishGeoNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/geoNFTs/{id}/republish (query: version) */
-  republishGeoNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  republishGeoNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/geoNFTs/search (query: query) */
-  searchGeoNFTs(args?: Record<string, any>): Promise<OASISResponse>;
+  searchGeoNFTs(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/geoNFTs/{id}/unpublish (query: version) */
-  unpublishGeoNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  unpublishGeoNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/geoNFTs/{id} */
-  updateGeoNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  updateGeoNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

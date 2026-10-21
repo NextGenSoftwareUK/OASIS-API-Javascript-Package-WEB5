@@ -5,125 +5,125 @@ export declare class QuestsModule {
   constructor(http: unknown);
 
   /** POST api/quests/{id}/activate (query: version) */
-  activateQuest(args?: Record<string, any>): Promise<OASISResponse>;
+  activateQuest(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/quests/{id}/objectives */
-  addQuestObjective(args?: Record<string, any>): Promise<OASISResponse>;
+  addQuestObjective(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/quests/{id}/subquests */
-  addSubQuest(args?: Record<string, any>): Promise<OASISResponse>;
+  addSubQuest(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/quests/{id}/progress */
-  applyQuestProgress(args?: Record<string, any>): Promise<OASISResponse>;
+  applyQuestProgress(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/quests/{id}/can-start */
-  canStartQuest(args?: Record<string, any>): Promise<OASISResponse>;
+  canStartQuest(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/quests/{id}/clone */
-  cloneQuest(args?: Record<string, any>): Promise<OASISResponse>;
+  cloneQuest(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/quests/{id}/complete (body: completionNotes) */
-  completeQuest(args?: Record<string, any>): Promise<OASISResponse>;
+  completeQuest(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/quests/{id}/objectives/{objectiveId}/complete */
-  completeQuestObjective(args?: Record<string, any>): Promise<OASISResponse>;
+  completeQuestObjective(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/quests/objectives/complete */
-  completeQuestObjectiveByIdentifiers(args?: Record<string, any>): Promise<OASISResponse>;
+  completeQuestObjectiveByIdentifiers(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/quests/ */
-  createIQuest(args?: Record<string, any>): Promise<OASISResponse>;
+  createIQuest(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/quests/create */
-  createQuestWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
+  createQuestWithOptions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/quests/{id}/deactivate (query: version) */
-  deactivateQuest(args?: Record<string, any>): Promise<OASISResponse>;
+  deactivateQuest(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/quests/{id} */
-  deleteIQuest(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteIQuest(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/quests/{id}/download (query: version, downloadPath, reInstall) */
-  downloadQuest(args?: Record<string, any>): Promise<OASISResponse>;
+  downloadQuest(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/quests/{id}/edit */
-  editQuest(args?: Record<string, any>): Promise<OASISResponse>;
+  editQuest(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/quests/ */
-  getAllIQuests(args?: Record<string, any>): Promise<OASISResponse>;
+  getAllIQuests(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/quests/all-for-avatar */
-  getAllQuestsForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+  getAllQuestsForAvatar(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/quests/all-for-avatar/game */
-  getAllQuestsForAvatarGame(args?: Record<string, any>): Promise<OASISResponse>;
+  getAllQuestsForAvatarGame(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/quests/{id} */
-  getIQuest(args?: Record<string, any>): Promise<OASISResponse>;
+  getIQuest(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/quests/by-avatar/{avatarId} */
-  getIQuestsByAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+  getIQuestsByAvatar(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/quests/{id}/leaderboard (query: limit) */
-  getQuestLeaderboard(args?: Record<string, any>): Promise<OASISResponse>;
+  getQuestLeaderboard(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/quests/{id}/rewards */
-  getQuestRewards(args?: Record<string, any>): Promise<OASISResponse>;
+  getQuestRewards(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/quests/by-status/{status} */
-  getQuestsByStatus(args?: Record<string, any>): Promise<OASISResponse>;
+  getQuestsByStatus(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/quests/by-status/{status}/game */
-  getQuestsByStatusGame(args?: Record<string, any>): Promise<OASISResponse>;
+  getQuestsByStatusGame(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/quests/by-type/{type} */
-  getQuestsByType(args?: Record<string, any>): Promise<OASISResponse>;
+  getQuestsByType(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/quests/stats */
-  getQuestStats(args?: Record<string, any>): Promise<OASISResponse>;
+  getQuestStats(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/quests/{id}/versions */
-  getQuestVersions(args?: Record<string, any>): Promise<OASISResponse>;
+  getQuestVersions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/quests/load-all-for-avatar (query: showAllVersions, version) */
-  loadAllQuestsForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+  loadAllQuestsForAvatar(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/quests/{id}/load (query: version, holonType) */
-  loadQuest(args?: Record<string, any>): Promise<OASISResponse>;
+  loadQuest(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/quests/load-from-path (query: path, holonType) */
-  loadQuestFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+  loadQuestFromPath(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/quests/load-from-published (query: publishedFilePath) */
-  loadQuestFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+  loadQuestFromPublished(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/quests/{id}/version/{version} */
-  loadQuestVersion(args?: Record<string, any>): Promise<OASISResponse>;
+  loadQuestVersion(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/quests/{id}/publish */
-  publishQuest(args?: Record<string, any>): Promise<OASISResponse>;
+  publishQuest(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/quests/{parentId}/objectives/{objectiveId} */
-  removeQuestObjective(args?: Record<string, any>): Promise<OASISResponse>;
+  removeQuestObjective(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/quests/{parentId}/subquests/{subQuestId} */
-  removeSubQuest(args?: Record<string, any>): Promise<OASISResponse>;
+  removeSubQuest(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/quests/{id}/republish (query: version) */
-  republishQuest(args?: Record<string, any>): Promise<OASISResponse>;
+  republishQuest(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/quests/{id}/progress/reset */
-  resetObjectiveProgress(args?: Record<string, any>): Promise<OASISResponse>;
+  resetObjectiveProgress(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/quests/search (query: query) */
-  searchQuests(args?: Record<string, any>): Promise<OASISResponse>;
+  searchQuests(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/quests/{id}/start (body: startNotes) */
-  startQuest(args?: Record<string, any>): Promise<OASISResponse>;
+  startQuest(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/quests/{id}/unpublish (query: version) */
-  unpublishQuest(args?: Record<string, any>): Promise<OASISResponse>;
+  unpublishQuest(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/quests/{id} */
-  updateIQuest(args?: Record<string, any>): Promise<OASISResponse>;
+  updateIQuest(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

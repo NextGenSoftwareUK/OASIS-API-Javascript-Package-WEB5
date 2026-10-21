@@ -5,68 +5,68 @@ export declare class ZomesModule {
   constructor(http: unknown);
 
   /** POST api/zomes/{id}/activate (query: version) */
-  activateZome(args?: Record<string, any>): Promise<OASISResponse>;
+  activateZome(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/zomes/ */
-  createZome(args?: Record<string, any>): Promise<OASISResponse>;
+  createZome(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/zomes/create */
-  createZomeWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
+  createZomeWithOptions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/zomes/{id}/deactivate (query: version) */
-  deactivateZome(args?: Record<string, any>): Promise<OASISResponse>;
+  deactivateZome(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/zomes/{id} */
-  deleteZome(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteZome(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/zomes/{id}/download (query: version, downloadPath, reInstall) */
-  downloadZome(args?: Record<string, any>): Promise<OASISResponse>;
+  downloadZome(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/zomes/{id}/edit */
-  editZome(args?: Record<string, any>): Promise<OASISResponse>;
+  editZome(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/zomes/ */
-  getAllZomes(args?: Record<string, any>): Promise<OASISResponse>;
+  getAllZomes(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/zomes/{id} */
-  getZome(args?: Record<string, any>): Promise<OASISResponse>;
+  getZome(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/zomes/by-type/{type} */
-  getZomesByType(args?: Record<string, any>): Promise<OASISResponse>;
+  getZomesByType(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/zomes/in-space/{spaceId} */
-  getZomesInSpace(args?: Record<string, any>): Promise<OASISResponse>;
+  getZomesInSpace(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/zomes/{id}/versions */
-  getZomeVersions(args?: Record<string, any>): Promise<OASISResponse>;
+  getZomeVersions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/zomes/load-all-for-avatar (query: showAllVersions, version) */
-  loadAllZomesForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+  loadAllZomesForAvatar(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/zomes/{id}/load (query: version, holonType) */
-  loadZome(args?: Record<string, any>): Promise<OASISResponse>;
+  loadZome(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/zomes/load-from-path (query: path, holonType) */
-  loadZomeFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+  loadZomeFromPath(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/zomes/load-from-published (query: publishedFilePath) */
-  loadZomeFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+  loadZomeFromPublished(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/zomes/{id}/version/{version} */
-  loadZomeVersion(args?: Record<string, any>): Promise<OASISResponse>;
+  loadZomeVersion(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/zomes/{id}/publish */
-  publishZome(args?: Record<string, any>): Promise<OASISResponse>;
+  publishZome(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/zomes/{id}/republish (query: version) */
-  republishZome(args?: Record<string, any>): Promise<OASISResponse>;
+  republishZome(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/zomes/search (query: searchTerm, searchOnlyForCurrentAvatar, showAllVersions, version) */
-  searchZomes(args?: Record<string, any>): Promise<OASISResponse>;
+  searchZomes(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/zomes/{id}/unpublish (query: version) */
-  unpublishZome(args?: Record<string, any>): Promise<OASISResponse>;
+  unpublishZome(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/zomes/{id} */
-  updateZome(args?: Record<string, any>): Promise<OASISResponse>;
+  updateZome(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

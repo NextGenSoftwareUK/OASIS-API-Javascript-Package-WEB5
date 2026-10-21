@@ -5,65 +5,65 @@ export declare class NFTsModule {
   constructor(http: unknown);
 
   /** POST api/nFTs/{id}/activate (query: version) */
-  activateNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  activateNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/nFTs/{id}/clone */
-  cloneNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  cloneNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/nFTs/ */
-  createNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  createNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/nFTs/create */
-  createNFTWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
+  createNFTWithOptions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/nFTs/{id}/deactivate (query: version) */
-  deactivateNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  deactivateNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/nFTs/{id} */
-  deleteNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/nFTs/{id}/download (query: version, downloadPath, reInstall) */
-  downloadNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  downloadNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/nFTs/{id}/edit */
-  editNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  editNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/nFTs/ */
-  getAllNFTs(args?: Record<string, any>): Promise<OASISResponse>;
+  getAllNFTs(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/nFTs/{id} */
-  getNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  getNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/nFTs/{id}/versions */
-  getNFTVersions(args?: Record<string, any>): Promise<OASISResponse>;
+  getNFTVersions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/nFTs/load-all-for-avatar (query: showAllVersions, version) */
-  loadAllNFTsForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+  loadAllNFTsForAvatar(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/nFTs/{id}/load (query: version, holonType) */
-  loadNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  loadNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/nFTs/load-from-path (query: path, holonType) */
-  loadNFTFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+  loadNFTFromPath(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/nFTs/load-from-published (query: publishedFilePath) */
-  loadNFTFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+  loadNFTFromPublished(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/nFTs/{id}/version/{version} */
-  loadNFTVersion(args?: Record<string, any>): Promise<OASISResponse>;
+  loadNFTVersion(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/nFTs/{id}/publish */
-  publishNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  publishNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/nFTs/{id}/republish (query: version) */
-  republishNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  republishNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/nFTs/search (query: searchTerm, searchOnlyForCurrentAvatar, showAllVersions, version) */
-  searchNFTs(args?: Record<string, any>): Promise<OASISResponse>;
+  searchNFTs(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/nFTs/{id}/unpublish (query: version) */
-  unpublishNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  unpublishNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/nFTs/{id} */
-  updateNFT(args?: Record<string, any>): Promise<OASISResponse>;
+  updateNFT(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

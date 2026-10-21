@@ -5,167 +5,167 @@ export declare class GamesModule {
   constructor(http: unknown);
 
   /** POST api/games/{id}/activate (query: version) */
-  activateGame(args?: Record<string, any>): Promise<OASISResponse>;
+  activateGame(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/shared-inventory/add */
-  addItemToInventory(args?: Record<string, any>): Promise<OASISResponse>;
+  addItemToInventory(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{gameId}/input/bind-keys */
-  bindKeys(args?: Record<string, any>): Promise<OASISResponse>;
+  bindKeys(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{id}/clone */
-  cloneGame(args?: Record<string, any>): Promise<OASISResponse>;
+  cloneGame(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/ */
-  createGame(args?: Record<string, any>): Promise<OASISResponse>;
+  createGame(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/create */
-  createGameWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
+  createGameWithOptions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{id}/deactivate (query: version) */
-  deactivateGame(args?: Record<string, any>): Promise<OASISResponse>;
+  deactivateGame(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/games/{id} */
-  deleteGame(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteGame(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{id}/download (query: version, downloadPath, reInstall) */
-  downloadGame(args?: Record<string, any>): Promise<OASISResponse>;
+  downloadGame(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{id}/edit */
-  editGame(args?: Record<string, any>): Promise<OASISResponse>;
+  editGame(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{gameId}/end */
-  endGame(args?: Record<string, any>): Promise<OASISResponse>;
+  endGame(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/games/ */
-  getAllGames(args?: Record<string, any>): Promise<OASISResponse>;
+  getAllGames(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/games/karma */
-  getAvatarKarma(args?: Record<string, any>): Promise<OASISResponse>;
+  getAvatarKarma(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/games/cross-game-quests */
-  getCrossGameQuests(args?: Record<string, any>): Promise<OASISResponse>;
+  getCrossGameQuests(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/games/{id} */
-  getGame(args?: Record<string, any>): Promise<OASISResponse>;
+  getGame(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/games/by-type/{type} */
-  getGamesByType(args?: Record<string, any>): Promise<OASISResponse>;
+  getGamesByType(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/games/{id}/versions */
-  getGameVersions(args?: Record<string, any>): Promise<OASISResponse>;
+  getGameVersions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/games/{gameId}/input/bind-keys */
-  getKeyBindings(args?: Record<string, any>): Promise<OASISResponse>;
+  getKeyBindings(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/games/{gameId}/audio/master-volume */
-  getMasterVolume(args?: Record<string, any>): Promise<OASISResponse>;
+  getMasterVolume(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/games/shared-inventory */
-  getSharedInventory(args?: Record<string, any>): Promise<OASISResponse>;
+  getSharedInventory(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/games/{gameId}/audio/sound-volume */
-  getSoundVolume(args?: Record<string, any>): Promise<OASISResponse>;
+  getSoundVolume(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/games/{gameId}/video/setting */
-  getVideoSetting(args?: Record<string, any>): Promise<OASISResponse>;
+  getVideoSetting(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/games/{gameId}/audio/voice-volume */
-  getVoiceVolume(args?: Record<string, any>): Promise<OASISResponse>;
+  getVoiceVolume(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/games/shared-inventory/{itemId}/has */
-  hasItem(args?: Record<string, any>): Promise<OASISResponse>;
+  hasItem(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/games/shared-inventory/has-by-name (query: itemName) */
-  hasItemByName(args?: Record<string, any>): Promise<OASISResponse>;
+  hasItemByName(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{id}/install (query: version, installPath) */
-  installGame(args?: Record<string, any>): Promise<OASISResponse>;
+  installGame(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{gameId}/areas/jump */
-  jumpToArea(args?: Record<string, any>): Promise<OASISResponse>;
+  jumpToArea(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{gameId}/levels/{level}/jump */
-  jumpToLevel(args?: Record<string, any>): Promise<OASISResponse>;
+  jumpToLevel(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{gameId}/levels/{level}/jump-to-point */
-  jumpToPointInLevel(args?: Record<string, any>): Promise<OASISResponse>;
+  jumpToPointInLevel(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/games/load-all-for-avatar (query: showAllVersions, version) */
-  loadAllGamesForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+  loadAllGamesForAvatar(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{gameId}/areas/load */
-  loadArea(args?: Record<string, any>): Promise<OASISResponse>;
+  loadArea(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{gameId}/load */
-  loadGame(args?: Record<string, any>): Promise<OASISResponse>;
+  loadGame(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/games/{id}/load (query: version, holonType) */
-  loadGameById(args?: Record<string, any>): Promise<OASISResponse>;
+  loadGameById(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/games/load-from-path (query: path, holonType) */
-  loadGameFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+  loadGameFromPath(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/games/load-from-published (query: publishedFilePath) */
-  loadGameFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+  loadGameFromPublished(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/games/{id}/version/{version} */
-  loadGameVersion(args?: Record<string, any>): Promise<OASISResponse>;
+  loadGameVersion(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{gameId}/levels/{level}/load */
-  loadLevel(args?: Record<string, any>): Promise<OASISResponse>;
+  loadLevel(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{id}/publish */
-  publishGame(args?: Record<string, any>): Promise<OASISResponse>;
+  publishGame(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/games/shared-inventory/{itemId} */
-  removeItemFromInventory(args?: Record<string, any>): Promise<OASISResponse>;
+  removeItemFromInventory(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{id}/republish */
-  republishGame(args?: Record<string, any>): Promise<OASISResponse>;
+  republishGame(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/games/search (query: query) */
-  searchGames(args?: Record<string, any>): Promise<OASISResponse>;
+  searchGames(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{gameId}/audio/master-volume */
-  setMasterVolume(args?: Record<string, any>): Promise<OASISResponse>;
+  setMasterVolume(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{gameId}/audio/sound-volume */
-  setSoundVolume(args?: Record<string, any>): Promise<OASISResponse>;
+  setSoundVolume(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{gameId}/video/setting */
-  setVideoSetting(args?: Record<string, any>): Promise<OASISResponse>;
+  setVideoSetting(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{gameId}/audio/voice-volume */
-  setVoiceVolume(args?: Record<string, any>): Promise<OASISResponse>;
+  setVoiceVolume(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{gameId}/ui/credits */
-  showCredits(args?: Record<string, any>): Promise<OASISResponse>;
+  showCredits(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{gameId}/ui/main-menu */
-  showMainMenu(args?: Record<string, any>): Promise<OASISResponse>;
+  showMainMenu(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{gameId}/ui/options */
-  showOptions(args?: Record<string, any>): Promise<OASISResponse>;
+  showOptions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{gameId}/ui/title-screen */
-  showTitleScreen(args?: Record<string, any>): Promise<OASISResponse>;
+  showTitleScreen(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{gameId}/start */
-  startGame(args?: Record<string, any>): Promise<OASISResponse>;
+  startGame(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{gameId}/areas/{areaId}/unload */
-  unloadArea(args?: Record<string, any>): Promise<OASISResponse>;
+  unloadArea(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{gameId}/unload */
-  unloadGame(args?: Record<string, any>): Promise<OASISResponse>;
+  unloadGame(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{gameId}/levels/{level}/unload */
-  unloadLevel(args?: Record<string, any>): Promise<OASISResponse>;
+  unloadLevel(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/games/{id}/unpublish (query: version) */
-  unpublishGame(args?: Record<string, any>): Promise<OASISResponse>;
+  unpublishGame(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/games/{id} */
-  updateGame(args?: Record<string, any>): Promise<OASISResponse>;
+  updateGame(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

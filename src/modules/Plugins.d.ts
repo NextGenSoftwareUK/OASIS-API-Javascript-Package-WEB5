@@ -5,74 +5,74 @@ export declare class PluginsModule {
   constructor(http: unknown);
 
   /** POST api/plugins/{id}/activate (query: version) */
-  activatePlugin(args?: Record<string, any>): Promise<OASISResponse>;
+  activatePlugin(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/plugins/{id}/clone */
-  clonePlugin(args?: Record<string, any>): Promise<OASISResponse>;
+  clonePlugin(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/plugins/ */
-  createPlugin(args?: Record<string, any>): Promise<OASISResponse>;
+  createPlugin(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/plugins/create */
-  createPluginWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
+  createPluginWithOptions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/plugins/{id}/deactivate (query: version) */
-  deactivatePlugin(args?: Record<string, any>): Promise<OASISResponse>;
+  deactivatePlugin(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/plugins/{id} */
-  deletePlugin(args?: Record<string, any>): Promise<OASISResponse>;
+  deletePlugin(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/plugins/{id}/download (query: version, downloadPath, reInstall) */
-  downloadPlugin(args?: Record<string, any>): Promise<OASISResponse>;
+  downloadPlugin(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/plugins/{id}/edit */
-  editPlugin(args?: Record<string, any>): Promise<OASISResponse>;
+  editPlugin(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/plugins/ */
-  getAllPlugins(args?: Record<string, any>): Promise<OASISResponse>;
+  getAllPlugins(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/plugins/{id} */
-  getPlugin(args?: Record<string, any>): Promise<OASISResponse>;
+  getPlugin(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/plugins/by-type/{type} */
-  getPluginsByType(args?: Record<string, any>): Promise<OASISResponse>;
+  getPluginsByType(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/plugins/{id}/versions */
-  getPluginVersions(args?: Record<string, any>): Promise<OASISResponse>;
+  getPluginVersions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/plugins/{id}/install */
-  installPlugin(args?: Record<string, any>): Promise<OASISResponse>;
+  installPlugin(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/plugins/load-all-for-avatar (query: showAllVersions, version) */
-  loadAllPluginsForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+  loadAllPluginsForAvatar(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/plugins/{id}/load (query: version, holonType) */
-  loadPlugin(args?: Record<string, any>): Promise<OASISResponse>;
+  loadPlugin(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/plugins/load-from-path (query: path, holonType) */
-  loadPluginFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+  loadPluginFromPath(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/plugins/load-from-published (query: publishedFilePath) */
-  loadPluginFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+  loadPluginFromPublished(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/plugins/{id}/version/{version} */
-  loadPluginVersion(args?: Record<string, any>): Promise<OASISResponse>;
+  loadPluginVersion(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/plugins/{id}/publish */
-  publishPlugin(args?: Record<string, any>): Promise<OASISResponse>;
+  publishPlugin(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/plugins/{id}/republish (query: version) */
-  republishPlugin(args?: Record<string, any>): Promise<OASISResponse>;
+  republishPlugin(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/plugins/search (query: searchTerm) */
-  searchPlugins(args?: Record<string, any>): Promise<OASISResponse>;
+  searchPlugins(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/plugins/{id}/uninstall */
-  uninstallPlugin(args?: Record<string, any>): Promise<OASISResponse>;
+  uninstallPlugin(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/plugins/{id}/unpublish (query: version) */
-  unpublishPlugin(args?: Record<string, any>): Promise<OASISResponse>;
+  unpublishPlugin(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/plugins/{id} */
-  updatePlugin(args?: Record<string, any>): Promise<OASISResponse>;
+  updatePlugin(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

@@ -5,218 +5,218 @@ export declare class CosmicModule {
   constructor(http: unknown);
 
   /** POST api/cosmic/galaxy/{parentGalaxyId}/asteroid */
-  addAsteroid(args?: Record<string, any>): Promise<OASISResponse>;
+  addAsteroid(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/cosmic/galaxy/{parentGalaxyId}/comet */
-  addComet(args?: Record<string, any>): Promise<OASISResponse>;
+  addComet(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/cosmic/galaxy-cluster/{parentGalaxyClusterId}/galaxy */
-  addGalaxy(args?: Record<string, any>): Promise<OASISResponse>;
+  addGalaxy(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/cosmic/universe/{parentUniverseId}/galaxy-cluster */
-  addGalaxyCluster(args?: Record<string, any>): Promise<OASISResponse>;
+  addGalaxyCluster(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/cosmic/galaxy/{parentGalaxyId}/meteroid */
-  addMeteroid(args?: Record<string, any>): Promise<OASISResponse>;
+  addMeteroid(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/cosmic/planet/{parentPlanetId}/moon */
-  addMoon(args?: Record<string, any>): Promise<OASISResponse>;
+  addMoon(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/cosmic/omniverse/{parentOmniverseId}/multiverse */
-  addMultiverse(args?: Record<string, any>): Promise<OASISResponse>;
+  addMultiverse(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/cosmic/solar-system/{parentSolarSystemId}/planet */
-  addPlanet(args?: Record<string, any>): Promise<OASISResponse>;
+  addPlanet(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/cosmic/galaxy/{parentGalaxyId}/solar-system */
-  addSolarSystem(args?: Record<string, any>): Promise<OASISResponse>;
+  addSolarSystem(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/cosmic/galaxy/{parentGalaxyId}/star */
-  addStar(args?: Record<string, any>): Promise<OASISResponse>;
+  addStar(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/cosmic/multiverse/{parentMultiverseId}/universe */
-  addUniverse(args?: Record<string, any>): Promise<OASISResponse>;
+  addUniverse(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/asteroid/{asteroidId} (query: softDelete, providerType) */
-  deleteAsteroid(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteAsteroid(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/blackhole/{blackHoleId} (query: softDelete, providerType) */
-  deleteBlackHole(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteBlackHole(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/comet/{cometId} (query: softDelete, providerType) */
-  deleteComet(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteComet(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/cosmic-ray/{rayId} (query: softDelete, providerType) */
-  deleteCosmicRay(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteCosmicRay(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/cosmic-wave/{waveId} (query: softDelete, providerType) */
-  deleteCosmicWave(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteCosmicWave(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/galaxy/{galaxyId} (query: softDelete, providerType) */
-  deleteGalaxy(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteGalaxy(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/galaxy-cluster/{galaxyClusterId} (query: softDelete, providerType) */
-  deleteGalaxyCluster(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteGalaxyCluster(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/gravitational-wave/{waveId} (query: softDelete, providerType) */
-  deleteGravitationalWave(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteGravitationalWave(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/meteroid/{meteroidId} (query: softDelete, providerType) */
-  deleteMeteroid(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteMeteroid(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/moon/{moonId} (query: softDelete, providerType) */
-  deleteMoon(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteMoon(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/multiverse/{multiverseId} (query: softDelete, providerType) */
-  deleteMultiverse(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteMultiverse(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/nebula/{nebulaId} (query: softDelete, providerType) */
-  deleteNebula(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteNebula(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/omniverse/{omniverseId} (query: softDelete, providerType) */
-  deleteOmniverse(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteOmniverse(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/planet/{planetId} (query: softDelete, providerType) */
-  deletePlanet(args?: Record<string, any>): Promise<OASISResponse>;
+  deletePlanet(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/portal/{portalId} (query: softDelete, providerType) */
-  deletePortal(args?: Record<string, any>): Promise<OASISResponse>;
+  deletePortal(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/solar-system/{solarSystemId} (query: softDelete, providerType) */
-  deleteSolarSystem(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteSolarSystem(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/spacetime-abnormally/{abnormallyId} (query: softDelete, providerType) */
-  deleteSpaceTimeAbnormally(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteSpaceTimeAbnormally(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/spacetime-distortion/{distortionId} (query: softDelete, providerType) */
-  deleteSpaceTimeDistortion(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteSpaceTimeDistortion(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/star/{starId} (query: softDelete, providerType) */
-  deleteStar(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteStar(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/stardust/{starDustId} (query: softDelete, providerType) */
-  deleteStarDust(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteStarDust(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/stargate/{starGateId} (query: softDelete, providerType) */
-  deleteStarGate(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteStarGate(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/superverse/{superVerseId} (query: softDelete, providerType) */
-  deleteSuperVerse(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteSuperVerse(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/temporal-rift/{riftId} (query: softDelete, providerType) */
-  deleteTemporalRift(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteTemporalRift(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/universe/{universeId} (query: softDelete, providerType) */
-  deleteUniverse(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteUniverse(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/cosmic/wormhole/{wormHoleId} (query: softDelete, providerType) */
-  deleteWormHole(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteWormHole(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/cosmic/children/{parentId} (query: parentHolonType, childHolonType) */
-  getChildrenForParent(args?: Record<string, any>): Promise<OASISResponse>;
+  getChildrenForParent(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/cosmic/galaxy/{galaxyId}/moons */
-  getMoonsForGalaxy(args?: Record<string, any>): Promise<OASISResponse>;
+  getMoonsForGalaxy(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/cosmic/omniverse */
-  getOmniverse(args?: Record<string, any>): Promise<OASISResponse>;
+  getOmniverse(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/cosmic/galaxy/{galaxyId}/planets */
-  getPlanetsForGalaxy(args?: Record<string, any>): Promise<OASISResponse>;
+  getPlanetsForGalaxy(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/cosmic/solar-system/{solarSystemId}/planets */
-  getPlanetsForSolarSystem(args?: Record<string, any>): Promise<OASISResponse>;
+  getPlanetsForSolarSystem(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/cosmic/galaxy/{galaxyId}/solar-systems */
-  getSolarSystemsForGalaxy(args?: Record<string, any>): Promise<OASISResponse>;
+  getSolarSystemsForGalaxy(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/cosmic/galaxy/{galaxyId}/stars */
-  getStarsForGalaxy(args?: Record<string, any>): Promise<OASISResponse>;
+  getStarsForGalaxy(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/cosmic/omniverse */
-  saveOmniverse(args?: Record<string, any>): Promise<OASISResponse>;
+  saveOmniverse(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/cosmic/search-children (query: searchTerm, parentId, parentHolonType, childHolonType) */
-  searchChildrenForParent(args?: Record<string, any>): Promise<OASISResponse>;
+  searchChildrenForParent(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/cosmic/search-holons (query: searchTerm, parentId, parentHolonType, childHolonType) */
-  searchHolonsForParent(args?: Record<string, any>): Promise<OASISResponse>;
+  searchHolonsForParent(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/cosmic/search-holons-sync (query: searchTerm, parentId, parentHolonType, childHolonType, searchOnlyForCurrentAvatar, providerType) */
-  searchHolonsForParentSync(args?: Record<string, any>): Promise<OASISResponse>;
+  searchHolonsForParentSync(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/asteroid (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updateAsteroid(args?: Record<string, any>): Promise<OASISResponse>;
+  updateAsteroid(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/blackhole (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updateBlackHole(args?: Record<string, any>): Promise<OASISResponse>;
+  updateBlackHole(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/comet (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updateComet(args?: Record<string, any>): Promise<OASISResponse>;
+  updateComet(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/cosmic-ray (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updateCosmicRay(args?: Record<string, any>): Promise<OASISResponse>;
+  updateCosmicRay(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/cosmic-wave (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updateCosmicWave(args?: Record<string, any>): Promise<OASISResponse>;
+  updateCosmicWave(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/galaxy (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updateGalaxy(args?: Record<string, any>): Promise<OASISResponse>;
+  updateGalaxy(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/galaxy-cluster (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updateGalaxyCluster(args?: Record<string, any>): Promise<OASISResponse>;
+  updateGalaxyCluster(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/gravitational-wave (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updateGravitationalWave(args?: Record<string, any>): Promise<OASISResponse>;
+  updateGravitationalWave(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/meteroid (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updateMeteroid(args?: Record<string, any>): Promise<OASISResponse>;
+  updateMeteroid(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/moon (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updateMoon(args?: Record<string, any>): Promise<OASISResponse>;
+  updateMoon(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/multiverse (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updateMultiverse(args?: Record<string, any>): Promise<OASISResponse>;
+  updateMultiverse(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/nebula (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updateNebula(args?: Record<string, any>): Promise<OASISResponse>;
+  updateNebula(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/omniverse (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updateOmniverse(args?: Record<string, any>): Promise<OASISResponse>;
+  updateOmniverse(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/planet (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updatePlanet(args?: Record<string, any>): Promise<OASISResponse>;
+  updatePlanet(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/portal (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updatePortal(args?: Record<string, any>): Promise<OASISResponse>;
+  updatePortal(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/solar-system (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updateSolarSystem(args?: Record<string, any>): Promise<OASISResponse>;
+  updateSolarSystem(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/spacetime-abnormally (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updateSpaceTimeAbnormally(args?: Record<string, any>): Promise<OASISResponse>;
+  updateSpaceTimeAbnormally(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/spacetime-distortion (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updateSpaceTimeDistortion(args?: Record<string, any>): Promise<OASISResponse>;
+  updateSpaceTimeDistortion(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/star (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updateStar(args?: Record<string, any>): Promise<OASISResponse>;
+  updateStar(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/stardust (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updateStarDust(args?: Record<string, any>): Promise<OASISResponse>;
+  updateStarDust(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/stargate (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updateStarGate(args?: Record<string, any>): Promise<OASISResponse>;
+  updateStarGate(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/superverse (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updateSuperVerse(args?: Record<string, any>): Promise<OASISResponse>;
+  updateSuperVerse(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/temporal-rift (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updateTemporalRift(args?: Record<string, any>): Promise<OASISResponse>;
+  updateTemporalRift(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/universe (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updateUniverse(args?: Record<string, any>): Promise<OASISResponse>;
+  updateUniverse(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/cosmic/wormhole (query: saveChildren, recursive, maxChildDepth, continueOnError, saveChildrenOnProvider, providerType) */
-  updateWormHole(args?: Record<string, any>): Promise<OASISResponse>;
+  updateWormHole(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

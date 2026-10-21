@@ -5,41 +5,41 @@ export declare class AvatarModule {
   constructor(http: unknown);
 
   /** POST api/avatar/inventory */
-  addItemToInventory(args?: Record<string, any>): Promise<OASISResponse>;
+  addItemToInventory(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/avatar/add-xp */
-  addXp(args?: Record<string, any>): Promise<OASISResponse>;
+  addXp(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/avatar/authenticate */
-  authenticate(args?: Record<string, any>): Promise<OASISResponse>;
+  authenticate(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/avatar/current */
-  getCurrentAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+  getCurrentAvatar(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/avatar/inventory */
-  getInventory(args?: Record<string, any>): Promise<OASISResponse>;
+  getInventory(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/avatar/inventory/{itemId} */
-  getInventoryItem(args?: Record<string, any>): Promise<OASISResponse>;
+  getInventoryItem(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/avatar/inventory/{itemId}/has */
-  hasItem(args?: Record<string, any>): Promise<OASISResponse>;
+  hasItem(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/avatar/inventory/has-by-name (query: itemName) */
-  hasItemByName(args?: Record<string, any>): Promise<OASISResponse>;
+  hasItemByName(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/avatar/inventory/{itemId} */
-  removeItemFromInventory(args?: Record<string, any>): Promise<OASISResponse>;
+  removeItemFromInventory(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/avatar/inventory/search (query: searchTerm) */
-  searchInventory(args?: Record<string, any>): Promise<OASISResponse>;
+  searchInventory(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/avatar/inventory/send-to-avatar */
-  sendItemToAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+  sendItemToAvatar(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/avatar/inventory/send-to-clan */
-  sendItemToClan(args?: Record<string, any>): Promise<OASISResponse>;
+  sendItemToClan(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/avatar/set-active-quest */
-  setActiveQuest(args?: Record<string, any>): Promise<OASISResponse>;
+  setActiveQuest(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

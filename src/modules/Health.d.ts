@@ -5,8 +5,8 @@ export declare class HealthModule {
   constructor(http: unknown);
 
   /** GET api/health/ */
-  get(args?: Record<string, any>): Promise<OASISResponse>;
+  get(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/health/health */
-  health(args?: Record<string, any>): Promise<OASISResponse>;
+  health(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

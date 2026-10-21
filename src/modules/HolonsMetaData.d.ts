@@ -5,65 +5,65 @@ export declare class HolonsMetaDataModule {
   constructor(http: unknown);
 
   /** POST api/holonsMetaData/{id}/activate (query: version) */
-  activateHolonMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  activateHolonMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/holonsMetaData/{id}/clone */
-  cloneHolonMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  cloneHolonMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/holonsMetaData/ */
-  createHolonMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  createHolonMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/holonsMetaData/create */
-  createHolonMetaDataWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
+  createHolonMetaDataWithOptions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/holonsMetaData/{id}/deactivate (query: version) */
-  deactivateHolonMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  deactivateHolonMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/holonsMetaData/{id} */
-  deleteHolonMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteHolonMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/holonsMetaData/{id}/download */
-  downloadHolonMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  downloadHolonMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/holonsMetaData/{id}/edit */
-  editHolonMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  editHolonMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/holonsMetaData/ */
-  getAllHolonsMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  getAllHolonsMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/holonsMetaData/{id} */
-  getHolonMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  getHolonMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/holonsMetaData/{id}/versions */
-  getHolonMetaDataVersions(args?: Record<string, any>): Promise<OASISResponse>;
+  getHolonMetaDataVersions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/holonsMetaData/load-all-for-avatar */
-  loadAllHolonMetaDataForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+  loadAllHolonMetaDataForAvatar(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/holonsMetaData/load-from-path (query: path) */
-  loadHolonMetaDataFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+  loadHolonMetaDataFromPath(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/holonsMetaData/load-from-published (query: publishedFilePath) */
-  loadHolonMetaDataFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+  loadHolonMetaDataFromPublished(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/holonsMetaData/{id}/versions/{version} */
-  loadHolonMetaDataVersion(args?: Record<string, any>): Promise<OASISResponse>;
+  loadHolonMetaDataVersion(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/holonsMetaData/{id}/publish */
-  publishHolonMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  publishHolonMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/holonsMetaData/{id}/republish (query: version) */
-  republishHolonMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  republishHolonMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/holonsMetaData/search (query: searchTerm, showAllVersions, version) */
-  searchHolonsMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  searchHolonsMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/holonsMetaData/search */
-  searchHolonsMetaDataPost(args?: Record<string, any>): Promise<OASISResponse>;
+  searchHolonsMetaDataPost(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/holonsMetaData/{id}/unpublish (query: version) */
-  unpublishHolonMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  unpublishHolonMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/holonsMetaData/{id} */
-  updateHolonMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  updateHolonMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

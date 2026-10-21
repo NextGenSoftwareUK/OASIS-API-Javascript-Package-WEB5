@@ -5,14 +5,14 @@ export declare class STARModule {
   constructor(http: unknown);
 
   /** POST api/sTAR/beam-in */
-  beamIn(args?: Record<string, any>): Promise<OASISResponse>;
+  beamIn(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/sTAR/extinguish */
-  extinguishSTAR(args?: Record<string, any>): Promise<OASISResponse>;
+  extinguishSTAR(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/sTAR/status */
-  getStatus(args?: Record<string, any>): Promise<OASISResponse>;
+  getStatus(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/sTAR/ignite */
-  igniteSTAR(args?: Record<string, any>): Promise<OASISResponse>;
+  igniteSTAR(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

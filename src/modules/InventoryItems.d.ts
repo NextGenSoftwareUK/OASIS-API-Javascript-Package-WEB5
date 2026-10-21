@@ -5,65 +5,65 @@ export declare class InventoryItemsModule {
   constructor(http: unknown);
 
   /** POST api/inventoryItems/{id}/activate (query: version) */
-  activateInventoryItem(args?: Record<string, any>): Promise<OASISResponse>;
+  activateInventoryItem(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/inventoryItems/ */
-  createInventoryItem(args?: Record<string, any>): Promise<OASISResponse>;
+  createInventoryItem(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/inventoryItems/create */
-  createInventoryItemWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
+  createInventoryItemWithOptions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/inventoryItems/{id}/deactivate (query: version) */
-  deactivateInventoryItem(args?: Record<string, any>): Promise<OASISResponse>;
+  deactivateInventoryItem(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/inventoryItems/{id} */
-  deleteInventoryItem(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteInventoryItem(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/inventoryItems/{id}/download (query: version, downloadPath, reInstall) */
-  downloadInventoryItem(args?: Record<string, any>): Promise<OASISResponse>;
+  downloadInventoryItem(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/inventoryItems/{id}/edit */
-  editInventoryItem(args?: Record<string, any>): Promise<OASISResponse>;
+  editInventoryItem(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/inventoryItems/ */
-  getAllInventoryItems(args?: Record<string, any>): Promise<OASISResponse>;
+  getAllInventoryItems(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/inventoryItems/{id} */
-  getInventoryItem(args?: Record<string, any>): Promise<OASISResponse>;
+  getInventoryItem(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/inventoryItems/by-avatar/{avatarId} */
-  getInventoryItemsByAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+  getInventoryItemsByAvatar(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/inventoryItems/{id}/versions */
-  getInventoryItemVersions(args?: Record<string, any>): Promise<OASISResponse>;
+  getInventoryItemVersions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/inventoryItems/load-all-for-avatar (query: showAllVersions, version) */
-  loadAllInventoryItemsForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+  loadAllInventoryItemsForAvatar(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/inventoryItems/{id}/load (query: version, holonType) */
-  loadInventoryItem(args?: Record<string, any>): Promise<OASISResponse>;
+  loadInventoryItem(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/inventoryItems/load-from-path (query: path, holonType) */
-  loadInventoryItemFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+  loadInventoryItemFromPath(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/inventoryItems/load-from-published (query: publishedFilePath) */
-  loadInventoryItemFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+  loadInventoryItemFromPublished(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/inventoryItems/{id}/version/{version} */
-  loadInventoryItemVersion(args?: Record<string, any>): Promise<OASISResponse>;
+  loadInventoryItemVersion(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/inventoryItems/{id}/publish */
-  publishInventoryItem(args?: Record<string, any>): Promise<OASISResponse>;
+  publishInventoryItem(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/inventoryItems/{id}/republish (query: version) */
-  republishInventoryItem(args?: Record<string, any>): Promise<OASISResponse>;
+  republishInventoryItem(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/inventoryItems/search */
-  searchInventoryItems(args?: Record<string, any>): Promise<OASISResponse>;
+  searchInventoryItems(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/inventoryItems/{id}/unpublish (query: version) */
-  unpublishInventoryItem(args?: Record<string, any>): Promise<OASISResponse>;
+  unpublishInventoryItem(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/inventoryItems/{id} */
-  updateInventoryItem(args?: Record<string, any>): Promise<OASISResponse>;
+  updateInventoryItem(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

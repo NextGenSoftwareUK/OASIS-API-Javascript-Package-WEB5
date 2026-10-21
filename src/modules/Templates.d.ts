@@ -5,68 +5,68 @@ export declare class TemplatesModule {
   constructor(http: unknown);
 
   /** POST api/templates/{id}/activate */
-  activateTemplate(args?: Record<string, any>): Promise<OASISResponse>;
+  activateTemplate(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/templates/{id}/clone */
-  cloneTemplate(args?: Record<string, any>): Promise<OASISResponse>;
+  cloneTemplate(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/templates/ */
-  createTemplate(args?: Record<string, any>): Promise<OASISResponse>;
+  createTemplate(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/templates/create */
-  createTemplateWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
+  createTemplateWithOptions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/templates/{id}/deactivate */
-  deactivateTemplate(args?: Record<string, any>): Promise<OASISResponse>;
+  deactivateTemplate(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/templates/{id} */
-  deleteTemplate(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteTemplate(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/templates/{id}/download */
-  downloadTemplate(args?: Record<string, any>): Promise<OASISResponse>;
+  downloadTemplate(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/templates/{id}/edit */
-  editTemplate(args?: Record<string, any>): Promise<OASISResponse>;
+  editTemplate(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/templates/ */
-  getAllTemplates(args?: Record<string, any>): Promise<OASISResponse>;
+  getAllTemplates(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/templates/{id} */
-  getTemplate(args?: Record<string, any>): Promise<OASISResponse>;
+  getTemplate(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/templates/by-type/{type} */
-  getTemplatesByType(args?: Record<string, any>): Promise<OASISResponse>;
+  getTemplatesByType(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/templates/{id}/versions */
-  getTemplateVersions(args?: Record<string, any>): Promise<OASISResponse>;
+  getTemplateVersions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/templates/load-all-for-avatar */
-  loadAllTemplatesForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+  loadAllTemplatesForAvatar(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/templates/load-from-path (query: path) */
-  loadTemplateFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+  loadTemplateFromPath(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/templates/load-from-published (query: publishedFilePath) */
-  loadTemplateFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+  loadTemplateFromPublished(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/templates/{id}/versions/{version} */
-  loadTemplateVersion(args?: Record<string, any>): Promise<OASISResponse>;
+  loadTemplateVersion(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/templates/{id}/publish */
-  publishTemplate(args?: Record<string, any>): Promise<OASISResponse>;
+  publishTemplate(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/templates/{id}/republish */
-  republishTemplate(args?: Record<string, any>): Promise<OASISResponse>;
+  republishTemplate(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/templates/search (query: searchTerm) */
-  searchTemplates(args?: Record<string, any>): Promise<OASISResponse>;
+  searchTemplates(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/templates/search */
-  searchTemplatesPost(args?: Record<string, any>): Promise<OASISResponse>;
+  searchTemplatesPost(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/templates/{id}/unpublish */
-  unpublishTemplate(args?: Record<string, any>): Promise<OASISResponse>;
+  unpublishTemplate(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/templates/{id} */
-  updateTemplate(args?: Record<string, any>): Promise<OASISResponse>;
+  updateTemplate(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

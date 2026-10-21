@@ -5,77 +5,77 @@ export declare class RuntimesModule {
   constructor(http: unknown);
 
   /** POST api/runtimes/{id}/activate */
-  activateRuntime(args?: Record<string, any>): Promise<OASISResponse>;
+  activateRuntime(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/runtimes/{id}/clone */
-  cloneRuntime(args?: Record<string, any>): Promise<OASISResponse>;
+  cloneRuntime(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/runtimes/ */
-  createRuntime(args?: Record<string, any>): Promise<OASISResponse>;
+  createRuntime(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/runtimes/create */
-  createRuntimeWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
+  createRuntimeWithOptions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/runtimes/{id}/deactivate */
-  deactivateRuntime(args?: Record<string, any>): Promise<OASISResponse>;
+  deactivateRuntime(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/runtimes/{id} */
-  deleteRuntime(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteRuntime(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/runtimes/{id}/download */
-  downloadRuntime(args?: Record<string, any>): Promise<OASISResponse>;
+  downloadRuntime(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/runtimes/{id}/edit */
-  editRuntime(args?: Record<string, any>): Promise<OASISResponse>;
+  editRuntime(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/runtimes/ */
-  getAllRuntimes(args?: Record<string, any>): Promise<OASISResponse>;
+  getAllRuntimes(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/runtimes/{id} */
-  getRuntime(args?: Record<string, any>): Promise<OASISResponse>;
+  getRuntime(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/runtimes/by-type/{type} */
-  getRuntimesByType(args?: Record<string, any>): Promise<OASISResponse>;
+  getRuntimesByType(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/runtimes/{id}/status */
-  getRuntimeStatus(args?: Record<string, any>): Promise<OASISResponse>;
+  getRuntimeStatus(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/runtimes/{id}/versions */
-  getRuntimeVersions(args?: Record<string, any>): Promise<OASISResponse>;
+  getRuntimeVersions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/runtimes/load-all-for-avatar */
-  loadAllRuntimesForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+  loadAllRuntimesForAvatar(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/runtimes/load-from-path (query: path) */
-  loadRuntimeFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+  loadRuntimeFromPath(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/runtimes/load-from-published (query: publishedFilePath) */
-  loadRuntimeFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+  loadRuntimeFromPublished(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/runtimes/{id}/versions/{version} */
-  loadRuntimeVersion(args?: Record<string, any>): Promise<OASISResponse>;
+  loadRuntimeVersion(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/runtimes/{id}/publish */
-  publishRuntime(args?: Record<string, any>): Promise<OASISResponse>;
+  publishRuntime(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/runtimes/{id}/republish */
-  republishRuntime(args?: Record<string, any>): Promise<OASISResponse>;
+  republishRuntime(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/runtimes/search (query: searchTerm) */
-  searchRuntimes(args?: Record<string, any>): Promise<OASISResponse>;
+  searchRuntimes(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/runtimes/search */
-  searchRuntimesPost(args?: Record<string, any>): Promise<OASISResponse>;
+  searchRuntimesPost(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/runtimes/{id}/start */
-  startRuntime(args?: Record<string, any>): Promise<OASISResponse>;
+  startRuntime(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/runtimes/{id}/stop */
-  stopRuntime(args?: Record<string, any>): Promise<OASISResponse>;
+  stopRuntime(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/runtimes/{id}/unpublish */
-  unpublishRuntime(args?: Record<string, any>): Promise<OASISResponse>;
+  unpublishRuntime(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/runtimes/{id} */
-  updateRuntime(args?: Record<string, any>): Promise<OASISResponse>;
+  updateRuntime(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

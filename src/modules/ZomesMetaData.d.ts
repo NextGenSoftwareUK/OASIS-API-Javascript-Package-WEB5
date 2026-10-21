@@ -5,65 +5,65 @@ export declare class ZomesMetaDataModule {
   constructor(http: unknown);
 
   /** POST api/zomesMetaData/{id}/activate (query: version) */
-  activateZomeMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  activateZomeMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/zomesMetaData/{id}/clone */
-  cloneZomeMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  cloneZomeMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/zomesMetaData/ */
-  createZomeMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  createZomeMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/zomesMetaData/create */
-  createZomeMetaDataWithOptions(args?: Record<string, any>): Promise<OASISResponse>;
+  createZomeMetaDataWithOptions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/zomesMetaData/{id}/deactivate (query: version) */
-  deactivateZomeMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  deactivateZomeMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** DELETE api/zomesMetaData/{id} */
-  deleteZomeMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  deleteZomeMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/zomesMetaData/{id}/download */
-  downloadZomeMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  downloadZomeMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/zomesMetaData/{id}/edit */
-  editZomeMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  editZomeMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/zomesMetaData/ */
-  getAllZomesMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  getAllZomesMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/zomesMetaData/{id} */
-  getZomeMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  getZomeMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/zomesMetaData/{id}/versions */
-  getZomeMetaDataVersions(args?: Record<string, any>): Promise<OASISResponse>;
+  getZomeMetaDataVersions(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/zomesMetaData/load-all-for-avatar */
-  loadAllZomeMetaDataForAvatar(args?: Record<string, any>): Promise<OASISResponse>;
+  loadAllZomeMetaDataForAvatar(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/zomesMetaData/load-from-path (query: path) */
-  loadZomeMetaDataFromPath(args?: Record<string, any>): Promise<OASISResponse>;
+  loadZomeMetaDataFromPath(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/zomesMetaData/load-from-published (query: publishedFilePath) */
-  loadZomeMetaDataFromPublished(args?: Record<string, any>): Promise<OASISResponse>;
+  loadZomeMetaDataFromPublished(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/zomesMetaData/{id}/versions/{version} */
-  loadZomeMetaDataVersion(args?: Record<string, any>): Promise<OASISResponse>;
+  loadZomeMetaDataVersion(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/zomesMetaData/{id}/publish */
-  publishZomeMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  publishZomeMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/zomesMetaData/{id}/republish (query: version) */
-  republishZomeMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  republishZomeMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET api/zomesMetaData/search (query: searchTerm, showAllVersions, version) */
-  searchZomesMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  searchZomesMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/zomesMetaData/search */
-  searchZomesMetaDataPost(args?: Record<string, any>): Promise<OASISResponse>;
+  searchZomesMetaDataPost(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/zomesMetaData/{id}/unpublish (query: version) */
-  unpublishZomeMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  unpublishZomeMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** PUT api/zomesMetaData/{id} */
-  updateZomeMetaData(args?: Record<string, any>): Promise<OASISResponse>;
+  updateZomeMetaData(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }
