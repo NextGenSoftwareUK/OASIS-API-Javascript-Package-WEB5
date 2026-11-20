@@ -1,6 +1,6 @@
-# Teleport — `oasis.teleport`
+# Teleport — `star.teleport`
 
-Source controller: [`TeleportController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/ONODE/NextGenSoftware.OASIS.API.ONODE.WebAPI/Controllers/TeleportController.cs)
+Source controller: [`TeleportController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/TeleportController.cs)
 Route prefix: `api/teleport`
 2 operation(s).
 
@@ -32,12 +32,14 @@ No request body.
 
 Standard `OASISResult` envelope (see top of this page) with:
 
-`result` type: `TeleportRequest` _(type definition not found in the OASIS source - field list unavailable)_
+`result` type: `TeleportRequest`
+
+_No fields._
 
 **Example**
 
 ```js
-const { isError, message, result } = await oasis.teleport.getPendingTeleport({});
+const { isError, message, result } = await star.teleport.getPendingTeleport({});
 if (isError) throw new Error(message);
 console.log(result);
 ```
@@ -48,7 +50,7 @@ Example response:
 {
   "isError": false,
   "message": "",
-  "result": /* <TeleportRequest> */
+  "result": {  }
 }
 ```
 
@@ -62,7 +64,9 @@ Records a cross-game teleport request for the given avatar. The target game will
 
 **Request**
 
-Body type: `TeleportRequest` _(type definition not found in the OASIS source - field list unavailable)_
+Body type: `TeleportRequest`
+
+_No fields._
 
 **Response**
 
@@ -73,9 +77,7 @@ Standard `OASISResult` envelope (see top of this page) with:
 **Example**
 
 ```js
-const { isError, message, result } = await oasis.teleport.recordTeleport({
-    /* ...request body fields */
-  });
+const { isError, message, result } = await star.teleport.recordTeleport({});
 if (isError) throw new Error(message);
 console.log(result);
 ```

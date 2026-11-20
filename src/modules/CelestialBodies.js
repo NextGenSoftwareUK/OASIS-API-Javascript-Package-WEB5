@@ -53,8 +53,8 @@ class CelestialBodiesModule {
     this.publishCelestialBody = makeOperation(http, "api/celestialBodies", "POST", "{id}/publish");
     // POST api/celestialBodies/{id}/republish (query: version)
     this.republishCelestialBody = makeOperation(http, "api/celestialBodies", "POST", "{id}/republish", {"query":["version"]});
-    // GET api/celestialBodies/search (query: query)
-    this.searchCelestialBodies = makeOperation(http, "api/celestialBodies", "GET", "search", {"query":["query"]});
+    // GET api/celestialBodies/search (query: query, searchTerm)
+    this.searchCelestialBodies = makeOperation(http, "api/celestialBodies", "GET", "search", {"query":["query","searchTerm"]});
     // POST api/celestialBodies/{id}/unpublish (query: version)
     this.unpublishCelestialBody = makeOperation(http, "api/celestialBodies", "POST", "{id}/unpublish", {"query":["version"]});
     // PUT api/celestialBodies/{id}

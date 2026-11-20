@@ -61,7 +61,7 @@ export declare class CelestialBodiesModule {
   /** POST api/celestialBodies/{id}/republish (query: version) */
   republishCelestialBody(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
-  /** GET api/celestialBodies/search (query: query) */
+  /** GET api/celestialBodies/search (query: query, searchTerm) */
   searchCelestialBodies(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/celestialBodies/{id}/unpublish (query: version) */

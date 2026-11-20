@@ -53,8 +53,8 @@ class ZomesModule {
     this.publishZome = makeOperation(http, "api/zomes", "POST", "{id}/publish");
     // POST api/zomes/{id}/republish (query: version)
     this.republishZome = makeOperation(http, "api/zomes", "POST", "{id}/republish", {"query":["version"]});
-    // GET api/zomes/search (query: searchTerm, searchOnlyForCurrentAvatar, showAllVersions, version)
-    this.searchZomes = makeOperation(http, "api/zomes", "GET", "search", {"query":["searchTerm","searchOnlyForCurrentAvatar","showAllVersions","version"]});
+    // GET api/zomes/search (query: searchTerm, searchOnlyForCurrentAvatar, showAllVersions, version, query)
+    this.searchZomes = makeOperation(http, "api/zomes", "GET", "search", {"query":["searchTerm","searchOnlyForCurrentAvatar","showAllVersions","version","query"]});
     // POST api/zomes/{id}/unpublish (query: version)
     this.unpublishZome = makeOperation(http, "api/zomes", "POST", "{id}/unpublish", {"query":["version"]});
     // PUT api/zomes/{id}

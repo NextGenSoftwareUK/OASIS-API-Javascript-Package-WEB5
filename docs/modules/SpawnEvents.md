@@ -1,6 +1,6 @@
-# SpawnEvents — `oasis.spawnEvents`
+# SpawnEvents — `star.spawnEvents`
 
-Source controller: [`SpawnEventsController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/ONODE/NextGenSoftware.OASIS.API.ONODE.WebAPI/Controllers/SpawnEventsController.cs)
+Source controller: [`SpawnEventsController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/SpawnEventsController.cs)
 Route prefix: `api/spawn-events`
 3 operation(s).
 
@@ -26,7 +26,9 @@ Acknowledges a completed entity spawn. No persistent state is updated; this endp
 
 **Request**
 
-Body type: `SpawnConfirmRequest` _(type definition not found in the OASIS source - field list unavailable)_
+Body type: `SpawnConfirmRequest`
+
+_No fields._
 
 **Response**
 
@@ -37,9 +39,7 @@ Standard `OASISResult` envelope (see top of this page) with:
 **Example**
 
 ```js
-const { isError, message, result } = await oasis.spawnEvents.confirmSpawn({
-    /* ...request body fields */
-  });
+const { isError, message, result } = await star.spawnEvents.confirmSpawn({});
 if (isError) throw new Error(message);
 console.log(result);
 ```
@@ -74,12 +74,14 @@ Query parameters:
 
 Standard `OASISResult` envelope (see top of this page) with:
 
-`result` type: `SpawnEvent` _(type definition not found in the OASIS source - field list unavailable)_
+`result` type: `SpawnEvent`
+
+_No fields._
 
 **Example**
 
 ```js
-const { isError, message, result } = await oasis.spawnEvents.getPendingSpawnEvent({
+const { isError, message, result } = await star.spawnEvents.getPendingSpawnEvent({
     game: 'example string'
   });
 if (isError) throw new Error(message);
@@ -92,7 +94,7 @@ Example response:
 {
   "isError": false,
   "message": "",
-  "result": /* <SpawnEvent> */
+  "result": {  }
 }
 ```
 
@@ -106,7 +108,9 @@ Queues a cross-game entity spawn event. The target game retrieves it via GET api
 
 **Request**
 
-Body type: `SpawnEvent` _(type definition not found in the OASIS source - field list unavailable)_
+Body type: `SpawnEvent`
+
+_No fields._
 
 **Response**
 
@@ -117,9 +121,7 @@ Standard `OASISResult` envelope (see top of this page) with:
 **Example**
 
 ```js
-const { isError, message, result } = await oasis.spawnEvents.queueSpawnEvent({
-    /* ...request body fields */
-  });
+const { isError, message, result } = await star.spawnEvents.queueSpawnEvent({});
 if (isError) throw new Error(message);
 console.log(result);
 ```

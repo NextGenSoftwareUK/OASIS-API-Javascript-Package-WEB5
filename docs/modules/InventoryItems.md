@@ -1,6 +1,6 @@
 # InventoryItems — `star.inventoryItems`
 
-Source controller: [`InventoryItemsController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/InventoryItemsController.cs)
+Source controller: [`InventoryItemsController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/InventoryItemsController.cs)
 Route prefix: `api/inventoryItems`
 21 operation(s).
 
@@ -89,6 +89,7 @@ Body type: `InventoryItem`
 | `GameSource` | `string` |
 | `ItemType` | `string` |
 | `NftId` | `string` |
+| `GeoNFTId` | `Guid` |
 | `InventoryItemType` | `InventoryItemType` |
 | `Rarity` | `string` |
 | `MaxQuantity` | `int` |
@@ -120,6 +121,7 @@ const { isError, message, result } = await star.inventoryItems.createInventoryIt
     gameSource: "example string",
     itemType: "example string",
     nftId: "example string",
+    geoNFTId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     inventoryItemType: {  },
     rarity: "example string",
     maxQuantity: 1,
@@ -1012,6 +1014,7 @@ Body type: `InventoryItem`
 | `GameSource` | `string` |
 | `ItemType` | `string` |
 | `NftId` | `string` |
+| `GeoNFTId` | `Guid` |
 | `InventoryItemType` | `InventoryItemType` |
 | `Rarity` | `string` |
 | `MaxQuantity` | `int` |
@@ -1044,6 +1047,7 @@ const { isError, message, result } = await star.inventoryItems.updateInventoryIt
     gameSource: "example string",
     itemType: "example string",
     nftId: "example string",
+    geoNFTId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     inventoryItemType: {  },
     rarity: "example string",
     maxQuantity: 1,

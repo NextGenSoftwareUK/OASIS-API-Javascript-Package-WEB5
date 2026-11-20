@@ -1,6 +1,6 @@
-# MapEntities — `oasis.mapEntities`
+# MapEntities — `star.mapEntities`
 
-Source controller: [`MapEntitiesController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/ONODE/NextGenSoftware.OASIS.API.ONODE.WebAPI/Controllers/MapEntitiesController.cs)
+Source controller: [`MapEntitiesController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/MapEntitiesController.cs)
 Route prefix: `api/maps`
 2 operation(s).
 
@@ -44,7 +44,7 @@ Standard `OASISResult` envelope (see top of this page) with:
 **Example**
 
 ```js
-const { isError, message, result } = await oasis.mapEntities.getEntities({
+const { isError, message, result } = await star.mapEntities.getEntities({
     game: '<game>',
     map: '<map>'
   });
@@ -79,7 +79,9 @@ Route parameters:
 
 **Request**
 
-Body type: `MapEntity` (array) _(type definition not found in the OASIS source - field list unavailable)_
+Body type: `MapEntity` (array)
+
+_No fields._
 
 **Response**
 
@@ -90,10 +92,9 @@ Standard `OASISResult` envelope (see top of this page) with:
 **Example**
 
 ```js
-const { isError, message, result } = await oasis.mapEntities.putEntities({
+const { isError, message, result } = await star.mapEntities.putEntities({
     game: '<game>',
-    map: '<map>',
-    /* ...request body fields */
+    map: '<map>'
   });
 if (isError) throw new Error(message);
 console.log(result);

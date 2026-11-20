@@ -57,8 +57,8 @@ class HolonsModule {
     this.publishHolon = makeOperation(http, "api/holons", "POST", "{id}/publish");
     // POST api/holons/{id}/republish (query: version)
     this.republishHolon = makeOperation(http, "api/holons", "POST", "{id}/republish", {"query":["version"]});
-    // GET api/holons/search (query: query)
-    this.searchHolons = makeOperation(http, "api/holons", "GET", "search", {"query":["query"]});
+    // GET api/holons/search (query: query, searchTerm)
+    this.searchHolons = makeOperation(http, "api/holons", "GET", "search", {"query":["query","searchTerm"]});
     // POST api/holons/{id}/unpublish (query: version)
     this.unpublishHolon = makeOperation(http, "api/holons", "POST", "{id}/unpublish", {"query":["version"]});
     // PUT api/holons/{id}
