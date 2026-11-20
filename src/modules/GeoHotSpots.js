@@ -31,6 +31,8 @@ class GeoHotSpotsModule {
     this.editGeoHotSpot = makeOperation(http, "api/geoHotSpots", "POST", "{id}/edit");
     // GET api/geoHotSpots/
     this.getAllGeoHotSpots = makeOperation(http, "api/geoHotSpots", "GET", "");
+    // GET api/geoHotSpots/eligible
+    this.getEligibleGeoHotSpots = makeOperation(http, "api/geoHotSpots", "GET", "eligible");
     // GET api/geoHotSpots/{id}
     this.getGeoHotSpot = makeOperation(http, "api/geoHotSpots", "GET", "{id}");
     // GET api/geoHotSpots/{id}/versions
@@ -51,6 +53,8 @@ class GeoHotSpotsModule {
     this.publishGeoHotSpot = makeOperation(http, "api/geoHotSpots", "POST", "{id}/publish");
     // POST api/geoHotSpots/{id}/republish (query: version)
     this.republishGeoHotSpot = makeOperation(http, "api/geoHotSpots", "POST", "{id}/republish", {"query":["version"]});
+    // POST api/geoHotSpots/{id}/trigger
+    this.triggerGeoHotSpot = makeOperation(http, "api/geoHotSpots", "POST", "{id}/trigger");
     // POST api/geoHotSpots/{id}/unpublish (query: version)
     this.unpublishGeoHotSpot = makeOperation(http, "api/geoHotSpots", "POST", "{id}/unpublish", {"query":["version"]});
     // PUT api/geoHotSpots/{id}

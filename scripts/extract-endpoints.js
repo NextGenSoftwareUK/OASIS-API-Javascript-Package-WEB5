@@ -217,10 +217,27 @@ function parseController(filePath) {
     // genuinely distinct operations with the same param count, e.g.
     // AvatarController.Authenticate(AuthenticateRequest) vs Authenticate(string JWTToken) -
     // the first one in source order is the primary/intended operation).
-    const shouldSkip = ops[methodName] && params.length >= ops[methodName]._paramCount;
+    //
+    // That only applies to true overloads (same verb AND route). A method name
+    // reused for a different verb or route is a distinct endpoint - e.g.
+    // `GET search?searchTerm=` and `POST search {SearchRequest}` are both
+    // `SearchOAPPs` in C#. Keep both: GET owns the plain name and the other
+    // gets its verb as a suffix (searchOAPPsPost), so neither is dropped.
+    let opKey = methodName;
+    const existing = ops[methodName];
+    if (existing && (existing.verb !== verb || existing.route !== route)) {
+      const suffix = (v) => v.charAt(0) + v.slice(1).toLowerCase();
+      if (verb === 'GET' && existing.verb !== 'GET') {
+        ops[`${methodName}${suffix(existing.verb)}`] = existing;
+        delete ops[methodName];
+      } else {
+        opKey = `${methodName}${suffix(verb)}`;
+      }
+    }
+    const shouldSkip = ops[opKey] && params.length >= ops[opKey]._paramCount;
 
     if (!shouldSkip) {
-      ops[methodName] = {
+      ops[opKey] = {
         verb,
         route,
         routeParams: routeParams.map((p) => ({ name: p.name, type: p.type })),

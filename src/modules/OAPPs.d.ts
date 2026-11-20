@@ -55,7 +55,7 @@ export declare class OAPPsModule {
   /** POST api/oAPPs/{id}/republish (query: version) */
   republishOAPP(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
-  /** GET api/oAPPs/search (query: searchTerm, showAllVersions, version) */
+  /** GET api/oAPPs/search (query: searchTerm, showAllVersions, version, query) */
   searchOAPPs(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/oAPPs/search */

@@ -49,8 +49,10 @@ class OAPPsModule {
     this.publishOAPP = makeOperation(http, "api/oAPPs", "POST", "{id}/publish");
     // POST api/oAPPs/{id}/republish (query: version)
     this.republishOAPP = makeOperation(http, "api/oAPPs", "POST", "{id}/republish", {"query":["version"]});
+    // GET api/oAPPs/search (query: searchTerm, showAllVersions, version, query)
+    this.searchOAPPs = makeOperation(http, "api/oAPPs", "GET", "search", {"query":["searchTerm","showAllVersions","version","query"]});
     // POST api/oAPPs/search
-    this.searchOAPPs = makeOperation(http, "api/oAPPs", "POST", "search");
+    this.searchOAPPsPost = makeOperation(http, "api/oAPPs", "POST", "search");
     // POST api/oAPPs/{id}/unpublish (query: version)
     this.unpublishOAPP = makeOperation(http, "api/oAPPs", "POST", "{id}/unpublish", {"query":["version"]});
     // PUT api/oAPPs/{id}

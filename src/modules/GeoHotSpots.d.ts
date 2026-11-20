@@ -28,6 +28,9 @@ export declare class GeoHotSpotsModule {
   /** GET api/geoHotSpots/ */
   getAllGeoHotSpots(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
+  /** GET api/geoHotSpots/eligible */
+  getEligibleGeoHotSpots(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
   /** GET api/geoHotSpots/{id} */
   getGeoHotSpot(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
@@ -57,6 +60,9 @@ export declare class GeoHotSpotsModule {
 
   /** POST api/geoHotSpots/{id}/republish (query: version) */
   republishGeoHotSpot(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
+  /** POST api/geoHotSpots/{id}/trigger */
+  triggerGeoHotSpot(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/geoHotSpots/{id}/unpublish (query: version) */
   unpublishGeoHotSpot(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;

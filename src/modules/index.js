@@ -16,22 +16,22 @@ const { HolonsModule } = require('./Holons');
 const { HolonsMetaDataModule } = require('./HolonsMetaData');
 const { InventoryItemsModule } = require('./InventoryItems');
 const { LibrariesModule } = require('./Libraries');
-const { MapEntitiesModule } = require('./MapEntities');
 const { MissionsModule } = require('./Missions');
 const { NFTsModule } = require('./NFTs');
 const { OAPPsModule } = require('./OAPPs');
-const { OAssetsModule } = require('./OAssets');
 const { ParksModule } = require('./Parks');
-const { PortalsModule } = require('./Portals');
 const { PluginsModule } = require('./Plugins');
 const { QuestsModule } = require('./Quests');
 const { RuntimesModule } = require('./Runtimes');
-const { SpawnEventsModule } = require('./SpawnEvents');
 const { STARModule } = require('./STAR');
-const { TeleportModule } = require('./Teleport');
 const { TemplatesModule } = require('./Templates');
 const { ZomesModule } = require('./Zomes');
 const { ZomesMetaDataModule } = require('./ZomesMetaData');
+const { MapEntitiesModule } = require('./MapEntities');
+const { OAssetsModule } = require('./OAssets');
+const { PortalsModule } = require('./Portals');
+const { SpawnEventsModule } = require('./SpawnEvents');
+const { TeleportModule } = require('./Teleport');
 
 /**
  * Attaches every generated module to the client under its lowerCamel controller
@@ -55,22 +55,22 @@ function attachGeneratedModules(client, http) {
   client.holonsMetaData = client.holonsMetaData || new HolonsMetaDataModule(http);
   client.inventoryItems = client.inventoryItems || new InventoryItemsModule(http);
   client.libraries = client.libraries || new LibrariesModule(http);
-  client.mapEntities = client.mapEntities || new MapEntitiesModule(http);
   client.missions = client.missions || new MissionsModule(http);
   client.nFTs = client.nFTs || new NFTsModule(http);
   client.oAPPs = client.oAPPs || new OAPPsModule(http);
-  client.oAssets = client.oAssets || new OAssetsModule(http);
   client.parks = client.parks || new ParksModule(http);
-  client.portals = client.portals || new PortalsModule(http);
   client.plugins = client.plugins || new PluginsModule(http);
   client.quests = client.quests || new QuestsModule(http);
   client.runtimes = client.runtimes || new RuntimesModule(http);
-  client.spawnEvents = client.spawnEvents || new SpawnEventsModule(http);
   client.sTAR = client.sTAR || new STARModule(http);
-  client.teleport = client.teleport || new TeleportModule(http);
   client.templates = client.templates || new TemplatesModule(http);
   client.zomes = client.zomes || new ZomesModule(http);
   client.zomesMetaData = client.zomesMetaData || new ZomesMetaDataModule(http);
+  client.mapEntities = client.mapEntities || new MapEntitiesModule(http);
+  client.oAssets = client.oAssets || new OAssetsModule(http);
+  client.portals = client.portals || new PortalsModule(http);
+  client.spawnEvents = client.spawnEvents || new SpawnEventsModule(http);
+  client.teleport = client.teleport || new TeleportModule(http);
   return client;
 }
 

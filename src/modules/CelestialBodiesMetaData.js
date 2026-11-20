@@ -49,8 +49,10 @@ class CelestialBodiesMetaDataModule {
     this.publishCelestialBodyMetaData = makeOperation(http, "api/celestialBodiesMetaData", "POST", "{id}/publish");
     // POST api/celestialBodiesMetaData/{id}/republish (query: version)
     this.republishCelestialBodyMetaData = makeOperation(http, "api/celestialBodiesMetaData", "POST", "{id}/republish", {"query":["version"]});
+    // GET api/celestialBodiesMetaData/search (query: searchTerm, showAllVersions, version)
+    this.searchCelestialBodiesMetaData = makeOperation(http, "api/celestialBodiesMetaData", "GET", "search", {"query":["searchTerm","showAllVersions","version"]});
     // POST api/celestialBodiesMetaData/search
-    this.searchCelestialBodiesMetaData = makeOperation(http, "api/celestialBodiesMetaData", "POST", "search");
+    this.searchCelestialBodiesMetaDataPost = makeOperation(http, "api/celestialBodiesMetaData", "POST", "search");
     // POST api/celestialBodiesMetaData/{id}/unpublish (query: version)
     this.unpublishCelestialBodyMetaData = makeOperation(http, "api/celestialBodiesMetaData", "POST", "{id}/unpublish", {"query":["version"]});
     // PUT api/celestialBodiesMetaData/{id}

@@ -118,9 +118,6 @@ export declare class QuestsModule {
   /** GET api/quests/search (query: query) */
   searchQuests(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
-  /** POST api/quests/{id}/start (body: startNotes) */
-  startQuest(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
-
   /** POST api/quests/{id}/unpublish (query: version) */
   unpublishQuest(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
