@@ -49,8 +49,10 @@ class HolonsMetaDataModule {
     this.publishHolonMetaData = makeOperation(http, "api/holonsMetaData", "POST", "{id}/publish");
     // POST api/holonsMetaData/{id}/republish (query: version)
     this.republishHolonMetaData = makeOperation(http, "api/holonsMetaData", "POST", "{id}/republish", {"query":["version"]});
+    // GET api/holonsMetaData/search (query: searchTerm, showAllVersions, version)
+    this.searchHolonsMetaData = makeOperation(http, "api/holonsMetaData", "GET", "search", {"query":["searchTerm","showAllVersions","version"]});
     // POST api/holonsMetaData/search
-    this.searchHolonsMetaData = makeOperation(http, "api/holonsMetaData", "POST", "search");
+    this.searchHolonsMetaDataPost = makeOperation(http, "api/holonsMetaData", "POST", "search");
     // POST api/holonsMetaData/{id}/unpublish (query: version)
     this.unpublishHolonMetaData = makeOperation(http, "api/holonsMetaData", "POST", "{id}/unpublish", {"query":["version"]});
     // PUT api/holonsMetaData/{id}

@@ -169,7 +169,7 @@ npm install @oasisomniverse/web5-api
 const { STARClient } = require('@oasisomniverse/web5-api');
 // or: import { STARClient } from '@oasisomniverse/web5-api';
 
-const star = new STARClient({ baseUrl: 'https://api.star.oasisweb5.one' });
+const star = new STARClient(); // defaults to https://api.starnet.oasisomniverse.one
 
 await star.auth.login({ username: 'me@example.com', password: '...' });
 

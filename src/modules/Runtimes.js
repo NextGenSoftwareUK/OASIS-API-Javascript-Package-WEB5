@@ -55,6 +55,8 @@ class RuntimesModule {
     this.republishRuntime = makeOperation(http, "api/runtimes", "POST", "{id}/republish");
     // GET api/runtimes/search (query: searchTerm)
     this.searchRuntimes = makeOperation(http, "api/runtimes", "GET", "search", {"query":["searchTerm"]});
+    // POST api/runtimes/search
+    this.searchRuntimesPost = makeOperation(http, "api/runtimes", "POST", "search");
     // POST api/runtimes/{id}/start
     this.startRuntime = makeOperation(http, "api/runtimes", "POST", "{id}/start");
     // POST api/runtimes/{id}/stop

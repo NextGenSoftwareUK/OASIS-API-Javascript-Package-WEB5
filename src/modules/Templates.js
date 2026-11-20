@@ -53,6 +53,8 @@ class TemplatesModule {
     this.republishTemplate = makeOperation(http, "api/templates", "POST", "{id}/republish");
     // GET api/templates/search (query: searchTerm)
     this.searchTemplates = makeOperation(http, "api/templates", "GET", "search", {"query":["searchTerm"]});
+    // POST api/templates/search
+    this.searchTemplatesPost = makeOperation(http, "api/templates", "POST", "search");
     // POST api/templates/{id}/unpublish
     this.unpublishTemplate = makeOperation(http, "api/templates", "POST", "{id}/unpublish");
     // PUT api/templates/{id}

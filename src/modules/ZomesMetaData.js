@@ -49,8 +49,10 @@ class ZomesMetaDataModule {
     this.publishZomeMetaData = makeOperation(http, "api/zomesMetaData", "POST", "{id}/publish");
     // POST api/zomesMetaData/{id}/republish (query: version)
     this.republishZomeMetaData = makeOperation(http, "api/zomesMetaData", "POST", "{id}/republish", {"query":["version"]});
+    // GET api/zomesMetaData/search (query: searchTerm, showAllVersions, version)
+    this.searchZomesMetaData = makeOperation(http, "api/zomesMetaData", "GET", "search", {"query":["searchTerm","showAllVersions","version"]});
     // POST api/zomesMetaData/search
-    this.searchZomesMetaData = makeOperation(http, "api/zomesMetaData", "POST", "search");
+    this.searchZomesMetaDataPost = makeOperation(http, "api/zomesMetaData", "POST", "search");
     // POST api/zomesMetaData/{id}/unpublish (query: version)
     this.unpublishZomeMetaData = makeOperation(http, "api/zomesMetaData", "POST", "{id}/unpublish", {"query":["version"]});
     // PUT api/zomesMetaData/{id}

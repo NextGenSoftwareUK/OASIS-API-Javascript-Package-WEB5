@@ -1,6 +1,6 @@
 {
   "name": "@oasisomniverse/web5-api",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "publishConfig": {
     "access": "public"
   },
@@ -13,7 +13,8 @@
       "types": "./index.d.ts",
       "import": "./index.mjs",
       "require": "./index.js"
-    }
+    },
+    "./package.json": "./package.json"
   },
   "engines": {
     "node": ">=18"
