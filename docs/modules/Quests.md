@@ -1,8 +1,8 @@
 # Quests — `star.quests`
 
-Source controller: [`QuestsController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/QuestsController.cs)
+Source controller: [`QuestsController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/QuestsController.cs)
 Route prefix: `api/quests`
-40 operation(s).
+42 operation(s).
 
 Every method takes a single args object: any key matching a `{token}` in the route is substituted into the URL; everything else becomes the query string (GET/DELETE) or JSON body (POST/PUT). Every call resolves to the standard OASIS envelope:
 
@@ -91,6 +91,12 @@ Body type: `AddQuestObjectiveRequest`
 | `Order` | `int` |
 | `LinkedGeoHotSpotId` | `Guid?` |
 | `ExternalHandoffUri` | `string?` |
+| `RewardInventoryItemIds` | `List<Guid>?` |
+| `RewardKarma` | `long` |
+| `RewardXP` | `long` |
+| `CrossGameEventsOnActivate` | `List<CrossGameEvent>?` |
+| `CrossGameEventsOnComplete` | `List<CrossGameEvent>?` |
+| `CrossGameEventsOnGeoHotSpotTriggered` | `List<CrossGameEvent>?` |
 | `Dictionaries` | `QuestObjectiveDictionariesRequest?` |
 
 **Response**
@@ -110,6 +116,12 @@ const { isError, message, result } = await star.quests.addQuestObjective({
     order: 1,
     linkedGeoHotSpotId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     externalHandoffUri: "example string",
+    rewardInventoryItemIds: ["3fa85f64-5717-4562-b3fc-2c963f66afa6"],
+    rewardKarma: 1,
+    rewardXP: 1,
+    crossGameEventsOnActivate: [{ "EventType": "example string", "TargetGame": "example string", "TargetMap": "example string", "EntityClassname": "example string", "SpawnCount": 1, "EntityCategory": "example string", "PortalId": "example string", "NarrationText": "example string", "AudioUrl": "example string", "AudioTitle": "example string", "VideoUrl": "example string", "VideoTitle": "example string", "WebsiteUrl": "example string", "ImageUrl": "example string", "ImageTitle": "example string", "AnimationKey": "example string" }],
+    crossGameEventsOnComplete: [{ "EventType": "example string", "TargetGame": "example string", "TargetMap": "example string", "EntityClassname": "example string", "SpawnCount": 1, "EntityCategory": "example string", "PortalId": "example string", "NarrationText": "example string", "AudioUrl": "example string", "AudioTitle": "example string", "VideoUrl": "example string", "VideoTitle": "example string", "WebsiteUrl": "example string", "ImageUrl": "example string", "ImageTitle": "example string", "AnimationKey": "example string" }],
+    crossGameEventsOnGeoHotSpotTriggered: [{ "EventType": "example string", "TargetGame": "example string", "TargetMap": "example string", "EntityClassname": "example string", "SpawnCount": 1, "EntityCategory": "example string", "PortalId": "example string", "NarrationText": "example string", "AudioUrl": "example string", "AudioTitle": "example string", "VideoUrl": "example string", "VideoTitle": "example string", "WebsiteUrl": "example string", "ImageUrl": "example string", "ImageTitle": "example string", "AnimationKey": "example string" }],
     dictionaries: { "NeedToCollectArmor": { "<string>": ["example string"] }, "NeedToCollectAmmo": { "<string>": ["example string"] }, "NeedToCollectHealth": { "<string>": ["example string"] }, "NeedToCollectWeapons": { "<string>": ["example string"] }, "NeedToCollectPowerups": { "<string>": ["example string"] }, "NeedToCollectItems": { "<string>": ["example string"] }, "NeedToCollectKeys": { "<string>": ["example string"] }, "NeedToKillMonsters": { "<string>": ["example string"] }, "NeedToCompleteInMins": { "<string>": ["example string"] }, "NeedToEarnKarma": { "<string>": ["example string"] }, "NeedToEarnXP": { "<string>": ["example string"] }, "NeedToGoToGeoHotSpots": { "<string>": ["example string"] }, "NeedToCompleteLevel": { "<string>": ["example string"] }, "NeedToUseWeapons": { "<string>": ["example string"] }, "NeedToUsePowerups": { "<string>": ["example string"] }, "NeedToVisitLocations": { "<string>": ["example string"] }, "NeedToSurviveMins": { "<string>": ["example string"] }, "ArmorCollected": { "<string>": ["example string"] }, "AmmoCollected": { "<string>": ["example string"] }, "HealthCollected": { "<string>": ["example string"] }, "WeaponsCollected": { "<string>": ["example string"] }, "PowerupsCollected": { "<string>": ["example string"] }, "ItemsCollected": { "<string>": ["example string"] }, "KeysCollected": { "<string>": ["example string"] }, "MonstersKilled": { "<string>": ["example string"] }, "TimeStarted": { "<string>": ["example string"] }, "TimeEnded": { "<string>": ["example string"] }, "TimeTaken": { "<string>": ["example string"] }, "KarmaEarnt": { "<string>": ["example string"] }, "XPEarnt": { "<string>": ["example string"] }, "GeoHotSpotsArrived": { "<string>": ["example string"] }, "LevelsCompleted": { "<string>": ["example string"] } }
   });
 if (isError) throw new Error(message);
@@ -203,6 +215,7 @@ Body type: `QuestProgressRequest`
 
 | Field | Type |
 | --- | --- |
+| `OperationId` | `Guid` |
 | `ActiveObjectiveId` | `Guid?` |
 | `GameSource` | `string` |
 | `MonstersKilledDelta` | `int` |
@@ -216,6 +229,7 @@ Body type: `QuestProgressRequest`
 | `ItemCollectedName` | `string` |
 | `GenericItemPickup` | `int` |
 | `LevelTimeSeconds` | `int?` |
+| `MonsterKilledClassname` | `string?` |
 
 **Response**
 
@@ -228,6 +242,7 @@ Standard `OASISResult` envelope (see top of this page) with:
 ```js
 const { isError, message, result } = await star.quests.applyQuestProgress({
     id: '<id>',
+    operationId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     activeObjectiveId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     gameSource: "example string",
     monstersKilledDelta: 1,
@@ -240,7 +255,8 @@ const { isError, message, result } = await star.quests.applyQuestProgress({
     ammoCollectedDelta: 1,
     itemCollectedName: "example string",
     genericItemPickup: 1,
-    levelTimeSeconds: 1
+    levelTimeSeconds: 1,
+    monsterKilledClassname: "example string"
   });
 if (isError) throw new Error(message);
 console.log(result);
@@ -507,19 +523,20 @@ Creates a new quest for the authenticated avatar.
 
 **Request**
 
-Body type: `IQuest`
+Body type: `Quest`
 
 | Field | Type |
 | --- | --- |
-| `ParentMissionId` | `Guid` |
-| `ParentQuestId` | `Guid` |
-| `QuestType` | `QuestType` |
-| `GeoSpatialNFTIds` | `IList<string>` |
-| `GeoSpatialNFTs` | `IList<IOASISGeoSpatialNFT>` |
-| `GeoHotSpotIds` | `IList<string>` |
-| `GeoHotSpots` | `IList<IGeoHotSpot>` |
-| `CurrentSubQuest` | `IQuest` |
-| `CurrentSubQuestNumber` | `int` |
+| `Id` | `Guid` |
+| `Name` | `string` |
+| `Description` | `string` |
+| `Type` | `QuestType` |
+| `Difficulty` | `QuestDifficulty` |
+| `RewardKarma` | `long` |
+| `RewardExperience` | `long` |
+| `Requirements` | `List<string>` |
+| `IsActive` | `bool` |
+| `CreatedAt` | `DateTime` |
 
 **Response**
 
@@ -531,15 +548,16 @@ Standard `OASISResult` envelope (see top of this page) with:
 
 ```js
 const { isError, message, result } = await star.quests.createIQuest({
-    parentMissionId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    parentQuestId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    questType: {  },
-    geoSpatialNFTIds: ["example string"],
-    geoSpatialNFTs: [ /* <IOASISGeoSpatialNFT> */ ],
-    geoHotSpotIds: ["example string"],
-    geoHotSpots: [{ "TriggerType": {  }, "Lat": 1.0, "Long": 1.0, "HotSpotRadiusInMetres": 1, "TimeInSecondsNeedToBeAtLocationToTriggerHotSpot": 1, "TimeInSecondsNeedToLookAt3DObjectOr2DImageToTriggerHotSpot": 1, "Object3D": "<base64-bytes>", "Image2D": "<base64-bytes>", "Rewards": [{ "Image2D": "<base64-bytes>", "Image2DURI": "https://example.com/asset.png", "ThumbnailUrl": "example string", "Object3D": "<base64-bytes>", "Object3DURI": "https://example.com/asset.png", "Quantity": 1, "Stack": true, "IsStackable": true, "GameSource": "example string", "ItemType": "example string", "NftId": "example string", "Rarity": "example string", "MaxQuantity": 1, "Weight": 1.0, "IsUsable": true, "IsTradeable": true, "OwnerAvatarId": "example string", "AcquiredOn": "2026-01-01T00:00:00Z", "LastUsedOn": "2026-01-01T00:00:00Z", "Properties": { "<string>": {} } }], "AudioData": "<base64-bytes>", "AudioUrl": "example string", "VideoData": "<base64-bytes>", "VideoUrl": "example string", "TextContent": "example string", "WebsiteUrl": "example string" }],
-    currentSubQuest: { "ParentMissionId": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "ParentQuestId": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "QuestType": {  }, "GeoSpatialNFTIds": ["example string"], "GeoSpatialNFTs": [ /* <IOASISGeoSpatialNFT> */ ], "GeoHotSpotIds": ["example string"], "GeoHotSpots": [{ "TriggerType": {  }, "Lat": 1.0, "Long": 1.0, "HotSpotRadiusInMetres": 1, "TimeInSecondsNeedToBeAtLocationToTriggerHotSpot": 1, "TimeInSecondsNeedToLookAt3DObjectOr2DImageToTriggerHotSpot": 1, "Object3D": "<base64-bytes>", "Image2D": "<base64-bytes>", "Rewards": [{ "Image2D": "<base64-bytes>", "Image2DURI": "https://example.com/asset.png", "ThumbnailUrl": "example string", "Object3D": "<base64-bytes>", "Object3DURI": "https://example.com/asset.png", "Quantity": 1, "Stack": true, "IsStackable": true, "GameSource": "example string", "ItemType": "example string", "NftId": "example string", "Rarity": "example string", "MaxQuantity": 1, "Weight": 1.0, "IsUsable": true, "IsTradeable": true, "OwnerAvatarId": "example string", "AcquiredOn": "2026-01-01T00:00:00Z", "LastUsedOn": "2026-01-01T00:00:00Z", "Properties": { "<string>": {} } }], "AudioData": "<base64-bytes>", "AudioUrl": "example string", "VideoData": "<base64-bytes>", "VideoUrl": "example string", "TextContent": "example string", "WebsiteUrl": "example string" }], "CurrentSubQuest": {}, "CurrentSubQuestNumber": 1 },
-    currentSubQuestNumber: 1
+    id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    name: "example string",
+    description: "example string",
+    type: {  },
+    difficulty: {  },
+    rewardKarma: 1,
+    rewardExperience: 1,
+    requirements: ["example string"],
+    isActive: true,
+    createdAt: "2026-01-01T00:00:00Z"
   });
 if (isError) throw new Error(message);
 console.log(result);
@@ -573,10 +591,14 @@ Body type: `CreateQuestRequest`
 | `Description` | `string` |
 | `HolonSubType` | `HolonType` |
 | `QuestType` | `QuestType` |
+| `ObjectiveCompletionOrder` | `ObjectiveCompletionOrder` |
 | `SourceFolderPath` | `string` |
 | `CreateOptions` | `ISTARNETCreateOptions<Quest, STARNETDNA>?` |
 | `LinkedGeoHotSpotId` | `Guid?` |
 | `ExternalHandoffUri` | `string?` |
+| `RewardKarma` | `long` |
+| `RewardXP` | `long` |
+| `RewardInventoryItemIds` | `List<Guid>?` |
 | `Objectives` | `List<QuestObjectiveRequest>?` |
 
 **Response**
@@ -593,11 +615,15 @@ const { isError, message, result } = await star.quests.createQuestWithOptions({
     description: "example string",
     holonSubType: {  },
     questType: {  },
+    objectiveCompletionOrder: {  },
     sourceFolderPath: "example string",
     createOptions: { "STARNETHolon": /* <T1> */, "STARNETDNA": /* <T2> */, "MetaTagMappings": { "MetaHolonTags": [{ "HolonName": "example string", "HolonType": {  }, "NodeName": "example string", "NodeType": { "Score": 1.0 }, "MetaTag": "example string" }], "MetaTags": { "<string>": "example string" } }, "CheckIfSourcePathExists": true, "CustomCreateParams": { "<string>": {} } },
     linkedGeoHotSpotId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     externalHandoffUri: "example string",
-    objectives: [{ "Title": "example string", "Description": "example string", "GameSource": "example string", "Order": 1, "IsCompleted": true, "CompletedAt": "2026-01-01T00:00:00Z", "CompletedBy": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "LinkedGeoHotSpotId": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "ExternalHandoffUri": "example string", "Dictionaries": { "NeedToCollectArmor": { "<string>": ["example string"] }, "NeedToCollectAmmo": { "<string>": ["example string"] }, "NeedToCollectHealth": { "<string>": ["example string"] }, "NeedToCollectWeapons": { "<string>": ["example string"] }, "NeedToCollectPowerups": { "<string>": ["example string"] }, "NeedToCollectItems": { "<string>": ["example string"] }, "NeedToCollectKeys": { "<string>": ["example string"] }, "NeedToKillMonsters": { "<string>": ["example string"] }, "NeedToCompleteInMins": { "<string>": ["example string"] }, "NeedToEarnKarma": { "<string>": ["example string"] }, "NeedToEarnXP": { "<string>": ["example string"] }, "NeedToGoToGeoHotSpots": { "<string>": ["example string"] }, "NeedToCompleteLevel": { "<string>": ["example string"] }, "NeedToUseWeapons": { "<string>": ["example string"] }, "NeedToUsePowerups": { "<string>": ["example string"] }, "NeedToVisitLocations": { "<string>": ["example string"] }, "NeedToSurviveMins": { "<string>": ["example string"] }, "ArmorCollected": { "<string>": ["example string"] }, "AmmoCollected": { "<string>": ["example string"] }, "HealthCollected": { "<string>": ["example string"] }, "WeaponsCollected": { "<string>": ["example string"] }, "PowerupsCollected": { "<string>": ["example string"] }, "ItemsCollected": { "<string>": ["example string"] }, "KeysCollected": { "<string>": ["example string"] }, "MonstersKilled": { "<string>": ["example string"] }, "TimeStarted": { "<string>": ["example string"] }, "TimeEnded": { "<string>": ["example string"] }, "TimeTaken": { "<string>": ["example string"] }, "KarmaEarnt": { "<string>": ["example string"] }, "XPEarnt": { "<string>": ["example string"] }, "GeoHotSpotsArrived": { "<string>": ["example string"] }, "LevelsCompleted": { "<string>": ["example string"] } } }]
+    rewardKarma: 1,
+    rewardXP: 1,
+    rewardInventoryItemIds: ["3fa85f64-5717-4562-b3fc-2c963f66afa6"],
+    objectives: [{ "Title": "example string", "Description": "example string", "GameSource": "example string", "Order": 1, "IsCompleted": true, "CompletedAt": "2026-01-01T00:00:00Z", "CompletedBy": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "LinkedGeoHotSpotId": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "ExternalHandoffUri": "example string", "RewardInventoryItemIds": ["3fa85f64-5717-4562-b3fc-2c963f66afa6"], "RewardKarma": 1, "RewardXP": 1, "CrossGameEventsOnActivate": [{ "EventType": "example string", "TargetGame": "example string", "TargetMap": "example string", "EntityClassname": "example string", "SpawnCount": 1, "EntityCategory": "example string", "PortalId": "example string", "NarrationText": "example string", "AudioUrl": "example string", "AudioTitle": "example string", "VideoUrl": "example string", "VideoTitle": "example string", "WebsiteUrl": "example string", "ImageUrl": "example string", "ImageTitle": "example string", "AnimationKey": "example string" }], "CrossGameEventsOnComplete": [], "CrossGameEventsOnGeoHotSpotTriggered": [], "Dictionaries": { "NeedToCollectArmor": { "<string>": ["example string"] }, "NeedToCollectAmmo": { "<string>": ["example string"] }, "NeedToCollectHealth": { "<string>": ["example string"] }, "NeedToCollectWeapons": { "<string>": ["example string"] }, "NeedToCollectPowerups": { "<string>": ["example string"] }, "NeedToCollectItems": { "<string>": ["example string"] }, "NeedToCollectKeys": { "<string>": ["example string"] }, "NeedToKillMonsters": { "<string>": ["example string"] }, "NeedToCompleteInMins": { "<string>": ["example string"] }, "NeedToEarnKarma": { "<string>": ["example string"] }, "NeedToEarnXP": { "<string>": ["example string"] }, "NeedToGoToGeoHotSpots": { "<string>": ["example string"] }, "NeedToCompleteLevel": { "<string>": ["example string"] }, "NeedToUseWeapons": { "<string>": ["example string"] }, "NeedToUsePowerups": { "<string>": ["example string"] }, "NeedToVisitLocations": { "<string>": ["example string"] }, "NeedToSurviveMins": { "<string>": ["example string"] }, "ArmorCollected": { "<string>": ["example string"] }, "AmmoCollected": { "<string>": ["example string"] }, "HealthCollected": { "<string>": ["example string"] }, "WeaponsCollected": { "<string>": ["example string"] }, "PowerupsCollected": { "<string>": ["example string"] }, "ItemsCollected": { "<string>": ["example string"] }, "KeysCollected": { "<string>": ["example string"] }, "MonstersKilled": { "<string>": ["example string"] }, "TimeStarted": { "<string>": ["example string"] }, "TimeEnded": { "<string>": ["example string"] }, "TimeTaken": { "<string>": ["example string"] }, "KarmaEarnt": { "<string>": ["example string"] }, "XPEarnt": { "<string>": ["example string"] }, "GeoHotSpotsArrived": { "<string>": ["example string"] }, "LevelsCompleted": { "<string>": ["example string"] } } }]
   });
 if (isError) throw new Error(message);
 console.log(result);
@@ -902,6 +928,50 @@ Standard `OASISResult` envelope (see top of this page) with:
 
 ```js
 const { isError, message, result } = await star.quests.getAllQuestsForAvatarGame({});
+if (isError) throw new Error(message);
+console.log(result);
+```
+
+Example response:
+
+```json
+{
+  "isError": false,
+  "message": "",
+  "result": null
+}
+```
+
+---
+
+### `getFirstObjectiveActivationEvents`
+
+Returns CrossGameEventsOnActivate for the first incomplete objective. Call once after StartQuest to get opening audio/narration/video events.</summary>
+
+**GET** `api/quests/{id}/first-objective-events`
+
+Route parameters:
+
+| Field | Type |
+| --- | --- |
+| `id` | `Guid` |
+
+**Request**
+
+No request body.
+
+**Response**
+
+Standard `OASISResult` envelope (see top of this page) with:
+
+`result` type: `IActionResult` (not part of the request/response payload).
+
+**Example**
+
+```js
+const { isError, message, result } = await star.quests.getFirstObjectiveActivationEvents({
+    id: '<id>'
+  });
 if (isError) throw new Error(message);
 console.log(result);
 ```
@@ -1599,6 +1669,48 @@ Example response:
 
 ---
 
+### `reconcileInventoryProgress`
+
+**POST** `api/quests/{id}/inventory-progress`
+
+Route parameters:
+
+| Field | Type |
+| --- | --- |
+| `id` | `Guid` |
+
+**Request**
+
+No request body.
+
+**Response**
+
+Standard `OASISResult` envelope (see top of this page) with:
+
+`result` type: `IActionResult` (not part of the request/response payload).
+
+**Example**
+
+```js
+const { isError, message, result } = await star.quests.reconcileInventoryProgress({
+    id: '<id>'
+  });
+if (isError) throw new Error(message);
+console.log(result);
+```
+
+Example response:
+
+```json
+{
+  "isError": false,
+  "message": "",
+  "result": null
+}
+```
+
+---
+
 ### `removeQuestObjective`
 
 Removes an objective (sub-quest) from a quest.
@@ -1797,6 +1909,7 @@ Query parameters:
 | Field | Type |
 | --- | --- |
 | `query` | `string` |
+| `searchTerm` | `string (optional)` |
 
 **Response**
 
@@ -1808,7 +1921,8 @@ Standard `OASISResult` envelope (see top of this page) with:
 
 ```js
 const { isError, message, result } = await star.quests.searchQuests({
-    query: 'example string'
+    query: 'example string',
+    searchTerm: 'example string'
   });
 if (isError) throw new Error(message);
 console.log(result);

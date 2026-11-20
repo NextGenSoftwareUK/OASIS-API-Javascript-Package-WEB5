@@ -1,6 +1,6 @@
 # Games — `star.games`
 
-Source controller: [`GamesController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/GamesController.cs)
+Source controller: [`GamesController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/GamesController.cs)
 Route prefix: `api/games`
 55 operation(s).
 
@@ -89,6 +89,7 @@ Body type: `InventoryItem`
 | `GameSource` | `string` |
 | `ItemType` | `string` |
 | `NftId` | `string` |
+| `GeoNFTId` | `Guid` |
 | `InventoryItemType` | `InventoryItemType` |
 | `Rarity` | `string` |
 | `MaxQuantity` | `int` |
@@ -120,6 +121,7 @@ const { isError, message, result } = await star.games.addItemToInventory({
     gameSource: "example string",
     itemType: "example string",
     nftId: "example string",
+    geoNFTId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     inventoryItemType: {  },
     rarity: "example string",
     maxQuantity: 1,

@@ -1,8 +1,8 @@
 # HolonsMetaData — `star.holonsMetaData`
 
-Source controller: [`HolonsMetaDataController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/HolonsMetaDataController.cs)
+Source controller: [`HolonsMetaDataController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/HolonsMetaDataController.cs)
 Route prefix: `api/holonsMetaData`
-20 operation(s).
+21 operation(s).
 
 Every method takes a single args object: any key matching a `{token}` in the route is substituted into the URL; everything else becomes the query string (GET/DELETE) or JSON body (POST/PUT). Every call resolves to the standard OASIS envelope:
 
@@ -812,6 +812,52 @@ Example response:
 
 ### `searchHolonsMetaData`
 
+Searches for Holons Metadata based on search criteria.
+
+**GET** `api/holonsMetaData/search`
+
+**Request**
+
+Query parameters:
+
+| Field | Type |
+| --- | --- |
+| `searchTerm` | `string` |
+| `showAllVersions` | `bool (optional)` |
+| `version` | `int (optional)` |
+
+**Response**
+
+Standard `OASISResult` envelope (see top of this page) with:
+
+`result` type: `IActionResult` (not part of the request/response payload).
+
+**Example**
+
+```js
+const { isError, message, result } = await star.holonsMetaData.searchHolonsMetaData({
+    searchTerm: 'example string',
+    showAllVersions: true,
+    version: 1
+  });
+if (isError) throw new Error(message);
+console.log(result);
+```
+
+Example response:
+
+```json
+{
+  "isError": false,
+  "message": "",
+  "result": null
+}
+```
+
+---
+
+### `searchHolonsMetaDataPost`
+
 Searches for Holons Metadata using advanced search criteria.
 
 **POST** `api/holonsMetaData/search`
@@ -834,7 +880,7 @@ Standard `OASISResult` envelope (see top of this page) with:
 **Example**
 
 ```js
-const { isError, message, result } = await star.holonsMetaData.searchHolonsMetaData({
+const { isError, message, result } = await star.holonsMetaData.searchHolonsMetaDataPost({
     searchTerm: "example string",
     filters: { "<string>": {} }
   });

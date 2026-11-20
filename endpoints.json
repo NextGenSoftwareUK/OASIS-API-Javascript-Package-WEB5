@@ -314,6 +314,11 @@
             "name": "query",
             "type": "string",
             "optional": false
+          },
+          {
+            "name": "searchTerm",
+            "type": "string",
+            "optional": true
           }
         ],
         "requestType": null,
@@ -323,7 +328,8 @@
         },
         "summary": "Searches celestial bodies by name or description.",
         "query": [
-          "query"
+          "query",
+          "searchTerm"
         ]
       },
       "CreateCelestialBodyWithOptions": {
@@ -889,6 +895,18 @@
         },
         "summary": "Loads all Celestial Bodies Metadata for the current avatar."
       },
+      "SearchCelestialBodiesMetaDataPost": {
+        "verb": "POST",
+        "route": "search",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "SearchRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Searches for Celestial Bodies Metadata using advanced search criteria."
+      },
       "DownloadCelestialBodyMetaData": {
         "verb": "POST",
         "route": "{id}/download",
@@ -1047,18 +1065,6 @@
         "query": [
           "version"
         ]
-      },
-      "SearchCelestialBodiesMetaDataPost": {
-        "verb": "POST",
-        "route": "search",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": "SearchRequest",
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Searches for Celestial Bodies Metadata using advanced search criteria."
       }
     }
   },
@@ -5203,6 +5209,109 @@
         },
         "summary": "Creates a new game with specified parameters."
       },
+      "GetSharedInventory": {
+        "verb": "GET",
+        "route": "shared-inventory",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Gets shared inventory items (keycards, items, etc.) that can be used across games, apps, websites, services This uses the AvatarDetail.Inventory property - the avatar's actual owned inventory"
+      },
+      "AddItemToInventory": {
+        "verb": "POST",
+        "route": "shared-inventory/add",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "InventoryItem",
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Adds an item to the avatar's shared inventory (can be used across all games, apps, websites, services)"
+      },
+      "RemoveItemFromInventory": {
+        "verb": "DELETE",
+        "route": "shared-inventory/{itemId}",
+        "routeParams": [
+          {
+            "name": "itemId",
+            "type": "Guid"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Removes an item from the avatar's shared inventory"
+      },
+      "HasItem": {
+        "verb": "GET",
+        "route": "shared-inventory/{itemId}/has",
+        "routeParams": [
+          {
+            "name": "itemId",
+            "type": "Guid"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Checks if the avatar has a specific item in their shared inventory"
+      },
+      "HasItemByName": {
+        "verb": "GET",
+        "route": "shared-inventory/has-by-name",
+        "routeParams": [],
+        "queryParams": [
+          {
+            "name": "itemName",
+            "type": "string",
+            "optional": false
+          }
+        ],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Checks if the avatar has a specific item by name in their shared inventory",
+        "query": [
+          "itemName"
+        ]
+      },
+      "GetCrossGameQuests": {
+        "verb": "GET",
+        "route": "cross-game-quests",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Gets active quests that span multiple games"
+      },
+      "GetAvatarKarma": {
+        "verb": "GET",
+        "route": "karma",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Gets avatar's karma score (shared across all games)"
+      },
       "StartGame": {
         "verb": "POST",
         "route": "{gameId}/start",
@@ -5647,109 +5756,6 @@
           "inner": "IActionResult"
         },
         "summary": "Gets current key bindings"
-      },
-      "GetSharedInventory": {
-        "verb": "GET",
-        "route": "shared-inventory",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Gets shared inventory items (keycards, items, etc.) that can be used across games, apps, websites, services This uses the AvatarDetail.Inventory property - the avatar's actual owned inventory"
-      },
-      "AddItemToInventory": {
-        "verb": "POST",
-        "route": "shared-inventory/add",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": "InventoryItem",
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Adds an item to the avatar's shared inventory (can be used across all games, apps, websites, services)"
-      },
-      "RemoveItemFromInventory": {
-        "verb": "DELETE",
-        "route": "shared-inventory/{itemId}",
-        "routeParams": [
-          {
-            "name": "itemId",
-            "type": "Guid"
-          }
-        ],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Removes an item from the avatar's shared inventory"
-      },
-      "HasItem": {
-        "verb": "GET",
-        "route": "shared-inventory/{itemId}/has",
-        "routeParams": [
-          {
-            "name": "itemId",
-            "type": "Guid"
-          }
-        ],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Checks if the avatar has a specific item in their shared inventory"
-      },
-      "HasItemByName": {
-        "verb": "GET",
-        "route": "shared-inventory/has-by-name",
-        "routeParams": [],
-        "queryParams": [
-          {
-            "name": "itemName",
-            "type": "string",
-            "optional": false
-          }
-        ],
-        "requestType": null,
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Checks if the avatar has a specific item by name in their shared inventory",
-        "query": [
-          "itemName"
-        ]
-      },
-      "GetCrossGameQuests": {
-        "verb": "GET",
-        "route": "cross-game-quests",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Gets active quests that span multiple games"
-      },
-      "GetAvatarKarma": {
-        "verb": "GET",
-        "route": "karma",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Gets avatar's karma score (shared across all games)"
       }
     }
   },
@@ -5784,6 +5790,35 @@
           "inner": "IActionResult"
         },
         "summary": "Retrieves a specific geo hot spot by its unique identifier."
+      },
+      "GetEligibleGeoHotSpots": {
+        "verb": "GET",
+        "route": "eligible",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Returns active, map-visible GeoHotSpots with authoritative eligibility for the authenticated avatar.</summary>"
+      },
+      "TriggerGeoHotSpot": {
+        "verb": "POST",
+        "route": "{id}/trigger",
+        "routeParams": [
+          {
+            "name": "id",
+            "type": "Guid"
+          }
+        ],
+        "queryParams": [],
+        "requestType": "TriggerGeoHotSpotRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Validates and records an authoritative GeoHotSpot trigger.</summary>"
       },
       "CreateGeoHotSpot": {
         "verb": "POST",
@@ -6196,35 +6231,6 @@
         "query": [
           "version"
         ]
-      },
-      "GetEligibleGeoHotSpots": {
-        "verb": "GET",
-        "route": "eligible",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Returns active, map-visible GeoHotSpots with authoritative eligibility for the authenticated avatar.</summary>"
-      },
-      "TriggerGeoHotSpot": {
-        "verb": "POST",
-        "route": "{id}/trigger",
-        "routeParams": [
-          {
-            "name": "id",
-            "type": "Guid"
-          }
-        ],
-        "queryParams": [],
-        "requestType": "TriggerGeoHotSpotRequest",
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Validates and records an authoritative GeoHotSpot trigger.</summary>"
       }
     }
   },
@@ -6889,6 +6895,11 @@
             "name": "query",
             "type": "string",
             "optional": false
+          },
+          {
+            "name": "searchTerm",
+            "type": "string",
+            "optional": true
           }
         ],
         "requestType": null,
@@ -6898,7 +6909,8 @@
         },
         "summary": "Searches holons by name or description.",
         "query": [
-          "query"
+          "query",
+          "searchTerm"
         ]
       },
       "GetHolonsByStatus": {
@@ -7481,6 +7493,18 @@
         },
         "summary": "Loads all Holons Metadata for the current avatar."
       },
+      "SearchHolonsMetaDataPost": {
+        "verb": "POST",
+        "route": "search",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "SearchRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Searches for Holons Metadata using advanced search criteria."
+      },
       "DownloadHolonMetaData": {
         "verb": "POST",
         "route": "{id}/download",
@@ -7639,18 +7663,6 @@
         "query": [
           "version"
         ]
-      },
-      "SearchHolonsMetaDataPost": {
-        "verb": "POST",
-        "route": "search",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": "SearchRequest",
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Searches for Holons Metadata using advanced search criteria."
       }
     }
   },
@@ -8564,6 +8576,53 @@
       }
     }
   },
+  "MapEntitiesController.cs": {
+    "route_prefix": "api/maps",
+    "ops": {
+      "GetEntities": {
+        "verb": "GET",
+        "route": "{game}/{map}/entities",
+        "routeParams": [
+          {
+            "name": "game",
+            "type": "string"
+          },
+          {
+            "name": "map",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Returns the entity list for the specified game map. Used by ogengine_get_map_entities() at map load time."
+      },
+      "PutEntities": {
+        "verb": "PUT",
+        "route": "{game}/{map}/entities",
+        "routeParams": [
+          {
+            "name": "game",
+            "type": "string"
+          },
+          {
+            "name": "map",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": "List<MapEntity>",
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Replaces the entity list for the specified map. The new list is stored as a Holon. Used by UDB map export / OASIS entity placement tools."
+      }
+    }
+  },
   "MissionsController.cs": {
     "route_prefix": "api/missions",
     "ops": {
@@ -9065,7 +9124,7 @@
         ],
         "requestType": null,
         "responseType": {
-          "wrapper": "Task",
+          "wrapper": null,
           "inner": "IActionResult"
         },
         "summary": "Completes a mission for the authenticated avatar.",
@@ -9089,7 +9148,7 @@
         ],
         "requestType": null,
         "responseType": {
-          "wrapper": "Task",
+          "wrapper": null,
           "inner": "IActionResult"
         },
         "summary": "Gets mission leaderboard for a specific mission.",
@@ -9109,7 +9168,7 @@
         "queryParams": [],
         "requestType": null,
         "responseType": {
-          "wrapper": "Task",
+          "wrapper": null,
           "inner": "IActionResult"
         },
         "summary": "Gets mission rewards for a specific mission."
@@ -9121,7 +9180,7 @@
         "queryParams": [],
         "requestType": null,
         "responseType": {
-          "wrapper": "Task",
+          "wrapper": null,
           "inner": "IActionResult"
         },
         "summary": "Gets mission statistics for the authenticated avatar."
@@ -9831,6 +9890,18 @@
         },
         "summary": "Loads all OAPPs for the current avatar."
       },
+      "SearchOAPPsPost": {
+        "verb": "POST",
+        "route": "search",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "SearchRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Searches for OAPPs based on the provided search criteria."
+      },
       "DownloadOAPP": {
         "verb": "POST",
         "route": "{id}/download",
@@ -9989,18 +10060,32 @@
         "query": [
           "version"
         ]
-      },
-      "SearchOAPPsPost": {
-        "verb": "POST",
-        "route": "search",
+      }
+    }
+  },
+  "OAssetsController.cs": {
+    "route_prefix": "api/oAssets",
+    "ops": {
+      "GetAssets": {
+        "verb": "GET",
+        "route": "",
         "routeParams": [],
-        "queryParams": [],
-        "requestType": "SearchRequest",
+        "queryParams": [
+          {
+            "name": "gameId",
+            "type": "string",
+            "optional": true
+          }
+        ],
+        "requestType": null,
         "responseType": {
           "wrapper": null,
-          "inner": "IActionResult"
+          "inner": "object"
         },
-        "summary": "Searches for OAPPs based on the provided search criteria."
+        "summary": "Returns all OASIS game assets, optionally filtered by gameId. OQUAKE2-RTX → aliased to OQUAKE2; ODUKE3D-RT → ODUKE3D; ODOOM3-BFG → ODOOM3.",
+        "query": [
+          "gameId"
+        ]
       }
     }
   },
@@ -10981,77 +11066,92 @@
       }
     }
   },
+  "PortalsController.cs": {
+    "route_prefix": "api/portals",
+    "ops": {
+      "RegisterPortal": {
+        "verb": "POST",
+        "route": "",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "PortalRegistration",
+        "responseType": {
+          "wrapper": null,
+          "inner": "object"
+        },
+        "summary": "Register or update a portal endpoint.  Games call this on map load so the registry always knows which portals exist across the omniverse."
+      },
+      "GetAllPortals": {
+        "verb": "GET",
+        "route": "",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": "IEnumerable",
+          "inner": "PortalRecord"
+        },
+        "summary": "List all registered portals (both locked and unlocked)."
+      },
+      "GetPortal": {
+        "verb": "GET",
+        "route": "{portalId}",
+        "routeParams": [
+          {
+            "name": "portalId",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "PortalRecord"
+        },
+        "summary": "Get a specific portal by ID."
+      },
+      "UnlockPortal": {
+        "verb": "POST",
+        "route": "{portalId}/unlock",
+        "routeParams": [
+          {
+            "name": "portalId",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "object"
+        },
+        "summary": "Mark a portal as unlocked.  Called by OGEditor/OmniverseKernel when it detects the oasis_portal_unlock_{portalId}.json IPC file written by ogengine_notify_portal_unlock."
+      },
+      "LockPortal": {
+        "verb": "POST",
+        "route": "{portalId}/lock",
+        "routeParams": [
+          {
+            "name": "portalId",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "object"
+        },
+        "summary": "Reset (re-lock) a portal.  Use for testing or when a quest resets."
+      }
+    }
+  },
   "QuestsController.cs": {
     "route_prefix": "api/quests",
     "ops": {
-      "GetAllIQuests": {
-        "verb": "GET",
-        "route": "",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Retrieves all quests in the system."
-      },
-      "GetAllQuestsForAvatar": {
-        "verb": "GET",
-        "route": "all-for-avatar",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Retrieves all quests for the current avatar (no status filter). Returns a flat list of every quest where CreatedByAvatarId matches and Active=1: top-level quests, sub-quests, and objectives (child quests with ParentQuestId set). Use this for the quest popup; the client filters by status (Not Started, In Progress, Completed) and by ParentQuestId for sub-quests/objectives."
-      },
-      "GetAllQuestsForAvatarGame": {
-        "verb": "GET",
-        "route": "all-for-avatar/game",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Same data path as <see cref=\"GetAllQuestsForAvatar\"/> but returns a flat game-friendly DTO (no full holon graph / STARNET children). Use for native clients and games; keep <c>all-for-avatar</c> for tools and graph consumers."
-      },
-      "GetIQuest": {
-        "verb": "GET",
-        "route": "{id}",
-        "routeParams": [
-          {
-            "name": "id",
-            "type": "Guid"
-          }
-        ],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Retrieves a specific quest by its unique identifier."
-      },
-      "CreateIQuest": {
+      "ApplyQuestProgress": {
         "verb": "POST",
-        "route": "",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": "IQuest",
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Creates a new quest for the authenticated avatar."
-      },
-      "UpdateIQuest": {
-        "verb": "PUT",
-        "route": "{id}",
+        "route": "{id}/progress",
         "routeParams": [
           {
             "name": "id",
@@ -11059,36 +11159,19 @@
           }
         ],
         "queryParams": [],
-        "requestType": "Quest",
+        "requestType": "QuestProgressRequest",
         "responseType": {
           "wrapper": null,
           "inner": "IActionResult"
         },
-        "summary": "Updates an existing quest by its unique identifier."
+        "summary": "Apply in-game progress (monster kills, XP, item pickups, keys, level elapsed seconds) to the tracked quest. Updates objective progress and % complete; completes objectives/quest when thresholds are met.</summary>"
       },
-      "DeleteIQuest": {
-        "verb": "DELETE",
-        "route": "{id}",
-        "routeParams": [
-          {
-            "name": "id",
-            "type": "Guid"
-          }
-        ],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Deletes a quest by its unique identifier."
-      },
-      "GetIQuestsByAvatar": {
+      "GetFirstObjectiveActivationEvents": {
         "verb": "GET",
-        "route": "by-avatar/{avatarId}",
+        "route": "{id}/first-objective-events",
         "routeParams": [
           {
-            "name": "avatarId",
+            "name": "id",
             "type": "Guid"
           }
         ],
@@ -11098,11 +11181,11 @@
           "wrapper": null,
           "inner": "IActionResult"
         },
-        "summary": "Retrieves all quests for a specific avatar."
+        "summary": "Returns CrossGameEventsOnActivate for the first incomplete objective. Call once after StartQuest to get opening audio/narration/video events.</summary>"
       },
-      "CloneQuest": {
+      "ResetObjectiveProgress": {
         "verb": "POST",
-        "route": "{id}/clone",
+        "route": "{id}/progress/reset",
         "routeParams": [
           {
             "name": "id",
@@ -11110,73 +11193,60 @@
           }
         ],
         "queryParams": [],
-        "requestType": "CloneRequest",
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Clones an existing quest with a new name."
-      },
-      "GetQuestsByType": {
-        "verb": "GET",
-        "route": "by-type/{type}",
-        "routeParams": [
-          {
-            "name": "type",
-            "type": "string"
-          }
-        ],
-        "queryParams": [],
         "requestType": null,
         "responseType": {
           "wrapper": null,
           "inner": "IActionResult"
         },
-        "summary": "Retrieves quests by a specific type."
+        "summary": "Clears all progress dictionaries on the quest and its embedded objectives (kills, collected counts, XP, etc.) to 0; leaves Need* requirements unchanged. If the quest was Completed, status becomes InProgress.</summary>"
       },
-      "GetQuestsByStatus": {
-        "verb": "GET",
-        "route": "by-status/{status}",
-        "routeParams": [
-          {
-            "name": "status",
-            "type": "string"
-          }
-        ],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Retrieves quests by status."
-      },
-      "GetQuestsByStatusGame": {
-        "verb": "GET",
-        "route": "by-status/{status}/game",
-        "routeParams": [
-          {
-            "name": "status",
-            "type": "string"
-          }
-        ],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Same filtering as <see cref=\"GetQuestsByStatus\"/> but returns <see cref=\"GameQuestSummaryLite\"/> rows for small payloads in games."
-      },
-      "SearchQuests": {
-        "verb": "GET",
-        "route": "search",
+      "CompleteQuestObjectiveByIdentifiers": {
+        "verb": "POST",
+        "route": "objectives/complete",
         "routeParams": [],
+        "queryParams": [],
+        "requestType": "CompleteQuestObjectiveIdentifiersRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Complete a quest objective using string identifiers in the JSON body (GUIDs or client slugs such as cross_dimensional_keycard_hunt / doom_red_keycard). Native games use this path; route parameters remain Guid-only.</summary>"
+      },
+      "CompleteQuestObjective": {
+        "verb": "POST",
+        "route": "{id}/objectives/{objectiveId}/complete",
+        "routeParams": [
+          {
+            "name": "id",
+            "type": "Guid"
+          },
+          {
+            "name": "objectiveId",
+            "type": "Guid"
+          }
+        ],
+        "queryParams": [],
+        "requestType": "CompleteQuestObjectiveRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": null
+      },
+      "CompleteQuest": {
+        "verb": "POST",
+        "route": "{id}/complete",
+        "routeParams": [
+          {
+            "name": "id",
+            "type": "Guid"
+          }
+        ],
         "queryParams": [
           {
-            "name": "query",
+            "name": "completionNotes",
             "type": "string",
-            "optional": false
+            "optional": true
           }
         ],
         "requestType": null,
@@ -11184,10 +11254,80 @@
           "wrapper": null,
           "inner": "IActionResult"
         },
-        "summary": "Searches quests by name or description.",
+        "summary": "Completes a quest for the authenticated avatar.",
+        "bodyParam": "completionNotes"
+      },
+      "GetQuestLeaderboard": {
+        "verb": "GET",
+        "route": "{id}/leaderboard",
+        "routeParams": [
+          {
+            "name": "id",
+            "type": "Guid"
+          }
+        ],
+        "queryParams": [
+          {
+            "name": "limit",
+            "type": "int",
+            "optional": true
+          }
+        ],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Gets quest leaderboard for a specific quest.",
         "query": [
-          "query"
+          "limit"
         ]
+      },
+      "GetQuestRewards": {
+        "verb": "GET",
+        "route": "{id}/rewards",
+        "routeParams": [
+          {
+            "name": "id",
+            "type": "Guid"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Gets quest rewards for a specific quest."
+      },
+      "GetQuestStats": {
+        "verb": "GET",
+        "route": "stats",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Gets quest statistics for the authenticated avatar."
+      },
+      "ReconcileInventoryProgress": {
+        "verb": "POST",
+        "route": "{id}/inventory-progress",
+        "routeParams": [
+          {
+            "name": "id",
+            "type": "Guid"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": null
       },
       "CreateQuestWithOptions": {
         "verb": "POST",
@@ -11615,26 +11755,45 @@
         },
         "summary": "Checks whether the authenticated avatar can start the quest (quest is NotStarted and prerequisites are met). Use for the quest popup to enable/disable the Start button. Returns Result=true when the quest can be started, false otherwise with Message explaining why."
       },
-      "ApplyQuestProgress": {
-        "verb": "POST",
-        "route": "{id}/progress",
-        "routeParams": [
-          {
-            "name": "id",
-            "type": "Guid"
-          }
-        ],
+      "GetAllIQuests": {
+        "verb": "GET",
+        "route": "",
+        "routeParams": [],
         "queryParams": [],
-        "requestType": "QuestProgressRequest",
+        "requestType": null,
         "responseType": {
           "wrapper": null,
           "inner": "IActionResult"
         },
-        "summary": "Apply in-game progress (monster kills, XP, item pickups, keys, level elapsed seconds) to the tracked quest. Updates objective progress and % complete; completes objectives/quest when thresholds are met.</summary>"
+        "summary": "Retrieves all quests in the system."
       },
-      "ResetObjectiveProgress": {
-        "verb": "POST",
-        "route": "{id}/progress/reset",
+      "GetAllQuestsForAvatar": {
+        "verb": "GET",
+        "route": "all-for-avatar",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Retrieves all quests for the current avatar (no status filter). Returns a flat list of every quest where CreatedByAvatarId matches and Active=1: top-level quests, sub-quests, and objectives (child quests with ParentQuestId set). Use this for the quest popup; the client filters by status (Not Started, In Progress, Completed) and by ParentQuestId for sub-quests/objectives."
+      },
+      "GetAllQuestsForAvatarGame": {
+        "verb": "GET",
+        "route": "all-for-avatar/game",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Same data path as <see cref=\"GetAllQuestsForAvatar\"/> but returns a flat game-friendly DTO (no full holon graph / STARNET children). Use for native clients and games; keep <c>all-for-avatar</c> for tools and graph consumers."
+      },
+      "GetIQuest": {
+        "verb": "GET",
+        "route": "{id}",
         "routeParams": [
           {
             "name": "id",
@@ -11647,53 +11806,151 @@
           "wrapper": null,
           "inner": "IActionResult"
         },
-        "summary": "Clears all progress dictionaries on the quest and its embedded objectives (kills, collected counts, XP, etc.) to 0; leaves Need* requirements unchanged. If the quest was Completed, status becomes InProgress.</summary>"
+        "summary": "Retrieves a specific quest by its unique identifier."
       },
-      "CompleteQuestObjectiveByIdentifiers": {
+      "CreateIQuest": {
         "verb": "POST",
-        "route": "objectives/complete",
+        "route": "",
         "routeParams": [],
         "queryParams": [],
-        "requestType": "CompleteQuestObjectiveIdentifiersRequest",
+        "requestType": "Quest",
         "responseType": {
           "wrapper": null,
           "inner": "IActionResult"
         },
-        "summary": "Complete a quest objective using string identifiers in the JSON body (GUIDs or client slugs such as cross_dimensional_keycard_hunt / doom_red_keycard). Native games use this path; route parameters remain Guid-only.</summary>"
+        "summary": "Creates a new quest for the authenticated avatar."
       },
-      "CompleteQuestObjective": {
-        "verb": "POST",
-        "route": "{id}/objectives/{objectiveId}/complete",
+      "UpdateIQuest": {
+        "verb": "PUT",
+        "route": "{id}",
         "routeParams": [
           {
             "name": "id",
-            "type": "Guid"
-          },
-          {
-            "name": "objectiveId",
             "type": "Guid"
           }
         ],
         "queryParams": [],
-        "requestType": "CompleteQuestObjectiveRequest",
+        "requestType": "Quest",
         "responseType": {
           "wrapper": null,
           "inner": "IActionResult"
         },
-        "summary": null
+        "summary": "Updates an existing quest by its unique identifier."
       },
-      "CompleteQuest": {
-        "verb": "POST",
-        "route": "{id}/complete",
+      "DeleteIQuest": {
+        "verb": "DELETE",
+        "route": "{id}",
         "routeParams": [
           {
             "name": "id",
             "type": "Guid"
           }
         ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Deletes a quest by its unique identifier."
+      },
+      "GetIQuestsByAvatar": {
+        "verb": "GET",
+        "route": "by-avatar/{avatarId}",
+        "routeParams": [
+          {
+            "name": "avatarId",
+            "type": "Guid"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Retrieves all quests for a specific avatar."
+      },
+      "CloneQuest": {
+        "verb": "POST",
+        "route": "{id}/clone",
+        "routeParams": [
+          {
+            "name": "id",
+            "type": "Guid"
+          }
+        ],
+        "queryParams": [],
+        "requestType": "CloneRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Clones an existing quest with a new name."
+      },
+      "GetQuestsByType": {
+        "verb": "GET",
+        "route": "by-type/{type}",
+        "routeParams": [
+          {
+            "name": "type",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Retrieves quests by a specific type."
+      },
+      "GetQuestsByStatus": {
+        "verb": "GET",
+        "route": "by-status/{status}",
+        "routeParams": [
+          {
+            "name": "status",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Retrieves quests by status."
+      },
+      "GetQuestsByStatusGame": {
+        "verb": "GET",
+        "route": "by-status/{status}/game",
+        "routeParams": [
+          {
+            "name": "status",
+            "type": "string"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Same filtering as <see cref=\"GetQuestsByStatus\"/> but returns <see cref=\"GameQuestSummaryLite\"/> rows for small payloads in games."
+      },
+      "SearchQuests": {
+        "verb": "GET",
+        "route": "search",
+        "routeParams": [],
         "queryParams": [
           {
-            "name": "completionNotes",
+            "name": "query",
+            "type": "string",
+            "optional": false
+          },
+          {
+            "name": "searchTerm",
             "type": "string",
             "optional": true
           }
@@ -11703,63 +11960,11 @@
           "wrapper": null,
           "inner": "IActionResult"
         },
-        "summary": "Completes a quest for the authenticated avatar.",
-        "bodyParam": "completionNotes"
-      },
-      "GetQuestLeaderboard": {
-        "verb": "GET",
-        "route": "{id}/leaderboard",
-        "routeParams": [
-          {
-            "name": "id",
-            "type": "Guid"
-          }
-        ],
-        "queryParams": [
-          {
-            "name": "limit",
-            "type": "int",
-            "optional": true
-          }
-        ],
-        "requestType": null,
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Gets quest leaderboard for a specific quest.",
+        "summary": "Searches quests by name or description.",
         "query": [
-          "limit"
+          "query",
+          "searchTerm"
         ]
-      },
-      "GetQuestRewards": {
-        "verb": "GET",
-        "route": "{id}/rewards",
-        "routeParams": [
-          {
-            "name": "id",
-            "type": "Guid"
-          }
-        ],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Gets quest rewards for a specific quest."
-      },
-      "GetQuestStats": {
-        "verb": "GET",
-        "route": "stats",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Gets quest statistics for the authenticated avatar."
       }
     }
   },
@@ -12013,6 +12218,18 @@
         },
         "summary": "Loads all runtimes for the current avatar."
       },
+      "SearchRuntimesPost": {
+        "verb": "POST",
+        "route": "search",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "SearchRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Searches for runtimes based on the provided search criteria."
+      },
       "PublishRuntime": {
         "verb": "POST",
         "route": "{id}/publish",
@@ -12169,18 +12386,6 @@
           "inner": "IActionResult"
         },
         "summary": "Deactivates a runtime in the STARNET system."
-      },
-      "SearchRuntimesPost": {
-        "verb": "POST",
-        "route": "search",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": "SearchRequest",
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Searches for runtimes based on the provided search criteria."
       }
     }
   },
@@ -12234,6 +12439,85 @@
           "inner": "IActionResult"
         },
         "summary": "Beams in (authenticates) an avatar to the STAR system."
+      }
+    }
+  },
+  "SpawnEventsController.cs": {
+    "route_prefix": "api/spawn-events",
+    "ops": {
+      "QueueSpawnEvent": {
+        "verb": "POST",
+        "route": "",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "SpawnEvent",
+        "responseType": {
+          "wrapper": null,
+          "inner": "object"
+        },
+        "summary": "Queues a cross-game entity spawn event. The target game retrieves it via GET api/spawn-events/pending."
+      },
+      "GetPendingSpawnEvent": {
+        "verb": "GET",
+        "route": "pending",
+        "routeParams": [],
+        "queryParams": [
+          {
+            "name": "game",
+            "type": "string",
+            "optional": false
+          }
+        ],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "SpawnEvent"
+        },
+        "summary": "Pops and returns the next pending spawn event for the given game and avatar, or 204 if none.",
+        "query": [
+          "game"
+        ]
+      },
+      "ConfirmSpawn": {
+        "verb": "POST",
+        "route": "confirm",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "SpawnConfirmRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "object"
+        },
+        "summary": "Acknowledges a completed entity spawn. No persistent state is updated; this endpoint exists for logging and future confirmation tracking."
+      }
+    }
+  },
+  "TeleportController.cs": {
+    "route_prefix": "api/teleport",
+    "ops": {
+      "RecordTeleport": {
+        "verb": "POST",
+        "route": "",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "TeleportRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "object"
+        },
+        "summary": "Records a cross-game teleport request for the given avatar. The target game will pick this up via GET api/teleport/pending."
+      },
+      "GetPendingTeleport": {
+        "verb": "GET",
+        "route": "pending",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "TeleportRequest"
+        },
+        "summary": "Returns and removes the pending teleport request for the given avatarId, or 204 if none exists. Games should poll this on map load or at an interval to detect incoming cross-game teleports."
       }
     }
   },
@@ -12436,6 +12720,18 @@
         },
         "summary": "Loads all templates for the current avatar."
       },
+      "SearchTemplatesPost": {
+        "verb": "POST",
+        "route": "search",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "SearchRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Searches for templates based on the provided search criteria."
+      },
       "PublishTemplate": {
         "verb": "POST",
         "route": "{id}/publish",
@@ -12592,18 +12888,6 @@
           "inner": "IActionResult"
         },
         "summary": "Deactivates a template in the STARNET system."
-      },
-      "SearchTemplatesPost": {
-        "verb": "POST",
-        "route": "search",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": "SearchRequest",
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Searches for templates based on the provided search criteria."
       }
     }
   },
@@ -12862,6 +13146,11 @@
             "name": "version",
             "type": "int",
             "optional": true
+          },
+          {
+            "name": "query",
+            "type": "string",
+            "optional": true
           }
         ],
         "requestType": null,
@@ -12874,7 +13163,8 @@
           "searchTerm",
           "searchOnlyForCurrentAvatar",
           "showAllVersions",
-          "version"
+          "version",
+          "query"
         ]
       },
       "PublishZome": {
@@ -13321,6 +13611,18 @@
         },
         "summary": "Loads all Zomes Metadata for the current avatar."
       },
+      "SearchZomesMetaDataPost": {
+        "verb": "POST",
+        "route": "search",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "SearchRequest",
+        "responseType": {
+          "wrapper": null,
+          "inner": "IActionResult"
+        },
+        "summary": "Searches for Zomes Metadata using advanced search criteria."
+      },
       "DownloadZomeMetaData": {
         "verb": "POST",
         "route": "{id}/download",
@@ -13479,250 +13781,6 @@
         "query": [
           "version"
         ]
-      },
-      "SearchZomesMetaDataPost": {
-        "verb": "POST",
-        "route": "search",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": "SearchRequest",
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Searches for Zomes Metadata using advanced search criteria."
-      }
-    }
-  },
-  "MapEntitiesController.cs": {
-    "route_prefix": "api/maps",
-    "ops": {
-      "GetEntities": {
-        "verb": "GET",
-        "route": "{game}/{map}/entities",
-        "routeParams": [
-          {
-            "name": "game",
-            "type": "string"
-          },
-          {
-            "name": "map",
-            "type": "string"
-          }
-        ],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Returns the entity list for the specified game map. Used by ogengine_get_map_entities() at map load time."
-      },
-      "PutEntities": {
-        "verb": "PUT",
-        "route": "{game}/{map}/entities",
-        "routeParams": [
-          {
-            "name": "game",
-            "type": "string"
-          },
-          {
-            "name": "map",
-            "type": "string"
-          }
-        ],
-        "queryParams": [],
-        "requestType": "List<MapEntity>",
-        "responseType": {
-          "wrapper": null,
-          "inner": "IActionResult"
-        },
-        "summary": "Replaces the entity list for the specified map. The new list is stored as a Holon. Used by UDB map export / OASIS entity placement tools."
-      }
-    }
-  },
-  "OAssetsController.cs": {
-    "route_prefix": "api/oAssets",
-    "ops": {
-      "GetAssets": {
-        "verb": "GET",
-        "route": "",
-        "routeParams": [],
-        "queryParams": [
-          {
-            "name": "gameId",
-            "type": "string",
-            "optional": true
-          }
-        ],
-        "requestType": null,
-        "responseType": {
-          "wrapper": null,
-          "inner": "object"
-        },
-        "summary": "Returns all OASIS game assets, optionally filtered by gameId. OQUAKE2-RTX → aliased to OQUAKE2; ODUKE3D-RT → ODUKE3D; ODOOM3-BFG → ODOOM3.",
-        "query": [
-          "gameId"
-        ]
-      }
-    }
-  },
-  "PortalsController.cs": {
-    "route_prefix": "api/portals",
-    "ops": {
-      "RegisterPortal": {
-        "verb": "POST",
-        "route": "",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": "PortalRegistration",
-        "responseType": {
-          "wrapper": null,
-          "inner": "object"
-        },
-        "summary": "Register or update a portal endpoint.  Games call this on map load so the registry always knows which portals exist across the omniverse."
-      },
-      "GetAllPortals": {
-        "verb": "GET",
-        "route": "",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": {
-          "wrapper": "IEnumerable",
-          "inner": "PortalRecord"
-        },
-        "summary": "List all registered portals (both locked and unlocked)."
-      },
-      "GetPortal": {
-        "verb": "GET",
-        "route": "{portalId}",
-        "routeParams": [
-          {
-            "name": "portalId",
-            "type": "string"
-          }
-        ],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": {
-          "wrapper": null,
-          "inner": "PortalRecord"
-        },
-        "summary": "Get a specific portal by ID."
-      },
-      "UnlockPortal": {
-        "verb": "POST",
-        "route": "{portalId}/unlock",
-        "routeParams": [
-          {
-            "name": "portalId",
-            "type": "string"
-          }
-        ],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": {
-          "wrapper": null,
-          "inner": "object"
-        },
-        "summary": "Mark a portal as unlocked.  Called by OGEditor/OmniverseKernel when it detects the oasis_portal_unlock_{portalId}.json IPC file written by ogengine_notify_portal_unlock."
-      },
-      "LockPortal": {
-        "verb": "POST",
-        "route": "{portalId}/lock",
-        "routeParams": [
-          {
-            "name": "portalId",
-            "type": "string"
-          }
-        ],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": {
-          "wrapper": null,
-          "inner": "object"
-        },
-        "summary": "Reset (re-lock) a portal.  Use for testing or when a quest resets."
-      }
-    }
-  },
-  "SpawnEventsController.cs": {
-    "route_prefix": "api/spawn-events",
-    "ops": {
-      "QueueSpawnEvent": {
-        "verb": "POST",
-        "route": "",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": "SpawnEvent",
-        "responseType": {
-          "wrapper": null,
-          "inner": "object"
-        },
-        "summary": "Queues a cross-game entity spawn event. The target game retrieves it via GET api/spawn-events/pending."
-      },
-      "GetPendingSpawnEvent": {
-        "verb": "GET",
-        "route": "pending",
-        "routeParams": [],
-        "queryParams": [
-          {
-            "name": "game",
-            "type": "string",
-            "optional": false
-          }
-        ],
-        "requestType": null,
-        "responseType": {
-          "wrapper": null,
-          "inner": "SpawnEvent"
-        },
-        "summary": "Pops and returns the next pending spawn event for the given game and avatar, or 204 if none.",
-        "query": [
-          "game"
-        ]
-      },
-      "ConfirmSpawn": {
-        "verb": "POST",
-        "route": "confirm",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": "SpawnConfirmRequest",
-        "responseType": {
-          "wrapper": null,
-          "inner": "object"
-        },
-        "summary": "Acknowledges a completed entity spawn. No persistent state is updated; this endpoint exists for logging and future confirmation tracking."
-      }
-    }
-  },
-  "TeleportController.cs": {
-    "route_prefix": "api/teleport",
-    "ops": {
-      "RecordTeleport": {
-        "verb": "POST",
-        "route": "",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": "TeleportRequest",
-        "responseType": {
-          "wrapper": null,
-          "inner": "object"
-        },
-        "summary": "Records a cross-game teleport request for the given avatar. The target game will pick this up via GET api/teleport/pending."
-      },
-      "GetPendingTeleport": {
-        "verb": "GET",
-        "route": "pending",
-        "routeParams": [],
-        "queryParams": [],
-        "requestType": null,
-        "responseType": {
-          "wrapper": null,
-          "inner": "TeleportRequest"
-        },
-        "summary": "Returns and removes the pending teleport request for the given avatarId, or 204 if none exists. Games should poll this on map load or at an interval to detect incoming cross-game teleports."
       }
     }
   }

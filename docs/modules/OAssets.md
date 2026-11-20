@@ -1,6 +1,6 @@
-# OAssets — `oasis.oAssets`
+# OAssets — `star.oAssets`
 
-Source controller: [`OAssetsController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/ONODE/NextGenSoftware.OASIS.API.ONODE.WebAPI/Controllers/OAssetsController.cs)
+Source controller: [`OAssetsController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/OAssetsController.cs)
 Route prefix: `api/oAssets`
 1 operation(s).
 
@@ -41,7 +41,7 @@ Standard `OASISResult` envelope (see top of this page) with:
 **Example**
 
 ```js
-const { isError, message, result } = await oasis.oAssets.getAssets({
+const { isError, message, result } = await star.oAssets.getAssets({
     gameId: 'example string'
   });
 if (isError) throw new Error(message);

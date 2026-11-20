@@ -1,8 +1,8 @@
 # Runtimes — `star.runtimes`
 
-Source controller: [`RuntimesController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/RuntimesController.cs)
+Source controller: [`RuntimesController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/RuntimesController.cs)
 Route prefix: `api/runtimes`
-24 operation(s).
+25 operation(s).
 
 Every method takes a single args object: any key matching a `{token}` in the route is substituted into the URL; everything else becomes the query string (GET/DELETE) or JSON body (POST/PUT). Every call resolves to the standard OASIS envelope:
 
@@ -914,6 +914,50 @@ Standard `OASISResult` envelope (see top of this page) with:
 ```js
 const { isError, message, result } = await star.runtimes.searchRuntimes({
     searchTerm: 'example string'
+  });
+if (isError) throw new Error(message);
+console.log(result);
+```
+
+Example response:
+
+```json
+{
+  "isError": false,
+  "message": "",
+  "result": null
+}
+```
+
+---
+
+### `searchRuntimesPost`
+
+Searches for runtimes based on the provided search criteria.
+
+**POST** `api/runtimes/search`
+
+**Request**
+
+Body type: `SearchRequest`
+
+| Field | Type |
+| --- | --- |
+| `SearchTerm` | `string` |
+| `Filters` | `Dictionary<string, object>` |
+
+**Response**
+
+Standard `OASISResult` envelope (see top of this page) with:
+
+`result` type: `IActionResult` (not part of the request/response payload).
+
+**Example**
+
+```js
+const { isError, message, result } = await star.runtimes.searchRuntimesPost({
+    searchTerm: "example string",
+    filters: { "<string>": {} }
   });
 if (isError) throw new Error(message);
 console.log(result);

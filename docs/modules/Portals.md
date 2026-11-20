@@ -1,6 +1,6 @@
-# Portals — `oasis.portals`
+# Portals — `star.portals`
 
-Source controller: [`PortalsController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/ONODE/NextGenSoftware.OASIS.API.ONODE.WebAPI/Controllers/PortalsController.cs)
+Source controller: [`PortalsController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/PortalsController.cs)
 Route prefix: `api/portals`
 5 operation(s).
 
@@ -32,12 +32,14 @@ No request body.
 
 Standard `OASISResult` envelope (see top of this page) with:
 
-`result` type: `PortalRecord` _(type definition not found in the OASIS source - field list unavailable)_
+`result` type: `PortalRecord`
+
+_No fields._
 
 **Example**
 
 ```js
-const { isError, message, result } = await oasis.portals.getAllPortals({});
+const { isError, message, result } = await star.portals.getAllPortals({});
 if (isError) throw new Error(message);
 console.log(result);
 ```
@@ -48,7 +50,7 @@ Example response:
 {
   "isError": false,
   "message": "",
-  "result": /* <PortalRecord> */
+  "result": {  }
 }
 ```
 
@@ -74,12 +76,14 @@ No request body.
 
 Standard `OASISResult` envelope (see top of this page) with:
 
-`result` type: `PortalRecord` _(type definition not found in the OASIS source - field list unavailable)_
+`result` type: `PortalRecord`
+
+_No fields._
 
 **Example**
 
 ```js
-const { isError, message, result } = await oasis.portals.getPortal({
+const { isError, message, result } = await star.portals.getPortal({
     portalId: '<portalId>'
   });
 if (isError) throw new Error(message);
@@ -92,7 +96,7 @@ Example response:
 {
   "isError": false,
   "message": "",
-  "result": /* <PortalRecord> */
+  "result": {  }
 }
 ```
 
@@ -123,7 +127,7 @@ Standard `OASISResult` envelope (see top of this page) with:
 **Example**
 
 ```js
-const { isError, message, result } = await oasis.portals.lockPortal({
+const { isError, message, result } = await star.portals.lockPortal({
     portalId: '<portalId>'
   });
 if (isError) throw new Error(message);
@@ -150,7 +154,9 @@ Register or update a portal endpoint.  Games call this on map load so the regist
 
 **Request**
 
-Body type: `PortalRegistration` _(type definition not found in the OASIS source - field list unavailable)_
+Body type: `PortalRegistration`
+
+_No fields._
 
 **Response**
 
@@ -161,9 +167,7 @@ Standard `OASISResult` envelope (see top of this page) with:
 **Example**
 
 ```js
-const { isError, message, result } = await oasis.portals.registerPortal({
-    /* ...request body fields */
-  });
+const { isError, message, result } = await star.portals.registerPortal({});
 if (isError) throw new Error(message);
 console.log(result);
 ```
@@ -205,7 +209,7 @@ Standard `OASISResult` envelope (see top of this page) with:
 **Example**
 
 ```js
-const { isError, message, result } = await oasis.portals.unlockPortal({
+const { isError, message, result } = await star.portals.unlockPortal({
     portalId: '<portalId>'
   });
 if (isError) throw new Error(message);

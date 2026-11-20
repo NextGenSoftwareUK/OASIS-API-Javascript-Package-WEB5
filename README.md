@@ -382,7 +382,9 @@ The generated modules, type declarations and docs are produced from
 ```bash
 npm run generate   # src/modules/*.js + src/modules/index.js
 npm run types      # src/modules/*.d.ts + index.d.ts + src/core/types.d.ts
-npm run docs        # docs/README.md + docs/modules/*.md
+npm run docs        # quick docs; for the full reference with resolved types run:
+# node scripts/generate-full-docs.js endpoints.json star "STAR ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers" "WEB5 STAR API"
+# (needs the full OASIS repo checked out at ../OASIS next to this package)
 ```
 
 ## Testing

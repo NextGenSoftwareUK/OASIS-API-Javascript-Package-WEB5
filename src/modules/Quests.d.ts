@@ -58,6 +58,9 @@ export declare class QuestsModule {
   /** GET api/quests/all-for-avatar/game */
   getAllQuestsForAvatarGame(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
+  /** GET api/quests/{id}/first-objective-events */
+  getFirstObjectiveActivationEvents(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
   /** GET api/quests/{id} */
   getIQuest(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
@@ -103,6 +106,9 @@ export declare class QuestsModule {
   /** POST api/quests/{id}/publish */
   publishQuest(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
+  /** POST api/quests/{id}/inventory-progress */
+  reconcileInventoryProgress(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
   /** DELETE api/quests/{parentId}/objectives/{objectiveId} */
   removeQuestObjective(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
@@ -115,7 +121,7 @@ export declare class QuestsModule {
   /** POST api/quests/{id}/progress/reset */
   resetObjectiveProgress(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
-  /** GET api/quests/search (query: query) */
+  /** GET api/quests/search (query: query, searchTerm) */
   searchQuests(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/quests/{id}/unpublish (query: version) */

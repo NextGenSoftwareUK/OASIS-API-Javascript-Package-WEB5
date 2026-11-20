@@ -51,6 +51,8 @@ class QuestsModule {
     this.getAllQuestsForAvatar = makeOperation(http, "api/quests", "GET", "all-for-avatar");
     // GET api/quests/all-for-avatar/game
     this.getAllQuestsForAvatarGame = makeOperation(http, "api/quests", "GET", "all-for-avatar/game");
+    // GET api/quests/{id}/first-objective-events
+    this.getFirstObjectiveActivationEvents = makeOperation(http, "api/quests", "GET", "{id}/first-objective-events");
     // GET api/quests/{id}
     this.getIQuest = makeOperation(http, "api/quests", "GET", "{id}");
     // GET api/quests/by-avatar/{avatarId}
@@ -81,6 +83,8 @@ class QuestsModule {
     this.loadQuestVersion = makeOperation(http, "api/quests", "GET", "{id}/version/{version}");
     // POST api/quests/{id}/publish
     this.publishQuest = makeOperation(http, "api/quests", "POST", "{id}/publish");
+    // POST api/quests/{id}/inventory-progress
+    this.reconcileInventoryProgress = makeOperation(http, "api/quests", "POST", "{id}/inventory-progress");
     // DELETE api/quests/{parentId}/objectives/{objectiveId}
     this.removeQuestObjective = makeOperation(http, "api/quests", "DELETE", "{parentId}/objectives/{objectiveId}");
     // DELETE api/quests/{parentId}/subquests/{subQuestId}
@@ -89,8 +93,8 @@ class QuestsModule {
     this.republishQuest = makeOperation(http, "api/quests", "POST", "{id}/republish", {"query":["version"]});
     // POST api/quests/{id}/progress/reset
     this.resetObjectiveProgress = makeOperation(http, "api/quests", "POST", "{id}/progress/reset");
-    // GET api/quests/search (query: query)
-    this.searchQuests = makeOperation(http, "api/quests", "GET", "search", {"query":["query"]});
+    // GET api/quests/search (query: query, searchTerm)
+    this.searchQuests = makeOperation(http, "api/quests", "GET", "search", {"query":["query","searchTerm"]});
     // POST api/quests/{id}/unpublish (query: version)
     this.unpublishQuest = makeOperation(http, "api/quests", "POST", "{id}/unpublish", {"query":["version"]});
     // PUT api/quests/{id}

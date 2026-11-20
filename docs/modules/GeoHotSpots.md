@@ -1,8 +1,8 @@
 # GeoHotSpots — `star.geoHotSpots`
 
-Source controller: [`GeoHotSpotsController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/GeoHotSpotsController.cs)
+Source controller: [`GeoHotSpotsController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/GeoHotSpotsController.cs)
 Route prefix: `api/geoHotSpots`
-20 operation(s).
+22 operation(s).
 
 Every method takes a single args object: any key matching a `{token}` in the route is substituted into the URL; everything else becomes the query string (GET/DELETE) or JSON body (POST/PUT). Every call resolves to the standard OASIS envelope:
 
@@ -84,6 +84,12 @@ Body type: `GeoHotSpot`
 | `Lat` | `double` |
 | `Long` | `double` |
 | `HotSpotRadiusInMetres` | `int` |
+| `BoundaryType` | `string` |
+| `BoundaryLatitudes` | `IList<double>` |
+| `BoundaryLongitudes` | `IList<double>` |
+| `RecognitionTargetKey` | `string` |
+| `RecognitionTargetClass` | `string` |
+| `MinimumRecognitionConfidence` | `double` |
 | `Object3D` | `byte[]` |
 | `Object3DURI` | `Uri` |
 | `Image2D` | `byte[]` |
@@ -91,6 +97,17 @@ Body type: `GeoHotSpot`
 | `TimeInSecondsNeedToLookAt3DObjectOr2DImageToTriggerHotSpot` | `int` |
 | `Rewards` | `IList<IInventoryItem>` |
 | `RewardIds` | `IList<string>` |
+| `GeoNFTRewardIds` | `IList<Guid>` |
+| `AllowOtherPlayersToAlsoCollect` | `bool` |
+| `PermSpawn` | `bool` |
+| `GlobalSpawnQuantity` | `int` |
+| `PlayerSpawnQuantity` | `int` |
+| `RespawnDurationInSeconds` | `int` |
+| `SpawnInSafeZone` | `bool` |
+| `SpawnNearPlayer` | `bool` |
+| `SpawnWithinXMetersFromPlayer` | `int` |
+| `SpawnXMetersAwayFromPlayer` | `int` |
+| `IsVisibleOnMap` | `bool` |
 | `AudioData` | `byte[]` |
 | `AudioUrl` | `string` |
 | `VideoData` | `byte[]` |
@@ -113,13 +130,30 @@ const { isError, message, result } = await star.geoHotSpots.createGeoHotSpot({
     lat: 1.0,
     long: 1.0,
     hotSpotRadiusInMetres: 1,
+    boundaryType: "example string",
+    boundaryLatitudes: [1.0],
+    boundaryLongitudes: [1.0],
+    recognitionTargetKey: "example string",
+    recognitionTargetClass: "example string",
+    minimumRecognitionConfidence: 1.0,
     object3D: "<base64-bytes>",
     object3DURI: "https://example.com/asset.png",
     image2D: "<base64-bytes>",
     image2DURI: "https://example.com/asset.png",
     timeInSecondsNeedToLookAt3DObjectOr2DImageToTriggerHotSpot: 1,
-    rewards: [{ "Image2D": "<base64-bytes>", "Image2DURI": "https://example.com/asset.png", "ThumbnailUrl": "example string", "Object3D": "<base64-bytes>", "Object3DURI": "https://example.com/asset.png", "Quantity": 1, "Stack": true, "IsStackable": true, "GameSource": "example string", "ItemType": "example string", "NftId": "example string", "Rarity": "example string", "MaxQuantity": 1, "Weight": 1.0, "IsUsable": true, "IsTradeable": true, "OwnerAvatarId": "example string", "AcquiredOn": "2026-01-01T00:00:00Z", "LastUsedOn": "2026-01-01T00:00:00Z", "Properties": { "<string>": {} } }],
+    rewards: [{ "Image2D": "<base64-bytes>", "Image2DURI": "https://example.com/asset.png", "ThumbnailUrl": "example string", "Object3D": "<base64-bytes>", "Object3DURI": "https://example.com/asset.png", "Quantity": 1, "Stack": true, "IsStackable": true, "GameSource": "example string", "ItemType": "example string", "NftId": "example string", "GeoNFTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "Rarity": "example string", "MaxQuantity": 1, "Weight": 1.0, "IsUsable": true, "IsTradeable": true, "OwnerAvatarId": "example string", "AcquiredOn": "2026-01-01T00:00:00Z", "LastUsedOn": "2026-01-01T00:00:00Z", "Properties": { "<string>": {} } }],
     rewardIds: ["example string"],
+    geoNFTRewardIds: ["3fa85f64-5717-4562-b3fc-2c963f66afa6"],
+    allowOtherPlayersToAlsoCollect: true,
+    permSpawn: true,
+    globalSpawnQuantity: 1,
+    playerSpawnQuantity: 1,
+    respawnDurationInSeconds: 1,
+    spawnInSafeZone: true,
+    spawnNearPlayer: true,
+    spawnWithinXMetersFromPlayer: 1,
+    spawnXMetersAwayFromPlayer: 1,
+    isVisibleOnMap: true,
     audioData: "<base64-bytes>",
     audioUrl: "example string",
     videoData: "<base64-bytes>",
@@ -408,6 +442,42 @@ Standard `OASISResult` envelope (see top of this page) with:
 
 ```js
 const { isError, message, result } = await star.geoHotSpots.getAllGeoHotSpots({});
+if (isError) throw new Error(message);
+console.log(result);
+```
+
+Example response:
+
+```json
+{
+  "isError": false,
+  "message": "",
+  "result": null
+}
+```
+
+---
+
+### `getEligibleGeoHotSpots`
+
+Returns active, map-visible GeoHotSpots with authoritative eligibility for the authenticated avatar.</summary>
+
+**GET** `api/geoHotSpots/eligible`
+
+**Request**
+
+No request body.
+
+**Response**
+
+Standard `OASISResult` envelope (see top of this page) with:
+
+`result` type: `IActionResult` (not part of the request/response payload).
+
+**Example**
+
+```js
+const { isError, message, result } = await star.geoHotSpots.getEligibleGeoHotSpots({});
 if (isError) throw new Error(message);
 console.log(result);
 ```
@@ -895,6 +965,79 @@ Example response:
 
 ---
 
+### `triggerGeoHotSpot`
+
+Validates and records an authoritative GeoHotSpot trigger.</summary>
+
+**POST** `api/geoHotSpots/{id}/trigger`
+
+Route parameters:
+
+| Field | Type |
+| --- | --- |
+| `id` | `Guid` |
+
+**Request**
+
+Body type: `TriggerGeoHotSpotRequest`
+
+| Field | Type |
+| --- | --- |
+| `IdempotencyKey` | `Guid` |
+| `TriggerType` | `GeoHotSpotTriggeredType` |
+| `ObservedAtUtc` | `DateTime` |
+| `Latitude` | `double?` |
+| `Longitude` | `double?` |
+| `AccuracyMetres` | `double?` |
+| `ContinuousDurationSeconds` | `double` |
+| `GameSource` | `string` |
+| `RecognitionTargetKey` | `string` |
+| `RecognitionTargetClass` | `string` |
+| `RecognitionConfidence` | `double?` |
+| `RecognitionModelVersion` | `string` |
+| `RecognitionEvidenceReference` | `string` |
+
+**Response**
+
+Standard `OASISResult` envelope (see top of this page) with:
+
+`result` type: `IActionResult` (not part of the request/response payload).
+
+**Example**
+
+```js
+const { isError, message, result } = await star.geoHotSpots.triggerGeoHotSpot({
+    id: '<id>',
+    idempotencyKey: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    triggerType: {  },
+    observedAtUtc: "2026-01-01T00:00:00Z",
+    latitude: 1.0,
+    longitude: 1.0,
+    accuracyMetres: 1.0,
+    continuousDurationSeconds: 1.0,
+    gameSource: "example string",
+    recognitionTargetKey: "example string",
+    recognitionTargetClass: "example string",
+    recognitionConfidence: 1.0,
+    recognitionModelVersion: "example string",
+    recognitionEvidenceReference: "example string"
+  });
+if (isError) throw new Error(message);
+console.log(result);
+```
+
+Example response:
+
+```json
+{
+  "isError": false,
+  "message": "",
+  "result": null
+}
+```
+
+---
+
 ### `unpublishGeoHotSpot`
 
 Unpublishes a geo hot spot from the STARNET system.
@@ -967,6 +1110,12 @@ Body type: `GeoHotSpot`
 | `Lat` | `double` |
 | `Long` | `double` |
 | `HotSpotRadiusInMetres` | `int` |
+| `BoundaryType` | `string` |
+| `BoundaryLatitudes` | `IList<double>` |
+| `BoundaryLongitudes` | `IList<double>` |
+| `RecognitionTargetKey` | `string` |
+| `RecognitionTargetClass` | `string` |
+| `MinimumRecognitionConfidence` | `double` |
 | `Object3D` | `byte[]` |
 | `Object3DURI` | `Uri` |
 | `Image2D` | `byte[]` |
@@ -974,6 +1123,17 @@ Body type: `GeoHotSpot`
 | `TimeInSecondsNeedToLookAt3DObjectOr2DImageToTriggerHotSpot` | `int` |
 | `Rewards` | `IList<IInventoryItem>` |
 | `RewardIds` | `IList<string>` |
+| `GeoNFTRewardIds` | `IList<Guid>` |
+| `AllowOtherPlayersToAlsoCollect` | `bool` |
+| `PermSpawn` | `bool` |
+| `GlobalSpawnQuantity` | `int` |
+| `PlayerSpawnQuantity` | `int` |
+| `RespawnDurationInSeconds` | `int` |
+| `SpawnInSafeZone` | `bool` |
+| `SpawnNearPlayer` | `bool` |
+| `SpawnWithinXMetersFromPlayer` | `int` |
+| `SpawnXMetersAwayFromPlayer` | `int` |
+| `IsVisibleOnMap` | `bool` |
 | `AudioData` | `byte[]` |
 | `AudioUrl` | `string` |
 | `VideoData` | `byte[]` |
@@ -997,13 +1157,30 @@ const { isError, message, result } = await star.geoHotSpots.updateGeoHotSpot({
     lat: 1.0,
     long: 1.0,
     hotSpotRadiusInMetres: 1,
+    boundaryType: "example string",
+    boundaryLatitudes: [1.0],
+    boundaryLongitudes: [1.0],
+    recognitionTargetKey: "example string",
+    recognitionTargetClass: "example string",
+    minimumRecognitionConfidence: 1.0,
     object3D: "<base64-bytes>",
     object3DURI: "https://example.com/asset.png",
     image2D: "<base64-bytes>",
     image2DURI: "https://example.com/asset.png",
     timeInSecondsNeedToLookAt3DObjectOr2DImageToTriggerHotSpot: 1,
-    rewards: [{ "Image2D": "<base64-bytes>", "Image2DURI": "https://example.com/asset.png", "ThumbnailUrl": "example string", "Object3D": "<base64-bytes>", "Object3DURI": "https://example.com/asset.png", "Quantity": 1, "Stack": true, "IsStackable": true, "GameSource": "example string", "ItemType": "example string", "NftId": "example string", "Rarity": "example string", "MaxQuantity": 1, "Weight": 1.0, "IsUsable": true, "IsTradeable": true, "OwnerAvatarId": "example string", "AcquiredOn": "2026-01-01T00:00:00Z", "LastUsedOn": "2026-01-01T00:00:00Z", "Properties": { "<string>": {} } }],
+    rewards: [{ "Image2D": "<base64-bytes>", "Image2DURI": "https://example.com/asset.png", "ThumbnailUrl": "example string", "Object3D": "<base64-bytes>", "Object3DURI": "https://example.com/asset.png", "Quantity": 1, "Stack": true, "IsStackable": true, "GameSource": "example string", "ItemType": "example string", "NftId": "example string", "GeoNFTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "Rarity": "example string", "MaxQuantity": 1, "Weight": 1.0, "IsUsable": true, "IsTradeable": true, "OwnerAvatarId": "example string", "AcquiredOn": "2026-01-01T00:00:00Z", "LastUsedOn": "2026-01-01T00:00:00Z", "Properties": { "<string>": {} } }],
     rewardIds: ["example string"],
+    geoNFTRewardIds: ["3fa85f64-5717-4562-b3fc-2c963f66afa6"],
+    allowOtherPlayersToAlsoCollect: true,
+    permSpawn: true,
+    globalSpawnQuantity: 1,
+    playerSpawnQuantity: 1,
+    respawnDurationInSeconds: 1,
+    spawnInSafeZone: true,
+    spawnNearPlayer: true,
+    spawnWithinXMetersFromPlayer: 1,
+    spawnXMetersAwayFromPlayer: 1,
+    isVisibleOnMap: true,
     audioData: "<base64-bytes>",
     audioUrl: "example string",
     videoData: "<base64-bytes>",

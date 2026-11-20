@@ -76,9 +76,10 @@ function extractReturnType(taskGeneric) {
   return { wrapper: m[1], inner: stripNamespace(m[2].trim()) };
 }
 
-function parseController(filePath) {
-  const src = fs.readFileSync(filePath, 'utf8');
-  const classMatch = src.match(/public class (\w+)Controller\s*:/);
+function parseController(src) {
+  // `partial` controllers declare the base class (and [Route]) in one file
+  // only; the merged source puts that file first, so match either form.
+  const classMatch = src.match(/public\s+(?:sealed\s+)?(?:partial\s+)?class (\w+)Controller\b/);
   if (!classMatch) return null;
   const controllerName = classMatch[1];
   const routeAttrMatch = src
@@ -262,17 +263,27 @@ function parseController(filePath) {
   return { controllerName, routePrefix, ops };
 }
 
-const files = fs
-  .readdirSync(controllersDir)
-  .filter((f) => f.endsWith('Controller.cs'))
-  .sort();
+// Partial controllers are split across files such as QuestsController.cs,
+// QuestsController.Quest.cs and QuestsController.Objective.cs. Group every
+// part under its controller and parse them as one source, with the file that
+// declares the base class / [Route] first.
+const groups = {};
+for (const f of fs.readdirSync(controllersDir).sort()) {
+  const m = f.match(/^(\w+Controller)(?:\.[\w.]+)?\.cs$/);
+  if (!m) continue;
+  (groups[m[1]] = groups[m[1]] || []).push(f);
+}
 
 const result = {};
 let totalOps = 0;
 
-for (const file of files) {
-  const parsed = parseController(path.join(controllersDir, file));
+for (const name of Object.keys(groups).sort()) {
+  const parts = groups[name]
+    .map((f) => fs.readFileSync(path.join(controllersDir, f), 'utf8'))
+    .sort((a, b) => Number(/class \w+Controller\s*:/.test(b)) - Number(/class \w+Controller\s*:/.test(a)));
+  const parsed = parseController(parts.join('\n'));
   if (!parsed || !Object.keys(parsed.ops).length) continue;
+  const file = `${name}.cs`;
   result[file] = { route_prefix: parsed.routePrefix, ops: parsed.ops };
   totalOps += Object.keys(parsed.ops).length;
 }

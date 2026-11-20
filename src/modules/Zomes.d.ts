@@ -61,7 +61,7 @@ export declare class ZomesModule {
   /** POST api/zomes/{id}/republish (query: version) */
   republishZome(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
-  /** GET api/zomes/search (query: searchTerm, searchOnlyForCurrentAvatar, showAllVersions, version) */
+  /** GET api/zomes/search (query: searchTerm, searchOnlyForCurrentAvatar, showAllVersions, version, query) */
   searchZomes(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/zomes/{id}/unpublish (query: version) */

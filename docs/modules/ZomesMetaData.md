@@ -1,8 +1,8 @@
 # ZomesMetaData — `star.zomesMetaData`
 
-Source controller: [`ZomesMetaDataController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/ZomesMetaDataController.cs)
+Source controller: [`ZomesMetaDataController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/ZomesMetaDataController.cs)
 Route prefix: `api/zomesMetaData`
-20 operation(s).
+21 operation(s).
 
 Every method takes a single args object: any key matching a `{token}` in the route is substituted into the URL; everything else becomes the query string (GET/DELETE) or JSON body (POST/PUT). Every call resolves to the standard OASIS envelope:
 
@@ -812,6 +812,52 @@ Example response:
 
 ### `searchZomesMetaData`
 
+Searches for Zomes Metadata based on search criteria.
+
+**GET** `api/zomesMetaData/search`
+
+**Request**
+
+Query parameters:
+
+| Field | Type |
+| --- | --- |
+| `searchTerm` | `string` |
+| `showAllVersions` | `bool (optional)` |
+| `version` | `int (optional)` |
+
+**Response**
+
+Standard `OASISResult` envelope (see top of this page) with:
+
+`result` type: `IActionResult` (not part of the request/response payload).
+
+**Example**
+
+```js
+const { isError, message, result } = await star.zomesMetaData.searchZomesMetaData({
+    searchTerm: 'example string',
+    showAllVersions: true,
+    version: 1
+  });
+if (isError) throw new Error(message);
+console.log(result);
+```
+
+Example response:
+
+```json
+{
+  "isError": false,
+  "message": "",
+  "result": null
+}
+```
+
+---
+
+### `searchZomesMetaDataPost`
+
 Searches for Zomes Metadata using advanced search criteria.
 
 **POST** `api/zomesMetaData/search`
@@ -834,7 +880,7 @@ Standard `OASISResult` envelope (see top of this page) with:
 **Example**
 
 ```js
-const { isError, message, result } = await star.zomesMetaData.searchZomesMetaData({
+const { isError, message, result } = await star.zomesMetaData.searchZomesMetaDataPost({
     searchTerm: "example string",
     filters: { "<string>": {} }
   });

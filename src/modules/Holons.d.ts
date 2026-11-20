@@ -67,7 +67,7 @@ export declare class HolonsModule {
   /** POST api/holons/{id}/republish (query: version) */
   republishHolon(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
-  /** GET api/holons/search (query: query) */
+  /** GET api/holons/search (query: query, searchTerm) */
   searchHolons(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST api/holons/{id}/unpublish (query: version) */

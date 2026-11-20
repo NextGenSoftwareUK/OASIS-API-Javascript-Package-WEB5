@@ -1,6 +1,6 @@
 # Avatar — `star.avatar`
 
-Source controller: [`AvatarController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/AvatarController.cs)
+Source controller: [`AvatarController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/AvatarController.cs)
 Route prefix: `api/avatar`
 13 operation(s).
 
@@ -40,6 +40,7 @@ Body type: `InventoryItem`
 | `GameSource` | `string` |
 | `ItemType` | `string` |
 | `NftId` | `string` |
+| `GeoNFTId` | `Guid` |
 | `InventoryItemType` | `InventoryItemType` |
 | `Rarity` | `string` |
 | `MaxQuantity` | `int` |
@@ -71,6 +72,7 @@ const { isError, message, result } = await star.avatar.addItemToInventory({
     gameSource: "example string",
     itemType: "example string",
     nftId: "example string",
+    geoNFTId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     inventoryItemType: {  },
     rarity: "example string",
     maxQuantity: 1,
@@ -482,6 +484,8 @@ Body type: `SendItemRequest`
 | `ItemName` | `string` |
 | `ItemId` | `Guid?` |
 | `Quantity` | `int` |
+| `OperationId` | `Guid?` |
+| `DestinationInventoryItemId` | `Guid?` |
 
 **Response**
 
@@ -496,7 +500,9 @@ const { isError, message, result } = await star.avatar.sendItemToAvatar({
     target: "example string",
     itemName: "example string",
     itemId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    quantity: 1
+    quantity: 1,
+    operationId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    destinationInventoryItemId: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
   });
 if (isError) throw new Error(message);
 console.log(result);
@@ -530,6 +536,8 @@ Body type: `SendItemRequest`
 | `ItemName` | `string` |
 | `ItemId` | `Guid?` |
 | `Quantity` | `int` |
+| `OperationId` | `Guid?` |
+| `DestinationInventoryItemId` | `Guid?` |
 
 **Response**
 
@@ -544,7 +552,9 @@ const { isError, message, result } = await star.avatar.sendItemToClan({
     target: "example string",
     itemName: "example string",
     itemId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    quantity: 1
+    quantity: 1,
+    operationId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    destinationInventoryItemId: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
   });
 if (isError) throw new Error(message);
 console.log(result);
