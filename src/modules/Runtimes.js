@@ -49,6 +49,8 @@ class RuntimesModule {
     this.loadRuntimeFromPublished = makeOperation(http, "api/runtimes", "GET", "load-from-published", {"query":["publishedFilePath"]});
     // GET api/runtimes/{id}/versions/{version}
     this.loadRuntimeVersion = makeOperation(http, "api/runtimes", "GET", "{id}/versions/{version}");
+    // POST api/runtimes/publish-release
+    this.publishRelease = makeOperation(http, "api/runtimes", "POST", "publish-release");
     // POST api/runtimes/{id}/publish
     this.publishRuntime = makeOperation(http, "api/runtimes", "POST", "{id}/publish");
     // POST api/runtimes/{id}/republish

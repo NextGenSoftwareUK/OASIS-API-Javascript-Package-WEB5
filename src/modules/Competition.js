@@ -33,6 +33,10 @@ class CompetitionModule {
     this.getMyStats = makeOperation(http, "api/competition", "GET", "stats/{competitionType}/{seasonType}");
     // POST api/competition/tournaments/{tournamentId}/join
     this.joinTournament = makeOperation(http, "api/competition", "POST", "tournaments/{tournamentId}/join");
+    // PUT api/competition/leagues/{competitionType}/{seasonType}
+    this.publishLeagues = makeOperation(http, "api/competition", "PUT", "leagues/{competitionType}/{seasonType}");
+    // PUT api/competition/tournaments
+    this.publishTournament = makeOperation(http, "api/competition", "PUT", "tournaments");
   }
 }
 

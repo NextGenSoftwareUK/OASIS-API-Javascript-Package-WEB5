@@ -1,16 +1,10 @@
 # WEB5 STAR API — JavaScript SDK Reference
 
-Generated from `endpoints.json` (extracted from the WebAPI controllers) by
-`scripts/generate-full-docs.js`. Regenerate the full pipeline after the API
-changes:
+Generated from `src/modules/*.js` by `scripts/generate-docs.js`. Regenerate
+after running `node scripts/generate-modules.js` against an updated
+`endpoints.json` so the docs never drift from the actual code.
 
-```
-node scripts/extract-endpoints.js
-node scripts/generate-modules.js
-node scripts/generate-full-docs.js
-```
-
-- [Module Reference](#module-reference) (31 modules, 632 operations)
+- [Module Reference](#module-reference) (32 modules, 639 operations)
 
 ## Module Reference
 
@@ -21,7 +15,7 @@ node scripts/generate-full-docs.js
 | [`star.celestialBodiesMetaData`](modules/CelestialBodiesMetaData.md) | `api/celestialBodiesMetaData` | 21 |
 | [`star.celestialSpaces`](modules/CelestialSpaces.md) | `api/celestialSpaces` | 22 |
 | [`star.chapters`](modules/Chapters.md) | `api/chapters` | 20 |
-| [`star.competition`](modules/Competition.md) | `api/competition` | 9 |
+| [`star.competition`](modules/Competition.md) | `api/competition` | 11 |
 | [`star.cosmic`](modules/Cosmic.md) | `api/cosmic` | 72 |
 | [`star.games`](modules/Games.md) | `api/games` | 55 |
 | [`star.geoHotSpots`](modules/GeoHotSpots.md) | `api/geoHotSpots` | 22 |
@@ -39,10 +33,11 @@ node scripts/generate-full-docs.js
 | [`star.parks`](modules/Parks.md) | `api/parks` | 22 |
 | [`star.plugins`](modules/Plugins.md) | `api/plugins` | 24 |
 | [`star.portals`](modules/Portals.md) | `api/portals` | 5 |
-| [`star.quests`](modules/Quests.md) | `api/quests` | 42 |
-| [`star.runtimes`](modules/Runtimes.md) | `api/runtimes` | 25 |
+| [`star.quests`](modules/Quests.md) | `api/quests` | 43 |
+| [`star.runtimes`](modules/Runtimes.md) | `api/runtimes` | 26 |
 | [`star.sTAR`](modules/STAR.md) | `api/sTAR` | 4 |
 | [`star.spawnEvents`](modules/SpawnEvents.md) | `api/spawn-events` | 3 |
+| [`star.starnet`](modules/Starnet.md) | `api/starnet` | 3 |
 | [`star.teleport`](modules/Teleport.md) | `api/teleport` | 2 |
 | [`star.templates`](modules/Templates.md) | `api/templates` | 22 |
 | [`star.zomes`](modules/Zomes.md) | `api/zomes` | 22 |

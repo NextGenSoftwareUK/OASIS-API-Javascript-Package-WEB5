@@ -95,6 +95,8 @@ class QuestsModule {
     this.resetObjectiveProgress = makeOperation(http, "api/quests", "POST", "{id}/progress/reset");
     // GET api/quests/search (query: query, searchTerm)
     this.searchQuests = makeOperation(http, "api/quests", "GET", "search", {"query":["query","searchTerm"]});
+    // POST api/quests/{id}/start
+    this.startQuest = makeOperation(http, "api/quests", "POST", "{id}/start");
     // POST api/quests/{id}/unpublish (query: version)
     this.unpublishQuest = makeOperation(http, "api/quests", "POST", "{id}/unpublish", {"query":["version"]});
     // PUT api/quests/{id}

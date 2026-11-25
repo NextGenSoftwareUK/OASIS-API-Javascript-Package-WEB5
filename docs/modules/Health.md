@@ -1,90 +1,29 @@
 # Health — `star.health`
 
-Source controller: [`HealthController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/HealthController.cs)
+Source controller: [`HealthController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/HealthController.cs)
 Route prefix: `api/health`
 2 operation(s).
 
-Every method takes a single args object: any key matching a `{token}` in the route is substituted into the URL; everything else becomes the query string (GET/DELETE) or JSON body (POST/PUT). Every call resolves to the standard OASIS envelope:
+All methods are generated 1:1 from the controller's real `[Http*]` routes (see
+[Conventions](../README.md#calling-any-endpoint)). They take a single args
+object: any key matching a `{token}` in the route is substituted into the
+URL; everything else becomes the query string (GET/DELETE) or JSON body
+(POST/PUT).
 
-```ts
-{
-  isError: boolean;
-  isWarning: boolean;
-  message: string;
-  errorCode?: string;
-  result: T; // see each endpoint's Response section below
-}
-```
+## Methods
 
-## Operations
+| Method | HTTP | Route | Route params | Query params | Body |
+| --- | --- | --- | --- | --- | --- |
+| `get` | GET | `api/health` | – | – | – |
+| `health` | GET | `api/health/health` | – | – | – |
 
-### `get`
-
-Health check endpoint for Railway deployment
-
-**GET** `api/health`
-
-**Request**
-
-No request body.
-
-**Response**
-
-Standard `OASISResult` envelope (see top of this page) with:
-
-`result` type: `object`
-
-**Example**
+## Example
 
 ```js
+const star = new STARClient({ baseUrl: '...' });
+star.setToken(jwtToken); // or: await star.auth.login({ username, password })
+
 const { isError, message, result } = await star.health.get({});
 if (isError) throw new Error(message);
 console.log(result);
 ```
-
-Example response:
-
-```json
-{
-  "isError": false,
-  "message": "",
-  "result": {}
-}
-```
-
----
-
-### `health`
-
-Health check endpoint for Railway deployment
-
-**GET** `api/health/health`
-
-**Request**
-
-No request body.
-
-**Response**
-
-Standard `OASISResult` envelope (see top of this page) with:
-
-`result` type: `object`
-
-**Example**
-
-```js
-const { isError, message, result } = await star.health.health({});
-if (isError) throw new Error(message);
-console.log(result);
-```
-
-Example response:
-
-```json
-{
-  "isError": false,
-  "message": "",
-  "result": {}
-}
-```
-

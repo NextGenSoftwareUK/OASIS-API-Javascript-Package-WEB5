@@ -32,6 +32,7 @@ const { TeleportModule } = require('./Teleport');
 const { TemplatesModule } = require('./Templates');
 const { ZomesModule } = require('./Zomes');
 const { ZomesMetaDataModule } = require('./ZomesMetaData');
+const { StarnetModule } = require('./Starnet');
 
 /**
  * Attaches every generated module to the client under its lowerCamel controller
@@ -71,6 +72,7 @@ function attachGeneratedModules(client, http) {
   client.templates = client.templates || new TemplatesModule(http);
   client.zomes = client.zomes || new ZomesModule(http);
   client.zomesMetaData = client.zomesMetaData || new ZomesMetaDataModule(http);
+  client.starnet = client.starnet || new StarnetModule(http);
   return client;
 }
 

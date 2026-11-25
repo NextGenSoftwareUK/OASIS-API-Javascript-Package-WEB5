@@ -55,6 +55,9 @@ export declare class RuntimesModule {
   /** GET api/runtimes/{id}/versions/{version} */
   loadRuntimeVersion(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
+  /** POST api/runtimes/publish-release */
+  publishRelease(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
   /** POST api/runtimes/{id}/publish */
   publishRuntime(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 

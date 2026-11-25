@@ -30,4 +30,10 @@ export declare class CompetitionModule {
 
   /** POST api/competition/tournaments/{tournamentId}/join */
   joinTournament(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
+  /** PUT api/competition/leagues/{competitionType}/{seasonType} */
+  publishLeagues(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
+
+  /** PUT api/competition/tournaments */
+  publishTournament(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

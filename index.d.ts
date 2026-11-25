@@ -28,6 +28,7 @@ import type { QuestsModule } from './src/modules/Quests';
 import type { RuntimesModule } from './src/modules/Runtimes';
 import type { STARModule } from './src/modules/STAR';
 import type { SpawnEventsModule } from './src/modules/SpawnEvents';
+import type { StarnetModule } from './src/modules/Starnet';
 import type { TeleportModule } from './src/modules/Teleport';
 import type { TemplatesModule } from './src/modules/Templates';
 import type { ZomesModule } from './src/modules/Zomes';
@@ -93,6 +94,7 @@ export declare class STARClient {
   readonly runtimes: RuntimesModule;
   readonly sTAR: STARModule;
   readonly spawnEvents: SpawnEventsModule;
+  readonly starnet: StarnetModule;
   readonly teleport: TeleportModule;
   readonly templates: TemplatesModule;
   readonly zomes: ZomesModule;

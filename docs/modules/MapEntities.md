@@ -1,49 +1,28 @@
 # MapEntities — `star.mapEntities`
 
-Source controller: [`MapEntitiesController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/MapEntitiesController.cs)
+Source controller: [`MapEntitiesController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/STAR%20ODK/NextGenSoftware.OASIS.STAR.WebAPI/Controllers/MapEntitiesController.cs)
 Route prefix: `api/maps`
 2 operation(s).
 
-Every method takes a single args object: any key matching a `{token}` in the route is substituted into the URL; everything else becomes the query string (GET/DELETE) or JSON body (POST/PUT). Every call resolves to the standard OASIS envelope:
+All methods are generated 1:1 from the controller's real `[Http*]` routes (see
+[Conventions](../README.md#calling-any-endpoint)). They take a single args
+object: any key matching a `{token}` in the route is substituted into the
+URL; everything else becomes the query string (GET/DELETE) or JSON body
+(POST/PUT).
 
-```ts
-{
-  isError: boolean;
-  isWarning: boolean;
-  message: string;
-  errorCode?: string;
-  result: T; // see each endpoint's Response section below
-}
-```
+## Methods
 
-## Operations
+| Method | HTTP | Route | Route params | Query params | Body |
+| --- | --- | --- | --- | --- | --- |
+| `getEntities` | GET | `api/maps/{game}/{map}/entities` | `game`, `map` | – | – |
+| `putEntities` | PUT | `api/maps/{game}/{map}/entities` | `game`, `map` | – | remaining args |
 
-### `getEntities`
-
-Returns the entity list for the specified game map. Used by ogengine_get_map_entities() at map load time.
-
-**GET** `api/maps/{game}/{map}/entities`
-
-Route parameters:
-
-| Field | Type |
-| --- | --- |
-| `game` | `string` |
-| `map` | `string` |
-
-**Request**
-
-No request body.
-
-**Response**
-
-Standard `OASISResult` envelope (see top of this page) with:
-
-`result` type: `IActionResult` (not part of the request/response payload).
-
-**Example**
+## Example
 
 ```js
+const star = new STARClient({ baseUrl: '...' });
+star.setToken(jwtToken); // or: await star.auth.login({ username, password })
+
 const { isError, message, result } = await star.mapEntities.getEntities({
     game: '<game>',
     map: '<map>'
@@ -51,62 +30,3 @@ const { isError, message, result } = await star.mapEntities.getEntities({
 if (isError) throw new Error(message);
 console.log(result);
 ```
-
-Example response:
-
-```json
-{
-  "isError": false,
-  "message": "",
-  "result": null
-}
-```
-
----
-
-### `putEntities`
-
-Replaces the entity list for the specified map. The new list is stored as a Holon. Used by UDB map export / OASIS entity placement tools.
-
-**PUT** `api/maps/{game}/{map}/entities`
-
-Route parameters:
-
-| Field | Type |
-| --- | --- |
-| `game` | `string` |
-| `map` | `string` |
-
-**Request**
-
-Body type: `MapEntity` (array)
-
-_No fields._
-
-**Response**
-
-Standard `OASISResult` envelope (see top of this page) with:
-
-`result` type: `IActionResult` (not part of the request/response payload).
-
-**Example**
-
-```js
-const { isError, message, result } = await star.mapEntities.putEntities({
-    game: '<game>',
-    map: '<map>'
-  });
-if (isError) throw new Error(message);
-console.log(result);
-```
-
-Example response:
-
-```json
-{
-  "isError": false,
-  "message": "",
-  "result": null
-}
-```
-
