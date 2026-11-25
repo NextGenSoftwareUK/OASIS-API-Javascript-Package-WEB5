@@ -406,7 +406,7 @@ Or pass a bound fetch to the constructor:
 
 ```js
 const client = new STARClient({
-  baseUrl: 'https://api.web5.oasisomniverse.one',
+  baseUrl: 'https://api.starnet.oasisomniverse.one',
   fetchImpl: window.fetch.bind(window)
 });
 ```
